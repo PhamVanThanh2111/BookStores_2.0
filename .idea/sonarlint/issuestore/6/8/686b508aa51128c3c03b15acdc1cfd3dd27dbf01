@@ -1,0 +1,12 @@
+
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÛÏš…ÿÿÿÿÿJ$76feec3c-d13d-4448-bb0b-6786b9aaa827
+
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡ºJ$46f43ec7-63a8-4182-9456-92b85328203d
+l
+java:S2160"+Override the "equals" method in this class.(ÛÏš…ÿÿÿÿÿJ$e499afcb-e382-4121-b944-8e113184519c
+e
+java:S1948"$Make "em" transient or serializable.(‘æ¿ÚúÿÿÿÿJ$e91e1c53-6c2a-4c98-89ce-70916bc9cbcf
+s
+java:S11358"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$a2d71730-3a70-4bdb-b0d0-b876ecc01144
+s
+java:S1135i"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$ca949ada-e2f9-4353-ab24-7425ca308fde

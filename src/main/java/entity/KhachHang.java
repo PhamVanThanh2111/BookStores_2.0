@@ -4,14 +4,14 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "KhachHang")
+@NamedQueries({
+		@NamedQuery(name = "getAllKhachHang", query = "select kh from KhachHang kh"),
+		@NamedQuery(name = "getKhachHangTheoSoDienThoai", query = "select kh from KhachHang kh where kh.soDienThoai = :soDienThoai")
+})
 public class KhachHang implements Serializable {
 	private static final long serialVersionUID = 1L;
 
