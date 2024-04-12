@@ -1,5 +1,7 @@
 package entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -11,7 +13,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "ChiTietPhieuDatHang")
-public class ChiTietPhieuDatHang {
+public class ChiTietPhieuDatHang implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@EmbeddedId
 	private ChiTietPhieuDatKey id;
 

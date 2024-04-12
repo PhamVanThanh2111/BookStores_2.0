@@ -1,5 +1,7 @@
 package entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -8,7 +10,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "DungCuHocTap")
-public class DungCuHocTap extends SanPham {
+public class DungCuHocTap extends SanPham implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Column(name = "mucTieuSuDung", columnDefinition = "nvarchar(100)")
 	private String mucTieuSuDung;
 

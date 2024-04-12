@@ -1,5 +1,7 @@
 package entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -10,10 +12,16 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Sach")
+<<<<<<< HEAD
 @NamedQueries({
 	@NamedQuery(name="getAllSach",query = "select s from Sach s")
 })
 public class Sach extends SanPham {
+=======
+public class Sach extends SanPham implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+>>>>>>> 077dd7b07248abff0679f0d7641f6db1bda10162
 	@Column(name = "tacGia", columnDefinition = "nvarchar(50)", nullable = false)
 	private String tacGia;
 
