@@ -1,4 +1,4 @@
-package dao.iplm;
+package dao.impl;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

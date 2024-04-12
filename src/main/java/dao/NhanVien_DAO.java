@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-import dao.iplm.NhanVien_Impl;
+import dao.impl.NhanVien_Impl;
 import entity.NhanVien;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;

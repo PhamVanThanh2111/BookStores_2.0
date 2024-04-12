@@ -3,7 +3,7 @@ package dao;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-import dao.iplm.Ca_Impl;
+import dao.impl.Ca_Impl;
 import entity.Ca;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;

@@ -705,13 +705,13 @@ public class Sach_GUI extends JPanel {
 		btnXuatFile.setFont(new Font("SansSerif", Font.BOLD, 14));
 		btnXuatFile.setBackground(new Color(73, 129, 158));
 		btnXuatFile.setBounds(1098, 10, 135, 27);
-		btnXuatFile.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				xuatFile(sanPham_DAO.getAllSach());
-			}
-		});
+//		btnXuatFile.addActionListener(new ActionListener() {
+//
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				xuatFile(sanPham_DAO.getAllSach());
+//			}
+//		});
 		pDanhSach.add(btnXuatFile);
 
 		// unfocus
@@ -1190,9 +1190,9 @@ public class Sach_GUI extends JPanel {
 			lblHinhAnh.removeAll();
 		}
 
-	public void refresh() {
-		loadData(sanPham_DAO.getAllSach());
-	}
+//	public void refresh() {
+//		loadData(sanPham_DAO.getAllSach());
+//	}
 
 	// Thêm sách
 	public boolean add() {
@@ -1278,7 +1278,7 @@ public class Sach_GUI extends JPanel {
 //					sanPham.setMaNhaCungCap(null);
 //					sanPham_DAO.themSanPham(sanPham);
 					JOptionPane.showMessageDialog(null, "Thêm sách thành công!");
-					refresh();
+//					refresh();
 					return true;
 				} catch (Exception e1) {
 					JOptionPane.showMessageDialog(null, "Thêm sách thất bại!");
@@ -1336,7 +1336,7 @@ public class Sach_GUI extends JPanel {
 
 						// sanPham_DAO.suaSanPhamTheoMa(sanPham);
 //						sanPham_DAO.suaMaSach(sanPham);
-						refresh();
+//						refresh();
 					} catch (Exception e) {
 						JOptionPane.showMessageDialog(null, "Sản phẩm tồn tại trong hóa đơn!");
 					}
@@ -1406,7 +1406,7 @@ public class Sach_GUI extends JPanel {
 				// sanPham_DAO.suaSanPhamTheoMa(sanPham);
 //				sanPham_DAO.suaSanPhamTheoMaSach(sanPham);
 				JOptionPane.showMessageDialog(null, "Sửa thành công sách '" + model.getValueAt(row, 0) + "'!");
-				refresh();
+//				refresh();
 				return true;
 			} else {
 				return false;

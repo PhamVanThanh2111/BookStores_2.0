@@ -3,7 +3,7 @@ package dao;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import dao.iplm.TheLoaiSach_Impl;
+import dao.impl.TheLoaiSach_Impl;
 import entity.TheLoaiSach;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;

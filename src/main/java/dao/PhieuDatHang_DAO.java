@@ -3,7 +3,7 @@ package dao;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import dao.iplm.PhieuDatHang_Impl;
+import dao.impl.PhieuDatHang_Impl;
 import entity.PhieuDatHang;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
