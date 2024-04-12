@@ -12,16 +12,11 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Sach")
-<<<<<<< HEAD
 @NamedQueries({
-	@NamedQuery(name="getAllSach",query = "select s from Sach s")
+	@NamedQuery(name="getAllSach",query = "Select s from Sach s"),
+	@NamedQuery(name="getTenSachTheoTenSanPham",query = "Select s from Sach s wherer s.tenSanPham = :tenSanPham")
 })
 public class Sach extends SanPham {
-=======
-public class Sach extends SanPham implements Serializable {
-	private static final long serialVersionUID = 1L;
-
->>>>>>> 077dd7b07248abff0679f0d7641f6db1bda10162
 	@Column(name = "tacGia", columnDefinition = "nvarchar(50)", nullable = false)
 	private String tacGia;
 

@@ -8,6 +8,7 @@ import entity.ChiTietHoaDon;
 public class ChiTietHoaDon_DAO {
 	// them nhan vien
 	public boolean themChiTietHoaDon(ChiTietHoaDon chiTietHoaDon) throws SQLException {
+		
 		return false;
 	}
 

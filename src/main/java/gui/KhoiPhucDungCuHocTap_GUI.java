@@ -106,12 +106,8 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 				int row = table.getSelectedRow();
 				DungCuHocTap dungCuHocTap = new DungCuHocTap();
 				dungCuHocTap.setMaSanPham((String) model.getValueAt(row, 0));
-				try {
-					sanPham_DAO.khoiPhucSanPham(dungCuHocTap);
-					loadData(sanPham_DAO.getAllDCHTXoa());
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
+				sanPham_DAO.khoiPhucSanPham(dungCuHocTap);
+				loadData(sanPham_DAO.getAllDCHTXoa());
 
 			}
 		});
@@ -133,12 +129,8 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 					int tb = JOptionPane.showConfirmDialog(null, "Bạn Muốn Xóa Sản Phẩm? ", "Delete",
 							JOptionPane.YES_NO_OPTION);
 					if (tb == JOptionPane.YES_OPTION) {
-						try {
-							sanPham_DAO.xoaSachTheoMa((String) model.getValueAt(row, 0));
-							loadData(sanPham_DAO.getAllDCHTXoa());
-						} catch (SQLException e1) {
-							e1.printStackTrace();
-						}
+						sanPham_DAO.xoaSachTheoMa((String) model.getValueAt(row, 0));
+						loadData(sanPham_DAO.getAllDCHTXoa());
 					}
 
 				}

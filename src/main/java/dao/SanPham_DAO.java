@@ -3,7 +3,7 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import dao.iplm.SanPham_Iplm;
+import dao.impl.SanPham_Iplm;
 import entity.DungCuHocTap;
 import entity.Sach;
 import entity.SanPham;
