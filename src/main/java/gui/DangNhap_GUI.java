@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 
 import javax.swing.BorderFactory;
@@ -43,7 +44,7 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 	private int countSaiMatKhau = 0;
 	private JCheckBox chkShow;
 
-	public DangNhap_GUI() throws SQLException {
+	public DangNhap_GUI() throws SQLException, RemoteException {
 		connect();
 
 		taiKhoan_DAO = new TaiKhoan_DAO();
@@ -192,7 +193,7 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 		if (e.getSource().equals(btnLogin)) {
 			try {
 				login();
-			} catch (SQLException e1) {
+			} catch (SQLException | RemoteException e1) {
 				e1.printStackTrace();
 			}
 		} else if (e.getSource().equals(btnExit)) {
@@ -205,7 +206,7 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 
 	}
 
-	public void login() throws SQLException {
+	public void login() throws SQLException, RemoteException {
 		if (countSaiMatKhau > 2) {
 			JOptionPane.showMessageDialog(null, "Bạn đã nhập sai tài khoản quá 3 lần. Chương trình sẽ thoát!");
 			System.exit(0);

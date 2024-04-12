@@ -1,6 +1,7 @@
 package dao;
 
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
 import dao.impl.TheLoaiSach_Impl;
@@ -8,10 +9,11 @@ import entity.TheLoaiSach;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
-public class TheLoaiSach_DAO implements TheLoaiSach_Impl {
+public class TheLoaiSach_DAO extends UnicastRemoteObject implements TheLoaiSach_Impl {
+	private static final long serialVersionUID = 1L;
 	private EntityManager em;
 	
-	public TheLoaiSach_DAO() {
+	public TheLoaiSach_DAO() throws RemoteException {
 		em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
 	}
 

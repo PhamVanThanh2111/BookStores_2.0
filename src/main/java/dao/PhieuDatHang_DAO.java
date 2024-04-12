@@ -1,6 +1,7 @@
 package dao;
 
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
 import dao.impl.PhieuDatHang_Impl;
@@ -8,9 +9,10 @@ import entity.PhieuDatHang;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
-public class PhieuDatHang_DAO implements PhieuDatHang_Impl {
+public class PhieuDatHang_DAO extends UnicastRemoteObject implements PhieuDatHang_Impl {
+	private static final long serialVersionUID = 1L;
 	private EntityManager em;
-	public PhieuDatHang_DAO() {
+	public PhieuDatHang_DAO() throws RemoteException {
 		em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
 	}
 	

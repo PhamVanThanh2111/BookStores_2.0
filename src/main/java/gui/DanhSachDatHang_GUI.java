@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.rmi.RemoteException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -26,11 +27,13 @@ import javax.swing.table.JTableHeader;
 import connect.ConnectDB;
 import dao.ChiTietHoaDon_DAO;
 import dao.ChiTietPhieuDatHang_DAO;
+import dao.DungCuHocTap_DAO;
 import dao.HoaDon_DAO;
 import dao.KhachHang_DAO;
 import dao.NhanVien_DAO;
 import dao.PhatSinhMa_DAO;
 import dao.PhieuDatHang_DAO;
+import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import entity.ChiTietHoaDon;
 import entity.ChiTietPhieuDatHang;
@@ -61,27 +64,32 @@ public class DanhSachDatHang_GUI extends JPanel {
 	private JTableHeader tableHeaderCTPD;
 	private PhieuDatHang_DAO phieuDatHang_DAO;
 	private ChiTietPhieuDatHang_DAO chiTietPhieuDatHang_DAO;
-	private SanPham_DAO sanPham_DAO;
+	private Sach_DAO sach_DAO;
+	private DungCuHocTap_DAO dungCuHocTap_DAO;
 	private PhatSinhMa_DAO phatSinhMa_DAO;
 	private HoaDon_DAO hoaDon_DAO;
 	private ChiTietHoaDon_DAO chiTietHoaDon_DAO;
 	private NhanVien_DAO nhanVien_DAO;
 	private KhachHang_DAO khachHang_DAO;
+	private SanPham_DAO sanPham_DAO;
 	
 	/**
 	 * Create the panel.
+	 * @throws RemoteException 
 	 */
-	public DanhSachDatHang_GUI() {
+	public DanhSachDatHang_GUI() throws RemoteException {
 		
 		// declare variables DAO
 		phieuDatHang_DAO = new PhieuDatHang_DAO();
 		chiTietPhieuDatHang_DAO = new ChiTietPhieuDatHang_DAO();
-		sanPham_DAO = new SanPham_DAO();
+		sach_DAO = new Sach_DAO();
+		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 		phatSinhMa_DAO = new PhatSinhMa_DAO();
 		hoaDon_DAO = new HoaDon_DAO();
 		chiTietHoaDon_DAO = new ChiTietHoaDon_DAO();
 		nhanVien_DAO = new NhanVien_DAO();
 		khachHang_DAO = new KhachHang_DAO();
+		sanPham_DAO = new SanPham_DAO();
 		
 		setLayout(null);
 		
@@ -153,8 +161,13 @@ public class DanhSachDatHang_GUI extends JPanel {
 			public void mouseClicked(MouseEvent e) {
 				// TODO Auto-generated method stub
 				int row = tableDSPD.getSelectedRow();
-				PhieuDatHang phieuDatHang = phieuDatHang_DAO.getPhieuDatHangTheoMa(modelDSPD.getValueAt(row, 0).toString());
-				loadDataIntoTableChiTietPhieuDatTheoMaPhieuDat(phieuDatHang.getMaPhieuDatHang());
+				PhieuDatHang phieuDatHang;
+				try {
+					phieuDatHang = phieuDatHang_DAO.getPhieuDatHangTheoMa(modelDSPD.getValueAt(row, 0).toString());
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
+//				loadDataIntoTableChiTietPhieuDatTheoMaPhieuDat(phieuDatHang.getMaPhieuDatHang());
 				lblMaPhieuDatHangValue.setText(modelDSPD.getValueAt(row, 0).toString());
 				lblTenKhachHang.setText(modelDSPD.getValueAt(row, 1).toString());
 				lblSDThoai.setText(modelDSPD.getValueAt(row, 2).toString());
@@ -189,7 +202,11 @@ public class DanhSachDatHang_GUI extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				delete();
+				try {
+					delete();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		pDanhSachDatHang.add(btnXoa);
@@ -205,7 +222,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					lapHoaDon();
-				} catch (JRException e1) {
+				} catch (JRException | RemoteException e1) {
 					e1.printStackTrace();
 				}
 				
@@ -345,7 +362,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 		pThongTinChiTiet.add(lblTien);
 	}
 	
-	public void loadData(ArrayList<PhieuDatHang> danhSachPhieuDatHangs) {
+	public void loadData(ArrayList<PhieuDatHang> danhSachPhieuDatHangs) throws RemoteException {
 		modelDSPD.setRowCount(0);
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		for (PhieuDatHang phieuDatHang : danhSachPhieuDatHangs) {
@@ -359,11 +376,11 @@ public class DanhSachDatHang_GUI extends JPanel {
 		}
 	}
 	
-	private void loadDataIntoTableChiTietPhieuDatTheoMaPhieuDat(String maPhieuDat) {
+	private void loadDataIntoTableChiTietPhieuDatTheoMaPhieuDat(String maPhieuDat) throws RemoteException {
 		modelCTPD.setRowCount(0);
 		for (ChiTietPhieuDatHang chiTietPhieuDatHang : chiTietPhieuDatHang_DAO.getAllChiTietPhieuDatHangTheoMaPhieuDatHang(maPhieuDat)) {
 			Object[] objects = {chiTietPhieuDatHang.getPhieuDatHang().getMaPhieuDatHang(),
-								sanPham_DAO.getSanPhamTheoMaSanPham(chiTietPhieuDatHang.getSanPham().getMaSanPham()).getTenSanPham(),
+								sanPham_DAO.getSanPhamTheoMa(chiTietPhieuDatHang.getSanPham().getMaSanPham()).getTenSanPham(),
 								chiTietPhieuDatHang.getSoLuong(),
 								chiTietPhieuDatHang.getDonGia()};
 			modelCTPD.addRow(objects);
@@ -371,10 +388,10 @@ public class DanhSachDatHang_GUI extends JPanel {
 	}
 	
 	public void refresh() {
-		loadData(phieuDatHang_DAO.getAllPhieuDatHang());
+//		loadData(phieuDatHang_DAO.getAllPhieuDatHang());
 	}
 	
-	private boolean delete() {
+	private boolean delete() throws RemoteException {
 		int row = tableDSPD.getSelectedRow();
 		if (row == -1) {
 			JOptionPane.showInternalMessageDialog(null, "Bạn phải chọn sản phẩm cần xóa!");
@@ -384,13 +401,8 @@ public class DanhSachDatHang_GUI extends JPanel {
 					"Bạn có chắc muốn xóa phiếu đặt hàng '" + modelDSPD.getValueAt(row, 0) + "' chứ?", "Xóa?",
 					JOptionPane.YES_NO_OPTION);
 			if (option == JOptionPane.YES_OPTION) {
-				try {
-					chiTietPhieuDatHang_DAO.xoaChiTietPhieuDatHang(modelDSPD.getValueAt(row, 0).toString());
-					phieuDatHang_DAO.xoaPhieuDatHangTheoMa(modelDSPD.getValueAt(row, 0).toString());
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				chiTietPhieuDatHang_DAO.xoaChiTietPhieuDatHang(modelDSPD.getValueAt(row, 0).toString());
+				phieuDatHang_DAO.xoaPhieuDatHangTheoMa(modelDSPD.getValueAt(row, 0).toString());
 				JOptionPane.showMessageDialog(null,
 						"Xóa phiếu đặt hàng '" + modelDSPD.getValueAt(row, 0) + "' thành công!");
 				refresh();
@@ -401,7 +413,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 		}
 	}
 	
-	private boolean lapHoaDon() throws JRException {
+	private boolean lapHoaDon() throws JRException, RemoteException {
 		
 		int row = tableDSPD.getSelectedRow();
 		if (row != -1) {

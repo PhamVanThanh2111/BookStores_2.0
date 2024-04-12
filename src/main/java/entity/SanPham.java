@@ -8,12 +8,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "SanPham")
 @Inheritance(strategy = InheritanceType.JOINED)
+@NamedQueries({
+	@NamedQuery(name = "getSanPhamTheoTen", query = "SELECT sp FROM SanPham sp WHERE sp.tenSanPham = :tenSanPham"),
+	
+})
 public abstract class SanPham implements Serializable {
 	private static final long serialVersionUID = 1L;
 

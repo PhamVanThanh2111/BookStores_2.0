@@ -205,9 +205,12 @@ public class DanhSachHoaDon_GUI extends JPanel {
 		btnTim.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (!kiemTraRong()) {
-					loadData(timHoaDon());
+					try {
+						loadData(timHoaDon());
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Bạn phải nhập ít nhất 1 thông tin!");
@@ -226,8 +229,11 @@ public class DanhSachHoaDon_GUI extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				loadData(hoaDon_DAO.getAllHoaDon());
+				try {
+					loadData(hoaDon_DAO.getAllHoaDon());
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		pnlThongTinTimKiem.add(btnLamMoi);
@@ -290,7 +296,11 @@ public class DanhSachHoaDon_GUI extends JPanel {
 				// TODO Auto-generated method stub
 				int row = tableDanhSachHoaDon.getSelectedRow();
 				HoaDon hoaDon = hoaDon_DAO.getHoaDonTheoMaHoaDon(modelDanhSachHoaDon.getValueAt(row, 0).toString());
-				loadDataIntoTableChiTietHoaDonTheoMaHoaDon(hoaDon.getMaHoaDon());
+				try {
+					loadDataIntoTableChiTietHoaDonTheoMaHoaDon(hoaDon.getMaHoaDon());
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		scrDanhSachHoaDon.setViewportView(tableDanhSachHoaDon);
@@ -387,7 +397,7 @@ public class DanhSachHoaDon_GUI extends JPanel {
 //		loadDataIntoTableHoaDon(hoaDon_DAO.getAllListHoaDon());
 	}
 	
-	public void loadData(ArrayList<HoaDon> danhSachHoaDons) {
+	public void loadData(ArrayList<HoaDon> danhSachHoaDons) throws RemoteException {
 		modelDanhSachHoaDon.setRowCount(0);
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		for (HoaDon hoaDon : danhSachHoaDons) {
@@ -401,15 +411,15 @@ public class DanhSachHoaDon_GUI extends JPanel {
 		}
 	}
 	
-	public void refresh() {
+	public void refresh() throws RemoteException {
 		loadData(hoaDon_DAO.getAllHoaDon());
 	}
 	
-	private void loadDataIntoTableChiTietHoaDonTheoMaHoaDon(String maHoaDon) {
+	private void loadDataIntoTableChiTietHoaDonTheoMaHoaDon(String maHoaDon) throws RemoteException {
 		modelChiTietHoaDon.setRowCount(0);
 		for (ChiTietHoaDon chiTietHoaDon : chiTietHoaDon_DAO.getAllChiTietHoaDonTheoMaHoaDon(maHoaDon)) {
 			Object[] objects = {chiTietHoaDon.getHoaDon().getMaHoaDon(),
-								sanPham_DAO.getSanPhamTheoMaSanPham(chiTietHoaDon.getSanPham().getMaSanPham()).getTenSanPham(),
+								sanPham_DAO.getSanPhamTheoMa(chiTietHoaDon.getSanPham().getMaSanPham()).getTenSanPham(),
 								chiTietHoaDon.getSoLuong(),
 								chiTietHoaDon.getDonGia()};
 			modelChiTietHoaDon.addRow(objects);

@@ -13,8 +13,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Sach")
 @NamedQueries({
-	@NamedQuery(name="getAllSach",query = "Select s from Sach s"),
-	@NamedQuery(name="getTenSachTheoTenSanPham",query = "Select s from Sach s wherer s.tenSanPham = :tenSanPham")
+	@NamedQuery(name = "getAllSach",query = "Select s from Sach s"),
+	@NamedQuery(name = "getSachTheoTen",query = "Select s from Sach s wherer s.tenSanPham LIKE :tenSanPham"),
+	@NamedQuery(name = "getAllSachXoa", query = "Select s from Sach s where s.maSanPham LIKE 'XS%'"),
+	@NamedQuery(name = "getSachGanHetHang", query = "Select s from Sach s where s.soLuongTon <= 10"),
 })
 public class Sach extends SanPham implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -9,10 +9,14 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "ChiTietPhieuDatHang")
+@NamedQueries({
+		@NamedQuery(name = "getAllChiTietPhieuDatHangTheoMaPhieuDatHang", query = "SELECT c FROM ChiTietPhieuDatHang c WHERE c.id.maPhieuDatHang = :maPhieuDatHang") })
 public class ChiTietPhieuDatHang implements Serializable {
 	private static final long serialVersionUID = 1L;
 
