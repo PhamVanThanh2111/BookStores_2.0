@@ -1,12 +1,9 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import connect.ConnectDB;
 import entity.NhanVien;
 
 public class NhanVien_DAO {
@@ -48,11 +45,7 @@ public class NhanVien_DAO {
 
 	// xoa nhan vien
 	public boolean xoaNhanVienTheoMa(String maNV) throws SQLException {
-		ConnectDB.getInstance();
-		Connection connection = ConnectDB.getConnection();
-		PreparedStatement preparedStatement = connection
-					.prepareStatement("delete from NhanVien where maNhanVien = '" + maNV + "'");
-		return preparedStatement.executeUpdate() > 0;
+		return false;
 	}
 	
 	// sửa nhân viên 

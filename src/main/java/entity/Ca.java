@@ -1,5 +1,6 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -10,7 +11,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Ca")
-public class Ca {
+public class Ca implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "maCa", columnDefinition = "nvarchar(3)")

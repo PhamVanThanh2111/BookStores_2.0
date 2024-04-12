@@ -1,5 +1,6 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -13,7 +14,9 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "SanPham")
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class SanPham {
+public abstract class SanPham implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name = "maSanPham", columnDefinition = "nvarchar(9)")
 	protected String maSanPham;
