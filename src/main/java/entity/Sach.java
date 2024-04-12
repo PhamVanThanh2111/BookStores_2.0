@@ -4,10 +4,15 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Sach")
+@NamedQueries({
+	@NamedQuery(name="getAllSach",query = "select s from Sach s")
+})
 public class Sach extends SanPham {
 	@Column(name = "tacGia", columnDefinition = "nvarchar(50)", nullable = false)
 	private String tacGia;
