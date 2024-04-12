@@ -2,7 +2,6 @@ package dao.iplm;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 
 import entity.DungCuHocTap;
@@ -20,7 +19,7 @@ public interface SanPham_Iplm extends Remote {
 
 	public boolean khoiPhucSanPham01(SanPham sanPham) throws RemoteException;
 
-	public ArrayList<SanPham> getAllDungCuHocTap() throws RemoteException;
+	public List<SanPham> getAllDungCuHocTap() throws RemoteException;
 
 	public SanPham getSanPhamTheoTenSanPham(String tenSanPham) throws RemoteException;
 
@@ -36,9 +35,9 @@ public interface SanPham_Iplm extends Remote {
 
 	public boolean khoiPhucSanPham(SanPham sanPham) throws RemoteException;
 
-	public ArrayList<DungCuHocTap> getAllDCHTXoa() throws RemoteException;
+	public List<DungCuHocTap> getAllDCHTXoa() throws RemoteException;
 
-	public ArrayList<Sach> getAllSachXoa() throws RemoteException;
+	public List<Sach> getAllSachXoa() throws RemoteException;
 
-	public ArrayList<SanPham> getSanPhamGanHetHang() throws RemoteException;
+	public List<SanPham> getSanPhamGanHetHang() throws RemoteException;
 }

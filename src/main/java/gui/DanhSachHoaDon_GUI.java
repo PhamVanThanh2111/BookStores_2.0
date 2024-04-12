@@ -29,6 +29,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.rmi.RemoteException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -71,8 +72,9 @@ public class DanhSachHoaDon_GUI extends JPanel {
 	
 	/**
 	 * Create the panel.
+	 * @throws RemoteException 
 	 */
-	public DanhSachHoaDon_GUI() {
+	public DanhSachHoaDon_GUI() throws RemoteException {
 		
 		// khai bao DAO
 		hoaDon_DAO = new HoaDon_DAO();

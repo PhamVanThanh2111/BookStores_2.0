@@ -30,9 +30,6 @@ import javax.swing.SwingConstants;
 
 public class DangNhap_GUI extends JFrame implements ActionListener {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JLabel lblTitle;
 	private JLabel lblUser;
