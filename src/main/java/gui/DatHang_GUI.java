@@ -256,7 +256,11 @@ public class DatHang_GUI extends JPanel {
 				else {
 					cbLoaiSP.setSelectedIndex(1);
 				}
-				loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+				try {
+					loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 				cbTenSP.setSelectedItem(model.getValueAt(row, 0));
 				txtSoLuong.setText(model.getValueAt(row, 2).toString());
 				try {
@@ -314,7 +318,7 @@ public class DatHang_GUI extends JPanel {
 				if (tinhThanhTien() > 0) {
 					try {
 						lapPhieuDatHang(nhanVien.getMaNhanVien());
-					} catch (SQLException e1) {
+					} catch (SQLException | RemoteException e1) {
 						e1.printStackTrace();
 					}
 				}
@@ -359,9 +363,12 @@ public class DatHang_GUI extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (cbLoaiSP.getSelectedIndex() != -1) {
-					loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+					try {
+						loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					cbTenSP.setEnabled(true);
 				}
 				else {
@@ -626,7 +633,11 @@ public class DatHang_GUI extends JPanel {
 					String searchText = txtSearchSanPham.getText().toLowerCase();
 					if (searchText.isEmpty()) {
 	                    // If search text is empty, show all items
-	                    loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+	                    try {
+							loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+						} catch (RemoteException e1) {
+							e1.printStackTrace();
+						}
 	                } else {
 	                    // Filter items based on the search text
 	                    ArrayList<String> filteredItems = new ArrayList<>();
@@ -709,7 +720,7 @@ public class DatHang_GUI extends JPanel {
 //		return soLuong;
 //	}
 	
-	private void lapPhieuDatHang(String maNhanVien) throws SQLException {
+	private void lapPhieuDatHang(String maNhanVien) throws SQLException, RemoteException {
 		PhieuDatHang phieuDatHang = new PhieuDatHang();
 		String maPhieuDatHang = phatSinhMa_DAO.getMaPhieuDatHang();
 		phieuDatHang.setMaPhieuDatHang(maPhieuDatHang);
@@ -719,7 +730,7 @@ public class DatHang_GUI extends JPanel {
 		phieuDatHang.setThanhTien(tinhThanhTien());
 		phieuDatHang_DAO.lapPhieuDatHang(phieuDatHang);
 		for (int i = 0; i < model.getRowCount(); i++) {
-			String maSanPham = sanPham_DAO.getSanPhamTheoTenSanPham(model.getValueAt(i, 0).toString()).getMaSanPham();
+			String maSanPham = sanPham_DAO.getSanPhamTheoTen(model.getValueAt(i, 0).toString()).getMaSanPham();
 			int soLuong = Integer.parseInt(model.getValueAt(i, 2).toString());
 			ChiTietPhieuDatHang chiTietPhieuDatHang = new ChiTietPhieuDatHang();
 //			chiTietPhieuDatHang.setMaPhieuDatHang(maPhieuDatHang);

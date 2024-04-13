@@ -21,7 +21,7 @@ public class TaiKhoan_DAO extends UnicastRemoteObject implements TaiKhoan_Impl {
 	}
 	
 	@Override
-	public boolean themTaiKhoan(TaiKhoan_Impl tk) throws RemoteException {
+	public boolean themTaiKhoan(TaiKhoan tk) throws RemoteException {
 		try {
 			em.getTransaction().begin();
 			em.persist(tk);

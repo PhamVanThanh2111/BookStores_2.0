@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.rmi.RemoteException;
 
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -37,15 +38,18 @@ import javax.swing.JButton;
 
 import dao.NhaXuatBan_DAO;
 import dao.PhatSinhMa_DAO;
+import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import dao.TheLoaiSach_DAO;
 import entity.NhaXuatBan;
 import entity.NhanVien;
+import entity.Sach;
 import entity.SanPham;
 import entity.TheLoaiSach;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JDesktopPane;
 import javax.swing.JFileChooser;
@@ -100,10 +104,12 @@ public class Sach_GUI extends JPanel {
 	private TheLoaiSach_DAO theLoaiSach_DAO;
 	private SanPham_DAO sanPham_DAO;
 	private PhatSinhMa_DAO phatSinhMa_DAO;
+	private Sach_DAO sach_DAO;
+	
 	private TimKiemSach_GUI timKiemSach_GUI;
 	private NhaXuatBan nhaXuatBan;
 	private TheLoaiSach theLoaiSach;
-	private ArrayList<SanPham> ds;
+	private List<Sach> ds;
 	private Border borderDefault;
 	private JButton btnXuatFile;
 
@@ -121,18 +127,20 @@ public class Sach_GUI extends JPanel {
 	// private JButton btnChonHinhAnh;
 	/**
 	 * Create the panel.
+	 * @throws RemoteException 
 	 * 
 	 * @throws SQLException
 	 */
-	public Sach_GUI(NhanVien nhanVien) {
+	public Sach_GUI(NhanVien nhanVien) throws RemoteException {
 
 		// Khai báo Dao
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
 		sanPham_DAO = new SanPham_DAO();
 		phatSinhMa_DAO = new PhatSinhMa_DAO();
+		sach_DAO = new Sach_DAO();
 
-		ds = new ArrayList<SanPham>();
+		ds = new ArrayList<Sach>();
 		setLayout(null);
 
 		JPanel panel = new JPanel();
@@ -477,7 +485,11 @@ public class Sach_GUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				if (timKiemSach_GUI == null || timKiemSach_GUI.isClosed()) {
-					timKiemSach_GUI = new TimKiemSach_GUI(ds);
+					try {
+						timKiemSach_GUI = new TimKiemSach_GUI(ds);
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					timKiemSach_GUI.addInternalFrameListener(new InternalFrameAdapter() {
 						@Override
 						public void internalFrameActivated(InternalFrameEvent e) {
@@ -540,9 +552,12 @@ public class Sach_GUI extends JPanel {
 		btnKhoiPhuc.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (khoiPhucSach_GUI == null || khoiPhucSach_GUI.isClosed()) {
-					khoiPhucSach_GUI = new KhoiPhucSach_GUI(ds);
+					try {
+						khoiPhucSach_GUI = new KhoiPhucSach_GUI(ds);
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					khoiPhucSach_GUI.addInternalFrameListener(new InternalFrameAdapter() {
 						@Override
 						public void internalFrameActivated(InternalFrameEvent e) {
@@ -644,23 +659,26 @@ public class Sach_GUI extends JPanel {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 				int row = table.getSelectedRow();
-				SanPham sach = sanPham_DAO.getSanPhamTheoMaSanPham((String) model.getValueAt(row, 0).toString());
-				txtMaSach.setText((String) model.getValueAt(row, 0));
-				txtTenSach.setText((String) model.getValueAt(row, 1));
-				txtXuatXu.setText((String) model.getValueAt(row, 2));
-				txtGiaBan.setText(model.getValueAt(row, 4).toString());
-				txtGiaNhap.setText(model.getValueAt(row, 3).toString());
-				txtSoLuong.setText(model.getValueAt(row, 5).toString());
-				cmbTenNhaXuatBan.setSelectedItem(model.getValueAt(row, 6));
-				cmbTenLoaiSach.setSelectedItem(model.getValueAt(row, 7));
-				txtTacGia.setText(model.getValueAt(row, 8).toString());
-				txtSoTrang.setText(model.getValueAt(row, 9).toString());
-				txtNamXuatBan.setText(model.getValueAt(row, 10).toString());
-				lblHinhAnh.setIcon(new ImageIcon(Sach_GUI.class.getResource(sach.getHinhAnh())));
-				// System.out.println(sach.getHinhAnh());
-				relativePath = sach.getHinhAnh();
+				Sach sach;
+				try {
+					sach = sach_DAO.getSachTheoMa((String) model.getValueAt(row, 0).toString());
+					txtMaSach.setText((String) model.getValueAt(row, 0));
+					txtTenSach.setText((String) model.getValueAt(row, 1));
+					txtXuatXu.setText((String) model.getValueAt(row, 2));
+					txtGiaBan.setText(model.getValueAt(row, 4).toString());
+					txtGiaNhap.setText(model.getValueAt(row, 3).toString());
+					txtSoLuong.setText(model.getValueAt(row, 5).toString());
+					cmbTenNhaXuatBan.setSelectedItem(model.getValueAt(row, 6));
+					cmbTenLoaiSach.setSelectedItem(model.getValueAt(row, 7));
+					txtTacGia.setText(model.getValueAt(row, 8).toString());
+					txtSoTrang.setText(model.getValueAt(row, 9).toString());
+					txtNamXuatBan.setText(model.getValueAt(row, 10).toString());
+					lblHinhAnh.setIcon(new ImageIcon(Sach_GUI.class.getResource(sach.getHinhAnh())));
+					relativePath = sach.getHinhAnh();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 			}
 			//
 		});
@@ -725,7 +743,7 @@ public class Sach_GUI extends JPanel {
 		}
 	}
 
-	public Sach_GUI() {
+	public Sach_GUI() throws RemoteException {
 
 		// Khai báo DAO
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
@@ -733,7 +751,7 @@ public class Sach_GUI extends JPanel {
 		sanPham_DAO = new SanPham_DAO();
 		phatSinhMa_DAO = new PhatSinhMa_DAO();
 
-		ds = new ArrayList<SanPham>();
+		ds = new ArrayList<Sach>();
 		setLayout(null);
 
 		JPanel panel = new JPanel();
@@ -961,9 +979,12 @@ public class Sach_GUI extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (timKiemSach_GUI == null || timKiemSach_GUI.isClosed()) {
-					timKiemSach_GUI = new TimKiemSach_GUI(ds);
+					try {
+						timKiemSach_GUI = new TimKiemSach_GUI(ds);
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					timKiemSach_GUI.addInternalFrameListener(new InternalFrameAdapter() {
 						@Override
 						public void internalFrameActivated(InternalFrameEvent e) {
@@ -1067,9 +1088,14 @@ public class Sach_GUI extends JPanel {
 					txtTacGia.setText(model.getValueAt(row, 7).toString());
 					txtSoTrang.setText(model.getValueAt(row, 8).toString());
 					txtNamXuatBan.setText(model.getValueAt(row, 9).toString());
-					SanPham sach = sanPham_DAO.getSanPhamTheoMaSanPham((String) model.getValueAt(row, 0).toString());
-					relativePath = sach.getHinhAnh();
-					lblHinhAnh.setIcon(new ImageIcon(Sach_GUI.class.getResource(sach.getHinhAnh())));
+					Sach sach;
+					try {
+						sach = sach_DAO.getSachTheoMa((String) model.getValueAt(row, 0).toString());
+						relativePath = sach.getHinhAnh();
+						lblHinhAnh.setIcon(new ImageIcon(Sach_GUI.class.getResource(sach.getHinhAnh())));
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					// System.out.println(sach.getHinhAnh());
 
 				}
@@ -1115,7 +1141,7 @@ public class Sach_GUI extends JPanel {
 	}
 
 	// load Data to table
-	public void loadData(ArrayList<SanPham> ds) {
+	public void loadData(List<Sach> list) {
 		model.setRowCount(0);
 //		for (SanPham sanPham : ds) {
 //			Object[] object = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getXuatXu(),

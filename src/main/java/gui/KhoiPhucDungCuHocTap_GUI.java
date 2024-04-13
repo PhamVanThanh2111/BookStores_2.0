@@ -5,8 +5,10 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -20,7 +22,9 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
+import dao.DungCuHocTap_DAO;
 import dao.NhaCungCap_DAO;
+import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import entity.DungCuHocTap;
 import entity.SanPham;
@@ -37,18 +41,24 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 	private JTableHeader tableHeader;
 	private JButton btnXoa, btnKhoiPhuc;
 	private SanPham_DAO sanPham_DAO;
-	private ArrayList<SanPham> ds;
+	private List<DungCuHocTap> ds;
 	private NhaCungCap_DAO nhaCungCap_DAO;
+	private DungCuHocTap_DAO dungCuHocTap_DAO;
+	private Sach_DAO sach_DAO;
 	private JButton btnquayLai;
 
 	/**
 	 * Launch the application.
+	 * @throws RemoteException 
 	 */
 
-	public KhoiPhucDungCuHocTap_GUI(ArrayList<SanPham> ds) {
+	public KhoiPhucDungCuHocTap_GUI(List<DungCuHocTap> ds) throws RemoteException {
 		this.ds = ds;
 		sanPham_DAO = new SanPham_DAO();
 		nhaCungCap_DAO = new NhaCungCap_DAO();
+		dungCuHocTap_DAO = new DungCuHocTap_DAO();
+		sach_DAO = new Sach_DAO();
+		
 		setBounds(100, 100, 882, 495);
 		getContentPane().setLayout(null);
 
@@ -106,9 +116,12 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 				int row = table.getSelectedRow();
 				DungCuHocTap dungCuHocTap = new DungCuHocTap();
 				dungCuHocTap.setMaSanPham((String) model.getValueAt(row, 0));
-				sanPham_DAO.khoiPhucSanPham(dungCuHocTap);
-				loadData(sanPham_DAO.getAllDCHTXoa());
-
+				try {
+					dungCuHocTap_DAO.khoiPhucDungCuHocTap(dungCuHocTap.getMaSanPham());
+					loadData(dungCuHocTap_DAO.getAllDungCuHocTapXoa());
+				} catch (RemoteException | SQLException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		pMain.add(btnKhoiPhuc);
@@ -129,8 +142,12 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 					int tb = JOptionPane.showConfirmDialog(null, "Bạn Muốn Xóa Sản Phẩm? ", "Delete",
 							JOptionPane.YES_NO_OPTION);
 					if (tb == JOptionPane.YES_OPTION) {
-						sanPham_DAO.xoaSachTheoMa((String) model.getValueAt(row, 0));
-						loadData(sanPham_DAO.getAllDCHTXoa());
+						try {
+							sach_DAO.xoaSachTheoMaSach((String) model.getValueAt(row, 0));
+							loadData(dungCuHocTap_DAO.getAllDungCuHocTapXoa());
+						} catch (RemoteException e1) {
+							e1.printStackTrace();
+						}
 					}
 
 				}
@@ -148,7 +165,11 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				loadALL();
+				try {
+					loadALL();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 				try {
 					setClosed(true);
 				} catch (PropertyVetoException e1) {
@@ -158,10 +179,10 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 
 		});
 		pMain.add(btnquayLai);
-		loadData(sanPham_DAO.getAllDCHTXoa());
+		loadData(dungCuHocTap_DAO.getAllDungCuHocTapXoa());
 	}
 
-	private void loadData(ArrayList<DungCuHocTap> ds) {
+	private void loadData(List<DungCuHocTap> ds) {
 		model.setRowCount(0);
 //		for (SanPham sanPham : ds) {
 //			Object[] o = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getXuatXu(), sanPham.getGiaNhap(),
@@ -171,10 +192,10 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 //		}
 	}
 
-	private void loadALL() {
+	private void loadALL() throws RemoteException {
 		model.setRowCount(0);
-		for (SanPham sanPham : sanPham_DAO.getAllDungCuHocTap()) {
-			ds.add(sanPham);
+		for (DungCuHocTap dungCuHocTap : dungCuHocTap_DAO.getAllDungCuHocTap()) {
+			ds.add(dungCuHocTap);
 		}
 	}
 }

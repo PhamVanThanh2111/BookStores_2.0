@@ -6,8 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -71,8 +73,9 @@ public class TheLoaiSach_GUI extends JPanel {
 
 	/**
 	 * Create the panel.
+	 * @throws RemoteException 
 	 */
-	public TheLoaiSach_GUI(NhanVien nhanVien) {
+	public TheLoaiSach_GUI(NhanVien nhanVien) throws RemoteException {
 
 		// khai bao DAO
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
@@ -139,7 +142,11 @@ public class TheLoaiSach_GUI extends JPanel {
 					btnTim.setEnabled(false);
 
 				} else {
-					add();
+					try {
+						add();
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					disableEdit();
 					unfocusable();
 					btnAdd.setText("Thêm");
@@ -211,7 +218,11 @@ public class TheLoaiSach_GUI extends JPanel {
 						btnTim.setEnabled(false);
 					}
 				} else {
-					update();
+					try {
+						update();
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					unfocusable();
 					btnUpdate.setText("Sửa");
 					btnDelete.setText("Xóa");
@@ -252,10 +263,13 @@ public class TheLoaiSach_GUI extends JPanel {
 		btnTim.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				// null cho lan dau chay va isClose cho nhung click sau
 				if (timKiemTheLoaiSach_GUI == null || timKiemTheLoaiSach_GUI.isClosed()) {
-					timKiemTheLoaiSach_GUI = new TimKiemTheLoaiSach_GUI(ds);
+					try {
+						timKiemTheLoaiSach_GUI = new TimKiemTheLoaiSach_GUI(ds);
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					timKiemTheLoaiSach_GUI.addInternalFrameListener(new InternalFrameAdapter() {
 						@Override
 						public void internalFrameActivated(InternalFrameEvent e) {
@@ -381,12 +395,16 @@ public class TheLoaiSach_GUI extends JPanel {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 				int row = table.getSelectedRow();
 				if (row >= 0) {
-					TheLoaiSach theLoaiSach = theLoaiSach_DAO.getTheLoaiSachTheoMa(model.getValueAt(row, 0).toString());
-					txtMaTheLoaiSach.setText(theLoaiSach.getMaTheLoaiSach());
-					txtTenTheLoaiSach.setText(theLoaiSach.getTenTheLoaiSach());
+					TheLoaiSach theLoaiSach;
+					try {
+						theLoaiSach = theLoaiSach_DAO.getTheLoaiSachTheoMa(model.getValueAt(row, 0).toString());
+						txtMaTheLoaiSach.setText(theLoaiSach.getMaTheLoaiSach());
+						txtTenTheLoaiSach.setText(theLoaiSach.getTenTheLoaiSach());
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 				}
 			}
 		});
@@ -409,7 +427,7 @@ public class TheLoaiSach_GUI extends JPanel {
 		unfocusable();
 	}
 
-	public TheLoaiSach_GUI() {
+	public TheLoaiSach_GUI() throws RemoteException {
 
 		// khai bao DAO
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
@@ -487,7 +505,11 @@ public class TheLoaiSach_GUI extends JPanel {
 				// TODO Auto-generated method stub
 				// null cho lan dau chay va isClose cho nhung click sau
 				if (timKiemTheLoaiSach_GUI == null || timKiemTheLoaiSach_GUI.isClosed()) {
-					timKiemTheLoaiSach_GUI = new TimKiemTheLoaiSach_GUI(ds);
+					try {
+						timKiemTheLoaiSach_GUI = new TimKiemTheLoaiSach_GUI(ds);
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					timKiemTheLoaiSach_GUI.addInternalFrameListener(new InternalFrameAdapter() {
 						@Override
 						public void internalFrameActivated(InternalFrameEvent e) {
@@ -609,9 +631,12 @@ public class TheLoaiSach_GUI extends JPanel {
 				// TODO Auto-generated method stub
 				int row = table.getSelectedRow();
 				if (row >= 0) {
-					TheLoaiSach theLoaiSach = theLoaiSach_DAO.getTheLoaiSachTheoMa(model.getValueAt(row, 0).toString());
-					txtMaTheLoaiSach.setText(theLoaiSach.getMaTheLoaiSach());
-					txtTenTheLoaiSach.setText(theLoaiSach.getTenTheLoaiSach());
+					TheLoaiSach theLoaiSach;
+					try {
+						theLoaiSach = theLoaiSach_DAO.getTheLoaiSachTheoMa(model.getValueAt(row, 0).toString());
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 				}
 			}
 		});
@@ -635,7 +660,7 @@ public class TheLoaiSach_GUI extends JPanel {
 	}
 
 	// đổ dữ liệu lên bảng
-	public void loadData(ArrayList<TheLoaiSach> list) {
+	public void loadData(List<TheLoaiSach> list) {
 		model.setRowCount(0);
 		if (list != null) {
 			for (TheLoaiSach theLoaiSach : list) {
@@ -652,12 +677,12 @@ public class TheLoaiSach_GUI extends JPanel {
 	}
 
 	// làm mới bảng
-	public void refresh() {
+	public void refresh() throws RemoteException {
 		loadData(theLoaiSach_DAO.getAllTheLoaiSach());
 	}
 
 	// Thêm thể loại sách
-	public boolean add() {
+	public boolean add() throws RemoteException {
 
 		if (txtTenTheLoaiSach.getText().equals("")) {
 			JOptionPane.showMessageDialog(null, "Tên thể loại sách không được để trống!");
@@ -668,7 +693,13 @@ public class TheLoaiSach_GUI extends JPanel {
 				TheLoaiSach theLoaiSach = new TheLoaiSach();
 				theLoaiSach.setMaTheLoaiSach(phatSinhMa_DAO.getMaTheLoaiSach());
 				theLoaiSach.setTenTheLoaiSach(txtTenTheLoaiSach.getText());
-				theLoaiSach_DAO.themTheLoaiSach(theLoaiSach);
+				try {
+					theLoaiSach_DAO.themTheLoaiSach(theLoaiSach);
+				} catch (RemoteException e) {
+					e.printStackTrace();
+				}
+				txtMaTheLoaiSach.setText(theLoaiSach.getMaTheLoaiSach());
+				txtTenTheLoaiSach.setText(theLoaiSach.getTenTheLoaiSach());
 				JOptionPane.showMessageDialog(null, "Thêm thể loại sách thành công!");
 				refresh();
 				return true;
@@ -681,7 +712,7 @@ public class TheLoaiSach_GUI extends JPanel {
 	}
 
 	// Xóa thể loại sách
-	public boolean delete() {
+	public boolean delete() throws RemoteException {
 		int row = table.getSelectedRow();
 		if (row == -1) {
 			JOptionPane.showInternalMessageDialog(null, "Bạn phải chọn thể loại sách cần xóa!");
@@ -709,7 +740,7 @@ public class TheLoaiSach_GUI extends JPanel {
 	}
 
 	// Sửa thể loại sách theo mã
-	public boolean update() {
+	public boolean update() throws RemoteException {
 		int row = table.getSelectedRow();
 		if (row == -1) {
 			JOptionPane.showMessageDialog(null, "Bạn phải chọn thể loại sách cần sửa!");
@@ -722,18 +753,12 @@ public class TheLoaiSach_GUI extends JPanel {
 					"Bạn có chắc muốn sửa thể loại sách? '" + model.getValueAt(row, 0) + "' chứ?", "Sửa?",
 					JOptionPane.YES_NO_OPTION);
 			if (option == JOptionPane.YES_OPTION) {
-				try {
-					TheLoaiSach theLoaiSach = new TheLoaiSach(txtMaTheLoaiSach.getText(), txtTenTheLoaiSach.getText());
-					theLoaiSach_DAO.suaTheLoaiSachTheoMa(theLoaiSach);
-					JOptionPane.showMessageDialog(null,
-							"Sửa thành công thể loại sách '" + model.getValueAt(row, 0) + "'!");
-					refresh();
-					return true;
-				} catch (SQLException e1) {
-					JOptionPane.showMessageDialog(null,
-							"Sửa thể loại sách '\" + model.getValueAt(row, 0) + \"' không thành công!");
-					return false;
-				}
+				TheLoaiSach theLoaiSach = new TheLoaiSach(txtMaTheLoaiSach.getText(), txtTenTheLoaiSach.getText());
+				theLoaiSach_DAO.suaTheLoaiSach(theLoaiSach);
+				JOptionPane.showMessageDialog(null,
+						"Sửa thành công thể loại sách '" + model.getValueAt(row, 0) + "'!");
+				refresh();
+				return true;
 			} else {
 				return false;
 			}

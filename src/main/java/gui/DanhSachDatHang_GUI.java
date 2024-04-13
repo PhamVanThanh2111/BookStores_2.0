@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -362,7 +363,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 		pThongTinChiTiet.add(lblTien);
 	}
 	
-	public void loadData(ArrayList<PhieuDatHang> danhSachPhieuDatHangs) throws RemoteException {
+	public void loadData(List<PhieuDatHang> danhSachPhieuDatHangs) throws RemoteException {
 		modelDSPD.setRowCount(0);
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		for (PhieuDatHang phieuDatHang : danhSachPhieuDatHangs) {

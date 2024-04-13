@@ -15,12 +15,14 @@ import javax.swing.UIManager;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 
+import dao.DungCuHocTap_DAO;
 import dao.HoaDon_DAO;
 import dao.KhachHang_DAO;
 import dao.NhaCungCap_DAO;
 import dao.NhaXuatBan_DAO;
 import dao.NhanVien_DAO;
 import dao.PhieuDatHang_DAO;
+import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import dao.TheLoaiSach_DAO;
 import entity.NhanVien;
@@ -33,6 +35,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.rmi.RemoteException;
 import java.awt.Toolkit;
 import javax.swing.JSeparator;
 import javax.swing.JButton;
@@ -88,14 +91,17 @@ public class HeThongQuanLyNhaSach extends JFrame {
 	private NhaXuatBan_DAO nhaXuatBan_DAO;
 	private NhaCungCap_DAO nhaCungCap_DAO;
 	private HoaDon_DAO hoaDon_DAO;
+	private Sach_DAO sach_DAO;
+	private DungCuHocTap_DAO dungCuHocTap_DAO;
 
 	/**
 	 * Create the frame.
 	 * 
 	 * @throws SQLException
+	 * @throws RemoteException 
 	 */
 
-	public HeThongQuanLyNhaSach(NhanVien nhanVien) throws SQLException {
+	public HeThongQuanLyNhaSach(NhanVien nhanVien) throws SQLException, RemoteException {
 
 		// initialization variable DAO
 		nhanVien_DAO = new NhanVien_DAO();
@@ -106,6 +112,8 @@ public class HeThongQuanLyNhaSach extends JFrame {
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		nhaCungCap_DAO = new NhaCungCap_DAO();
 		hoaDon_DAO = new HoaDon_DAO();
+		sach_DAO = new Sach_DAO();
+		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 
 		ExecutorService executor = Executors.newCachedThreadPool();
 
@@ -446,10 +454,13 @@ public class HeThongQuanLyNhaSach extends JFrame {
 						JOptionPane.YES_NO_OPTION);
 				if (option == JOptionPane.YES_OPTION) {
 					HeThongQuanLyNhaSach heThongQuanLyNhaSach;
-					heThongQuanLyNhaSach = new HeThongQuanLyNhaSach();
+					try {
+						heThongQuanLyNhaSach = new HeThongQuanLyNhaSach();
+						heThongQuanLyNhaSach.setVisible(true);
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					setVisible(false);
-					heThongQuanLyNhaSach.setVisible(true);
-
 				}
 			}
 		});
@@ -793,10 +804,13 @@ public class HeThongQuanLyNhaSach extends JFrame {
 						JOptionPane.YES_NO_OPTION);
 				if (option == JOptionPane.YES_OPTION) {
 					HeThongQuanLyNhaSach heThongQuanLyNhaSach;
-					heThongQuanLyNhaSach = new HeThongQuanLyNhaSach();
+					try {
+						heThongQuanLyNhaSach = new HeThongQuanLyNhaSach();
+						heThongQuanLyNhaSach.setVisible(true);
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					setVisible(false);
-					heThongQuanLyNhaSach.setVisible(true);
-
 				}
 			}
 		});
@@ -1014,7 +1028,11 @@ public class HeThongQuanLyNhaSach extends JFrame {
 		contentPane.add(sprNgang);
 
 		Runnable loadDataNhanVien = () -> {
-			nhanVien_GUI.loadData(nhanVien_DAO.getAllNhanVien());
+			try {
+				nhanVien_GUI.loadData(nhanVien_DAO.getAllNhanVien());
+			} catch (RemoteException e1) {
+				e1.printStackTrace();
+			}
 		};
 
 		Runnable loadDataThongKe = () -> {
@@ -1022,23 +1040,31 @@ public class HeThongQuanLyNhaSach extends JFrame {
 		};
 
 		Runnable loadDataDanhSachDatHang = () -> {
-			danhSachDatHang_GUI.loadData(phieuDatHang_DAO.getAllPhieuDatHang());
+			try {
+				danhSachDatHang_GUI.loadData(phieuDatHang_DAO.getAllPhieuDatHang());
+			} catch (RemoteException e1) {
+				e1.printStackTrace();
+			}
 		};
 
 		Runnable loadDataKhachHang = () -> {
 			khachHang_GUI.loadData(khachHang_DAO.getAllKhachHang());
 		};
 
-		Runnable loadDataSach = () -> {
-			sach_GUI_NhanVien.loadData_KhachHang(sanPham_DAO.getAllSach());
-		};
-
 		Runnable loadDataSach_NhanVien = () -> {
-			sach_GUI_NhanVien.loadData(sanPham_DAO.getAllSach());
+			try {
+				sach_GUI_NhanVien.loadData(sach_DAO.getAllSach());
+			} catch (RemoteException e1) {
+				e1.printStackTrace();
+			}
 		};
 
 		Runnable loadDataTheLoaiSach = () -> {
-			theLoaiSach_GUI_NhanVien.loadData(theLoaiSach_DAO.getAllTheLoaiSach());
+			try {
+				theLoaiSach_GUI_NhanVien.loadData(theLoaiSach_DAO.getAllTheLoaiSach());
+			} catch (RemoteException e1) {
+				e1.printStackTrace();
+			}
 		};
 
 		Runnable loadDataNhaXuatBan_NhanVien = () -> {
@@ -1046,7 +1072,11 @@ public class HeThongQuanLyNhaSach extends JFrame {
 		};
 
 		Runnable loadDataDungCuHocTap_NhanVien = () -> {
-			dungCuHocTap_GUI_NhanVien.loadData(sanPham_DAO.getAllDungCuHocTap());
+			try {
+				dungCuHocTap_GUI_NhanVien.loadData(dungCuHocTap_DAO.getAllDungCuHocTap());
+			} catch (RemoteException e1) {
+				e1.printStackTrace();
+			}
 		};
 
 		Runnable loadDataNhaCungCap_NhanVien = () -> {
@@ -1054,14 +1084,17 @@ public class HeThongQuanLyNhaSach extends JFrame {
 		};
 
 		Runnable loadDataHoaDon = () -> {
-			danhSachHoaDon_GUI.loadData(hoaDon_DAO.getAllHoaDon());
+			try {
+				danhSachHoaDon_GUI.loadData(hoaDon_DAO.getAllHoaDon());
+			} catch (RemoteException e1) {
+				e1.printStackTrace();
+			}
 		};
 
 		executor.execute(loadDataNhanVien);
 		executor.execute(loadDataThongKe);
 		executor.execute(loadDataDanhSachDatHang);
 		executor.execute(loadDataKhachHang);
-		executor.execute(loadDataSach);
 		executor.execute(loadDataSach_NhanVien);
 		executor.execute(loadDataTheLoaiSach);
 		executor.execute(loadDataNhaXuatBan_NhanVien);
@@ -1071,12 +1104,14 @@ public class HeThongQuanLyNhaSach extends JFrame {
 		executor.shutdown();
 	}
 
-	public HeThongQuanLyNhaSach() {
+	public HeThongQuanLyNhaSach() throws RemoteException {
 		// khai bao DAO
 		sanPham_DAO = new SanPham_DAO();
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
 		nhaCungCap_DAO = new NhaCungCap_DAO();
+		sach_DAO = new Sach_DAO();
+		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 		
 		setIconImage(Toolkit.getDefaultToolkit()
 				.getImage(HeThongQuanLyNhaSach.class.getResource("/image/HeThong/favicon.jpg")));
@@ -1422,7 +1457,7 @@ public class HeThongQuanLyNhaSach extends JFrame {
 				try {
 					dangNhap_GUI = new DangNhap_GUI();
 					dangNhap_GUI.setVisible(true);
-				} catch (SQLException e1) {
+				} catch (SQLException | RemoteException e1) {
 					e1.printStackTrace();
 				}
 			}
@@ -1432,11 +1467,19 @@ public class HeThongQuanLyNhaSach extends JFrame {
 		ExecutorService executor = Executors.newCachedThreadPool();
 		
 		Runnable loadDataSach = () -> {
-			sach_GUI.loadData(sanPham_DAO.getAllSach());
+			try {
+				sach_GUI.loadData(sach_DAO.getAllSach());
+			} catch (RemoteException e1) {
+				e1.printStackTrace();
+			}
 		};
 		
 		Runnable loadDataDungCuHocTap = () -> {
-			dungCuHocTap_GUI.loadData(sanPham_DAO.getAllDungCuHocTap());
+			try {
+				dungCuHocTap_GUI.loadData(dungCuHocTap_DAO.getAllDungCuHocTap());
+			} catch (RemoteException e1) {
+				e1.printStackTrace();
+			}
 		};
 		
 		Runnable loadDataNhaXuatBan = () -> {
@@ -1444,7 +1487,11 @@ public class HeThongQuanLyNhaSach extends JFrame {
 		};
 		
 		Runnable loadDataTheLoaiSach = () -> {
-			theLoaiSach_GUI.loadData(theLoaiSach_DAO.getAllTheLoaiSach());
+			try {
+				theLoaiSach_GUI.loadData(theLoaiSach_DAO.getAllTheLoaiSach());
+			} catch (RemoteException e1) {
+				e1.printStackTrace();
+			}
 		};
 		
 		Runnable loadDataNhaCungCap = () -> {

@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
 import java.text.SimpleDateFormat;
 
 import javax.swing.JSeparator;
@@ -63,7 +64,11 @@ public class HoSo_GUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				if (doiMatKhau_GUI == null || doiMatKhau_GUI.isClosed()) {
-					doiMatKhau_GUI = new DoiMatKhau_GUI(nhanVien);
+					try {
+						doiMatKhau_GUI = new DoiMatKhau_GUI(nhanVien);
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					doiMatKhau_GUI.addInternalFrameListener(new InternalFrameAdapter() {
 			            @Override
 			            public void internalFrameActivated(InternalFrameEvent e) {

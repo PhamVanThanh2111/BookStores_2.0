@@ -40,6 +40,7 @@ import entity.HoaDon;
 import entity.SanPham;
 
 import java.beans.PropertyChangeListener;
+import java.rmi.RemoteException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.beans.PropertyChangeEvent;
@@ -106,8 +107,9 @@ public class ThongKe_GUI extends JPanel {
 
 	/**
 	 * Create the panel.
+	 * @throws RemoteException 
 	 */
-	public ThongKe_GUI() {
+	public ThongKe_GUI() throws RemoteException {
 		// khai bao DAO
 		hoaDon_DAO = new HoaDon_DAO();
 		sanPham_DAO = new SanPham_DAO();
@@ -565,7 +567,7 @@ public class ThongKe_GUI extends JPanel {
 	}
 	
 	// load danh sách sản phẩm gần hết hàng
-	private void loadSanPhamGanHetHang() {
+	private void loadSanPhamGanHetHang() throws RemoteException {
 		model.setRowCount(0);
 		for (SanPham sanPham : sanPham_DAO.getSanPhamGanHetHang()) {
 			Object[] objects = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getSoLuongTon()};
