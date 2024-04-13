@@ -25,6 +25,7 @@ import javax.swing.JFrame;
 
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
+import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -54,8 +55,9 @@ public class TimKiemNhanVien_GUI extends JInternalFrame {
 	
 	/**
 	 * Create the frame.
+	 * @throws RemoteException 
 	 */
-	public TimKiemNhanVien_GUI(ArrayList<NhanVien> ds) {
+	public TimKiemNhanVien_GUI(ArrayList<NhanVien> ds) throws RemoteException {
 
 		// khai bao DAO
 		nhanVien_DAO = new NhanVien_DAO();
@@ -221,7 +223,11 @@ public class TimKiemNhanVien_GUI extends JInternalFrame {
 		btnTim.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (!duLieuRong()) {
-					searchNhanVien();
+					try {
+						searchNhanVien();
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					try {
 						setClosed(true);
 					} catch (PropertyVetoException e1) {
@@ -266,7 +272,11 @@ public class TimKiemNhanVien_GUI extends JInternalFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				loadAll();
+				try {
+					loadAll();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 				try {
 					setClosed(true);
 				} catch (PropertyVetoException e1) {
@@ -294,7 +304,7 @@ public class TimKiemNhanVien_GUI extends JInternalFrame {
 		return false;
 	}
 	
-	public void searchNhanVien() {
+	public void searchNhanVien() throws RemoteException {
 		for (NhanVien nhanVien : nhanVien_DAO.getAllNhanVien()) {
 			boolean thoaMan = false;
 			if (!txtMaNhanVien.getText().isEmpty()) {
@@ -362,7 +372,7 @@ public class TimKiemNhanVien_GUI extends JInternalFrame {
 		}
 	}
 	
-	public void loadAll() {
+	public void loadAll() throws RemoteException {
 		for (NhanVien nhanVien : nhanVien_DAO.getAllNhanVien()) {
 			ds.add(nhanVien);	
 		}

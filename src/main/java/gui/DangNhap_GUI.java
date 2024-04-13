@@ -162,9 +162,13 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				HeThongQuanLyNhaSach heThongQuanLyNhaSach = new HeThongQuanLyNhaSach();
-				heThongQuanLyNhaSach.setVisible(true);
+				HeThongQuanLyNhaSach heThongQuanLyNhaSach;
+				try {
+					heThongQuanLyNhaSach = new HeThongQuanLyNhaSach();
+					heThongQuanLyNhaSach.setVisible(true);
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 				setVisible(false);
 			}
 		});

@@ -2,6 +2,7 @@ package dao;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
 import dao.impl.SanPham_Impl;
 import entity.Sach;
@@ -50,6 +51,11 @@ public class SanPham_DAO extends UnicastRemoteObject implements SanPham_Impl {
 			em.getTransaction().rollback();
 			return false;
 		}
+	}
+
+	@Override
+	public List<SanPham> getSanPhamGanHetHang() throws RemoteException {
+		return em.createNamedQuery("getSanPhamGanHetHang", SanPham.class).getResultList();
 	}
 
 }

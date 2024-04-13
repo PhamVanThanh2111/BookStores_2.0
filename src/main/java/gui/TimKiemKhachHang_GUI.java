@@ -7,6 +7,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import javax.swing.JTextField;
@@ -36,8 +37,9 @@ public class TimKiemKhachHang_GUI extends JInternalFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws RemoteException 
 	 */
-	public TimKiemKhachHang_GUI(ArrayList<KhachHang> ds) {
+	public TimKiemKhachHang_GUI(ArrayList<KhachHang> ds) throws RemoteException {
 		khachHang_DAO = new KhachHang_DAO();
 		this.ds = ds;
 		setBounds(100, 100, 910, 350);
@@ -47,7 +49,11 @@ public class TimKiemKhachHang_GUI extends JInternalFrame {
 		btnquayLai.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource().equals(btnquayLai)) {
-					loadAll();
+					try {
+						loadAll();
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
 					try {
 						setClosed(true);
 					} catch (PropertyVetoException e1) {
@@ -115,7 +121,11 @@ public class TimKiemKhachHang_GUI extends JInternalFrame {
 		btnTim.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				searchKhachHang();
+				try {
+					searchKhachHang();
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
 				try {
 					setClosed(true);
 				} catch (PropertyVetoException e1) {
@@ -131,7 +141,7 @@ public class TimKiemKhachHang_GUI extends JInternalFrame {
 		getContentPane().add(lblDiaChi);
 
 	}
-	public void searchKhachHang() {
+	public void searchKhachHang() throws Exception {
 		for (KhachHang khachHang: khachHang_DAO.getAllKhachHang()) {
 			boolean thoaMan = false;
 			if (!txtMaKH.getText().isEmpty()) {
@@ -165,7 +175,7 @@ public class TimKiemKhachHang_GUI extends JInternalFrame {
 			}
 		}
 	}
-	public void loadAll() {
+	public void loadAll() throws Exception {
 		for(KhachHang khachHang: khachHang_DAO.getAllKhachHang()) {
 			ds.add(khachHang);
 		}

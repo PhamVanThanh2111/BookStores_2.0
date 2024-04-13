@@ -130,8 +130,8 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 	}
 
 	@Override
-	public List<DungCuHocTap> getDungCuHocTapGanHetHang() throws RemoteException {
-		return em.createNamedQuery("getDungCuHocTapGanHetHang", DungCuHocTap.class).getResultList();
+	public DungCuHocTap getDungCuHocTapTheoMa(String maDungCuHocTap) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
 	}
-
 }

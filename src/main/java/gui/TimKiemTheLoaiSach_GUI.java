@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.beans.PropertyVetoException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -37,9 +38,10 @@ public class TimKiemTheLoaiSach_GUI extends JInternalFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws RemoteException 
 	 */
 
-	public TimKiemTheLoaiSach_GUI(ArrayList<TheLoaiSach> ds) {
+	public TimKiemTheLoaiSach_GUI(ArrayList<TheLoaiSach> ds) throws RemoteException {
 
 		// khai bao DAO
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
@@ -104,7 +106,11 @@ public class TimKiemTheLoaiSach_GUI extends JInternalFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				loadAll();
+				try {
+					loadAll();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 				try {
 					setClosed(true);
 				} catch (PropertyVetoException e1) {
@@ -123,7 +129,11 @@ public class TimKiemTheLoaiSach_GUI extends JInternalFrame {
 		btnTim.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (! kiemTraDuLieuRong()) {
-					searchTheLoaiSach();
+					try {
+						searchTheLoaiSach();
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					try {
 						setClosed(true);
 					} catch (PropertyVetoException e1) {
@@ -135,7 +145,7 @@ public class TimKiemTheLoaiSach_GUI extends JInternalFrame {
 		});
 		contentPane.add(btnTim);
 	}
-	private void searchTheLoaiSach() {
+	private void searchTheLoaiSach() throws RemoteException {
 		// TODO Auto-generated method stub
 		for (TheLoaiSach theLoaiSach : theLoaiSach_DAO.getAllTheLoaiSach()) {
 			boolean thoaMan = false;
@@ -163,7 +173,7 @@ public class TimKiemTheLoaiSach_GUI extends JInternalFrame {
 	        }
 	        return false;
 	    }
-    private void loadAll() {
+    private void loadAll() throws RemoteException {
         if (theLoaiSach_DAO.getAllTheLoaiSach() != null) {
             for (TheLoaiSach theLoaiSach : theLoaiSach_DAO.getAllTheLoaiSach()) {
                 ds.add(theLoaiSach);

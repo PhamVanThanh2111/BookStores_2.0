@@ -7,11 +7,17 @@ import java.util.Set;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "NhaXuatBan")
+@NamedQueries({
+	@NamedQuery(name = "getAllNhaXuatBan", query = "SELECT nxb FROM NhaXuatBan nxb"),
+
+})
 public class NhaXuatBan implements Serializable {
 	private static final long serialVersionUID = 1L;
 

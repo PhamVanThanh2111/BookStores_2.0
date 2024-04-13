@@ -11,7 +11,12 @@ import jakarta.persistence.*;
 @NamedQueries({
 		@NamedQuery(name = "getAllKhachHang", query = "select kh from KhachHang kh"),
 		@NamedQuery(name = "getKhachHangTheoSoDienThoai", query = "select kh from KhachHang kh where kh.soDienThoai = :soDienThoai"),
+<<<<<<< HEAD
 		@NamedQuery(name="getKhachHangMuaNhieuTienNhat",query="select kh from KhachHang kh join kh.hoaDons hd group by kh having sum(hd.thanhTien) = (select max(total) from (select sum(hd.thanhTien) as total from HoaDon hd group by hd.khachHang))")
+=======
+		@NamedQuery(name = "getKhachHangMuaNhieuTienNhat", query = "select kh from KhachHang kh where kh.tenKhachHang like :tenKhachHang"),
+		
+>>>>>>> c4d3f00986feccf699e3fb559ba19768c7f0a59d
 })
 public class KhachHang implements Serializable {
 	private static final long serialVersionUID = 1L;

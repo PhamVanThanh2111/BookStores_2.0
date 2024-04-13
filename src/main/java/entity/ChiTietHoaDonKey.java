@@ -8,9 +8,6 @@ import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class ChiTietHoaDonKey implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Column(name = "maHoaDon")

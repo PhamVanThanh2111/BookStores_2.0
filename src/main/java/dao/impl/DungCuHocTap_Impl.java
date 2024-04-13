@@ -23,6 +23,6 @@ public interface DungCuHocTap_Impl extends Remote {
 	public boolean themDungCuHocTap(DungCuHocTap dungCuHocTap) throws RemoteException;
 	
 	public boolean suaDungCuHocTap(DungCuHocTap dungCuHocTap) throws RemoteException;
-	
-    public List<DungCuHocTap> getDungCuHocTapGanHetHang() throws RemoteException;
+
+	public DungCuHocTap getDungCuHocTapTheoMa(String maDungCuHocTap) throws RemoteException;
 }

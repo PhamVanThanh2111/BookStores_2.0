@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 
 import java.awt.Font;
+import java.awt.HeadlessException;
 
 import dao.TaiKhoan_DAO;
 import entity.NhanVien;
@@ -18,6 +19,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.beans.PropertyVetoException;
+import java.rmi.RemoteException;
 import java.awt.event.FocusAdapter;
 
 public class DoiMatKhau_GUI extends JInternalFrame {
@@ -37,8 +39,9 @@ public class DoiMatKhau_GUI extends JInternalFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws RemoteException 
 	 */
-	public DoiMatKhau_GUI(NhanVien nhanVien) {
+	public DoiMatKhau_GUI(NhanVien nhanVien) throws RemoteException {
 		// khai bao DAO
 		taiKhoan_DAO = new TaiKhoan_DAO();
 		
@@ -196,17 +199,22 @@ public class DoiMatKhau_GUI extends JInternalFrame {
 						JOptionPane.YES_NO_OPTION);
 				if (option == JOptionPane.YES_OPTION) {
 					if (Regular_expression.validatePassword(pwdMatKhauMoi.getText())) {
-						if (taiKhoan_DAO.getTaiKhoanTheoMaTaiKhoan(nhanVien.getTaiKhoan().getTaiKhoan()).getMatKhau().equals(pwdMatKhauHienTai.getText())) {
-							TaiKhoan taiKhoan = new TaiKhoan();
-							taiKhoan.setTaiKhoan(nhanVien.getTaiKhoan().getTaiKhoan());
-							taiKhoan.setMatKhau(pwdMatKhauMoi.getText());
-							taiKhoan_DAO.suaTaiKhoan(taiKhoan);
-							JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công!");
-							setClosable(true);
-							return true;
-						}
-						else {
-							JOptionPane.showMessageDialog(null, "Mật khẩu hiện tại không đúng!");
+						try {
+							if (taiKhoan_DAO.getTaiKhoanTheoMaTaiKhoan(nhanVien.getTaiKhoan().getTaiKhoan()).getMatKhau().equals(pwdMatKhauHienTai.getText())) {
+								TaiKhoan taiKhoan = new TaiKhoan();
+								taiKhoan.setTaiKhoan(nhanVien.getTaiKhoan().getTaiKhoan());
+								taiKhoan.setMatKhau(pwdMatKhauMoi.getText());
+								taiKhoan_DAO.suaTaiKhoan(taiKhoan);
+								JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công!");
+								setClosable(true);
+								return true;
+							}
+							else {
+								JOptionPane.showMessageDialog(null, "Mật khẩu hiện tại không đúng!");
+							}
+						} catch (HeadlessException | RemoteException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
 						}
 					}
 					else {

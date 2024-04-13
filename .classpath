@@ -54,11 +54,9 @@
 	<classpathentry kind="lib" path="library/jfreechart-1.0.19.jar"/>
 	<classpathentry kind="lib" path="library/jiconfont-font_awesome-4.7.0.0.jar"/>
 	<classpathentry kind="lib" path="library/jiconfont-swing-1.0.1.jar"/>
-	<classpathentry kind="lib" path="library/mysql-connector-j-8.0.32-javadoc.jar"/>
 	<classpathentry kind="lib" path="library/poi-4.0.1.jar"/>
 	<classpathentry kind="lib" path="library/poi-ooxml-4.0.1.jar"/>
 	<classpathentry kind="lib" path="library/poi-ooxml-schemas-4.0.1.jar"/>
-	<classpathentry kind="lib" path="library/sqljdbc42.jar"/>
 	<classpathentry kind="lib" path="library/xmlbeans-3.0.2.jar"/>
 	<classpathentry kind="src" path="target/generated-sources/annotations">
 		<attributes>

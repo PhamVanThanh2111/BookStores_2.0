@@ -31,10 +31,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.rmi.RemoteException;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
@@ -208,7 +210,7 @@ public class DanhSachHoaDon_GUI extends JPanel {
 				if (!kiemTraRong()) {
 					try {
 						loadData(timHoaDon());
-					} catch (RemoteException e1) {
+					} catch (RemoteException | SQLException e1) {
 						e1.printStackTrace();
 					}
 				}
@@ -293,12 +295,12 @@ public class DanhSachHoaDon_GUI extends JPanel {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 				int row = tableDanhSachHoaDon.getSelectedRow();
-				HoaDon hoaDon = hoaDon_DAO.getHoaDonTheoMaHoaDon(modelDanhSachHoaDon.getValueAt(row, 0).toString());
+				HoaDon hoaDon;
 				try {
+					hoaDon = hoaDon_DAO.getHoaDonTheoMa(modelDanhSachHoaDon.getValueAt(row, 0).toString());
 					loadDataIntoTableChiTietHoaDonTheoMaHoaDon(hoaDon.getMaHoaDon());
-				} catch (RemoteException e1) {
+				} catch (RemoteException | SQLException e1) {
 					e1.printStackTrace();
 				}
 			}
@@ -397,13 +399,13 @@ public class DanhSachHoaDon_GUI extends JPanel {
 //		loadDataIntoTableHoaDon(hoaDon_DAO.getAllListHoaDon());
 	}
 	
-	public void loadData(ArrayList<HoaDon> danhSachHoaDons) throws RemoteException {
+	public void loadData(List<HoaDon> list) throws RemoteException {
 		modelDanhSachHoaDon.setRowCount(0);
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		for (HoaDon hoaDon : danhSachHoaDons) {
+		for (HoaDon hoaDon : list) {
 			Object[] objects = {hoaDon.getMaHoaDon(), 
-								khachHang_DAO.getKhachHangTheoMa(hoaDon.getKhachHang().getMaKhachHang()).getTenKhachHang(),
-								khachHang_DAO.getKhachHangTheoMa(hoaDon.getKhachHang().getMaKhachHang()).getSoDienThoai(),
+								hoaDon.getKhachHang().getTenKhachHang(),
+								hoaDon.getKhachHang().getSoDienThoai(),
 								nhanVien_DAO.getNhanVienTheoMa(hoaDon.getNhanVien().getMaNhanVien()).getTenNhanVien(), 
 								simpleDateFormat.format(hoaDon.getNgayLap()), 
 								hoaDon.getThanhTien()};
@@ -415,18 +417,23 @@ public class DanhSachHoaDon_GUI extends JPanel {
 		loadData(hoaDon_DAO.getAllHoaDon());
 	}
 	
-	private void loadDataIntoTableChiTietHoaDonTheoMaHoaDon(String maHoaDon) throws RemoteException {
+	private void loadDataIntoTableChiTietHoaDonTheoMaHoaDon(String maHoaDon) throws RemoteException, SQLException {
 		modelChiTietHoaDon.setRowCount(0);
-		for (ChiTietHoaDon chiTietHoaDon : chiTietHoaDon_DAO.getAllChiTietHoaDonTheoMaHoaDon(maHoaDon)) {
-			Object[] objects = {chiTietHoaDon.getHoaDon().getMaHoaDon(),
-								sanPham_DAO.getSanPhamTheoMa(chiTietHoaDon.getSanPham().getMaSanPham()).getTenSanPham(),
-								chiTietHoaDon.getSoLuong(),
-								chiTietHoaDon.getDonGia()};
-			modelChiTietHoaDon.addRow(objects);
+		try {
+			for (ChiTietHoaDon chiTietHoaDon : chiTietHoaDon_DAO.getAllChiTietHoaDonTheoMaHoaDon(maHoaDon)) {
+				Object[] objects = {chiTietHoaDon.getHoaDon().getMaHoaDon(),
+									sanPham_DAO.getSanPhamTheoMa(chiTietHoaDon.getSanPham().getMaSanPham()).getTenSanPham(),
+									chiTietHoaDon.getSoLuong(),
+									chiTietHoaDon.getDonGia()};
+				modelChiTietHoaDon.addRow(objects);
+			}
+		} catch (RemoteException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
-	private ArrayList<HoaDon> timHoaDon() {
+	private ArrayList<HoaDon> timHoaDon() throws RemoteException, SQLException {
 		ArrayList<HoaDon> ds = new ArrayList<HoaDon>();
 		for (HoaDon hoaDon : hoaDon_DAO.getAllHoaDon()) {
 			boolean thoaMan = false;

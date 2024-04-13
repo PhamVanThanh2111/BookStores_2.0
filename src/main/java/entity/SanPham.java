@@ -16,10 +16,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "SanPham")
 @Inheritance(strategy = InheritanceType.JOINED)
-//@NamedQueries({
-//	@NamedQuery(name = "getSanPhamTheoTen", query = "SELECT sp FROM SanPham sp WHERE sp.tenSanPham = :tenSanPham"),
-//	
-//})
+@NamedQueries({
+	@NamedQuery(name = "getSanPhamTheoTen", query = "SELECT sp FROM SanPham sp WHERE sp.tenSanPham = :tenSanPham"),
+	@NamedQuery(name = "getSanPhamGanHetHang", query = "SELECT sp FROM SanPham sp WHERE sp.soLuongTon <= 10"),
+})
 public abstract class SanPham implements Serializable {
 	private static final long serialVersionUID = 1L;
 

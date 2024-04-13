@@ -8,11 +8,17 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import dao.DungCuHocTap_DAO;
 import dao.NhaCungCap_DAO;
 import dao.SanPham_DAO;
+import entity.DungCuHocTap;
 import entity.NhaCungCap;
 import entity.SanPham;
 import javax.swing.JComboBox;
@@ -28,16 +34,18 @@ public class TimKiemDungCuHoctap extends JInternalFrame {
 	private JTextField txtTenDCHT;
 	private JTextField txtGiaBan;
 	private JTextField txtSoLuong;
-	private ArrayList<SanPham>ds;
+	private List<DungCuHocTap> ds;
 	private SanPham_DAO sanPham_DAO;
 	private JComboBox<String> cbNhaCC;
 	private NhaCungCap_DAO nhaCungCap_DAO;
+	private DungCuHocTap_DAO dungCuHocTap_DAO;
 	private JButton btnTim;
 
-	public TimKiemDungCuHoctap(ArrayList<SanPham>ds) {
-		sanPham_DAO = new SanPham_DAO(); 
+	public TimKiemDungCuHoctap(List<DungCuHocTap> ds) throws RemoteException {
+		sanPham_DAO = new SanPham_DAO();
+		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 		nhaCungCap_DAO = new NhaCungCap_DAO();
-		this.ds=ds;
+		this.ds = ds;
 		setBounds(100, 100, 922, 415);
 		getContentPane().setLayout(null);
 		
@@ -63,7 +71,11 @@ public class TimKiemDungCuHoctap extends JInternalFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				loadAll();
+				try {
+					loadAll();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 				try {
 					setClosed(true);
 				} catch (PropertyVetoException e1) {
@@ -176,39 +188,44 @@ public class TimKiemDungCuHoctap extends JInternalFrame {
 	}
 	
 	public void searchDungCuHocTap() {
-		for (SanPham sanPham: sanPham_DAO.getAllDungCuHocTap()) {
-			boolean thoaMan = false;
-			if (!txtMaDCHT.getText().isEmpty()) {
-				if (sanPham.getMaSanPham().equalsIgnoreCase(txtMaDCHT.getText().trim())) {
-					thoaMan = true;
+		try {
+			for (DungCuHocTap dungCuHocTap: dungCuHocTap_DAO.getAllDungCuHocTap()) {
+				boolean thoaMan = false;
+				if (!txtMaDCHT.getText().isEmpty()) {
+					if (dungCuHocTap.getMaSanPham().equalsIgnoreCase(txtMaDCHT.getText().trim())) {
+						thoaMan = true;
+					}
 				}
-			}
-			if (!txtTenDCHT.getText().isEmpty()) {
-				if (sanPham.getTenSanPham().toLowerCase().contains(dinhDangChuoi(txtTenDCHT.getText().toLowerCase().trim()))) {
-					thoaMan = true;
+				if (!txtTenDCHT.getText().isEmpty()) {
+					if (dungCuHocTap.getTenSanPham().toLowerCase().contains(dinhDangChuoi(txtTenDCHT.getText().toLowerCase().trim()))) {
+						thoaMan = true;
+					}
 				}
-			}
-			if (!txtGiaBan.getText().isEmpty()) {
-				if (sanPham.getGiaBan()==Integer.parseInt(dinhDangChuoi(txtGiaBan.getText().trim()))) {
-					thoaMan = true;
+				if (!txtGiaBan.getText().isEmpty()) {
+					if (dungCuHocTap.getGiaBan()==Integer.parseInt(dinhDangChuoi(txtGiaBan.getText().trim()))) {
+						thoaMan = true;
+					}
 				}
-			}
-			if (!txtSoLuong.getText().isEmpty()) {
-				if (sanPham.getSoLuongTon()==Integer.parseInt(dinhDangChuoi(txtSoLuong.getText().trim()))) {
-					thoaMan = true;
+				if (!txtSoLuong.getText().isEmpty()) {
+					if (dungCuHocTap.getSoLuongTon()==Integer.parseInt(dinhDangChuoi(txtSoLuong.getText().trim()))) {
+						thoaMan = true;
+					}
 				}
-			}
-		
 			
-			if (cbNhaCC.getSelectedIndex()!=-1) {
+				
+				if (cbNhaCC.getSelectedIndex()!=-1) {
 //				NhaCungCap tenNhaCC= nhaCungCap_DAO.getNhaCCTheoMa(sanPham.getMaNhaCungCap());
 //				if (tenNhaCC.getTenNCC().toLowerCase().equalsIgnoreCase(cbNhaCC.getSelectedItem().toString().toLowerCase())) {
 //					thoaMan = true;
 //				}
+				}
+				if (thoaMan) {
+					ds.add(dungCuHocTap);	
+				}
 			}
-			if (thoaMan) {
-				ds.add(sanPham);	
-			}
+		} catch (NumberFormatException | RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
@@ -217,9 +234,9 @@ public class TimKiemDungCuHoctap extends JInternalFrame {
 			cbNhaCC.addItem(nhaCungCap.getTenNCC());
 		}
 	}
-	public void loadAll() {
-		for (SanPham sanPham : sanPham_DAO.getAllDungCuHocTap()) {
-			ds.add(sanPham);
+	public void loadAll() throws RemoteException {
+		for (DungCuHocTap dungCuHocTap : dungCuHocTap_DAO.getAllDungCuHocTap()) {
+			ds.add(dungCuHocTap);
 		}
 	}
 	public String dinhDangChuoi(String chuoi) {
