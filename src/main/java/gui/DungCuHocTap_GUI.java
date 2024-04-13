@@ -532,16 +532,6 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 		});
 		pThongTin.add(btnlamMoi);
 
-		btnChonHinhAnh = new JButton("Choose");
-		btnChonHinhAnh.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				chooseFile();
-			}
-		});
-		btnChonHinhAnh.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		btnChonHinhAnh.setBounds(1003, 226, 90, 19);
-		pThongTin.add(btnChonHinhAnh);
-
 		lblHinhAnh = new JLabel("");
 		lblHinhAnh.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHinhAnh.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -725,30 +715,37 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 		});
 	}
 
-	public void loadData(List<DungCuHocTap> ds) {
+	public void loadData(List<DungCuHocTap> danhSach) {
 		// Xóa dữ liệu cũ trước khi nạp dữ liệu mới
 		model.setRowCount(0);
 
-//		for (SanPham sanPham : ds) {
-//			Object[] object = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getXuatXu(),
-//					sanPham.getGiaNhap(), sanPham.getGiaBan(), sanPham.getSoLuongTon(),
-//					nhaCC_DAO.getNhaCCTheoMa(sanPham.getMaNhaCungCap()).getTenNCC() };
-//			model.addRow(object);
-//			table.setRowHeight(25);
-//		}
+		for (DungCuHocTap dungCuHocTap : danhSach) {
+			Object[] object = { dungCuHocTap.getMaSanPham(), 
+					dungCuHocTap.getTenSanPham(), 
+					dungCuHocTap.getXuatXu(),
+					dungCuHocTap.getGiaNhap(), 
+					dungCuHocTap.getGiaBan(), 
+					dungCuHocTap.getSoLuongTon(),
+					dungCuHocTap.getNhaCungCap().getTenNCC() };
+			model.addRow(object);
+			table.setRowHeight(25);
+		}
 	}
 
-	public void loadDataDCHT_KhachHang(ArrayList<SanPham> ds) {
+	public void loadData_KhachHang(List<DungCuHocTap> danhSach) {
 		// Xóa dữ liệu cũ trước khi nạp dữ liệu mới
 		model.setRowCount(0);
 
-//		for (SanPham sanPham : ds) {
-//			Object[] object = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getXuatXu(),
-//					sanPham.getGiaBan(), sanPham.getSoLuongTon(),
-//					nhaCC_DAO.getNhaCCTheoMa(sanPham.getMaNhaCungCap()).getTenNCC() };
-//			model.addRow(object);
-//			table.setRowHeight(25);
-//		}
+		for (DungCuHocTap dungCuHocTap : danhSach) {
+			Object[] object = { dungCuHocTap.getMaSanPham(), 
+					dungCuHocTap.getTenSanPham(), 
+					dungCuHocTap.getXuatXu(),
+					dungCuHocTap.getGiaBan(), 
+					dungCuHocTap.getSoLuongTon(),
+					dungCuHocTap.getNhaCungCap().getTenNCC() };
+			model.addRow(object);
+			table.setRowHeight(25);
+		}
 	}
 
 	public void loadCBNhaCC() {

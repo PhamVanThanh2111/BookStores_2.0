@@ -398,14 +398,14 @@ public class ThongKe_GUI extends JPanel {
 		datasetSanPhamBanChay = new DefaultCategoryDataset();
 		
 		// add value
-		ResultSet resultSet = hoaDon_DAO.getDanhSachSanPhamBanChay();
-		try {
-			while (resultSet.next()) {
-				datasetSanPhamBanChay.addValue(resultSet.getInt(3), "Sản phẩm", resultSet.getString(2));
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		ResultSet resultSet = hoaDon_DAO.getDanhSachSanPhamBanChay();
+//		try {
+//			while (resultSet.next()) {
+//				datasetSanPhamBanChay.addValue(resultSet.getInt(3), "Sản phẩm", resultSet.getString(2));
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		
 		chartSanPhamBanChay = ChartFactory.createBarChart("CÁC SẢN PHẨM BÁN CHẠY", "SẢN PHẨM", "SỐ LƯỢNG", datasetSanPhamBanChay, PlotOrientation.VERTICAL, true, true, false);
 	
@@ -455,17 +455,17 @@ public class ThongKe_GUI extends JPanel {
 		datasetDoanhThuNhanVien = new DefaultCategoryDataset();
 		datasetSoLuongHoaDonVaSanPhamNhanVien = new DefaultCategoryDataset();
 		
-		ResultSet resultSet = hoaDon_DAO.getDanhSachNhanVienTheoDoanhThu();
+//		ResultSet resultSet = hoaDon_DAO.getDanhSachNhanVienTheoDoanhThu();
 		// add value
-		try {
-			while (resultSet.next()) {
-				datasetDoanhThuNhanVien.addValue(resultSet.getFloat(5), "Doanh thu", resultSet.getString(2));
-				datasetSoLuongHoaDonVaSanPhamNhanVien.addValue(resultSet.getInt(3), "Hóa đơn", resultSet.getString(2));
-				datasetSoLuongHoaDonVaSanPhamNhanVien.addValue(resultSet.getInt(4), "Sản phẩm", resultSet.getString(2));
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		try {
+//			while (resultSet.next()) {
+//				datasetDoanhThuNhanVien.addValue(resultSet.getFloat(5), "Doanh thu", resultSet.getString(2));
+//				datasetSoLuongHoaDonVaSanPhamNhanVien.addValue(resultSet.getInt(3), "Hóa đơn", resultSet.getString(2));
+//				datasetSoLuongHoaDonVaSanPhamNhanVien.addValue(resultSet.getInt(4), "Sản phẩm", resultSet.getString(2));
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 
 		// chart 1
 		chartDoanhThuNhanVien = ChartFactory.createBarChart("DOANH THU NHÂN VIÊN", "TÊN NHÂN VIÊN", "VNĐ", datasetDoanhThuNhanVien, PlotOrientation.VERTICAL, true, true, false);
@@ -569,9 +569,9 @@ public class ThongKe_GUI extends JPanel {
 	// load danh sách sản phẩm gần hết hàng
 	private void loadSanPhamGanHetHang() throws RemoteException {
 		model.setRowCount(0);
-		for (SanPham sanPham : sanPham_DAO.getSanPhamGanHetHang()) {
-			Object[] objects = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getSoLuongTon()};
-			model.addRow(objects);
-		}
+//		for (SanPham sanPham : sanPham_DAO.getSanPhamGanHetHang()) {
+//			Object[] objects = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getSoLuongTon()};
+//			model.addRow(objects);
+//		}
 	}
 }

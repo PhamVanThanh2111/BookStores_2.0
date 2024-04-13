@@ -974,7 +974,6 @@ public class HeThongQuanLyNhaSach extends JFrame {
 					cardLayoutContent.show(pContent, "DanhSachDatHang_GUI");
 					setTitle("Danh Sách Đặt Hàng");
 				}
-
 			}
 		});
 		lblSubMenu3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1472,7 +1471,7 @@ public class HeThongQuanLyNhaSach extends JFrame {
 		
 		Runnable loadDataSach = () -> {
 			try {
-				sach_GUI.loadData(sach_DAO.getAllSach());
+				sach_GUI.loadData_KhachHang(sach_DAO.getAllSach());
 			} catch (RemoteException e1) {
 				e1.printStackTrace();
 			}
@@ -1480,7 +1479,7 @@ public class HeThongQuanLyNhaSach extends JFrame {
 		
 		Runnable loadDataDungCuHocTap = () -> {
 			try {
-				dungCuHocTap_GUI.loadData(dungCuHocTap_DAO.getAllDungCuHocTap());
+				dungCuHocTap_GUI.loadData_KhachHang(dungCuHocTap_DAO.getAllDungCuHocTap());
 			} catch (RemoteException e1) {
 				e1.printStackTrace();
 			}

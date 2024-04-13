@@ -404,8 +404,8 @@ public class DanhSachHoaDon_GUI extends JPanel {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		for (HoaDon hoaDon : list) {
 			Object[] objects = {hoaDon.getMaHoaDon(), 
-								hoaDon.getKhachHang().getTenKhachHang(),
-								hoaDon.getKhachHang().getSoDienThoai(),
+								hoaDon.getKhachHang() != null ? hoaDon.getKhachHang().getTenKhachHang() : "",
+								hoaDon.getKhachHang() != null ? hoaDon.getKhachHang().getSoDienThoai() : "",
 								nhanVien_DAO.getNhanVienTheoMa(hoaDon.getNhanVien().getMaNhanVien()).getTenNhanVien(), 
 								simpleDateFormat.format(hoaDon.getNgayLap()), 
 								hoaDon.getThanhTien()};

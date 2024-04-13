@@ -660,9 +660,8 @@ public class Sach_GUI extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				int row = table.getSelectedRow();
-				Sach sach;
 				try {
-					sach = sach_DAO.getSachTheoMa((String) model.getValueAt(row, 0).toString());
+					Sach sach = sach_DAO.getSachTheoMa((String) model.getValueAt(row, 0).toString());
 					txtMaSach.setText((String) model.getValueAt(row, 0));
 					txtTenSach.setText((String) model.getValueAt(row, 1));
 					txtXuatXu.setText((String) model.getValueAt(row, 2));
@@ -750,6 +749,7 @@ public class Sach_GUI extends JPanel {
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
 		sanPham_DAO = new SanPham_DAO();
 		phatSinhMa_DAO = new PhatSinhMa_DAO();
+		sach_DAO = new Sach_DAO();
 
 		ds = new ArrayList<Sach>();
 		setLayout(null);
@@ -1078,19 +1078,18 @@ public class Sach_GUI extends JPanel {
 				// TODO Auto-generated method stub
 				int row = table.getSelectedRow();
 				if (row >= 0) {
-					txtMaSach.setText((String) model.getValueAt(row, 0));
-					txtTenSach.setText((String) model.getValueAt(row, 1));
-					txtXuatXu.setText((String) model.getValueAt(row, 2));
-					txtGiaBan.setText(model.getValueAt(row, 3).toString());
-					txtSoLuong.setText(model.getValueAt(row, 4).toString());
-					cmbTenNhaXuatBan.setSelectedItem(model.getValueAt(row, 5));
-					cmbTenLoaiSach.setSelectedItem(model.getValueAt(row, 6));
-					txtTacGia.setText(model.getValueAt(row, 7).toString());
-					txtSoTrang.setText(model.getValueAt(row, 8).toString());
-					txtNamXuatBan.setText(model.getValueAt(row, 9).toString());
-					Sach sach;
 					try {
-						sach = sach_DAO.getSachTheoMa((String) model.getValueAt(row, 0).toString());
+						Sach sach = sach_DAO.getSachTheoMa((String) model.getValueAt(row, 0).toString());
+						txtMaSach.setText((String) model.getValueAt(row, 0));
+						txtTenSach.setText((String) model.getValueAt(row, 1));
+						txtXuatXu.setText((String) model.getValueAt(row, 2));
+						txtGiaBan.setText(model.getValueAt(row, 3).toString());
+						txtSoLuong.setText(model.getValueAt(row, 4).toString());
+						cmbTenNhaXuatBan.setSelectedItem(model.getValueAt(row, 5));
+						cmbTenLoaiSach.setSelectedItem(model.getValueAt(row, 6));
+						txtTacGia.setText(model.getValueAt(row, 7).toString());
+						txtSoTrang.setText(model.getValueAt(row, 8).toString());
+						txtNamXuatBan.setText(model.getValueAt(row, 9).toString());
 						relativePath = sach.getHinhAnh();
 						lblHinhAnh.setIcon(new ImageIcon(Sach_GUI.class.getResource(sach.getHinhAnh())));
 					} catch (RemoteException e1) {
@@ -1141,31 +1140,31 @@ public class Sach_GUI extends JPanel {
 	}
 
 	// load Data to table
-	public void loadData(List<Sach> list) {
+	public void loadData(List<Sach> danhSach) {
 		model.setRowCount(0);
-//		for (SanPham sanPham : ds) {
-//			Object[] object = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getXuatXu(),
-//					sanPham.getGiaNhap(), sanPham.getGiaBan(), sanPham.getSoLuongTon(),
-//					nhaXuatBan_DAO.getnhaXuatBanTheoMa(sanPham.getMaNXB()).getTenNhaXuatBan(),
-//					theLoaiSach_DAO.getTheLoaiSachTheoMa(sanPham.getMaTheLoaiSach()).gettenTheLoaiSach(),
-//					sanPham.getTacGia(), sanPham.getSoTrang(), sanPham.getNamXuatBan(), };
-//			model.addRow(object);
-//			table.setRowHeight(25);
-//		}
+		for (Sach sach : danhSach) {
+			Object[] object = { sach.getMaSanPham(), sach.getTenSanPham(), sach.getXuatXu(),
+					sach.getGiaNhap(), sach.getGiaBan(), sach.getSoLuongTon(),
+					sach.getNhaXuatBan().getTenNhaXuatBan(),
+					sach.getTheLoaiSach().getTenTheLoaiSach(),
+					sach.getTacGia(), sach.getSoTrang(), sach.getNamXuatBan() };
+			model.addRow(object);
+			table.setRowHeight(25);
+		}
 	}
 
 	// loadData sach cho khachhang
-	public void loadData_KhachHang(ArrayList<SanPham> danhSach) {
-//		model.setRowCount(0);
-//		for (SanPham sanPham : danhSach) {
-//			Object[] object = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getXuatXu(),
-//					sanPham.getGiaBan(), sanPham.getSoLuongTon(),
-//					nhaXuatBan_DAO.getnhaXuatBanTheoMa(sanPham.getMaNXB()).getTenNhaXuatBan(),
-//					theLoaiSach_DAO.getTheLoaiSachTheoMa(sanPham.getMaTheLoaiSach()).gettenTheLoaiSach(),
-//					sanPham.getTacGia(), sanPham.getSoTrang(), sanPham.getNamXuatBan(), };
-//			model.addRow(object);
-//			table.setRowHeight(25);
-//		}
+	public void loadData_KhachHang(List<Sach> danhSach) {
+		model.setRowCount(0);
+		for (Sach sach : danhSach) {
+			Object[] object = { sach.getMaSanPham(), sach.getTenSanPham(), sach.getXuatXu(),
+					sach.getGiaBan(), sach.getSoLuongTon(),
+					sach.getNhaXuatBan().getTenNhaXuatBan(),
+					sach.getTheLoaiSach().getTenTheLoaiSach(),
+					sach.getTacGia(), sach.getSoTrang(), sach.getNamXuatBan(), };
+			model.addRow(object);
+			table.setRowHeight(25);
+		}
 	}
 
 	// load cbTenNhaXuatBan

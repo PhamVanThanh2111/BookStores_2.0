@@ -631,12 +631,8 @@ public class TheLoaiSach_GUI extends JPanel {
 				// TODO Auto-generated method stub
 				int row = table.getSelectedRow();
 				if (row >= 0) {
-					TheLoaiSach theLoaiSach;
-					try {
-						theLoaiSach = theLoaiSach_DAO.getTheLoaiSachTheoMa(model.getValueAt(row, 0).toString());
-					} catch (RemoteException e1) {
-						e1.printStackTrace();
-					}
+					txtMaTheLoaiSach.setText(model.getValueAt(row, 0).toString());
+					txtTenTheLoaiSach.setText(model.getValueAt(row, 1).toString());
 				}
 			}
 		});
@@ -662,6 +658,7 @@ public class TheLoaiSach_GUI extends JPanel {
 	// đổ dữ liệu lên bảng
 	public void loadData(List<TheLoaiSach> list) {
 		model.setRowCount(0);
+		
 		if (list != null) {
 			for (TheLoaiSach theLoaiSach : list) {
 				Object[] object = { theLoaiSach.getMaTheLoaiSach(), theLoaiSach.getTenTheLoaiSach() };

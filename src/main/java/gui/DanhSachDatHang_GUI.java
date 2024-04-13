@@ -365,12 +365,13 @@ public class DanhSachDatHang_GUI extends JPanel {
 	
 	public void loadData(List<PhieuDatHang> danhSachPhieuDatHangs) throws RemoteException {
 		modelDSPD.setRowCount(0);
+		
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		for (PhieuDatHang phieuDatHang : danhSachPhieuDatHangs) {
 			Object[] objects = {phieuDatHang.getMaPhieuDatHang(), 
 					phieuDatHang.getKhachHang().getTenKhachHang(),
 					phieuDatHang.getKhachHang().getSoDienThoai(),
-					nhanVien_DAO.getNhanVienTheoMa(phieuDatHang.getNhanVien().getMaNhanVien()).getTenNhanVien(), 
+					phieuDatHang.getNhanVien().getTenNhanVien(), 
 					simpleDateFormat.format(phieuDatHang.getNgayLap()), 
 					phieuDatHang.getThanhTien()};
 			modelDSPD.addRow(objects);

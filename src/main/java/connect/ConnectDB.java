@@ -13,7 +13,7 @@ public class ConnectDB {
 	}
 
 	public static void connect() throws SQLException {
-		String url = "jdbc:sqlserver://localhost:1433;databasename=BookStores";
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=Book;trustServerCertificate=true;encrypt=true";
 		String user = "sa";
 		String password = "sapassword";
 		con = DriverManager.getConnection(url, user, password);
@@ -33,9 +33,11 @@ public class ConnectDB {
 		try {
 			connect();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return con;
+	}
+	public static void main(String[] args) {
+		System.out.println(getConnection());
 	}
 }

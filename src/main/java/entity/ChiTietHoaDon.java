@@ -6,9 +6,9 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ChiTietHoaDon")
-//@NamedQueries({
-//		@NamedQuery(name = "getAllChiTietHoaDonTheoMaHoaDon", query = "select cthd from ChiTietHoaDon cthd where cthd.id.maHoaDon = :maHoaDon")
-//})
+@NamedQueries({
+		@NamedQuery(name = "getAllChiTietHoaDonTheoMaHoaDon", query = "select cthd from ChiTietHoaDon cthd where cthd.id.maHoaDon = :maHoaDon")
+})
 public class ChiTietHoaDon implements Serializable {
 	private static final long serialVersionUID = 1L;
 
