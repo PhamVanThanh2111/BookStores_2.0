@@ -16,7 +16,8 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "ChiTietPhieuDatHang")
 @NamedQueries({
-		@NamedQuery(name = "getAllChiTietPhieuDatHangTheoMaPhieuDatHang", query = "SELECT c FROM ChiTietPhieuDatHang c WHERE c.id.maPhieuDatHang = :maPhieuDatHang") })
+		@NamedQuery(name = "getAllChiTietPhieuDatHangTheoMaPhieuDatHang", query = "SELECT c FROM ChiTietPhieuDatHang c WHERE c.phieuDatHang.maPhieuDatHang = :maPhieuDatHang") 
+		})
 public class ChiTietPhieuDatHang implements Serializable {
 	private static final long serialVersionUID = 1L;
 
