@@ -129,8 +129,7 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 	}
 
 	@Override
-	public List<Sach> getSachGanHetHang() throws RemoteException {
-		return em.createNamedQuery("getSachGanHetHang", Sach.class).getResultList();
+	public Sach getSachTheoMa(String maSach) throws RemoteException {
+		return em.find(Sach.class, maSach);
 	}
-
 }

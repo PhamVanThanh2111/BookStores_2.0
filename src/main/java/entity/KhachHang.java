@@ -10,7 +10,9 @@ import jakarta.persistence.*;
 @Table(name = "KhachHang")
 @NamedQueries({
 		@NamedQuery(name = "getAllKhachHang", query = "select kh from KhachHang kh"),
-		@NamedQuery(name = "getKhachHangTheoSoDienThoai", query = "select kh from KhachHang kh where kh.soDienThoai = :soDienThoai")
+		@NamedQuery(name = "getKhachHangTheoSoDienThoai", query = "select kh from KhachHang kh where kh.soDienThoai = :soDienThoai"),
+		@NamedQuery(name = "getKhachHangMuaNhieuTienNhat", query = "select kh from KhachHang kh where kh.tenKhachHang like :tenKhachHang"),
+		
 })
 public class KhachHang implements Serializable {
 	private static final long serialVersionUID = 1L;

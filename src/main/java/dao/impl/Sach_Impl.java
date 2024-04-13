@@ -23,6 +23,6 @@ public interface Sach_Impl extends Remote {
 	public boolean themSach(Sach sach) throws RemoteException;
 	
 	public boolean suaSach(Sach sach) throws RemoteException;
-	
-	public List<Sach> getSachGanHetHang() throws RemoteException;
+
+	public Sach getSachTheoMa(String maSach) throws RemoteException;
 }

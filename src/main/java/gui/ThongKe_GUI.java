@@ -40,6 +40,7 @@ import entity.HoaDon;
 import entity.SanPham;
 
 import java.beans.PropertyChangeListener;
+import java.rmi.RemoteException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.beans.PropertyChangeEvent;
@@ -106,8 +107,9 @@ public class ThongKe_GUI extends JPanel {
 
 	/**
 	 * Create the panel.
+	 * @throws RemoteException 
 	 */
-	public ThongKe_GUI() {
+	public ThongKe_GUI() throws RemoteException {
 		// khai bao DAO
 		hoaDon_DAO = new HoaDon_DAO();
 		sanPham_DAO = new SanPham_DAO();
@@ -367,7 +369,7 @@ public class ThongKe_GUI extends JPanel {
 		// add value
 		int i = 0;
 		while (i <= tinhKhoangCachGiuaHaiNgay(doiDate(tuNgay), doiDate(denNgay))) {
-			datasetSoLuong.addValue(hoaDon_DAO.getListHoaDonTheoNgay(tuNgay.plusDays(i)).size(), "Hóa đơn", dateFormat.format(tuNgay.plusDays(i)).toString());
+//			datasetSoLuong.addValue(hoaDon_DAO.getListHoaDonTheoNgay(tuNgay.plusDays(i)).size(), "Hóa đơn", dateFormat.format(tuNgay.plusDays(i)).toString());
 			datasetSoLuong.addValue(tinhSoLuongSanPhamBanDuocTheoNgay(tuNgay.plusDays(i)), "Sản phẩm", dateFormat.format(tuNgay.plusDays(i)).toString());
 			i++;
 		}
@@ -424,14 +426,14 @@ public class ThongKe_GUI extends JPanel {
 	private void showBarChartKhachHangMuaNhieuNhat() {
 		datasetKhachHangMuaNhieuNhat = new DefaultCategoryDataset();
 		// add value
-		ResultSet resultSet = hoaDon_DAO.getDanhSachKhachHangMuaNhieuNhat();
-		try {
-			while (resultSet.next()) {
-				datasetKhachHangMuaNhieuNhat.addValue(resultSet.getFloat(2), "VNĐ", resultSet.getString(1));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+//		ResultSet resultSet = hoaDon_DAO.getDanhSachKhachHangMuaNhieuNhat();
+//		try {
+//			while (resultSet.next()) {
+//				datasetKhachHangMuaNhieuNhat.addValue(resultSet.getFloat(2), "VNĐ", resultSet.getString(1));
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 		
 		chartKhachHangMuaNhieuNhat = ChartFactory.createBarChart("KHÁCH HÀNG MUA NHIỀU NHẤT", "TÊN KHÁCH HÀNG", "VNĐ", datasetKhachHangMuaNhieuNhat, PlotOrientation.VERTICAL, true, true, false);
 		
@@ -502,19 +504,19 @@ public class ThongKe_GUI extends JPanel {
 	
 	private float tinhDoanhThuTheoNgay(LocalDate date) {
 		float doanhThu = 0;
-		for (HoaDon hoaDon : hoaDon_DAO.getListHoaDonTheoNgay(date)) {
-			doanhThu += hoaDon.getThanhTien();
-		}
+//		for (HoaDon hoaDon : hoaDon_DAO.getListHoaDonTheoNgay(date)) {
+//			doanhThu += hoaDon.getThanhTien();
+//		}
 		return doanhThu;
 	}
 	
 	private int tinhSoLuongSanPhamBanDuocTheoNgay(LocalDate date) {
 		int soLuong = 0;
-		for (HoaDon hoaDon : hoaDon_DAO.getListHoaDonTheoNgay(date)) {
-			for (ChiTietHoaDon chiTietHoaDon : chiTietHoaDon_DAO.getAllChiTietHoaDonTheoMaHoaDon(hoaDon.getMaHoaDon())) {
-				soLuong += chiTietHoaDon.getSoLuong();
-			}
-		}
+//		for (HoaDon hoaDon : hoaDon_DAO.getListHoaDonTheoNgay(date)) {
+//			for (ChiTietHoaDon chiTietHoaDon : chiTietHoaDon_DAO.getAllChiTietHoaDonTheoMaHoaDon(hoaDon.getMaHoaDon())) {
+//				soLuong += chiTietHoaDon.getSoLuong();
+//			}
+//		}
 		return soLuong;
 	}
 	
@@ -565,7 +567,7 @@ public class ThongKe_GUI extends JPanel {
 	}
 	
 	// load danh sách sản phẩm gần hết hàng
-	private void loadSanPhamGanHetHang() {
+	private void loadSanPhamGanHetHang() throws RemoteException {
 		model.setRowCount(0);
 		for (SanPham sanPham : sanPham_DAO.getSanPhamGanHetHang()) {
 			Object[] objects = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getSoLuongTon()};

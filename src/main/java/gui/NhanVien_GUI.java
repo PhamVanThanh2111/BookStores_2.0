@@ -9,10 +9,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
+import java.rmi.RemoteException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -86,10 +88,11 @@ public class NhanVien_GUI extends JPanel {
 
 	/**
 	 * Create the panel.
+	 * @throws RemoteException 
 	 * 
 	 * @throws SQLException
 	 */
-	public NhanVien_GUI() {
+	public NhanVien_GUI() throws RemoteException {
 
 		// khai bao DAO
 		nhanVien_DAO = new NhanVien_DAO();
@@ -255,38 +258,42 @@ public class NhanVien_GUI extends JPanel {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 				int row = table.getSelectedRow();
-				NhanVien nhanVien = nhanVien_DAO.getNhanVienTheoMa(model.getValueAt(row, 0).toString());
-				lblHinhAnh.setIcon(new ImageIcon(NhanVien_GUI.class.getResource(nhanVien.getHinhAnh())));
-				relativePath = nhanVien.getHinhAnh();
-				txtTenNhanVien.setText(nhanVien.getTenNhanVien());
-				lblChucVu.setText(nhanVien.getChucVu());
-				// hinh anh
-				txtSoDienThoai.setText(nhanVien.getSoDienThoai());
-				txtEmail.setText(nhanVien.getEmail());
-				lblMaNhanVienValue.setText(nhanVien.getMaNhanVien());
-				if (nhanVien.getChucVu().equals("Bán hàng"))
-					cbChucVu.setSelectedItem("Bán hàng");
-				else if (nhanVien.getChucVu().equals("Quản lý"))
-					cbChucVu.setSelectedItem("Quản lý");
-				else
-					cbChucVu.setSelectedIndex(-1);
-				if (nhanVien.getCa().getMaCa().equals("C01"))
-					cbCa.setSelectedItem("01");
-				else if (nhanVien.getCa().getMaCa().equals("C02"))
-					cbCa.setSelectedItem("02");
-				else
-					cbCa.setSelectedIndex(-1);
-				dateChooserNgaySinh.setDate(nhanVien.getNgaySinh());
-				txtcCCD.setText(nhanVien.getcCCD());
-				if (nhanVien.getGioiTinh().equals("Nam"))
-					cbGioiTinh.setSelectedItem("Nam");
-				else if (nhanVien.getGioiTinh().equals("Nữ"))
-					cbGioiTinh.setSelectedItem("Nữ");
-				else 
-					cbGioiTinh.setSelectedIndex(-1);
-				txtDiaChi.setText(nhanVien.getDiaChi());
+				NhanVien nhanVien;
+				try {
+					nhanVien = nhanVien_DAO.getNhanVienTheoMa(model.getValueAt(row, 0).toString());
+					lblHinhAnh.setIcon(new ImageIcon(NhanVien_GUI.class.getResource(nhanVien.getHinhAnh())));
+					relativePath = nhanVien.getHinhAnh();
+					txtTenNhanVien.setText(nhanVien.getTenNhanVien());
+					lblChucVu.setText(nhanVien.getChucVu());
+					// hinh anh
+					txtSoDienThoai.setText(nhanVien.getSoDienThoai());
+					txtEmail.setText(nhanVien.getEmail());
+					lblMaNhanVienValue.setText(nhanVien.getMaNhanVien());
+					if (nhanVien.getChucVu().equals("Bán hàng"))
+						cbChucVu.setSelectedItem("Bán hàng");
+					else if (nhanVien.getChucVu().equals("Quản lý"))
+						cbChucVu.setSelectedItem("Quản lý");
+					else
+						cbChucVu.setSelectedIndex(-1);
+					if (nhanVien.getCa().getMaCa().equals("C01"))
+						cbCa.setSelectedItem("01");
+					else if (nhanVien.getCa().getMaCa().equals("C02"))
+						cbCa.setSelectedItem("02");
+					else
+						cbCa.setSelectedIndex(-1);
+					dateChooserNgaySinh.setDate(nhanVien.getNgaySinh());
+					txtcCCD.setText(nhanVien.getcCCD());
+					if (nhanVien.getGioiTinh().equals("Nam"))
+						cbGioiTinh.setSelectedItem("Nam");
+					else if (nhanVien.getGioiTinh().equals("Nữ"))
+						cbGioiTinh.setSelectedItem("Nữ");
+					else 
+						cbGioiTinh.setSelectedIndex(-1);
+					txtDiaChi.setText(nhanVien.getDiaChi());
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		scrollPaneNV.setViewportView(table);
@@ -394,7 +401,11 @@ public class NhanVien_GUI extends JPanel {
 											
 										}
 										else {
-											add();
+											try {
+												add();
+											} catch (RemoteException e1) {
+												e1.printStackTrace();
+											}
 											disableEdit();
 											unfocusable();
 											btnThem.setText("Thêm");
@@ -433,7 +444,11 @@ public class NhanVien_GUI extends JPanel {
 												}
 											}
 											else {
-												update();
+												try {
+													update();
+												} catch (RemoteException e1) {
+													e1.printStackTrace();
+												}
 												btnSua.setText("Sửa");
 												btnXoa.setText("Xóa");
 												disableEdit();
@@ -456,9 +471,12 @@ public class NhanVien_GUI extends JPanel {
 
 											@Override
 											public void actionPerformed(ActionEvent e) {
-												// TODO Auto-generated method stub
 												if (btnXoa.getText().equals("Xóa")) {
-													delete();
+													try {
+														delete();
+													} catch (RemoteException e1) {
+														e1.printStackTrace();
+													}
 												}
 												else {
 													disableEdit();
@@ -484,10 +502,13 @@ public class NhanVien_GUI extends JPanel {
 											btnTim.addActionListener(new ActionListener() {
 												@Override
 												public void actionPerformed(ActionEvent e) {
-													// TODO Auto-generated method stub
 													// null cho lan dau chay va isClose cho nhung click sau
 													if (timNhanVien_GUI == null || timNhanVien_GUI.isClosed()) {
-														timNhanVien_GUI = new TimKiemNhanVien_GUI(ds);
+														try {
+															timNhanVien_GUI = new TimKiemNhanVien_GUI(ds);
+														} catch (RemoteException e1) {
+															e1.printStackTrace();
+														}
 														timNhanVien_GUI.addInternalFrameListener(new InternalFrameAdapter() {
 												            @Override
 												            public void internalFrameActivated(InternalFrameEvent e) {
@@ -534,8 +555,11 @@ public class NhanVien_GUI extends JPanel {
 												
 												@Override
 												public void actionPerformed(ActionEvent e) {
-													// TODO Auto-generated method stub
-													refresh();
+													try {
+														refresh();
+													} catch (RemoteException e1) {
+														e1.printStackTrace();
+													}
 												}
 											});
 											pDanhSach.add(btnLamMoi);
@@ -670,7 +694,7 @@ public class NhanVien_GUI extends JPanel {
 		unfocusable();
 	}
 
-	public void loadData(ArrayList<NhanVien> nhanViens) {
+	public void loadData(List<NhanVien> nhanViens) {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		model.setRowCount(0);
 		for (NhanVien nhanVien : nhanViens) {
@@ -682,12 +706,12 @@ public class NhanVien_GUI extends JPanel {
 		}
 	}
 
-	private void refresh() {
+	private void refresh() throws RemoteException {
 		loadData(nhanVien_DAO.getAllNhanVien());
 	}
 
 	@SuppressWarnings("deprecation")
-	private boolean add() {
+	private boolean add() throws RemoteException {
 		if (kiemTraRong()) {
 			JOptionPane.showMessageDialog(null, "Bạn phải điền đầy đủ thông tin!");
 			xoaTrang();
@@ -837,7 +861,7 @@ public class NhanVien_GUI extends JPanel {
 		return false;
 	}
 	
-	private boolean delete() {
+	private boolean delete() throws RemoteException {
 		int row = table.getSelectedRow();
 		if (row == -1) {
 			JOptionPane.showInternalMessageDialog(null, "Bạn phải chọn nhân viên cần xóa!");
@@ -866,7 +890,7 @@ public class NhanVien_GUI extends JPanel {
 		}
 	}
 	@SuppressWarnings("deprecation")
-	private boolean update() {
+	private boolean update() throws RemoteException {
 		if (kiemTraRong()) {
 			JOptionPane.showMessageDialog(null, "Bạn phải điền đầy đủ thông tin!");
 			return false;
@@ -952,27 +976,21 @@ public class NhanVien_GUI extends JPanel {
 						"Bạn có chắc muốn sửa nhân viên '" + model.getValueAt(row, 0) + "' chứ?", "Sửa?",
 						JOptionPane.YES_NO_OPTION);
 				if (option == JOptionPane.YES_OPTION) {
-					try {
-						TaiKhoan taiKhoan = nhanVien_DAO.getNhanVienTheoMa(model.getValueAt(row, 0).toString())
-								.getTaiKhoan();
-						Date ngayVaoLam = nhanVien_DAO.getNhanVienTheoMa(model.getValueAt(row, 0).toString())
-								.getNgayVaoLam();
-						Date ngaySinh = nhanVien_DAO.getNhanVienTheoMa(model.getValueAt(row, 0).toString()).getNgaySinh();
+					TaiKhoan taiKhoan = nhanVien_DAO.getNhanVienTheoMa(model.getValueAt(row, 0).toString())
+							.getTaiKhoan();
+					Date ngayVaoLam = nhanVien_DAO.getNhanVienTheoMa(model.getValueAt(row, 0).toString())
+							.getNgayVaoLam();
+					Date ngaySinh = nhanVien_DAO.getNhanVienTheoMa(model.getValueAt(row, 0).toString()).getNgaySinh();
 //						NhanVien nhanVien = new NhanVien(lblMaNhanVienValue.getText(), txtTenNhanVien.getText(), txtDiaChi.getText(),
 //								cbGioiTinh.getSelectedItem().toString(), ngaySinh, ngayVaoLam, txtcCCD.getText(),
 //								txtEmail.getText(), txtSoDienThoai.getText(), cbChucVu.getSelectedItem().toString(),
 //								taiKhoan, "C" + cbCa.getSelectedItem(), relativePath);
-						// tam thoi
-						NhanVien nhanVien = new NhanVien();
-						nhanVien_DAO.suaNhanVien(nhanVien);
-						JOptionPane.showMessageDialog(null, "Sửa thành công nhân viên '" + model.getValueAt(row, 0) + "'!");
-						refresh();
-						return true;
-					} catch (SQLException e1) {
-						JOptionPane.showMessageDialog(null,
-								"Sửa nhân viên '\" + model.getValueAt(row, 0) + \"' không thành công!");
-						return false;
-					}
+					// tam thoi
+					NhanVien nhanVien = new NhanVien();
+					nhanVien_DAO.suaNhanVien(nhanVien);
+					JOptionPane.showMessageDialog(null, "Sửa thành công nhân viên '" + model.getValueAt(row, 0) + "'!");
+					refresh();
+					return true;
 				} else {
 					return false;
 				}

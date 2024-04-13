@@ -27,8 +27,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -37,9 +39,11 @@ import javax.swing.table.JTableHeader;
 
 import org.apache.poi.ss.usermodel.CellType;
 
+import dao.DungCuHocTap_DAO;
 import dao.NhaCungCap_DAO;
 import dao.PhatSinhMa_DAO;
 import dao.SanPham_DAO;
+import entity.DungCuHocTap;
 import entity.NhaCungCap;
 import entity.NhanVien;
 import entity.SanPham;
@@ -67,12 +71,13 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 	private PhatSinhMa_DAO phatSinhMa_DAO;
 	private JTextField txtXuatXu;
 	private NhaCungCap_DAO nhaCC_DAO;
+	private DungCuHocTap_DAO dungCuHocTap_DAO;
 	private NhaCungCap nhacc;
 	private JFileChooser fileChooser;
 	private File selectedFile;
 	private String relativePath;
 	private JLabel lblHinhAnh;
-	private ArrayList<SanPham> ds;
+	private List<DungCuHocTap> ds;
 	private JButton btnTim;
 	private JDesktopPane desktopPane;
 	private TimKiemDungCuHoctap timKiemDungCuHoctap;
@@ -86,14 +91,17 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 
 	/**
 	 * Create the panel.
+	 * @throws RemoteException 
 	 */
-	public DungCuHocTap_GUI(NhanVien nhanVien) {
+	public DungCuHocTap_GUI(NhanVien nhanVien) throws RemoteException {
 
 		// khai bao DAO
 		sanPham_DAO = new SanPham_DAO();
 		phatSinhMa_DAO = new PhatSinhMa_DAO();
 		nhaCC_DAO = new NhaCungCap_DAO();
-		ds = new ArrayList<SanPham>();
+		dungCuHocTap_DAO = new DungCuHocTap_DAO(); 
+		
+		ds = new ArrayList<DungCuHocTap>();
 
 		setLayout(null);
 
@@ -381,16 +389,21 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 			public void mouseClicked(MouseEvent e) {
 
 				int r = table.getSelectedRow();
-				SanPham dungCuHocTap = sanPham_DAO.getSanPhamTheoMaSanPham((String) model.getValueAt(r, 0).toString());
-				txtmaDCHT.setText((String) model.getValueAt(r, 0));
-				txttenDCHT.setText((String) model.getValueAt(r, 1));
-				txtXuatXu.setText((String) model.getValueAt(r, 2));
-				txtgiaNhap.setText((String) model.getValueAt(r, 3).toString());
-				txtgiaBan.setText((String) model.getValueAt(r, 4).toString());
-				txtsoLuong.setText((String) model.getValueAt(r, 5).toString());
-				cbNhaCC.setSelectedItem((String) model.getValueAt(r, 6));
-				lblHinhAnh.setIcon(new ImageIcon(DungCuHocTap_GUI.class.getResource(dungCuHocTap.getHinhAnh())));
-				relativePath = dungCuHocTap.getHinhAnh();
+				SanPham dungCuHocTap;
+				try {
+					dungCuHocTap = sanPham_DAO.getSanPhamTheoMa((String) model.getValueAt(r, 0).toString());
+					txtmaDCHT.setText((String) model.getValueAt(r, 0));
+					txttenDCHT.setText((String) model.getValueAt(r, 1));
+					txtXuatXu.setText((String) model.getValueAt(r, 2));
+					txtgiaNhap.setText((String) model.getValueAt(r, 3).toString());
+					txtgiaBan.setText((String) model.getValueAt(r, 4).toString());
+					txtsoLuong.setText((String) model.getValueAt(r, 5).toString());
+					cbNhaCC.setSelectedItem((String) model.getValueAt(r, 6));
+					lblHinhAnh.setIcon(new ImageIcon(DungCuHocTap_GUI.class.getResource(dungCuHocTap.getHinhAnh())));
+					relativePath = dungCuHocTap.getHinhAnh();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		;
@@ -411,13 +424,13 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 		closeText();
 	}
 
-	public DungCuHocTap_GUI() {
+	public DungCuHocTap_GUI() throws RemoteException {
 
 		// khai bao DAO
 		sanPham_DAO = new SanPham_DAO();
 		phatSinhMa_DAO = new PhatSinhMa_DAO();
 		nhaCC_DAO = new NhaCungCap_DAO();
-		ds = new ArrayList<SanPham>();
+		ds = new ArrayList<DungCuHocTap>();
 
 		setLayout(null);
 
@@ -576,7 +589,11 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				if (timKiemDungCuHoctap == null || timKiemDungCuHoctap.isClosed()) {
-					timKiemDungCuHoctap = new TimKiemDungCuHoctap(ds);
+					try {
+						timKiemDungCuHoctap = new TimKiemDungCuHoctap(ds);
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					timKiemDungCuHoctap.addInternalFrameListener(new InternalFrameAdapter() {
 						@Override
 						public void internalFrameActivated(InternalFrameEvent e) {
@@ -690,21 +707,25 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 			public void mouseClicked(MouseEvent e) {
 
 				int r = table.getSelectedRow();
-				SanPham dungCuHocTap = sanPham_DAO.getSanPhamTheoMaSanPham((String) model.getValueAt(r, 0).toString());
-				txtmaDCHT.setText((String) model.getValueAt(r, 0));
-				txttenDCHT.setText((String) model.getValueAt(r, 1));
-				txtXuatXu.setText((String) model.getValueAt(r, 2));
-				txtgiaBan.setText((String) model.getValueAt(r, 3).toString());
-				txtsoLuong.setText((String) model.getValueAt(r, 4).toString());
-				cbNhaCC.setSelectedItem((String) model.getValueAt(r, 5));
-				lblHinhAnh.setIcon(new ImageIcon(DungCuHocTap_GUI.class.getResource(dungCuHocTap.getHinhAnh())));
-				relativePath = dungCuHocTap.getHinhAnh();
+				SanPham dungCuHocTap;
+				try {
+					dungCuHocTap = sanPham_DAO.getSanPhamTheoMa((String) model.getValueAt(r, 0).toString());
+					txtmaDCHT.setText((String) model.getValueAt(r, 0));
+					txttenDCHT.setText((String) model.getValueAt(r, 1));
+					txtXuatXu.setText((String) model.getValueAt(r, 2));
+					txtgiaBan.setText((String) model.getValueAt(r, 3).toString());
+					txtsoLuong.setText((String) model.getValueAt(r, 4).toString());
+					cbNhaCC.setSelectedItem((String) model.getValueAt(r, 5));
+					lblHinhAnh.setIcon(new ImageIcon(DungCuHocTap_GUI.class.getResource(dungCuHocTap.getHinhAnh())));
+					relativePath = dungCuHocTap.getHinhAnh();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
-		;
 	}
 
-	public void loadData(ArrayList<SanPham> ds) {
+	public void loadData(List<DungCuHocTap> ds) {
 		// Xóa dữ liệu cũ trước khi nạp dữ liệu mới
 		model.setRowCount(0);
 
@@ -757,8 +778,12 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 		lblHinhAnh.removeAll();
 	}
 
-	public void refresh() {
-		loadData(sanPham_DAO.getAllDungCuHocTap());
+	public void refresh() throws RemoteException {
+		try {
+			loadData(dungCuHocTap_DAO.getAllDungCuHocTap());
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void closeText() {
@@ -901,7 +926,7 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 		return false;
 	}
 
-	private void ghiFileExcel(ArrayList<SanPham> ds) {
+	private void ghiFileExcel(List<DungCuHocTap> ds) {
 		fileChooser = new JFileChooser();
 		int userSelection = fileChooser.showSaveDialog(this);
 		if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -967,7 +992,7 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 					cell.setCellValue(ds.get(i).getGiaBan());
 
 					cell = row.createCell(7, CellType.STRING);
-//					cell.setCellValue(ds.get(i).getMaNhaCungCap());
+					cell.setCellValue(ds.get(i).getNhaCungCap().getMaNCC());
 				}
 				FileOutputStream fis = new FileOutputStream(excelFilePath);
 				wordkbook.write(fis);
@@ -1035,7 +1060,11 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 							btnDelete.setText("Xóa");
 							btnUpdate.setEnabled(true);
 							closeText();
-							loadData(sanPham_DAO.getAllDungCuHocTap());
+							try {
+								loadData(dungCuHocTap_DAO.getAllDungCuHocTap());
+							} catch (RemoteException e1) {
+								e1.printStackTrace();
+							}
 						}
 					}
 				}
@@ -1060,8 +1089,8 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 							btnDelete.setText("Xóa");
 							try {
 								suaDCHT();
-								loadData(sanPham_DAO.getAllDungCuHocTap());
-							} catch (SQLException e1) {
+								loadData(dungCuHocTap_DAO.getAllDungCuHocTap());
+							} catch (SQLException | RemoteException e1) {
 								e1.printStackTrace();
 							}
 						}
@@ -1098,7 +1127,11 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 								btnUpdate.setEnabled(false);
 								btnlamMoi.setEnabled(false);
 								if (timKiemDungCuHoctap == null || timKiemDungCuHoctap.isClosed()) {
-									timKiemDungCuHoctap = new TimKiemDungCuHoctap(ds);
+									try {
+										timKiemDungCuHoctap = new TimKiemDungCuHoctap(ds);
+									} catch (RemoteException e1) {
+										e1.printStackTrace();
+									}
 									timKiemDungCuHoctap.addInternalFrameListener(new InternalFrameAdapter() {
 										@Override
 										public void internalFrameActivated(InternalFrameEvent e) {
@@ -1138,7 +1171,11 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 									btnlamMoi.setEnabled(false);
 									btnTim.setEnabled(false);
 									if (khoiPhucDuLieu == null || khoiPhucDuLieu.isClosed()) {
-										khoiPhucDuLieu = new KhoiPhucDungCuHocTap_GUI(ds);
+										try {
+											khoiPhucDuLieu = new KhoiPhucDungCuHocTap_GUI(ds);
+										} catch (RemoteException e1) {
+											e1.printStackTrace();
+										}
 										khoiPhucDuLieu.addInternalFrameListener(new InternalFrameAdapter() {
 											@Override
 											public void internalFrameActivated(InternalFrameEvent e) {
@@ -1172,7 +1209,11 @@ public class DungCuHocTap_GUI extends JPanel implements ActionListener {
 									}
 								} else {
 									if (o.equals(btnXuatFile)) {
-										ghiFileExcel(sanPham_DAO.getAllDungCuHocTap());
+										try {
+											ghiFileExcel(dungCuHocTap_DAO.getAllDungCuHocTap());
+										} catch (RemoteException e1) {
+											e1.printStackTrace();
+										}
 									}
 								}
 							}

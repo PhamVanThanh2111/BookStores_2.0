@@ -8,9 +8,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import dao.impl.HoaDon_Impl;
 import entity.HoaDon;
+import entity.KhachHang;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
@@ -66,13 +68,11 @@ public class HoaDon_DAO implements HoaDon_Impl {
     public List<HoaDon> getHoaDonsNhieuTienNhat() {
         return em.createNamedQuery("getHoaDonsNhieuTienNhat", HoaDon.class).getResultList();
     }
-    // thống kê top khách hàng mua nhiều nhất
-    public ResultSet getDanhSachKhachHangMuaNhieuNhat() {
-        return null;
-    }
+
 
     // thống kê danh sách các sản phẩm bán chạy nhất
     public ResultSet getDanhSachSanPhamBanChay() {
+    	
         return null;
     }
 

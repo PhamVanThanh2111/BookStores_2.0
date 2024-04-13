@@ -5,9 +5,11 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import dao.NhaXuatBan_DAO;
+import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import dao.TheLoaiSach_DAO;
 import entity.NhaXuatBan;
+import entity.Sach;
 import entity.SanPham;
 import entity.TheLoaiSach;
 
@@ -24,7 +26,9 @@ import javax.swing.JFrame;
 
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -47,26 +51,29 @@ public class TimKiemSach_GUI extends JInternalFrame {
 
 	private JComboBox<String> cmbTheLoaiSach;
 	private JComboBox<String> cmbNhaXuatBan;
-	private ArrayList<SanPham> ds;
+	private List<Sach> ds;
 
 	private SanPham_DAO sanPham_DAO;
 	private NhaXuatBan_DAO nhaXuatBan_DAO;
 	private TheLoaiSach_DAO theLoaiSach_DAO;
+	private Sach_DAO sach_DAO;
 
 	private JButton btnTim;
 	private JButton btnquayLai;
 
 	/**
 	 * Create the frame.
+	 * @throws RemoteException 
 	 */
-	public TimKiemSach_GUI(ArrayList<SanPham> ds) {
+	public TimKiemSach_GUI(List<Sach> ds2) throws RemoteException {
 
 		// khai bao DAO
 		sanPham_DAO = new SanPham_DAO();
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
+		sach_DAO = new Sach_DAO();
 
-		this.ds = ds;
+		this.ds = ds2;
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1242, 481);
@@ -230,7 +237,11 @@ public class TimKiemSach_GUI extends JInternalFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				loadAll();
+				try {
+					loadAll();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 				try {
 					setClosed(true);
 				} catch (PropertyVetoException e1) {
@@ -317,72 +328,77 @@ public class TimKiemSach_GUI extends JInternalFrame {
 	}
 
 	public void searchSach() {
-		for (SanPham sanPham : sanPham_DAO.getAllSach()) {
-			boolean thoaMan = false;
+		try {
+			for (Sach sach : sach_DAO.getAllSach()) {
+				boolean thoaMan = false;
 
-			if (!txtMaSach.getText().isEmpty()) {
-				if (sanPham.getMaSanPham().equalsIgnoreCase(txtMaSach.getText())) {
-					thoaMan = true;
+				if (!txtMaSach.getText().isEmpty()) {
+					if (sach.getMaSanPham().equalsIgnoreCase(txtMaSach.getText())) {
+						thoaMan = true;
+					}
 				}
-			}
-			// toLowerCase() chuyển đổi tất cả các ký tự trong một chuỗi thành chữ thường.
-			if (!txtTenSach.getText().isEmpty()) {
-				if (sanPham.getTenSanPham().toLowerCase().contains(txtTenSach.getText().toLowerCase())) {
-					thoaMan = true;
+				// toLowerCase() chuyển đổi tất cả các ký tự trong một chuỗi thành chữ thường.
+				if (!txtTenSach.getText().isEmpty()) {
+					if (sach.getTenSanPham().toLowerCase().contains(txtTenSach.getText().toLowerCase())) {
+						thoaMan = true;
+					}
 				}
-			}
-			if (!txtXuatXu.getText().isEmpty()) {
-				if (sanPham.getTenSanPham().toLowerCase().contains(txtXuatXu.getText().toLowerCase())) {
-					thoaMan = true;
+				if (!txtXuatXu.getText().isEmpty()) {
+					if (sach.getTenSanPham().toLowerCase().contains(txtXuatXu.getText().toLowerCase())) {
+						thoaMan = true;
+					}
 				}
-			}
-			if (!txtTacGia.getText().isEmpty()) {
-				if (sanPham.getTenSanPham().toLowerCase().contains(txtTacGia.getText().toLowerCase())) {
-					thoaMan = true;
+				if (!txtTacGia.getText().isEmpty()) {
+					if (sach.getTenSanPham().toLowerCase().contains(txtTacGia.getText().toLowerCase())) {
+						thoaMan = true;
+					}
 				}
-			}
-			if (cmbTheLoaiSach.getSelectedIndex() != -1) {
+				if (cmbTheLoaiSach.getSelectedIndex() != -1) {
 //				TheLoaiSach theLoaiSach = theLoaiSach_DAO
 //						.getTheLoaiSachTheoTen(cmbTheLoaiSach.getSelectedItem().toString());
 //				if (theLoaiSach.getMaTheLoaiSach().equals(sanPham.getMaTheLoaiSach())) {
 //					thoaMan = true;
 //				}
-			}
-			if (cmbNhaXuatBan.getSelectedIndex() != -1) {
+				}
+				if (cmbNhaXuatBan.getSelectedIndex() != -1) {
 //				NhaXuatBan nhaXuatBan = nhaXuatBan_DAO.getnhaXuatBanTheoTen(cmbNhaXuatBan.getSelectedItem().toString());
 //				if (nhaXuatBan.getMaNhaXuatBan().equals(sanPham.getMaNXB())) {
 //					thoaMan = true;
 //				}
-			}
-			if (!txtGiaNhap.getText().isEmpty()) {
-				if (sanPham.getGiaNhap() == Float.parseFloat(txtGiaNhap.getText())) {
-					thoaMan = true;
 				}
-			}
-			if (!txtGiaBan.getText().isEmpty()) {
-				if (sanPham.getGiaBan() == Float.parseFloat(txtGiaBan.getText())) {
-					thoaMan = true;
+				if (!txtGiaNhap.getText().isEmpty()) {
+					if (sach.getGiaNhap() == Float.parseFloat(txtGiaNhap.getText())) {
+						thoaMan = true;
+					}
 				}
-			}
-			if (!txtSoTrang.getText().isEmpty()) {
+				if (!txtGiaBan.getText().isEmpty()) {
+					if (sach.getGiaBan() == Float.parseFloat(txtGiaBan.getText())) {
+						thoaMan = true;
+					}
+				}
+				if (!txtSoTrang.getText().isEmpty()) {
 //				if (sanPham.getSoTrang() == Integer.parseInt(txtSoTrang.getText())) {
 //					thoaMan = true;
 //				}
-			}
-			if (!txtSoLuong.getText().isEmpty()) {
-				if (sanPham.getSoLuongTon() == Integer.parseInt(txtSoLuong.getText())) {
-					thoaMan = true;
 				}
-			}
-			if (!txtNamXuatBan.getText().isEmpty()) {
-				if (sanPham.getSoLuongTon() == Integer.parseInt(txtNamXuatBan.getText())) {
-					thoaMan = true;
+				if (!txtSoLuong.getText().isEmpty()) {
+					if (sach.getSoLuongTon() == Integer.parseInt(txtSoLuong.getText())) {
+						thoaMan = true;
+					}
 				}
-			}
+				if (!txtNamXuatBan.getText().isEmpty()) {
+					if (sach.getSoLuongTon() == Integer.parseInt(txtNamXuatBan.getText())) {
+						thoaMan = true;
+					}
+				}
 
-			if (thoaMan) {
-				ds.add(sanPham);
+				if (thoaMan) {
+					ds.add(sach);
+				}
 			}
+		} catch (NumberFormatException | RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
@@ -395,16 +411,16 @@ public class TimKiemSach_GUI extends JInternalFrame {
 	}
 
 	// load cbTenTheLoaiSachs
-	private void loadDataIntoComboboxTenLoaiSach() {
+	private void loadDataIntoComboboxTenLoaiSach() throws RemoteException {
 		cmbTheLoaiSach.removeAllItems();
 		for (TheLoaiSach theLoaiSach : theLoaiSach_DAO.getAllTheLoaiSach()) {
 			cmbTheLoaiSach.addItem(theLoaiSach.getTenTheLoaiSach());
 		}
 	}
 
-	public void loadAll() {
-		for (SanPham sanPham : sanPham_DAO.getAllSach()) {
-			ds.add(sanPham);
+	public void loadAll() throws RemoteException {
+		for (Sach sach : sach_DAO.getAllSach()) {
+			ds.add(sach);
 		}
 	}
 }

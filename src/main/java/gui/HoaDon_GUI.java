@@ -14,14 +14,18 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import connect.ConnectDB;
 import dao.ChiTietHoaDon_DAO;
+import dao.DungCuHocTap_DAO;
 import dao.HoaDon_DAO;
 import dao.KhachHang_DAO;
 import dao.PhatSinhMa_DAO;
+import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import entity.ChiTietHoaDon;
+import entity.DungCuHocTap;
 import entity.HoaDon;
 import entity.KhachHang;
 import entity.NhanVien;
+import entity.Sach;
 import entity.SanPham;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -44,6 +48,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -74,6 +79,8 @@ public class HoaDon_GUI extends JPanel {
 	private HoaDon_DAO hoaDon_DAO;
 	private ChiTietHoaDon_DAO chiTietHoaDon_DAO;
 	private PhatSinhMa_DAO phatSinhMa_DAO;
+	private DungCuHocTap_DAO dungCuHocTap_DAO;
+	private Sach_DAO sach_DAO;
 	private JTextField txtMaSanPham;
 	private DanhSachHoaDon_GUI danhSachHoaDon_GUI;
 	private ThongKe_GUI thongKe_GUI;
@@ -82,8 +89,9 @@ public class HoaDon_GUI extends JPanel {
 	
 	/**
 	 * Create the panel.
+	 * @throws RemoteException 
 	 */
-	public HoaDon_GUI(NhanVien nhanVien, DanhSachHoaDon_GUI danhSachHoaDon_GUI, ThongKe_GUI thongKe_GUI, TrangChu_GUI trangChu_GUI) {
+	public HoaDon_GUI(NhanVien nhanVien, DanhSachHoaDon_GUI danhSachHoaDon_GUI, ThongKe_GUI thongKe_GUI, TrangChu_GUI trangChu_GUI) throws RemoteException {
 		this.danhSachHoaDon_GUI = danhSachHoaDon_GUI;
 		this.thongKe_GUI = thongKe_GUI;
 		this.trangChu_GUI = trangChu_GUI;
@@ -95,6 +103,8 @@ public class HoaDon_GUI extends JPanel {
 		hoaDon_DAO = new HoaDon_DAO();
 		chiTietHoaDon_DAO = new ChiTietHoaDon_DAO();
 		phatSinhMa_DAO = new PhatSinhMa_DAO();
+		dungCuHocTap_DAO = new DungCuHocTap_DAO();
+		sach_DAO = new Sach_DAO();
 
 		// connect
 		ConnectDB.getInstance();
@@ -165,7 +175,11 @@ public class HoaDon_GUI extends JPanel {
 						lamMoi();
 					}
 					else {
-						khachHang = khachHang_DAO.getKhachHangTheoSoDienThoai(txtSoDienThoai.getText());
+						try {
+							khachHang = khachHang_DAO.getKhachHangTheoSoDienThoai(txtSoDienThoai.getText());
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
 						if (khachHang.getMaKhachHang() == null) {
 							JOptionPane.showMessageDialog(null, "Không tìm thấy khách hàng này!");
 							lamMoi();
@@ -262,10 +276,18 @@ public class HoaDon_GUI extends JPanel {
 				else {
 					cbLoaiSP.setSelectedIndex(1);
 				}
-				loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+				try {
+					loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 				cbTenSP.setSelectedItem(model.getValueAt(row, 0));
 				txtSoLuong.setText(model.getValueAt(row, 2).toString());
-				txtConLai.setText((sanPham_DAO.getSanPhamTheoTenSanPham(cbTenSP.getSelectedItem().toString()).getSoLuongTon() - Integer.parseInt(txtSoLuong.getText())) + "");
+				try {
+					txtConLai.setText((sanPham_DAO.getSanPhamTheoTen(cbTenSP.getSelectedItem().toString()).getSoLuongTon() - Integer.parseInt(txtSoLuong.getText())) + "");
+				} catch (NumberFormatException | RemoteException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		scrollPane.setViewportView(table);
@@ -317,7 +339,7 @@ public class HoaDon_GUI extends JPanel {
 					try {
 						try {
 							lapHoaDon(nhanVien.getMaNhanVien());
-						} catch (JRException e1) {
+						} catch (JRException | RemoteException e1) {
 							e1.printStackTrace();
 						}
 						
@@ -367,9 +389,12 @@ public class HoaDon_GUI extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (cbLoaiSP.getSelectedIndex() != -1) {
-					loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+					try {
+						loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					cbTenSP.setEnabled(true);
 				}
 				else {
@@ -389,9 +414,12 @@ public class HoaDon_GUI extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (cbTenSP.getSelectedIndex() != -1) {
-					sanPham = sanPham_DAO.getSanPhamTheoTenSanPham(cbTenSP.getSelectedItem().toString());
+					try {
+						sanPham = sanPham_DAO.getSanPhamTheoTen(cbTenSP.getSelectedItem().toString());
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					txtConLai.setText(sanPham.getSoLuongTon() + "");
 					txtMaSanPham.setText(sanPham.getMaSanPham());
 					txtSoLuong.setEnabled(true);
@@ -530,32 +558,36 @@ public class HoaDon_GUI extends JPanel {
 					JOptionPane.showMessageDialog(null, "Bạn phải chọn sản phẩm cần sửa!");
 				}
 				else {
-					SanPham sanPham = sanPham_DAO.getSanPhamTheoMaSanPham(txtMaSanPham.getText());
-					if (sanPham.getSoLuongTon() < Integer.parseInt(txtSoLuong.getText())) {
-						JOptionPane.showMessageDialog(null, "Không đủ sản phẩm!");
-					}
-					else {
-						model.setValueAt(cbTenSP.getSelectedItem().toString(), row, 0);
-						model.setValueAt(cbLoaiSP.getSelectedItem().toString(), row, 1);
-						try {
-							if (Integer.parseInt(txtSoLuong.getText()) <= 0) {
-								JOptionPane.showMessageDialog(null, "Số lượng phải lớn hơn không!");
-							}
-							else if (model.getValueAt(row, 2).toString().equals(txtSoLuong.getText())) {
-								JOptionPane.showMessageDialog(null, "Bạn chưa thay đổi số lượng!");
-							}
-							else {
-								model.setValueAt(txtSoLuong.getText(), row, 2);
-								txtConLai.setText(sanPham.getSoLuongTon() - Integer.parseInt(txtSoLuong.getText()) + "");
-							}
-							model.setValueAt(sanPham.getGiaBan(), row, 3);
-							model.setValueAt(Integer.parseInt(txtSoLuong.getText()) * sanPham.getGiaBan(), row, 4);
-							lblTongTienValue.setText(tinhThanhTien() + " VND");
-						} catch (Exception e2) {
-							JOptionPane.showMessageDialog(null, "Số lượng phải là số!");
+					SanPham sanPham;
+					try {
+						sanPham = sanPham_DAO.getSanPhamTheoMa(txtMaSanPham.getText());
+						if (sanPham.getSoLuongTon() < Integer.parseInt(txtSoLuong.getText())) {
+							JOptionPane.showMessageDialog(null, "Không đủ sản phẩm!");
 						}
+						else {
+							model.setValueAt(cbTenSP.getSelectedItem().toString(), row, 0);
+							model.setValueAt(cbLoaiSP.getSelectedItem().toString(), row, 1);
+							try {
+								if (Integer.parseInt(txtSoLuong.getText()) <= 0) {
+									JOptionPane.showMessageDialog(null, "Số lượng phải lớn hơn không!");
+								}
+								else if (model.getValueAt(row, 2).toString().equals(txtSoLuong.getText())) {
+									JOptionPane.showMessageDialog(null, "Bạn chưa thay đổi số lượng!");
+								}
+								else {
+									model.setValueAt(txtSoLuong.getText(), row, 2);
+									txtConLai.setText(sanPham.getSoLuongTon() - Integer.parseInt(txtSoLuong.getText()) + "");
+								}
+								model.setValueAt(sanPham.getGiaBan(), row, 3);
+								model.setValueAt(Integer.parseInt(txtSoLuong.getText()) * sanPham.getGiaBan(), row, 4);
+								lblTongTienValue.setText(tinhThanhTien() + " VND");
+							} catch (Exception e2) {
+								JOptionPane.showMessageDialog(null, "Số lượng phải là số!");
+							}
+						}
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
 					}
-					
 				}
 			}
 		});
@@ -571,7 +603,11 @@ public class HoaDon_GUI extends JPanel {
 						lamMoiThongTinSanPham();
 					}
 					else {
-						sanPham = sanPham_DAO.getSanPhamTheoMaSanPham(txtMaSanPham.getText());
+						try {
+							sanPham = sanPham_DAO.getSanPhamTheoMa(txtMaSanPham.getText());
+						} catch (RemoteException e1) {
+							e1.printStackTrace();
+						}
 						String tenSanPham = sanPham.getTenSanPham();
 						int soLuongTon = sanPham.getSoLuongTon();
 						if (sanPham.getMaSanPham() == null) {
@@ -611,7 +647,11 @@ public class HoaDon_GUI extends JPanel {
 					String searchText = txtSearchSanPham.getText().toLowerCase();
 					if (searchText.isEmpty()) {
 	                    // If search text is empty, show all items
-	                    loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+	                    try {
+							loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+						} catch (RemoteException e1) {
+							e1.printStackTrace();
+						}
 	                } else {
 	                    // Filter items based on the search text
 	                    ArrayList<String> filteredItems = new ArrayList<>();
@@ -638,15 +678,15 @@ public class HoaDon_GUI extends JPanel {
 	}
 
 	// load data ten sach vao combobox
-	private void loadDataIntoComboboxTenSP(String loaiSanPham) {
+	private void loadDataIntoComboboxTenSP(String loaiSanPham) throws RemoteException {
 		cbTenSP.removeAllItems();
 		if (loaiSanPham.equals("Sách")) {
-			for (SanPham sanPham : sanPham_DAO.getAllSach()) {
+			for (Sach sanPham : sach_DAO.getAllSach()) {
 				cbTenSP.addItem(sanPham.getTenSanPham());
 			}
 		}
 		else {
-			for (SanPham sanPham : sanPham_DAO.getAllDungCuHocTap()) {
+			for (DungCuHocTap dungCuHocTap : dungCuHocTap_DAO.getAllDungCuHocTap()) {
 				cbTenSP.addItem(sanPham.getTenSanPham());
 			}
 		}
@@ -674,7 +714,7 @@ public class HoaDon_GUI extends JPanel {
 		return false;
 	}
 	
-	private void lapHoaDon(String maNhanVien) throws SQLException, JRException {
+	private void lapHoaDon(String maNhanVien) throws SQLException, JRException, RemoteException {
 		HoaDon hoaDon = new HoaDon();
 		String maHoaDon = phatSinhMa_DAO.getMaHoaDon();
 		if (khachHang != null) {
@@ -687,16 +727,16 @@ public class HoaDon_GUI extends JPanel {
 //		hoaDon.setNhanVien();
 		hoaDon.setNgayLap(new java.sql.Date(new Date().getTime()));
 		hoaDon.setThanhTien(tinhThanhTien());
-		hoaDon_DAO.lapHoaDon(hoaDon);
+//		hoaDon_DAO.lapHoaDon(hoaDon);
 		for (int i = 0; i < model.getRowCount(); i++) {
-			String maSanPham = sanPham_DAO.getSanPhamTheoTenSanPham(model.getValueAt(i, 0).toString()).getMaSanPham();
+			String maSanPham = sanPham_DAO.getSanPhamTheoTen(model.getValueAt(i, 0).toString()).getMaSanPham();
 			int soLuong = Integer.parseInt(model.getValueAt(i, 2).toString());
 			ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
 //			chiTietHoaDon.setMaHoaDon(maHoaDon);
 //			chiTietHoaDon.setMaSanPham(maSanPham);
 			chiTietHoaDon.setSoLuong(soLuong);
 			chiTietHoaDon.setDonGia(Float.parseFloat(model.getValueAt(i, 3).toString()));
-			chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
+//			chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
 			sanPham_DAO.banSanPham(maSanPham, soLuong);
 		}
 		xemHoaDon(maHoaDon);

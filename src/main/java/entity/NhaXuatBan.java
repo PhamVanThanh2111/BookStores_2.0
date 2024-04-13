@@ -14,10 +14,17 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "NhaXuatBan")
+<<<<<<< HEAD
 @NamedQueries({ @NamedQuery(name = "getAllNhaXuatBan", query = "SELECT nxb FROM NhaXuatBan nxb"),
 		@NamedQuery(name = "getNhaXuatBanTheoTen", query = "SELECT nxb FROM NhaXuatBan nxb WHERE nxb.tenNhaXuatBan LIKE :tenNhaXuatBan"),
 		@NamedQuery(name = "getNhaXuatBanTheoDiaChi", query = "SELECT nxb FROM NhaXuatBan nxb WHERE nxb.diaChi LIKE :diaChi"),
 		@NamedQuery(name = "getNhaXuatBanTheoSoDienThoai", query = "SELECT nxb FROM NhaXuatBan nxb WHERE nxb.soDienThoai = :soDienThoai") })
+=======
+@NamedQueries({
+	@NamedQuery(name = "getAllNhaXuatBan", query = "SELECT nxb FROM NhaXuatBan nxb"),
+
+})
+>>>>>>> c4d3f00986feccf699e3fb559ba19768c7f0a59d
 public class NhaXuatBan implements Serializable {
 	private static final long serialVersionUID = 1L;
 

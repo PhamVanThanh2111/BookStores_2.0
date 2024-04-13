@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 import dao.NhaXuatBan_DAO;
+import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import dao.TheLoaiSach_DAO;
 import entity.Sach;
@@ -24,8 +25,10 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class KhoiPhucSach_GUI extends JInternalFrame {
 	/**
@@ -40,7 +43,7 @@ public class KhoiPhucSach_GUI extends JInternalFrame {
 	private SanPham_DAO sanPham_DAO;
 	private NhaXuatBan_DAO nhaXuatBan_DAO;
 	private TheLoaiSach_DAO theLoaiSach_DAO;
-	
+	private Sach_DAO sach_DAO;
 	private JScrollPane scrollPaneSach;
 	
 	private JButton btnKhoiPhuc;
@@ -49,17 +52,19 @@ public class KhoiPhucSach_GUI extends JInternalFrame {
 	
 	private JTable table;
 	
-	private ArrayList<SanPham> ds;
+	private List<Sach> ds;
 	
 
 	/**
 	 * Create the frame.
+	 * @throws RemoteException 
 	 */
-	public KhoiPhucSach_GUI(ArrayList<SanPham> ds ) {
+	public KhoiPhucSach_GUI(List<Sach> ds) throws RemoteException {
 		this.ds = ds;
 		sanPham_DAO = new SanPham_DAO();
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
+		sach_DAO = new Sach_DAO();
 		
 		setBounds(100, 100, 1199, 506);
 		getContentPane().setLayout(null);
@@ -171,7 +176,11 @@ public class KhoiPhucSach_GUI extends JInternalFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				loadALL();
+				try {
+					loadALL();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 				try {
 					setClosed(true);
 				} catch (PropertyVetoException e1) {
@@ -181,12 +190,12 @@ public class KhoiPhucSach_GUI extends JInternalFrame {
 
 		});
 		pMain.add(btnquayLai);
-		loadData(sanPham_DAO.getAllSachXoa());
+		loadData(sach_DAO.getAllSachXoa());
 		
 	}
 	
 	// load Data lên bảng
-		public void loadData(ArrayList<Sach> ds) {
+		public void loadData(List<Sach> ds) {
 			model.setRowCount(0);
 			for (Sach sach : ds) {
 //				Object[] object = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getXuatXu(),
@@ -197,10 +206,10 @@ public class KhoiPhucSach_GUI extends JInternalFrame {
 //				model.addRow(object);
 			}
 		}
-	private void loadALL() {
+	private void loadALL() throws RemoteException {
 		model.setRowCount(0);
-		for (SanPham sanPham : sanPham_DAO.getAllSach()) {
-			ds.add(sanPham);
+		for (Sach sach : sach_DAO.getAllSach()) {
+			ds.add(sach);
 		}
 	}
 }

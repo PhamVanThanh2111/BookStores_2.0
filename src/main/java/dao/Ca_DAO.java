@@ -13,7 +13,7 @@ public class Ca_DAO extends UnicastRemoteObject implements Ca_Impl{
 	private static final long serialVersionUID = 1L;
 
 	private EntityManager em;
-	protected Ca_DAO() throws RemoteException {
+	public Ca_DAO() throws RemoteException {
 		super();
 		em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
 	}

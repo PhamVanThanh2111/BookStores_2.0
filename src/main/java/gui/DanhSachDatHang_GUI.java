@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -362,13 +363,13 @@ public class DanhSachDatHang_GUI extends JPanel {
 		pThongTinChiTiet.add(lblTien);
 	}
 	
-	public void loadData(ArrayList<PhieuDatHang> danhSachPhieuDatHangs) throws RemoteException {
+	public void loadData(List<PhieuDatHang> danhSachPhieuDatHangs) throws RemoteException {
 		modelDSPD.setRowCount(0);
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		for (PhieuDatHang phieuDatHang : danhSachPhieuDatHangs) {
 			Object[] objects = {phieuDatHang.getMaPhieuDatHang(), 
-					khachHang_DAO.getKhachHangTheoMa(phieuDatHang.getKhachHang().getMaKhachHang()).getTenKhachHang(),
-					khachHang_DAO.getKhachHangTheoMa(phieuDatHang.getKhachHang().getMaKhachHang()).getSoDienThoai(),
+					phieuDatHang.getKhachHang().getTenKhachHang(),
+					phieuDatHang.getKhachHang().getSoDienThoai(),
 					nhanVien_DAO.getNhanVienTheoMa(phieuDatHang.getNhanVien().getMaNhanVien()).getTenNhanVien(), 
 					simpleDateFormat.format(phieuDatHang.getNgayLap()), 
 					phieuDatHang.getThanhTien()};
@@ -429,7 +430,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 //				hoaDon.setMaKhachHang(phieuDatHang.getMaKhachHang());
 				hoaDon.setNgayLap(new Date(new java.util.Date().getTime()));
 				hoaDon.setThanhTien(phieuDatHang.getThanhTien());
-				hoaDon_DAO.lapHoaDon(hoaDon);
+//				hoaDon_DAO.lapHoaDon(hoaDon);
 				
 				// thêm chi tiết hóa đơn
 				for (ChiTietPhieuDatHang chiTietPhieuDatHang : chiTietPhieuDatHang_DAO.getAllChiTietPhieuDatHangTheoMaPhieuDatHang(modelDSPD.getValueAt(row, 0).toString())) {
@@ -438,7 +439,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 //					chiTietHoaDon.setMaSanPham(chiTietPhieuDatHang.getMaSanPham());
 					chiTietHoaDon.setSoLuong(chiTietPhieuDatHang.getSoLuong());
 					chiTietHoaDon.setDonGia(chiTietPhieuDatHang.getDonGia());
-					chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
+//					chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
 				}
 				// xóa chi tiết phiếu đặt hàng
 				chiTietPhieuDatHang_DAO.xoaChiTietPhieuDatHang(phieuDatHang.getMaPhieuDatHang());
