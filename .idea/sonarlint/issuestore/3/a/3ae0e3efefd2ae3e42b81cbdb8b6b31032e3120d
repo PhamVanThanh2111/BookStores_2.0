@@ -1,0 +1,14 @@
+
+‹
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(çñŠ«üÿÿÿÿ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ŠÔ±™
+G
+java:S1172",Remove this unused method parameter "maNCC".(¨·êÞùÿÿÿÿ
+E
+java:S1172"/Remove this unused method parameter "tenNhaCC".(¥±¡µ
+B
+java:S1172",Remove this unused method parameter "nhaCC".(Õå§Ç
+G
+java:S1172",Remove this unused method parameter "maNCC".(‡ÐÀÂúÿÿÿÿ
+A
+java:S1172",Remove this unused method parameter "nhaCC".(¿ç´Q

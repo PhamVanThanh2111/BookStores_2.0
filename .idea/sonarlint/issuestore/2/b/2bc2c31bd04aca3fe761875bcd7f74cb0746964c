@@ -1,0 +1,90 @@
+
+d
+java:S1192ó"MDefine a constant instead of duplicating this literal "Sáº£n pháº©m" 3 times.(žƒø±
+e
+java:S1192÷"NDefine a constant instead of duplicating this literal "Sá» LÆ¯á»¢NG" 3 times.(¿Êüô
+a
+java:S1192œ"JDefine a constant instead of duplicating this literal "SansSerif" 6 times.(ËÐüá
+g
+java:S1192ø"KDefine a constant instead of duplicating this literal "dd/MM/yyyy" 4 times.(“¡ƒ³þÿÿÿÿ
+^
+java:S1192ª"GDefine a constant instead of duplicating this literal "Tahoma" 5 times.(¼äÕ¤
+a
+java:S1192"JDefine a constant instead of duplicating this literal "Doanh thu" 3 times.(ƒ±Ö°
+K
+java:S1066è"/Merge this if statement with the enclosing one.(Šûäúýÿÿÿÿ
+D
+java:S1604å"(Make this anonymous inner class a lambda(ºŠ´Óüÿÿÿÿ
+D
+java:S1604ÿ"(Make this anonymous inner class a lambda(¤äüÿÿÿÿÿ
+D
+java:S1604 "(Make this anonymous inner class a lambda(‘òÂÏùÿÿÿÿ
+?
+java:S1604¶"(Make this anonymous inner class a lambda(Å‹í­
+b	java:S1017"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(²‡É˜
+j	java:S116F"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ê‹”
+k	java:S116G"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë„ûÕ
+q	java:S116I"\Rename this field "chiTietHoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆáÐ—
+z
+java:S1450?"_Remove the "categoryDoanhThu" field and declare it as a local variable in the relevant methods.(ý‘Õ°þÿÿÿÿ
+|
+java:S1450_"gRemove the "categoryDoanhThuNhanVien" field and declare it as a local variable in the relevant methods.(ËûÆ
+
+java:S1450Y"lRemove the "categoryKhachHangMuaNhieuNhat" field and declare it as a local variable in the relevant methods.(€œÖ
+{
+java:S1450T"eRemove the "categorySanPhamBanChay" field and declare it as a local variable in the relevant methods.(Ý¢Äü
+t
+java:S1450C"^Remove the "categorySoLuong" field and declare it as a local variable in the relevant methods.(‚·¸¯
+‹
+java:S1450c"uRemove the "categorySoLuongHoaDonVaSanPhamNhanVien" field and declare it as a local variable in the relevant methods.(¡²Ç
+r
+java:S1450>"\Remove the "chartDoanhThu" field and declare it as a local variable in the relevant methods.(…ñ›
+z
+java:S1450^"dRemove the "chartDoanhThuNhanVien" field and declare it as a local variable in the relevant methods.(þÌÇ¶
+„
+java:S1450X"iRemove the "chartKhachHangMuaNhieuNhat" field and declare it as a local variable in the relevant methods.(øºÆ±üÿÿÿÿ
+|
+java:S1450@"aRemove the "chartPanelDoanhThu" field and declare it as a local variable in the relevant methods.(è“èüÿÿÿÿ
+„
+java:S1450a"iRemove the "chartPanelDoanhThuNhanVien" field and declare it as a local variable in the relevant methods.(å†ŽÇûÿÿÿÿ
+„
+java:S1450["nRemove the "chartPanelKhachHangMuaNhieuNhat" field and declare it as a local variable in the relevant methods.(ä„…Ö
+‚
+java:S1450V"gRemove the "chartPanelSanPhamBanChay" field and declare it as a local variable in the relevant methods.(†Ó·þûÿÿÿÿ
+v
+java:S1450D"`Remove the "chartPanelSoLuong" field and declare it as a local variable in the relevant methods.(ñÀñ£
+
+java:S1450e"wRemove the "chartPanelSoLuongHoaDonVaSanPhamNhanVien" field and declare it as a local variable in the relevant methods.(ÜÆ­ 
+x
+java:S1450S"bRemove the "chartSanPhamBanChay" field and declare it as a local variable in the relevant methods.(„‡ëè
+v
+java:S1450B"[Remove the "chartSoLuong" field and declare it as a local variable in the relevant methods.(‰ƒôÂÿÿÿÿÿ
+
+java:S1450b"rRemove the "chartSoLuongHoaDonVaSanPhamNhanVien" field and declare it as a local variable in the relevant methods.(×©¼Íúÿÿÿÿ
+t
+java:S1450="^Remove the "datasetDoanhThu" field and declare it as a local variable in the relevant methods.(’´ÊÅ
+|
+java:S1450`"fRemove the "datasetDoanhThuNhanVien" field and declare it as a local variable in the relevant methods.(òüó¢
+
+java:S1450Z"kRemove the "datasetKhachHangMuaNhieuNhat" field and declare it as a local variable in the relevant methods.(éåßã
+
+java:S1450U"dRemove the "datasetSanPhamBanChay" field and declare it as a local variable in the relevant methods.(ë³Þ€ûÿÿÿÿ
+x
+java:S1450A"]Remove the "datasetSoLuong" field and declare it as a local variable in the relevant methods.(ˆÁ¿øÿÿÿÿ
+Š
+java:S1450d"tRemove the "datasetSoLuongHoaDonVaSanPhamNhanVien" field and declare it as a local variable in the relevant methods.(„È×ð
+Y
+java:S3252{">Use static access with "javax.swing.SwingConstants" for "TOP".(û“ÍÉûÿÿÿÿ
+]
+java:S3252¾"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œÐÿÿÿÿÿ
+R	java:S125†"<This block of commented-out lines of code should be removed.(˜Î•
+N
+java:S1135¤"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+N
+java:S1135º"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+W
+java:S1858Ð"@"format" returns a string, there's no need to call "toString()".(´åß’
+\
+java:S1858ò"@"format" returns a string, there's no need to call "toString()".(šú€ûÿÿÿÿ
+W
+java:S1858ó"@"format" returns a string, there's no need to call "toString()".(žƒø±

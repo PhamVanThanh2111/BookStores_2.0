@@ -6,11 +6,17 @@ import java.util.Set;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "TheLoaiSach")
+//@NamedQueries({
+//	@NamedQuery(name = "getAllTheLoaiSach", query = "SELECT tls FROM TheLoaiSach tls"),
+//	@NamedQuery(name = "getTheLoaiSachTheoTen", query = "SELECT tls FROM TheLoaiSach tls WHERE tls.tenTheLoaiSach LIKE :tenTheLoaiSach"),
+//})
 public class TheLoaiSach implements Serializable {
 	private static final long serialVersionUID = 1L;
 

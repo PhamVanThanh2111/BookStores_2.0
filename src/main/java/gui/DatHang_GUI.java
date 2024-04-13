@@ -14,12 +14,15 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import connect.ConnectDB;
 import dao.ChiTietPhieuDatHang_DAO;
+import dao.DungCuHocTap_DAO;
 import dao.PhieuDatHang_DAO;
+import dao.Sach_DAO;
 import dao.KhachHang_DAO;
 import dao.PhatSinhMa_DAO;
 import dao.SanPham_DAO;
 import entity.ChiTietPhieuDatHang;
 import entity.PhieuDatHang;
+import entity.Sach;
 import entity.KhachHang;
 import entity.NhanVien;
 import entity.SanPham;
@@ -37,6 +40,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -67,14 +71,17 @@ public class DatHang_GUI extends JPanel {
 	private PhieuDatHang_DAO phieuDatHang_DAO;
 	private ChiTietPhieuDatHang_DAO chiTietPhieuDatHang_DAO;
 	private PhatSinhMa_DAO phatSinhMa_DAO;
+	private Sach_DAO sach_DAO;
+	private DungCuHocTap_DAO dungCuHocTap_DAO;
 	private JTextField txtMaSanPham;
 	private DanhSachDatHang_GUI danhSachDatHang_GUI;
 	private JTextField txtSearchSanPham;
 	
 	/**
 	 * Create the panel.
+	 * @throws RemoteException 
 	 */
-	public DatHang_GUI(NhanVien nhanVien, DanhSachDatHang_GUI danhSachDatHang_GUI) {
+	public DatHang_GUI(NhanVien nhanVien, DanhSachDatHang_GUI danhSachDatHang_GUI) throws RemoteException {
 		this.danhSachDatHang_GUI = danhSachDatHang_GUI;
 		setBackground(new Color(255, 255, 255));
 		// khai bao DAO
@@ -83,6 +90,8 @@ public class DatHang_GUI extends JPanel {
 		phieuDatHang_DAO = new PhieuDatHang_DAO();
 		chiTietPhieuDatHang_DAO = new ChiTietPhieuDatHang_DAO();
 		phatSinhMa_DAO = new PhatSinhMa_DAO();
+		sach_DAO = new Sach_DAO();
+		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 
 		// connect
 		ConnectDB.getInstance();
@@ -250,7 +259,11 @@ public class DatHang_GUI extends JPanel {
 				loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
 				cbTenSP.setSelectedItem(model.getValueAt(row, 0));
 				txtSoLuong.setText(model.getValueAt(row, 2).toString());
-				txtConLai.setText((sanPham_DAO.getSanPhamTheoTenSanPham(cbTenSP.getSelectedItem().toString()).getSoLuongTon() - Integer.parseInt(txtSoLuong.getText())) + "");
+				try {
+					txtConLai.setText((sanPham_DAO.getSanPhamTheoTen(cbTenSP.getSelectedItem().toString()).getSoLuongTon() - Integer.parseInt(txtSoLuong.getText())) + "");
+				} catch (NumberFormatException | RemoteException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		scrollPane.setViewportView(table);
@@ -367,9 +380,12 @@ public class DatHang_GUI extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (cbTenSP.getSelectedIndex() != -1) {
-					sanPham = sanPham_DAO.getSanPhamTheoTenSanPham(cbTenSP.getSelectedItem().toString());
+					try {
+						sanPham = sanPham_DAO.getSanPhamTheoTen(cbTenSP.getSelectedItem().toString());
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					txtConLai.setText(sanPham.getSoLuongTon() + "");
 					txtMaSanPham.setText(sanPham.getMaSanPham());
 					txtSoLuong.setEnabled(true);
@@ -513,30 +529,35 @@ public class DatHang_GUI extends JPanel {
 					JOptionPane.showInternalMessageDialog(null, "Bạn phải chọn sản phẩm cần sửa!");
 				}
 				else {
-					SanPham sanPham = sanPham_DAO.getSanPhamTheoMaSanPham(txtMaSanPham.getText());
-					if (sanPham.getSoLuongTon() < Integer.parseInt(txtSoLuong.getText())) {
-						JOptionPane.showMessageDialog(null, "Không đủ sản phẩm!");
-					}
-					else {
-						model.setValueAt(cbTenSP.getSelectedItem().toString(), row, 0);
-						model.setValueAt(cbLoaiSP.getSelectedItem().toString(), row, 1);
-						try {
-							if (Integer.parseInt(txtSoLuong.getText()) <= 0) {
-								JOptionPane.showMessageDialog(null, "Số lượng phải lớn hơn không!");
-							}
-							else if (model.getValueAt(row, 2).toString().equals(txtSoLuong.getText())) {
-								JOptionPane.showMessageDialog(null, "Bạn chưa thay đổi số lượng!");
-							}
-							else {
-								model.setValueAt(txtSoLuong.getText(), row, 2);
-								txtConLai.setText(sanPham.getSoLuongTon() - Integer.parseInt(txtSoLuong.getText()) + "");
-							}
-							model.setValueAt(sanPham.getGiaBan(), row, 3);
-							model.setValueAt(Integer.parseInt(txtSoLuong.getText()) * sanPham.getGiaBan(), row, 4);
-							lblTongTienValue.setText(tinhThanhTien() + " VND");
-						} catch (Exception e2) {
-							JOptionPane.showMessageDialog(null, "Số lượng phải là số!");
+					SanPham sanPham;
+					try {
+						sanPham = sanPham_DAO.getSanPhamTheoMa(txtMaSanPham.getText());
+						if (sanPham.getSoLuongTon() < Integer.parseInt(txtSoLuong.getText())) {
+							JOptionPane.showMessageDialog(null, "Không đủ sản phẩm!");
 						}
+						else {
+							model.setValueAt(cbTenSP.getSelectedItem().toString(), row, 0);
+							model.setValueAt(cbLoaiSP.getSelectedItem().toString(), row, 1);
+							try {
+								if (Integer.parseInt(txtSoLuong.getText()) <= 0) {
+									JOptionPane.showMessageDialog(null, "Số lượng phải lớn hơn không!");
+								}
+								else if (model.getValueAt(row, 2).toString().equals(txtSoLuong.getText())) {
+									JOptionPane.showMessageDialog(null, "Bạn chưa thay đổi số lượng!");
+								}
+								else {
+									model.setValueAt(txtSoLuong.getText(), row, 2);
+									txtConLai.setText(sanPham.getSoLuongTon() - Integer.parseInt(txtSoLuong.getText()) + "");
+								}
+								model.setValueAt(sanPham.getGiaBan(), row, 3);
+								model.setValueAt(Integer.parseInt(txtSoLuong.getText()) * sanPham.getGiaBan(), row, 4);
+								lblTongTienValue.setText(tinhThanhTien() + " VND");
+							} catch (Exception e2) {
+								JOptionPane.showMessageDialog(null, "Số lượng phải là số!");
+							}
+						}
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
 					}
 				}
 			}
@@ -552,24 +573,28 @@ public class DatHang_GUI extends JPanel {
 						lamMoiThongTinSanPham();
 					}
 					else {
-						sanPham = sanPham_DAO.getSanPhamTheoMaSanPham(txtMaSanPham.getText());
-						String tenSanPham = sanPham.getTenSanPham();
-						int soLuongTon = sanPham.getSoLuongTon();
-						if (sanPham.getMaSanPham() == null) {
-							JOptionPane.showMessageDialog(null, "Không có sản phẩm này!");
-							lamMoi();
-						}
-						else {
-							txtConLai.setText(sanPham.getSoLuongTon() + "");
-							cbTenSP.setSelectedItem(sanPham.getTenSanPham().toString());
-							if (txtMaSanPham.getText().charAt(0) == 'S' || txtMaSanPham.getText().charAt(0) == 's') {
-								cbLoaiSP.setSelectedIndex(0);
+						try {
+							sanPham = sanPham_DAO.getSanPhamTheoMa(txtMaSanPham.getText());
+							String tenSanPham = sanPham.getTenSanPham();
+							int soLuongTon = sanPham.getSoLuongTon();
+							if (sanPham.getMaSanPham() == null) {
+								JOptionPane.showMessageDialog(null, "Không có sản phẩm này!");
+								lamMoi();
 							}
 							else {
-								cbLoaiSP.setSelectedIndex(1);
+								txtConLai.setText(sanPham.getSoLuongTon() + "");
+								cbTenSP.setSelectedItem(sanPham.getTenSanPham().toString());
+								if (txtMaSanPham.getText().charAt(0) == 'S' || txtMaSanPham.getText().charAt(0) == 's') {
+									cbLoaiSP.setSelectedIndex(0);
+								}
+								else {
+									cbLoaiSP.setSelectedIndex(1);
+								}
+								txtConLai.setText(soLuongTon + "");
+								cbTenSP.setSelectedItem(tenSanPham);
 							}
-							txtConLai.setText(soLuongTon + "");
-							cbTenSP.setSelectedItem(tenSanPham);
+						} catch (RemoteException e1) {
+							e1.printStackTrace();
 						}
 					}
 				}
@@ -638,15 +663,15 @@ public class DatHang_GUI extends JPanel {
 	}
 
 	// load data ten sach vao combobox
-	private void loadDataIntoComboboxTenSP(String loaiSanPham) {
+	private void loadDataIntoComboboxTenSP(String loaiSanPham) throws RemoteException {
 		cbTenSP.removeAllItems();
 		if (loaiSanPham.equals("Sách")) {
-			for (SanPham sanPham : sanPham_DAO.getAllSach()) {
+			for (SanPham sanPham : sach_DAO.getAllSach()) {
 				cbTenSP.addItem(sanPham.getTenSanPham());
 			}
 		}
 		else {
-			for (SanPham sanPham : sanPham_DAO.getAllDungCuHocTap()) {
+			for (SanPham sanPham : dungCuHocTap_DAO.getAllDungCuHocTap()) {
 				cbTenSP.addItem(sanPham.getTenSanPham());
 			}
 		}

@@ -1,0 +1,77 @@
+
+u
+java:S2293è"YReplace the type specification in this constructor call with the diamond operator ("<>").(¼ŠÉüÿÿÿÿ
+u
+java:S2293ş"YReplace the type specification in this constructor call with the diamond operator ("<>").(­ö¥¶ûÿÿÿÿ
+p
+java:S2293Å"YReplace the type specification in this constructor call with the diamond operator ("<>").(’‡é¸
+p
+java:S2293à"YReplace the type specification in this constructor call with the diamond operator ("<>").(†ÜŸë
+a
+java:S1192w"KDefine a constant instead of duplicating this literal "SansSerif" 31 times.(¹¤±Æ
+Q
+java:S1141¾"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+k	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±†ºÆÿÿÿÿÿ
+k	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±†ºÆÿÿÿÿÿ
+k	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±†ºÆÿÿÿÿÿ
+?
+java:S1604¸"(Make this anonymous inner class a lambda(‹œ¾í
+?
+java:S1604î"(Make this anonymous inner class a lambda(á½²¤
+?
+java:S1604„"(Make this anonymous inner class a lambda(´Õ«Ê
+?
+java:S1604œ"(Make this anonymous inner class a lambda(±ÕÛø
+>
+java:S1604Ñ"(Make this anonymous inner class a lambda(©ŞøR
+D
+java:S1604è"(Make this anonymous inner class a lambda(‘òÂÏùÿÿÿÿ
+D
+java:S1604Œ"(Make this anonymous inner class a lambda(ÛåÅ¤ùÿÿÿÿ
+g	java:S1014"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(øŠÄ¥øÿÿÿÿ
+k	java:S116E"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë„ûÕ
+r	java:S116F"XRename this field "khachHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷˜Íøÿÿÿÿ
+j	java:S116J"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ê‹”
+q	java:S116K"\Rename this field "chiTietHoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆáĞ—
+s	java:S116L"YRename this field "phatSinhMa_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ÿ©Ëùÿÿÿÿ
+w	java:S116N"]Rename this field "danhSachHoaDon_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢±’”úÿÿÿÿ
+k	java:S116O"VRename this field "thongKe_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Òş˜
+q	java:S116P"WRename this field "trangChu_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶êÎ§úÿÿÿÿ
+m
+java:S3776V"RRefactor this method to reduce its Cognitive Complexity from 99 to the 15 allowed.(±†ºÆÿÿÿÿÿ
+@
+java:S1197Ù"*Move the array designators [] to the type.(Ú…á.
+N
+java:S1135é"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135ï"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135õ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135û"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+3
+java:S1116„"Remove this empty statement.(ä¬Şá
+]
+java:S3252˜"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿ
+N
+java:S1135ò"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135ˆ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135 "2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+R
+java:S1117•";Rename "sanPham" which hides the field declared at line 72.(©ùõ
+R	java:S125Ş"<This block of commented-out lines of code should be removed.( ³…£
+R
+java:S1117„";Rename "sanPham" which hides the field declared at line 72.(ÔÍ¥Ã
+R
+java:S1117‰";Rename "sanPham" which hides the field declared at line 72.(ƒÿ˜¶
+G
+java:S1172¥"1Remove this unused method parameter "maNhanVien".(ëÅÙB
+W	java:S125¯"<This block of commented-out lines of code should be removed.(–Œÿûÿÿÿÿÿ
+W	java:S125·"<This block of commented-out lines of code should be removed.(úÒ¥ûÿÿÿÿ
+U
+java:S1117á"9Rename "model" which hides the field declared at line 59.(ğ£Ñıÿÿÿÿ
+R	java:S125ñ"<This block of commented-out lines of code should be removed.(Ä¤§´
