@@ -6,10 +6,17 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "DungCuHocTap")
+@NamedQueries({
+	@NamedQuery(name = "LayDanhSachDungCuHocTap", query = "SELECT d FROM DungCuHocTap d"),
+	@NamedQuery(name="getTenSachTheoTenDCHT",query = "SELECT d FROM DungCuHocTap d d.tenSanPham LIKE :tenSanPham")
+
+})
 public class DungCuHocTap extends SanPham implements Serializable {
 	private static final long serialVersionUID = 1L;
 

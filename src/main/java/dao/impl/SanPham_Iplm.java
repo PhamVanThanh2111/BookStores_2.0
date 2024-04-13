@@ -12,7 +12,7 @@ import entity.SanPham;
 public interface SanPham_Iplm extends Remote {
 	public List<Sach> getAllSach() throws RemoteException;
 
-	public SanPham getTenSachTheoTenSanPham(String tenSanPham) throws RemoteException;
+	public List<Sach> getTenSachTheoTenSanPham(String tenSanPham) throws RemoteException;
 
 	public boolean xoaSachTheoMa(String maSach) throws RemoteException;
 
@@ -20,11 +20,11 @@ public interface SanPham_Iplm extends Remote {
 
 	public boolean khoiPhucSanPham01(SanPham sanPham) throws RemoteException;
 
-	public ArrayList<SanPham> getAllDungCuHocTap() throws RemoteException;
+	public List<DungCuHocTap> getAllDungCuHocTap() throws RemoteException;
 
-	public SanPham getSanPhamTheoTenSanPham(String tenSanPham) throws RemoteException;
+	public List<DungCuHocTap> getSanPhamTheoTenSanPham(String tenSanPham) throws RemoteException;
 
-	public SanPham getSanPhamTheoMaSanPham(String maSanPham) throws RemoteException;
+	public DungCuHocTap getSanPhamTheoMaSanPham(String maSanPham) throws RemoteException;
 
 	public boolean themSanPham(SanPham sanPham) throws RemoteException;
 

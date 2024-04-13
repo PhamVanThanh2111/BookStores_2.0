@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 @Table(name = "Sach")
 @NamedQueries({
 	@NamedQuery(name="getAllSach",query = "Select s from Sach s"),
-	@NamedQuery(name="getTenSachTheoTenSanPham",query = "Select s from Sach s wherer s.tenSanPham = :tenSanPham")
+	@NamedQuery(name="getTenSachTheoTenSanPham",query = "Select s from Sach s wherer s.tenSanPham LIKE :tenSanPham")
 })
 public class Sach extends SanPham {
 	@Column(name = "tacGia", columnDefinition = "nvarchar(50)", nullable = false)

@@ -1,5 +1,7 @@
 package dao;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,12 +10,13 @@ import entity.DungCuHocTap;
 import entity.Sach;
 import entity.SanPham;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
-public class SanPham_DAO implements SanPham_Iplm{
+public class SanPham_DAO extends UnicastRemoteObject implements SanPham_Iplm{
 	private EntityManager em;
 
-	public SanPham_DAO() {
+	public SanPham_DAO() throws RemoteException {
 		em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
 	}
 
@@ -22,15 +25,37 @@ public class SanPham_DAO implements SanPham_Iplm{
 		return  em.createNamedQuery("getAllSach").getResultList();
 	}
 	//Lấy tên theo mã sách
-	public SanPham getTenSachTheoTenSanPham(String tenSanPham) {
-		return null;
+	public List<Sach> getTenSachTheoTenSanPham(String tenSanPham) {
+		return em.createNamedQuery("getTenSachTheoTenSanPham").setParameter("tenSanPham",tenSanPham).getResultList();
 	}
 	// Xóa sách 
 	public boolean xoaSachTheoMa(String maSach) {
+		EntityTransaction et = em.getTransaction();
+		try {
+			et.begin();
+			Sach sach = em.find(Sach.class, maSach);
+			em.remove(sach);
+			et.commit();
+			return true;
+		} catch (Exception e) {
+			et.rollback();
+			e.printStackTrace();
+		}
 		return false;
+
 	}
 	// sửa Mã Sách
 	public boolean suaMaSach(SanPham sanPham) {
+		EntityTransaction et = em.getTransaction();
+		try {
+			et.begin();
+			em.merge(sanPham);
+			et.commit();
+			return true;
+		} catch (Exception e) {
+			et.rollback();
+			e.printStackTrace();
+		}
 		return false;
 	}
 	// khôi phục sản phẩm sách
@@ -38,27 +63,48 @@ public class SanPham_DAO implements SanPham_Iplm{
 		return false;
 	}
 	// Lấy Dụng Cụ Học Tập
-	public ArrayList<SanPham> getAllDungCuHocTap() {
-		return null;
-	}
-	public SanPham getSanPhamTheoTenSanPham(String tenSanPham) {
-		return null;
+	public List<DungCuHocTap> getAllDungCuHocTap() {
+		return em.createNamedQuery("LayDanhSachDungCuHocTap").getResultList();
 	}
 	
-	public SanPham getSanPhamTheoMaSanPham(String maSanPham) {
-		return null;
+	public List<DungCuHocTap> getSanPhamTheoTenSanPham(String tenSanPham) {
+		return em.createNamedQuery("getTenSachTheoTenDCHT").setParameter("tenSanPham", tenSanPham).getResultList();
+	}
+	
+	public DungCuHocTap getSanPhamTheoMaSanPham(String maSanPham) {
+		return em.find(DungCuHocTap.class, maSanPham);
 	}
 	
 //	Them DCHT
 	public boolean themSanPham(SanPham sanPham) {
+		EntityTransaction et = em.getTransaction();
+		try {
+			et.begin();
+			em.persist(sanPham);
+			et.commit();
+			return true;
+		} catch (Exception e) {
+			et.rollback();
+			e.printStackTrace();
+		}
 		return false;
 	}
 	
 	public boolean suaSanPhamTheoMa(SanPham sanPham) {
+		EntityTransaction et = em.getTransaction();
+		try {
+			et.begin();
+			em.merge(sanPham);
+			et.commit();
+			return true;
+		} catch (Exception e) {
+			et.rollback();
+			e.printStackTrace();
+		}
 		return false;
 	}
 	// sửa sản phẩm
-	public boolean suaSanPhamTheoMaSach(SanPham sanPham) {
+	public boolean suaDungCuHocTap(SanPham sanPham) {
 	    return false;
 	}
 	// ban san pham, soLuong là số lượng sản phẩm bán đi
