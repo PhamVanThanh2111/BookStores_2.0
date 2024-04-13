@@ -7,11 +7,19 @@ import java.util.Set;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "NhaCungCap")
+@NamedQueries({ @NamedQuery(name = "getAllNhaCungCap", query = "SELECT ncc FROM NhaCungCap ncc"),
+		@NamedQuery(name = "getNhaCungCapTheoTen", query = "SELECT ncc FROM NhaCungCap ncc WHERE ncc.tenNhaCungCap LIKE :tenNhaCungCap"),
+		@NamedQuery(name = "getNhaCungCapTheoDiaChi", query = "SELECT ncc FROM NhaCungCap ncc WHERE ncc.diaChi LIKE :diaChi"),
+		@NamedQuery(name = "getNhaCungCapTheoSoDienThoai", query = "SELECT ncc FROM NhaCungCap ncc WHERE ncc.soDienThoai = :soDienThoai"), 
+		@NamedQuery(name = "getNhaCungCapTheoTenList", query = "SELECT ncc FROM NhaCungCap ncc WHERE ncc.tenNhaCungCap IN :tenNhaCungCapList"), 
+})
 public class NhaCungCap implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -119,7 +127,7 @@ public class NhaCungCap implements Serializable {
 
 	@Override
 	public String toString() {
-		return "NhaCungCap [maNCC=" + maNhaCungCap + ", tenNCC=" + tenNhaCungCap + ", diaChi=" + diaChi + ", soDienThoai="
-				+ soDienThoai + ", email=" + email + "]";
+		return "NhaCungCap [maNCC=" + maNhaCungCap + ", tenNCC=" + tenNhaCungCap + ", diaChi=" + diaChi
+				+ ", soDienThoai=" + soDienThoai + ", email=" + email + "]";
 	}
 }
