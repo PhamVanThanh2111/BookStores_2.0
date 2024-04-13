@@ -1,4 +1,14 @@
 
-Ž	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(½×ë<8ðÍÇ˜í1J$53c6a1b8-ae00-4323-8da3-145edd403332
-”
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8øÍÇ˜í1J$7f69c8ca-88fb-41d3-90c1-07c18b6f55ba
+h	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(½×ë<8ÌÒü¯í1
+n
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8ÝÒü¯í1
+u
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8À¨ô¯í1J$c8de2aec-9f1b-42ba-9b82-a67d8a2a4da0
+‚
+java:S1128"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª8Á¨ô¯í1J$dcfd4eb6-04bb-453f-b158-8da39f4fdca1
+s
+java:S1128	"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Á¨ô¯í1J$cdae93f0-7de7-4629-9bfb-3bda7f30b3e3
+L
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òþÿÿÿÿ8éÒü¯í1
+J
+java:S1128"-Remove this unused import 'entity.KhachHang'.(§¶Á³8êÒü¯í1

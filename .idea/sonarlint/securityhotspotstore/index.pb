@@ -55,3 +55,5 @@ Z
 .src/main/java/dao/ChiTietPhieuDatHang_DAO.java,2\8\28bf83f8baada506f9e4c8d6c78986e19eed5c0a
 F
 BookStores_Mapping.iml,a\4\a4c9991eb66070dd69a8608f613014b4813bcc5f
+X
+(src/main/java/test/TestKhachHangDao.java,b\2\b21c825edcbd5dad499ca6f9d9dd453bf5d145f0

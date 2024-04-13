@@ -20,5 +20,5 @@ public interface KhachHang_Impl {
 
 	boolean themKhachHang(KhachHang khachHang) throws Exception;
 
-	Map<KhachHang, Double> getDanhSachKhachHangMuaNhieuTienNhat();
+	List<KhachHang> getDanhSachKhachHangMuaNhieuTienNhat();
 }

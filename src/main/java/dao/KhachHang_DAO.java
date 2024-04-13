@@ -82,8 +82,10 @@ public class KhachHang_DAO implements KhachHang_Impl {
 	}
 
 	@Override
-	public Map<KhachHang, Double> getDanhSachKhachHangMuaNhieuTienNhat() {
-
-		return null;
+	public List<KhachHang> getDanhSachKhachHangMuaNhieuTienNhat() {
+		List<KhachHang> result = em.createNamedQuery("getKhachHangMuaNhieuTienNhat", KhachHang.class)
+				.getResultList();
+		return result;
 	}
+
 }

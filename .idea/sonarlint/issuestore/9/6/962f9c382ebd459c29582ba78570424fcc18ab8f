@@ -1,4 +1,6 @@
 
-n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(•œÓœüÿÿÿÿ8…¿™í1
+{
+java:S1488V"^Immediately return this expression instead of assigning it to the temporary variable "result".(Šüá8È¤Õ²í1
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(•œÓœüÿÿÿÿ8Ê¤Õ²í1
 n
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8‰¿™í1
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8Õ¤Õ²í1

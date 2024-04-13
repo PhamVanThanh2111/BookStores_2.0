@@ -1,9 +1,15 @@
 
-	java:S112
-"FDefine and throw a dedicated exception instead of using a generic one.(Ôùì¹ıÿÿÿÿ8«Ùƒ™í1J$c54037dd-6df0-4128-bb7f-473f6449e8d6
-	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ÿ´§ûøÿÿÿÿ8«Ùƒ™í1J$396fd4d1-0502-4b89-9a9a-e1cd6a70e284
-ˆ	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ê´Óÿ8«Ùƒ™í1J$13b4d84c-27f0-4ceb-b415-eb27606579a8
-ˆ	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(£Êéù8«Ùƒ™í1J$00bf5d44-6a8e-41f1-bb96-24ae924f0591
-	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¬¿½øÿÿÿÿ8«Ùƒ™í1J$2b41d4b7-9a0b-484f-b051-a2a9490e78cd
-	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(å»¯ıûÿÿÿÿ8«Ùƒ™í1J$5fb9bd70-5f80-473d-a988-a8f4bb5bb57f
-“	java:S114	"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÎÀø¶8­Ùƒ™í1J$90e2c1be-2c95-4858-b9d9-6d7697b87331
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ôùì¹ıÿÿÿÿ8ìÓü¯í1J$613d96a2-3b5e-4605-8a8c-3c8c98b88531
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ÿ´§ûøÿÿÿÿ8íÓü¯í1J$612618de-9e8e-4a4c-919b-2611a8e814aa
+ˆ	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ê´Óÿ8íÓü¯í1J$5176eff0-7277-46bc-8582-cb026badfc78
+ˆ	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(£Êéù8íÓü¯í1J$7eb73b73-3d61-4609-9900-3a9355c87d36
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¬¿½øÿÿÿÿ8íÓü¯í1J$8b6e856f-0e55-418c-a233-c437b5e8e4ad
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(å»¯ıûÿÿÿÿ8íÓü¯í1J$36b04c6a-f084-4da4-896a-3b6ee7b42e9e
+“	java:S114
+"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÎÀø¶8ïÓü¯í1J$b38d7b51-8d42-4309-8c4f-571d0e080643
+u
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8Ÿ¡ô¯í1J$74e20f68-7ad5-4e8d-b5e4-e0beae828bad
+s
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Ÿ¡ô¯í1J$e90d6056-4fc4-41c9-bb74-cde7d21ec868
+L
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8İĞÎ²í1
