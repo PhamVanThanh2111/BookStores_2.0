@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -28,7 +29,7 @@ public class TimKiemNhaCungCap extends JInternalFrame {
 	private NhaCungCap_DAO nhaCungCap_Dao;
 	private ArrayList<NhaCungCap> ds;
 	
-	public TimKiemNhaCungCap(ArrayList<NhaCungCap>ds) {
+	public TimKiemNhaCungCap(ArrayList<NhaCungCap>ds) throws RemoteException {
 		nhaCungCap_Dao=new NhaCungCap_DAO();
 		this.ds = ds;
 		setBounds(100, 100, 910, 350);

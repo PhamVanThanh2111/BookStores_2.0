@@ -20,23 +20,23 @@ public class KhachHang_DAO implements KhachHang_Impl {
 	}
 
 	@Override
-	public List<KhachHang> getAllKhachHang() throws Exception {
+	public List<KhachHang> getAllKhachHang() throws RemoteException {
 		return em.createNamedQuery("getAllKhachHang", KhachHang.class).getResultList();
 	}
 
 	@Override
-	public KhachHang getKhachHangTheoSoDienThoai(String soDienThoai) throws Exception {
+	public KhachHang getKhachHangTheoSoDienThoai(String soDienThoai) throws RemoteException {
 		return em.createNamedQuery("getKhachHangTheoSoDienThoai", KhachHang.class)
 				.setParameter("soDienThoai", soDienThoai).getSingleResult();
 	}
 
 	@Override
-	public KhachHang getKhachHangTheoMa(String maKhachHang) throws SQLException {
+	public KhachHang getKhachHangTheoMa(String maKhachHang) throws RemoteException {
 		return em.find(KhachHang.class, maKhachHang);
 	}
 
 	@Override
-	public boolean xoaKhachHangTheoMa(String maKH) throws Exception {
+	public boolean xoaKhachHangTheoMa(String maKH) throws RemoteException {
 		boolean result = false;
 		try {
 			KhachHang khachHang = em.find(KhachHang.class, maKH);
@@ -52,7 +52,7 @@ public class KhachHang_DAO implements KhachHang_Impl {
 	}
 
 	@Override
-	public boolean suaKhachHangTheoMa(KhachHang khachHang) throws Exception {
+	public boolean suaKhachHangTheoMa(KhachHang khachHang) throws RemoteException {
 		boolean result = false;
 		try {
 			em.getTransaction().begin();
@@ -67,7 +67,7 @@ public class KhachHang_DAO implements KhachHang_Impl {
 	}
 
 	@Override
-	public boolean themKhachHang(KhachHang khachHang) throws SQLException {
+	public boolean themKhachHang(KhachHang khachHang) throws RemoteException {
 		boolean result = false;
 		try {
 			em.getTransaction().begin();
@@ -82,8 +82,10 @@ public class KhachHang_DAO implements KhachHang_Impl {
 	}
 
 	@Override
-	public Map<KhachHang, Double> getDanhSachKhachHangMuaNhieuTienNhat() {
-
-		return null;
+	public List<KhachHang> getDanhSachKhachHangMuaNhieuTienNhat() throws RemoteException {
+		List<KhachHang> result = em.createNamedQuery("getKhachHangMuaNhieuTienNhat", KhachHang.class)
+				.getResultList();
+		return result;
 	}
+
 }

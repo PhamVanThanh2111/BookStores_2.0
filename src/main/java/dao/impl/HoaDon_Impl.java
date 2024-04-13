@@ -19,6 +19,4 @@ public interface HoaDon_Impl {
     public List<HoaDon> getHoaDonTheoNgay(Date ngay)throws Exception;
     // get danh sach hoa don nhieu tien nhat
     public List<HoaDon> getHoaDonsNhieuTienNhat()throws Exception;
-
-
 }

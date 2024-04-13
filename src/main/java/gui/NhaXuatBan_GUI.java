@@ -6,8 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -67,8 +69,9 @@ public class NhaXuatBan_GUI extends JPanel {
 
 	/**
 	 * Create the panel.
+	 * @throws RemoteException 
 	 */
-	public NhaXuatBan_GUI(NhanVien nhanVien) {
+	public NhaXuatBan_GUI(NhanVien nhanVien) throws RemoteException {
 
 		// Khai bao DAO
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
@@ -277,7 +280,7 @@ public class NhaXuatBan_GUI extends JPanel {
 				int row = table.getSelectedRow();
 				if (row != -1) { // Ensure a row is selected
 //					txtTenNXB.
-					NhaXuatBan nhaXuatBan = nhaXuatBan_DAO.getnhaXuatBanTheoMa(model.getValueAt(row, 0).toString());
+					NhaXuatBan nhaXuatBan = nhaXuatBan_DAO.getNhaXuatBanTheoMa(model.getValueAt(row, 0).toString());
 					txtTenNXBValue.setText(nhaXuatBan.getTenNhaXuatBan());
 					lblMaNXBValue.setText(nhaXuatBan.getMaNhaXuatBan());
 					txtDiaChi.setText(nhaXuatBan.getDiaChi());
@@ -414,7 +417,11 @@ public class NhaXuatBan_GUI extends JPanel {
 				// TODO Auto-generated method stub
 				// null cho lan dau chay va isClose cho nhung click sau
 				if (timKiemNhaXuatBan_GUI == null || timKiemNhaXuatBan_GUI.isClosed()) {
-					timKiemNhaXuatBan_GUI = new TimKiemNhaXuatBan_GUI(ds);
+					try {
+						timKiemNhaXuatBan_GUI = new TimKiemNhaXuatBan_GUI(ds);
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					timKiemNhaXuatBan_GUI.addInternalFrameListener(new InternalFrameAdapter() {
 						@Override
 						public void internalFrameActivated(InternalFrameEvent e) {
@@ -487,7 +494,7 @@ public class NhaXuatBan_GUI extends JPanel {
 //		loadDataIntoTable(nhaXuatBan_DAO.getAllListNhaXuatBan());
 	}
 
-	public NhaXuatBan_GUI() {
+	public NhaXuatBan_GUI() throws RemoteException {
 
 		// Khai bao DAO
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
@@ -689,7 +696,7 @@ public class NhaXuatBan_GUI extends JPanel {
 				// TODO Auto-generated method stub
 				int row = table.getSelectedRow();
 				if (row >= 0) { // Ensure a row is selected
-					NhaXuatBan nhaXuatBan = nhaXuatBan_DAO.getnhaXuatBanTheoMa(model.getValueAt(row, 0).toString());
+					NhaXuatBan nhaXuatBan = nhaXuatBan_DAO.getNhaXuatBanTheoMa(model.getValueAt(row, 0).toString());
 					lblMaNXBValue.setText(nhaXuatBan.getMaNhaXuatBan());
 					txtDiaChi.setText(nhaXuatBan.getDiaChi());
 					txtSoDienThoai.setText(nhaXuatBan.getSoDienThoai());
@@ -725,7 +732,11 @@ public class NhaXuatBan_GUI extends JPanel {
 				// TODO Auto-generated method stub
 				// null cho lan dau chay va isClose cho nhung click sau
 				if (timKiemNhaXuatBan_GUI == null || timKiemNhaXuatBan_GUI.isClosed()) {
-					timKiemNhaXuatBan_GUI = new TimKiemNhaXuatBan_GUI(ds);
+					try {
+						timKiemNhaXuatBan_GUI = new TimKiemNhaXuatBan_GUI(ds);
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					timKiemNhaXuatBan_GUI.addInternalFrameListener(new InternalFrameAdapter() {
 						@Override
 						public void internalFrameActivated(InternalFrameEvent e) {
@@ -786,7 +797,7 @@ public class NhaXuatBan_GUI extends JPanel {
 	}
 
 	// đưa dữ liệu lên bảng
-	public void loadData(ArrayList<NhaXuatBan> list) {
+	public void loadData(List<NhaXuatBan> list) {
 		model.setRowCount(0);
 		for (NhaXuatBan nhaXuatBan : list) {
 			Object[] object = { nhaXuatBan.getMaNhaXuatBan(), nhaXuatBan.getTenNhaXuatBan(), nhaXuatBan.getDiaChi(),
@@ -890,19 +901,13 @@ public class NhaXuatBan_GUI extends JPanel {
 					"Bạn có chắc muốn sửa nhà xuất bản? '" + model.getValueAt(row, 0) + "' chứ?", "Sửa?",
 					JOptionPane.YES_NO_OPTION);
 			if (option == JOptionPane.YES_OPTION) {
-				try {
-					NhaXuatBan nhaXuatBan = new NhaXuatBan(lblMaNXBValue.getText(),txtTenNXB.getText()
-							,txtDiaChi.getText(), txtSoDienThoai.getText(), txtEmail.getText());
-					nhaXuatBan_DAO.suaNhaXuatBanTheoMa(nhaXuatBan);
-					JOptionPane.showMessageDialog(null,
-							"Sửa thành công nhà xuất bản '" + model.getValueAt(row, 0) + "'!");
-					refresh();
-					return true;
-				} catch (SQLException e1) {
-					JOptionPane.showMessageDialog(null,
-							"Sửa nhà xuất bản '\" + model.getValueAt(row, 0) + \"' không thành công!");
-					return false;
-				}
+				NhaXuatBan nhaXuatBan = new NhaXuatBan(lblMaNXBValue.getText(),txtTenNXB.getText()
+						,txtDiaChi.getText(), txtSoDienThoai.getText(), txtEmail.getText());
+				nhaXuatBan_DAO.suaNhaXuatBanTheoMa(nhaXuatBan);
+				JOptionPane.showMessageDialog(null,
+						"Sửa thành công nhà xuất bản '" + model.getValueAt(row, 0) + "'!");
+				refresh();
+				return true;
 			} else {
 				return false;
 			}

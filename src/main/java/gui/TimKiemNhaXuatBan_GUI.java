@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.beans.PropertyVetoException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -38,9 +39,10 @@ public class TimKiemNhaXuatBan_GUI extends JInternalFrame {
 	private JButton btnTim;
 	/**
 	 * Create the frame.
+	 * @throws RemoteException 
 	 */
 
-	public TimKiemNhaXuatBan_GUI(ArrayList<NhaXuatBan> ds) {
+	public TimKiemNhaXuatBan_GUI(ArrayList<NhaXuatBan> ds) throws RemoteException {
 
 		// khai bao DAO
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();

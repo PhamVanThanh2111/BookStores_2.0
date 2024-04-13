@@ -612,11 +612,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 			JOptionPane.showMessageDialog(null, "Số Điện Thoại Đã Tồn Tại !");
 			khachHang.setDiaChi(txtDiaChi.getText());
 			khachHang.setGioiTinh(cbGioiTinh.getSelectedItem().toString());
-			try {
-				khachHang_DAO.suaKhachHangTheoMa(khachHang);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			khachHang_DAO.suaKhachHangTheoMa(khachHang);
 			JOptionPane.showMessageDialog(null, "Cập Nhập Khách Hàng Thành Công");
 			loadData(khachHang_DAO.getAllKhachHang());
 		}

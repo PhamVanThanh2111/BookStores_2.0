@@ -2,29 +2,22 @@ package dao.impl;
 
 import entity.KhachHang;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.List;
-import java.util.Map;
 
-public interface KhachHang_Impl {
-	List<KhachHang> getAllKhachHang() throws Exception;
+public interface KhachHang_Impl extends Remote {
+	List<KhachHang> getAllKhachHang() throws RemoteException;
 
-	KhachHang getKhachHangTheoSoDienThoai(String soDienThoai) throws Exception;
+	KhachHang getKhachHangTheoSoDienThoai(String soDienThoai) throws RemoteException;
 
-	KhachHang getKhachHangTheoMa(String maKhachHang) throws Exception;
+	KhachHang getKhachHangTheoMa(String maKhachHang) throws RemoteException;
 
-	boolean xoaKhachHangTheoMa(String maKH) throws Exception;
+	boolean xoaKhachHangTheoMa(String maKH) throws RemoteException;
 
-	boolean suaKhachHangTheoMa(KhachHang khachHang) throws Exception;
-<<<<<<< HEAD
+	boolean suaKhachHangTheoMa(KhachHang khachHang) throws RemoteException;
 
-	boolean themKhachHang(KhachHang khachHang) throws Exception;
+	boolean themKhachHang(KhachHang khachHang) throws RemoteException;
 
-=======
-
-	boolean themKhachHang(KhachHang khachHang) throws Exception;
-
-	Map<KhachHang, Double> getDanhSachKhachHangMuaNhieuTienNhat();
->>>>>>> c4d3f00986feccf699e3fb559ba19768c7f0a59d
+	List<KhachHang> getDanhSachKhachHangMuaNhieuTienNhat() throws RemoteException;
 }

@@ -9,8 +9,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.awt.Color;
 
 import javax.swing.border.Border;
@@ -58,7 +60,7 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 	private TimKiemNhaCungCap timKiemNhaCungCap;
 	private JDesktopPane desktopPane;
 
-	public NhaCungCap_GUI(NhanVien nhanVien) {
+	public NhaCungCap_GUI(NhanVien nhanVien) throws RemoteException {
 
 		nhaCungCap_DAO = new NhaCungCap_DAO();
 		phatSinhMa_DAO = new PhatSinhMa_DAO();
@@ -336,7 +338,7 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 //		loadData(nhaCungCap_DAO.getAllNhaCungCap());
 	}
 
-	public NhaCungCap_GUI() {
+	public NhaCungCap_GUI() throws RemoteException {
 
 		nhaCungCap_DAO = new NhaCungCap_DAO();
 		phatSinhMa_DAO = new PhatSinhMa_DAO();
@@ -564,7 +566,11 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				if (timKiemNhaCungCap == null || timKiemNhaCungCap.isClosed()) {
-					timKiemNhaCungCap = new TimKiemNhaCungCap(ds);
+					try {
+						timKiemNhaCungCap = new TimKiemNhaCungCap(ds);
+					} catch (RemoteException e1) {
+						e1.printStackTrace();
+					}
 					timKiemNhaCungCap.addInternalFrameListener(new InternalFrameAdapter() {
 						@Override
 						public void internalFrameActivated(InternalFrameEvent e) {
@@ -613,9 +619,9 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 	}
 
 	// đưa dữ liệu lên bảng
-	public void loadData(ArrayList<NhaCungCap> ds) {
+	public void loadData(List<NhaCungCap> list) {
 		model.setRowCount(0);
-		for (NhaCungCap NhaCungCap : ds) {
+		for (NhaCungCap NhaCungCap : list) {
 			Object[] object = { NhaCungCap.getMaNCC(), NhaCungCap.getTenNCC(), NhaCungCap.getDiaChi(),
 					NhaCungCap.getSoDienThoai(), NhaCungCap.getEmail() };
 			model.addRow(object);
@@ -665,7 +671,7 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 		lblMaNCC.setText("");
 	}
 
-	public void themNhaCungCap() throws SQLException {
+	public void themNhaCungCap() throws SQLException, RemoteException {
 		if (txtTenNhaCungCap.getText().equalsIgnoreCase("") || txtSDT.getText().equalsIgnoreCase("")
 				|| txtEmail.getText().equalsIgnoreCase("") || txtDiaChi.getText().equalsIgnoreCase("")) {
 			JOptionPane.showMessageDialog(null, "Thông Tin Rỗng !");
@@ -685,19 +691,13 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 		}
 	}
 
-	public boolean xoaNhaCungCap() {
+	public boolean xoaNhaCungCap() throws RemoteException {
 		int row = table.getSelectedRow();
 		if (row != -1) {
 			int tb = JOptionPane.showConfirmDialog(null, "Bạn Muốn Xóa Nhà Cung Cấp ? ", "Delete",
 					JOptionPane.YES_NO_OPTION);
 			if (tb == JOptionPane.YES_OPTION) {
-				try {
-					nhaCungCap_DAO.xoaNhaCungCapTheoMa((String) model.getValueAt(row, 0));
-
-				} catch (SQLException e) {
-					JOptionPane.showMessageDialog(null, "Nhà Cung Cấp Không Được Phép Xóa!");
-					return false;
-				}
+				nhaCungCap_DAO.xoaNhaCungCapTheoMa((String) model.getValueAt(row, 0));
 				JOptionPane.showMessageDialog(null, "Xóa Thành Công");
 				loadData(nhaCungCap_DAO.getAllNhaCungCap());
 				return true;
@@ -706,7 +706,7 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 		return false;
 	}
 
-	public void suaNhaCungCap() throws SQLException {
+	public void suaNhaCungCap() throws SQLException, RemoteException {
 		if (txtTenNhaCungCap.getText().equalsIgnoreCase("") || txtSDT.getText().equalsIgnoreCase("")
 				|| txtEmail.getText().equalsIgnoreCase("") || txtDiaChi.getText().equalsIgnoreCase("")) {
 			JOptionPane.showMessageDialog(null, "Thông Tin Rỗng !");
@@ -757,6 +757,9 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 						themNhaCungCap();
 					} catch (SQLException e1) {
 						e1.printStackTrace();
+					} catch (RemoteException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
 					}
 				}
 			}
@@ -774,7 +777,11 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 						if (r == -1) {
 							JOptionPane.showMessageDialog(null, "Bạn Chưa Chọn Nhà Cung Cấp!");
 						} else {
-							xoaNhaCungCap();
+							try {
+								xoaNhaCungCap();
+							} catch (RemoteException e1) {
+								e1.printStackTrace();
+							}
 						}
 
 					}
@@ -804,7 +811,7 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 								btnTim.setText("Tìm");
 								try {
 									suaNhaCungCap();
-								} catch (SQLException e1) {
+								} catch (SQLException | RemoteException e1) {
 									e1.printStackTrace();
 								}
 								closeFocusTXT();
@@ -825,7 +832,11 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 								btnXoa.setEnabled(false);
 								btnSua.setEnabled(false);
 								if (timKiemNhaCungCap == null || timKiemNhaCungCap.isClosed()) {
-									timKiemNhaCungCap = new TimKiemNhaCungCap(ds);
+									try {
+										timKiemNhaCungCap = new TimKiemNhaCungCap(ds);
+									} catch (RemoteException e1) {
+										e1.printStackTrace();
+									}
 									timKiemNhaCungCap.addInternalFrameListener(new InternalFrameAdapter() {
 										@Override
 										public void internalFrameActivated(InternalFrameEvent e) {
