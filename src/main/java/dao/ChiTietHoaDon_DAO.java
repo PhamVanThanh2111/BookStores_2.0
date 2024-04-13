@@ -1,43 +1,39 @@
 package dao;
 
+import java.rmi.RemoteException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-
+import java.util.List;
+import dao.impl.ChiTietHoaDon_Impl;
 import entity.ChiTietHoaDon;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Persistence;
 
-public class ChiTietHoaDon_DAO {
-	// them nhan vien
-	public boolean themChiTietHoaDon(ChiTietHoaDon chiTietHoaDon) throws SQLException {
-		
+public class ChiTietHoaDon_DAO implements ChiTietHoaDon_Impl {
+	private EntityManager em;
+
+	public ChiTietHoaDon_DAO() throws RemoteException {
+		super();
+		em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
+	}
+	public boolean themChiTietHoaDon(List<ChiTietHoaDon> chiTietHoaDon) throws SQLException {
+		boolean result = false;
+		try {
+			em.getTransaction().begin();
+			for (ChiTietHoaDon cthd : chiTietHoaDon) {
+				em.persist(cthd);
+			}
+			em.getTransaction().commit();
+			result = true;
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			e.printStackTrace();
+		}
 		return false;
 	}
 
-	// get all chi tiet hoa don theo ma hoa don
-	public ArrayList<ChiTietHoaDon> getAllChiTietHoaDonTheoMaHoaDon(String maHoaDon) {
-		return null;
+	public List<ChiTietHoaDon> getAllChiTietHoaDonTheoMaHoaDon(String maHoaDon) throws SQLException {
+		return em.createNamedQuery("getAllChiTietHoaDonTheoMaHoaDon", ChiTietHoaDon.class)
+				.setParameter("maHoaDon", maHoaDon)
+				.getResultList();
 	}
-	
-//	// get danh sach chi tiet hoa don theo ngay
-//		public ArrayList<ChiTietHoaDon> getListChiTietHoaDonTheoNgay(LocalDate date) { 
-//			ConnectDB.getInstance();
-//			Connection connection = ConnectDB.getConnection();
-//			ArrayList<ChiTietHoaDon> ds = new ArrayList<ChiTietHoaDon>();
-//			try {
-//				PreparedStatement preparedStatement = connection
-//						.prepareStatement("select * from ChiTietHoaDon where ngayLap = '"+ date +"'");
-//				ResultSet resultSet = preparedStatement.executeQuery();
-//				while (resultSet.next()) {
-//					HoaDon hoaDon = new HoaDon();
-//					hoaDon.setMaHoaDon(resultSet.getString(1));
-//					hoaDon.setMaNhanVien(resultSet.getString(2));
-//					hoaDon.setMaKhachHang(resultSet.getString(3));
-//					hoaDon.setNgayLap(resultSet.getDate(4));
-//					hoaDon.setThanhTien(resultSet.getFloat(5));
-//					ds.add(hoaDon);
-//				}
-//			} catch (Exception e) {
-//				// TODO: handle exception
-//			}
-//			return ds;
-//		}
 }

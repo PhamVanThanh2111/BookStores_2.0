@@ -5,17 +5,16 @@ import java.sql.Date;
 import java.util.Objects;
 import java.util.Set;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "HoaDon")
+@NamedQueries({
+		@NamedQuery(name = "getAllHoaDon", query = "select hd from HoaDon hd"),
+		@NamedQuery(name = "getHoaDonTheoMaNhanVienVaNgayHienTai", query = "select hd from HoaDon hd where hd.nhanVien.id = :maNhanVien and hd.ngayLap = :ngayHienTai"),
+        @NamedQuery(name = "getHoaDonTheoNgay", query = "select hd from HoaDon hd where hd.ngayLap=:ngaylap"),
+		@NamedQuery(name = "getHoaDonsNhieuTienNhat", query = "select hd from HoaDon hd where hd.thanhTien = (select max(hd.thanhTien) from HoaDon hd)")
+})
 public class HoaDon implements Serializable {
 	private static final long serialVersionUID = 1L;
 

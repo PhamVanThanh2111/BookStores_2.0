@@ -175,7 +175,11 @@ public class HoaDon_GUI extends JPanel {
 						lamMoi();
 					}
 					else {
-						khachHang = khachHang_DAO.getKhachHangTheoSoDienThoai(txtSoDienThoai.getText());
+						try {
+							khachHang = khachHang_DAO.getKhachHangTheoSoDienThoai(txtSoDienThoai.getText());
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
 						if (khachHang.getMaKhachHang() == null) {
 							JOptionPane.showMessageDialog(null, "Không tìm thấy khách hàng này!");
 							lamMoi();
@@ -723,7 +727,7 @@ public class HoaDon_GUI extends JPanel {
 //		hoaDon.setNhanVien();
 		hoaDon.setNgayLap(new java.sql.Date(new Date().getTime()));
 		hoaDon.setThanhTien(tinhThanhTien());
-		hoaDon_DAO.lapHoaDon(hoaDon);
+//		hoaDon_DAO.lapHoaDon(hoaDon);
 		for (int i = 0; i < model.getRowCount(); i++) {
 			String maSanPham = sanPham_DAO.getSanPhamTheoTen(model.getValueAt(i, 0).toString()).getMaSanPham();
 			int soLuong = Integer.parseInt(model.getValueAt(i, 2).toString());
@@ -732,7 +736,7 @@ public class HoaDon_GUI extends JPanel {
 //			chiTietHoaDon.setMaSanPham(maSanPham);
 			chiTietHoaDon.setSoLuong(soLuong);
 			chiTietHoaDon.setDonGia(Float.parseFloat(model.getValueAt(i, 3).toString()));
-			chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
+//			chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
 			sanPham_DAO.banSanPham(maSanPham, soLuong);
 		}
 		xemHoaDon(maHoaDon);

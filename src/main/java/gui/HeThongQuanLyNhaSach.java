@@ -1048,7 +1048,11 @@ public class HeThongQuanLyNhaSach extends JFrame {
 		};
 
 		Runnable loadDataKhachHang = () -> {
-			khachHang_GUI.loadData(khachHang_DAO.getAllKhachHang());
+			try {
+				khachHang_GUI.loadData(khachHang_DAO.getAllKhachHang());
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
 		};
 
 		Runnable loadDataSach_NhanVien = () -> {

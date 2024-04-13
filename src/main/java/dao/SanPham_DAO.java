@@ -8,6 +8,7 @@ import dao.impl.SanPham_Impl;
 import entity.Sach;
 import entity.SanPham;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
 public class SanPham_DAO extends UnicastRemoteObject implements SanPham_Impl {

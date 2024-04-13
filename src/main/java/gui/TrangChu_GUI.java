@@ -200,23 +200,23 @@ public class TrangChu_GUI extends JPanel {
 		lblBackGround.setBounds(1010, 110, 267, 590);
 		pnlMain.add(lblBackGround);
 		
-		lblSoLuongGiaoDichValue.setText(hoaDon_DAO.getListHoaDonTrongNgayTheoMaNhanVien(nhanVien.getMaNhanVien()).size() + "");
+//		lblSoLuongGiaoDichValue.setText(hoaDon_DAO.getListHoaDonTrongNgayTheoMaNhanVien(nhanVien.getMaNhanVien()).size() + "");
 		
 		lblTongThuValue.setText(tinhDoanhThuNhanVienTrongNgay(nhanVien) + " VND");
 	}
 	
 	private float tinhDoanhThuNhanVienTrongNgay(NhanVien nhanVien) {
 		float doanhThu = 0;
-		for (HoaDon hoaDon : hoaDon_DAO.getListHoaDonTrongNgayTheoMaNhanVien(nhanVien.getMaNhanVien())) {
-			doanhThu += hoaDon.getThanhTien();
-		}
+//		for (HoaDon hoaDon : hoaDon_DAO.getListHoaDonTrongNgayTheoMaNhanVien(nhanVien.getMaNhanVien())) {
+//			doanhThu += hoaDon.getThanhTien();
+//		}
 		return doanhThu;
 	}
 	
 	public void refresh() throws RemoteException {
 		lblThoiGianValue.setText(ca_DAO.getCaTheoMa(nhanVien.getCa().getMaCa()).getThoiGian());
 		lblTieuDe.setText("Chào '" + nhanVien.getTenNhanVien() +"' , Chúc Bạn Ngày Mới Tốt Lành!");
-		lblSoLuongGiaoDichValue.setText(hoaDon_DAO.getListHoaDonTrongNgayTheoMaNhanVien(nhanVien.getMaNhanVien()).size() + "");
+//		lblSoLuongGiaoDichValue.setText(hoaDon_DAO.getListHoaDonTrongNgayTheoMaNhanVien(nhanVien.getMaNhanVien()).size() + "");
 		lblTongThuValue.setText(tinhDoanhThuNhanVienTrongNgay(nhanVien) + " VND");
 	}
 }

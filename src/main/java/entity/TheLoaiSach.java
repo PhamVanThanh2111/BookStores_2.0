@@ -13,10 +13,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "TheLoaiSach")
-@NamedQueries({
-	@NamedQuery(name = "getAllTheLoaiSach", query = "SELECT tls FROM TheLoaiSach tls"),
-	@NamedQuery(name = "getTheLoaiSachTheoTen", query = "SELECT tls FROM TheLoaiSach tls WHERE tls.tenTheLoaiSach LIKE :tenTheLoaiSach"),
-})
+//@NamedQueries({
+//	@NamedQuery(name = "getAllTheLoaiSach", query = "SELECT tls FROM TheLoaiSach tls"),
+//	@NamedQuery(name = "getTheLoaiSachTheoTen", query = "SELECT tls FROM TheLoaiSach tls WHERE tls.tenTheLoaiSach LIKE :tenTheLoaiSach"),
+//})
 public class TheLoaiSach implements Serializable {
 	private static final long serialVersionUID = 1L;
 

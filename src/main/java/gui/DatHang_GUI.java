@@ -160,7 +160,11 @@ public class DatHang_GUI extends JPanel {
 						JOptionPane.showMessageDialog(null, "Số điện thoại không hợp lệ!");
 					}
 					else {
-						khachHang = khachHang_DAO.getKhachHangTheoSoDienThoai(txtSoDienThoai.getText());
+						try {
+							khachHang = khachHang_DAO.getKhachHangTheoSoDienThoai(txtSoDienThoai.getText());
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
 						if (khachHang.getMaKhachHang() == null) {
 							JOptionPane.showMessageDialog(null, "Không tìm thấy khách hàng này!");
 						}

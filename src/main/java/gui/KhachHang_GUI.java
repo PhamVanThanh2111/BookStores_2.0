@@ -6,13 +6,16 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.HeadlessException;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
@@ -61,8 +64,9 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 
 	/**
 	 * Create the panel.
+	 * @throws RemoteException 
 	 */
-	public KhachHang_GUI() {
+	public KhachHang_GUI() throws RemoteException {
 
 		khachHang_DAO = new KhachHang_DAO();
 		phatSinhMa_DAO = new PhatSinhMa_DAO();
@@ -336,9 +340,9 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 		});
 	}
 
-	public void loadData(ArrayList<KhachHang> ds) {
+	public void loadData(List<KhachHang> list) {
 		model.setRowCount(0);
-		for (KhachHang Kh : ds) {
+		for (KhachHang Kh : list) {
 			Object[] object = { Kh.getTenKhachHang(), Kh.getMaKhachHang(), Kh.getGioiTinh(), Kh.getSoDienThoai(),
 					Kh.getDiaChi() };
 			model.addRow(object);
@@ -377,10 +381,14 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 				if (btnThem.getText().equalsIgnoreCase("Xác Nhận")) {
 					try {
 						themKhachHang();
-					} catch (SQLException e1) {
+					} catch (Exception e1) {
 						e1.printStackTrace();
 					}
-					loadData(khachHang_DAO.getAllKhachHang());
+					try {
+						loadData(khachHang_DAO.getAllKhachHang());
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
 					btnSua.setEnabled(true);
 					btnTim.setEnabled(true);
 					btnThem.setText("Thêm");
@@ -428,7 +436,11 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 							if (btnSua.getText().equalsIgnoreCase("Xác Nhận")) {
 								btnSua.setText("Sửa");
 								btnTim.setText("Tìm");
-								suaKhachHang();
+								try {
+									suaKhachHang();
+								} catch (Exception e1) {
+									e1.printStackTrace();
+								}
 								closeText();
 								btnThem.setEnabled(true);
 								btnXoa.setEnabled(true);
@@ -450,7 +462,11 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 								btnXoa.setEnabled(false);
 								btnSua.setEnabled(false);
 								if (timKiemKhachHang_GUI == null || timKiemKhachHang_GUI.isClosed()) {
-									timKiemKhachHang_GUI = new TimKiemKhachHang_GUI(ds);
+									try {
+										timKiemKhachHang_GUI = new TimKiemKhachHang_GUI(ds);
+									} catch (RemoteException e1) {
+										e1.printStackTrace();
+									}
 									timKiemKhachHang_GUI.addInternalFrameListener(new InternalFrameAdapter() {
 										@Override
 										public void internalFrameActivated(InternalFrameEvent e) {
@@ -489,7 +505,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 		}
 	}
 
-	private void themKhachHang() throws SQLException {
+	private void themKhachHang() throws HeadlessException, Exception {
 		if (txtTenKH.getText().equalsIgnoreCase("") || txtSDT.getText().equalsIgnoreCase("")
 				|| cbGioiTinh.getSelectedItem().toString().equalsIgnoreCase("")
 				|| txtDiaChi.getText().equalsIgnoreCase("")) {
@@ -569,7 +585,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 
 	}
 
-	private boolean kiemTraTrungSDT(String sDT) {
+	private boolean kiemTraTrungSDT(String sDT) throws Exception {
 		for (KhachHang khachHang : khachHang_DAO.getAllKhachHang()) {
 			if (khachHang.getSoDienThoai().equalsIgnoreCase(sDT.trim())) {
 				return true;
@@ -578,7 +594,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 		return false;
 	}
 
-	public boolean suaKhachHang() {
+	public boolean suaKhachHang() throws Exception {
 
 		if (txtTenKH.getText().equalsIgnoreCase("") || txtSDT.getText().equalsIgnoreCase("")
 				|| cbGioiTinh.getSelectedItem().toString().equalsIgnoreCase("")

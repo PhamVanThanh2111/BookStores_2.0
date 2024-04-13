@@ -1,0 +1,136 @@
+
+u
+java:S1192è"YDefine a constant instead of duplicating this literal "Dá»¥ng Cá»¥ Há»c Táº­p" 12 times.(üá÷¶øÿÿÿÿ
+i
+java:S1192Ã"MDefine a constant instead of duplicating this literal "Loáº¡i SÃ¡ch" 9 times.(ö¾‘úÿÿÿÿ
+k
+java:S1192–"TDefine a constant instead of duplicating this literal "DanhSachDatHang_GUI" 3 times.(àŠ„Š
+l
+java:S1192é"PDefine a constant instead of duplicating this literal "NhÃ  Cung Cáº¥p" 8 times.(±ø¾ıÿÿÿÿ
+i
+java:S1192Ÿ"MDefine a constant instead of duplicating this literal "Thá»‘ng KÃª" 10 times.(£¢Àşÿÿÿÿ
+f
+java:S1192˜"ODefine a constant instead of duplicating this literal "NhaXuatBan_GUI" 4 times.(ÉıÚï
+i
+java:S1192ß"MDefine a constant instead of duplicating this literal "KhÃ¡ch HÃ ng" 5 times.(Éâú¡ÿÿÿÿÿ
+h
+java:S1192§"LDefine a constant instead of duplicating this literal "ThongKe_GUI" 5 times.(åıùÿÿÿÿ
+j
+java:S1192÷"NDefine a constant instead of duplicating this literal "KhachHang_GUI" 3 times.(¢ıÙùÿÿÿÿ
+i
+java:S1192Ä"RDefine a constant instead of duplicating this literal "NhÃ  Xuáº¥t Báº£n" 9 times.(³Ë—˜
+e
+java:S1192™"ODefine a constant instead of duplicating this literal "NhaCungCap_GUI" 4 times.(ß®è1
+g
+java:S1192œ"KDefine a constant instead of duplicating this literal "HoaDon_GUI" 4 times.(Ï©ÿÿÿÿÿ
+h
+java:S1192•"LDefine a constant instead of duplicating this literal "DatHang_GUI" 3 times.(¿›Â£ûÿÿÿÿ
+`
+java:S1192·"IDefine a constant instead of duplicating this literal "Há»“ SÆ¡" 5 times.(Ú›ÁĞ
+m
+java:S1192ç"QDefine a constant instead of duplicating this literal "DungCuHocTap_GUI" 8 times.(Î¥öõÿÿÿÿÿ
+b
+java:S1192„"KDefine a constant instead of duplicating this literal "HÃ³a ÄÆ¡n" 7 times.(ğª¨å
+g
+java:S1192—"PDefine a constant instead of duplicating this literal "TheLoaiSach_GUI" 4 times.(ÂëÖ¨
+r
+java:S1192"VDefine a constant instead of duplicating this literal "Danh SÃ¡ch HÃ³a ÄÆ¡n" 4 times.(‰ªàúÿÿÿÿ
+b
+java:S1192µ"KDefine a constant instead of duplicating this literal "SansSerif" 11 times.(„‰£›
+c
+java:S1192‰"LDefine a constant instead of duplicating this literal "NhÃ¢n ViÃªn" 7 times.(Êº¸ï
+e
+java:S1192’"IDefine a constant instead of duplicating this literal "HoSo_GUI" 3 times.(†àä¶ıÿÿÿÿ
+o
+java:S1192¡"XDefine a constant instead of duplicating this literal "Danh SÃ¡ch Äáº·t HÃ ng" 8 times.(ğ¤ñë
+i
+java:S1192"MDefine a constant instead of duplicating this literal "NhanVien_GUI" 4 times.(”Öêğÿÿÿÿÿ
+^
+java:S1192¨"GDefine a constant instead of duplicating this literal "Tahoma" 9 times.(Ù¶±‚
+g
+java:S1192{"LDefine a constant instead of duplicating this literal "Trang Chá»§" 8 times.(î‹ã»úÿÿÿÿ
+d
+java:S1192 "MDefine a constant instead of duplicating this literal "Äáº·t HÃ ng" 8 times.(¸«í…
+`
+java:S1192Á"IDefine a constant instead of duplicating this literal "Sach_GUI" 9 times.(Äÿã¨
+d
+java:S1192Ò"MDefine a constant instead of duplicating this literal "TrangChu_GUI" 4 times.(—ßâó
+l	java:S117Œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Èßùıÿÿÿÿ
+l	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—§ûÿÿÿÿÿ
+l	java:S117˜"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯—â˜ÿÿÿÿÿ
+l	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÇÁøÿÿÿÿ
+g	java:S117¢	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾°‹ª
+g	java:S117£	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›¨êÀ
+l	java:S117¤	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“¿™ùÿÿÿÿ
+g	java:S117¥	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä¢ª´
+g	java:S117¦	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ŒÛ•
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó“ûÿÿÿÿ
+?
+java:S1604ˆ"(Make this anonymous inner class a lambda(¤¼ÚÑ
+w	java:S116E"]Rename this field "danhSachHoaDon_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢±’”úÿÿÿÿ
+s	java:S116F"^Rename this field "danhSachDatHang_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ¥«ô
+k	java:S116G"VRename this field "thongKe_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Òş˜
+q	java:S116H"WRename this field "trangChu_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶êÎ§úÿÿÿÿ
+q	java:S116I"WRename this field "nhanVien_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“¾Êûÿÿÿÿ
+m	java:S116J"XRename this field "khachHang_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ú¨Ÿ
+q	java:S116K"\Rename this field "sach_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬‹
+~	java:S116L"dRename this field "dungCuHocTap_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤á¤øÿÿÿÿ
+x	java:S116M"^Rename this field "hoaDon_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰»¹øÿÿÿÿ
+v	java:S116N"\Rename this field "hoSo_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş¢ç¬şÿÿÿÿ
+y	java:S116O"_Rename this field "datHang_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„‚èşÿÿÿÿ
+}	java:S116P"cRename this field "theLoaiSach_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„­­¨ÿÿÿÿÿ
+|	java:S116Q"bRename this field "nhaXuatBan_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â·†ùÿÿÿÿ
+|	java:S116R"bRename this field "nhaCungCap_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²Ù¾Éøÿÿÿÿ
+l	java:S116S"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÊ’Á
+u	java:S116T"[Rename this field "phieuDatHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô¾Ñïøÿÿÿÿ
+r	java:S116U"XRename this field "khachHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷˜Íøÿÿÿÿ
+k	java:S116V"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë„ûÕ
+t	java:S116W"ZRename this field "theLoaiSach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†‡«˜ÿÿÿÿÿ
+s	java:S116X"YRename this field "nhaXuatBan_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œÛÔ‹ÿÿÿÿÿ
+s	java:S116Y"YRename this field "nhaCungCap_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†¤´şÿÿÿÿ
+j	java:S116Z"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ê‹”
+h
+java:S3776b"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(ÔşöÌ
+d
+java:S3252s"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ
+S
+java:S3252~"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(®Ğ–
+H
+java:S1602ø",Remove useless curly braces around statement(â«¹µüÿÿÿÿ
+C
+java:S1602ü",Remove useless curly braces around statement(À…ÛÉ
+H
+java:S1602€",Remove useless curly braces around statement(¾şÅ¯ûÿÿÿÿ
+C
+java:S1602„",Remove useless curly braces around statement(ˆÔ·¥
+C
+java:S1602ˆ",Remove useless curly braces around statement( ÉƒØ
+H
+java:S1602Œ",Remove useless curly braces around statement(•Èßùıÿÿÿÿ
+C
+java:S1602",Remove useless curly braces around statement(­©„Ó
+H
+java:S1602”",Remove useless curly braces around statement(—§ûÿÿÿÿÿ
+H
+java:S1602˜",Remove useless curly braces around statement(¯—â˜ÿÿÿÿÿ
+H
+java:S1602œ",Remove useless curly braces around statement(ÂÇÁøÿÿÿÿ
+H
+java:S1602 ",Remove useless curly braces around statement(‡˜ª±úÿÿÿÿ
+i
+java:S3776²"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(Ù¥§ã
+e
+java:S3252¼"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ
+T
+java:S3252Ç"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(®Ğ–
+C
+java:S1602š",Remove useless curly braces around statement( ÉƒØ
+C
+java:S1602",Remove useless curly braces around statement(Ÿ§ãª
+C
+java:S1602¢",Remove useless curly braces around statement(Æ”æÓ
+C
+java:S1602¦",Remove useless curly braces around statement(­©„Ó
+C
+java:S1602ª",Remove useless curly braces around statement( óúæ
+A	java:S106½"+Replace this use of System.err by a logger.(ı×¯Í
