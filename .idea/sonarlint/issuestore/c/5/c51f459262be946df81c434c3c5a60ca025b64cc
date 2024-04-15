@@ -1,0 +1,45 @@
+
+u
+java:S2293õ"YReplace the type specification in this constructor call with the diamond operator ("<>").(ØÚËùÿÿÿÿ
+p
+java:S2293ü"YReplace the type specification in this constructor call with the diamond operator ("<>").(‘Ò×‡
+u
+java:S2293ƒ"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÓÑÒáıÿÿÿÿ
+_
+java:S1192r"JDefine a constant instead of duplicating this literal "SansSerif" 3 times.(¸ª—
+c
+java:S1192O"HDefine a constant instead of duplicating this literal "Tahoma" 10 times.(…¸ß¶øÿÿÿÿ
+F
+java:S1066·"/Merge this if statement with the enclosing one.(ôÎ´
+F
+java:S1066¼"/Merge this if statement with the enclosing one.(•±±ã
+F
+java:S1066Á"/Merge this if statement with the enclosing one.(²ıÔ
+F
+java:S1066Æ"/Merge this if statement with the enclosing one.(Ÿùª
+K
+java:S1066Ë"/Merge this if statement with the enclosing one.(®Ó™×şÿÿÿÿ
+K
+java:S1066Ğ"/Merge this if statement with the enclosing one.(£ŠÛ»ùÿÿÿÿ
+F
+java:S1066Õ"/Merge this if statement with the enclosing one.(¡ëİ
+K
+java:S1066Ú"/Merge this if statement with the enclosing one.(û†şíıÿÿÿÿ
+F
+java:S1066ß"/Merge this if statement with the enclosing one.(¾’¢Ç
+x
+java:S1319<"bThe type of "ds" should be an interface such as "List" rather than the implementation "ArrayList".(ŞòˆÇ
+?
+java:S1604ß"(Make this anonymous inner class a lambda(ğÕşÅ
+?
+java:S1604"(Make this anonymous inner class a lambda(Ò…÷Ì
+g	java:S101$"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¯Ìë¦ûÿÿÿÿ
+l	java:S1164"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÊ’Á
+h
+java:S3776<"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(ŞòˆÇ
+d
+java:S3252C"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ
+i
+java:S3776³"RRefactor this method to reduce its Cognitive Complexity from 54 to the 15 allowed.(’ÊÅ­
+İ
+java:S6541³"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 66 to 64, Complexity from 25 to 14, Nesting Level from 3 to 2, Number of Variables from 10 to 6.(’ÊÅ­

@@ -1,0 +1,13 @@
+
+›
+java:S1488"ZImmediately return this expression instead of assigning it to the temporary variable "ma".(Ã½ÊşÿÿÿÿJ$973823f0-a5f9-4a1b-84c2-14fbbdd6ef5f
+
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(’Æ’J$e2af9230-1c4e-45c8-a12d-1f914ba39a15
+‡
+java:S2095"KUse try-with-resources or close this "EntityManager" in a "finally" clause.(’Æ’J$ac23809f-dfad-4697-9c7b-f1da3d66e535
+j
+java:S1128"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚwJ$a519cb45-1f0b-4c22-8d97-eb8029fc2fad
+n
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸJ$d26f0e39-6a5d-466b-8779-5e914d552d26
+l
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±ÄøÿÿÿÿJ$7ebd550f-36d2-4987-9f6f-2c0e876e64d7

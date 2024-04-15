@@ -1,9 +1,9 @@
 
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ƒ¾½°í1
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ƒ¾½°í1J$dac87705-5276-4542-95c9-5bf72e748b42
 ”
-java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(Ï¦¢üùÿÿÿÿ8°•½°í1J$348e36bd-a794-4a0c-ae21-dbf442471742
-Ÿ	java:S116"XRename this field "khachHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷˜Íøÿÿÿÿ8´•½°í1J$baeaffe2-18a9-4bab-8057-6f659f01a0ac
-•	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï¦¢üùÿÿÿÿ8¸•½°í1J$3150a3b0-e814-4b70-a1b0-4b23dcf747d9
-I
-java:S1602",Remove useless curly braces around statement(çû¬“8”¾½°í1
-L	java:S106"+Replace this use of System.out by a logger.(ÒÏúÒùÿÿÿÿ8•¾½°í1
+java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(Ï¦¢üùÿÿÿÿ8°•½°í1J$502d0ada-8e04-43c8-93e4-64a236208037
+Ÿ	java:S116"XRename this field "khachHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷˜Íøÿÿÿÿ8´•½°í1J$43b02fd0-e3bd-4b4a-9bfc-186b7720d719
+•	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï¦¢üùÿÿÿÿ8¸•½°í1J$17c29293-4ec1-49d0-8cb5-7b7d6f4a4fcd
+X	java:S125"<This block of commented-out lines of code should be removed.(æÙ™Å8ğÚµÿí1
+S
+java:S1068"1Remove this unused "khachHang_DAO" private field.(÷˜Íøÿÿÿÿ8õÚµÿí1

@@ -6,6 +6,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "HoaDon")
@@ -19,6 +20,8 @@ public class HoaDon implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GenericGenerator(name = "generator", strategy = "entity.generateid.HoaDonGeneratorId")
+	@GeneratedValue(generator = "generator")
 	@Column(name = "maHoaDon", columnDefinition = "nvarchar(7)")
 	private String maHoaDon;
 

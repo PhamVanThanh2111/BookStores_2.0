@@ -1,4 +1,6 @@
 
 „
-java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿ8ı¼ú–í1J$c0a46046-8e2d-4ca7-9fbc-9fa881776478
-|	java:S125w"<This block of commented-out lines of code should be removed.(òß¿•üÿÿÿÿJ$05fe2018-690e-4f99-aba6-dc353d96cbd0
+java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿ8ı¼ú–í1J$f9263d4e-f4c5-4a6e-82b1-347a95f075cf
+R
+java:S1874"0Remove this use of "strategy"; it is deprecated.(ªéà½øÿÿÿÿ8ì¬à‰î1
+|	java:S125z"<This block of commented-out lines of code should be removed.(òß¿•üÿÿÿÿJ$28ef47da-bec1-4a53-bb0b-db57557749fc

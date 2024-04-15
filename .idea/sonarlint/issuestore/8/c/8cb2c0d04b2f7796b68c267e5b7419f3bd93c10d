@@ -1,0 +1,95 @@
+
+•
+java:S2293T"YReplace the type specification in this constructor call with the diamond operator ("<>").(€Õ‚ôJ$50be753f-2fac-466d-89e7-069d05400129
+–
+java:S2293´"YReplace the type specification in this constructor call with the diamond operator ("<>").(€Õ‚ôJ$2fdb5329-e775-4ac7-9ba7-22a94a575ffe
+
+java:S1192ğ"[Define a constant instead of duplicating this literal "/image/HeThong/refresh.png" 4 times.(™õùÿÿÿÿJ$df466fa2-ebec-476b-9e62-ecd71962309d
+
+java:S1192€"KDefine a constant instead of duplicating this literal "SansSerif" 13 times.(„ÃóæøÿÿÿÿJ$6bce9733-d556-48b8-b041-d4c87d5615cd
+„
+java:S1192x"HDefine a constant instead of duplicating this literal "Tahoma" 10 times.(ÈøšáJ$c4117dd1-7d17-4d80-b218-ed05c3021da2
+w
+java:S1141µ"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿJ$926ff786-e28c-4461-8548-7e1029c68239
+e
+java:S1604ƒ"(Make this anonymous inner class a lambda(ÎùÔòJ$3fa3de2b-669a-41c3-9699-517b8c27051e
+e
+java:S1604ª"(Make this anonymous inner class a lambda(»„¦²J$6795103e-bf33-46d8-a3a8-b8e666e49214
+e
+java:S1604Ê"(Make this anonymous inner class a lambda(õé—J$466c258a-1d67-488f-8e4a-bd10c6cc4056
+j
+java:S1604ô"(Make this anonymous inner class a lambda(‘òÂÏùÿÿÿÿJ$f73c4591-3e66-4b26-8179-8b0766eff6be
+e
+java:S1604‡"(Make this anonymous inner class a lambda(ğÕşÅJ$159f20b8-b106-424c-9998-e691d605ac4c
+j
+java:S1604â"(Make this anonymous inner class a lambda(‘òÂÏùÿÿÿÿJ$9d4e005f-a6da-4683-9013-e4291e364e14
+e
+java:S1604ö"(Make this anonymous inner class a lambda(ğÕşÅJ$7ada650b-f1f4-4573-8adc-a4d627f8b742
+ˆ	java:S101%"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(©şåÃJ$b81f4ccc-2ba9-4523-8b08-8dadfb79a123
+–
+java:S2259‘"TA "NullPointerException" could be thrown; "timKiemTheLoaiSach_GUI" is nullable here.(åø­ÄüÿÿÿÿJ$6c2f2cf0-9a74-4954-ac93-627c75ea71f3
+–
+java:S2259"TA "NullPointerException" could be thrown; "timKiemTheLoaiSach_GUI" is nullable here.(åø­ÄüÿÿÿÿJ$32a89d44-72a4-4c45-b98d-d002d026f02f
+š	java:S116B"ZRename this field "theLoaiSach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†‡«˜ÿÿÿÿÿJ$d93f9624-b04f-49a0-a6a2-106ab1624cfc
+™	java:S116C"YRename this field "phatSinhMa_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ÿ©ËùÿÿÿÿJ$07dbad53-ec4e-4c5f-9061-21a60755b8b5
+¡	java:S116G"aRename this field "timKiemTheLoaiSach_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£îèœùÿÿÿÿJ$6aca6316-74a3-4bed-b134-2d8359b24d73
+q
+java:S1948C"0Make "phatSinhMa_DAO" transient or serializable.(‰ÿ©ËùÿÿÿÿJ$9c21a43f-39be-4561-9e21-5e69aa69ccf9
+
+java:S3776N"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(ÅâÚ”J$f4aa25a1-617d-4498-b185-65d2e0f526de
+t
+java:S1135†"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$e1307079-4df2-478f-8646-a09b14ff3183
+t
+java:S1135®"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$427974e6-fe4d-434a-a01a-80d561c85604
+t
+java:S1135Î"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$6b591d45-d2e4-4cbf-8060-af201ad9eb42
+t
+java:S1135ø"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$154143a8-bcac-4ddf-abe1-b7061976ee27
+x	java:S125ú"<This block of commented-out lines of code should be removed.(·¼Û–J$dead1410-3a12-4328-966f-4a2c61879740
+x	java:S125”"<This block of commented-out lines of code should be removed.(¸ƒ ‰J$88a83ba8-8aa7-4157-a164-ceed6f3e4975
+x	java:S125™"<This block of commented-out lines of code should be removed.(€œÎÅJ$44b3eb14-d882-4bcc-a032-b6a185a0cd02
+}	java:S125"<This block of commented-out lines of code should be removed.(úãããûÿÿÿÿJ$b6c1ec65-936f-44b7-951b-a1736e96932e
+x	java:S125¥"<This block of commented-out lines of code should be removed.(Ìá–£J$f527291c-89f1-4532-844c-c651fabd8b1c
+j
+java:S2114©"(Remove or correct this "removeAll" call.(­¨ŠÚùÿÿÿÿJ$d8f5a9dc-e3a0-47ae-af47-38d6fa59b554
+x	java:S125¨"<This block of commented-out lines of code should be removed.(“ÏÒÂJ$c0afc054-367f-4eba-9695-aae141a8f154
+g
+java:S1197ã"*Move the array designators [] to the type.(óÈ‹J$fd7b14ce-0c13-4556-8601-637defdc8127
+t
+java:S1135ö"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$6e257f43-d282-4917-9798-915be02df150
+t
+java:S1135ü"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$6ba38eae-dd47-4789-8d51-86c9b1e72bb6
+t
+java:S1135‚"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$dbab9c28-cabf-445d-8627-90dcf640a44c
+t
+java:S1135ˆ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$125fe4b1-db3b-4e73-9584-5154207bf15b
+ƒ
+java:S3252£"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿJ$74c29940-0cca-490b-9fbb-38bcd0066a0a
+t
+java:S1135æ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$ccdae718-ae02-4dac-9766-33af762a2ba0
+x	java:S125è"<This block of commented-out lines of code should be removed.(·¼Û–J$1a06ece1-95f0-442a-8a9c-b3dd1e368b04
+t
+java:S1135ù"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$b216b6c6-1c69-411f-9e08-92297b8ae515
+x	java:S125„"<This block of commented-out lines of code should be removed.(¸ƒ ‰J$e4ac8cd7-e976-4423-a559-749dd9521b96
+x	java:S125‰"<This block of commented-out lines of code should be removed.(€œÎÅJ$bbc4bd35-1205-4145-a55b-8f640ca4814d
+}	java:S125"<This block of commented-out lines of code should be removed.(úãããûÿÿÿÿJ$28e17d01-dcf7-42c6-a4fd-0439ddef4c8e
+x	java:S125•"<This block of commented-out lines of code should be removed.(Ìá–£J$1d2c3eea-7ea8-447c-b130-2bab6798b630
+j
+java:S2114™"(Remove or correct this "removeAll" call.(­¨ŠÚùÿÿÿÿJ$d8ae06e2-fb46-429d-8617-fff0701f565b
+x	java:S125˜"<This block of commented-out lines of code should be removed.(“ÏÒÂJ$e7ba517b-22b8-48d6-9ae5-9e1f748fdfd5
+}	java:S125¸"<This block of commented-out lines of code should be removed.(É°áıúÿÿÿÿJ$2a7db281-0e32-4d38-99fb-5e9d84d5afbd
+g
+java:S1197Ì"*Move the array designators [] to the type.(óÈ‹J$04d66b0d-6231-42b4-ab78-4a03813b1e7d
+t
+java:S1135ß"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$69daac89-81e0-4f25-88d5-47b2beb93c7d
+t
+java:S1135å"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$69560dc0-e13d-4958-9f19-d00155ddfa96
+t
+java:S1135ë"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$4d6ee58f-f6b6-4f34-ba62-0b5a553cee4c
+t
+java:S1135ñ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$39898b01-4817-419b-bac4-b1fa9d42d425
+t
+java:S1135÷"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$6dc96179-d8ad-4a26-a802-3b3b51da483b
+d
+java:S3252‡"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿ8Şàµÿí1
+x	java:S125›"<This block of commented-out lines of code should be removed.(‡¤ø÷J$5348a832-c8e4-4ef2-802b-4b3224a1c2a4

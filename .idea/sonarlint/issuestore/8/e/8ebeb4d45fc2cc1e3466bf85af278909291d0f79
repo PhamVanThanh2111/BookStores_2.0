@@ -1,12 +1,12 @@
 
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(í¨àœÿÿÿÿÿ8õ¼º°í1
-ˆ	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(œê¾ß8œ—Í—í1J$5d7d995e-9979-4197-a67a-468649feeb04
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‚¿Î—í1
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(í¨àœÿÿÿÿÿ8õ¼º°í1J$b0725ca5-a65c-4fab-9f48-6f7c92fa7174
+ˆ	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(œê¾ß8œ—Í—í1J$dbd3f022-6c85-4a2b-9bf9-9da028f08068
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‚¿Î—í1J$3d321c2a-6725-4497-a1f9-43ec8db2aace
 ”
-java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(í¨àœÿÿÿÿÿ8—Í—í1J$9b631dde-20d6-4f2e-b4dd-60345c1e31b8
-•	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í¨àœÿÿÿÿÿ8¡—Í—í1J$19cdda53-12ad-4bce-b0a0-19b2575e3295
+java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(í¨àœÿÿÿÿÿ8—Í—í1J$a4579ea9-f5a2-44f1-8c35-7728e06254e4
+•	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í¨àœÿÿÿÿÿ8¡—Í—í1J$014a1320-6972-4621-928a-d04eaa4d54cc
 ¯
-java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(œê¾ß8£—Í—í1J$5cbd768f-a416-4a8a-9c6c-0f1f7226558b
-I
-java:S1602",Remove useless curly braces around statement(Õçíê8¿Î—í1
-F	java:S106"+Replace this use of System.out by a logger.(õ¬ãa8¿Î—í1
+java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(œê¾ß8£—Í—í1J$a0af99d0-b9a4-4286-961b-bb581207d246
+o
+java:S1602",Remove useless curly braces around statement(Õçíê8¿Î—í1J$ee31e8f9-87b5-46b3-8c5c-0f95182779b7
+l	java:S106"+Replace this use of System.out by a logger.(õ¬ãa8¿Î—í1J$a237f7dc-3c0f-4164-b289-77229ce39a75
