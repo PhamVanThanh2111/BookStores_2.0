@@ -109,3 +109,5 @@ L
 src/main/java/entity/Ca.java,e\0\e00d8468d3c5f426917f7330461e75fead92bf85
 R
 "src/main/java/entity/TaiKhoan.java,6\0\60ff67b589af4a0c2ef8d4ff8c0fc84991f65c15
+d
+4src/main/java/entity/generateid/SachGeneratorId.java,a\2\a276157003453ef4d373664301d061998f164df7
