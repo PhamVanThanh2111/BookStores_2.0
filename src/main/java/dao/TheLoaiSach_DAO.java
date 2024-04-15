@@ -73,7 +73,7 @@ public class TheLoaiSach_DAO extends UnicastRemoteObject implements TheLoaiSach_
 	public boolean suaTheLoaiSach(TheLoaiSach theLoaiSach) throws RemoteException {
 		try {
 			em.getTransaction().begin();
-			em.persist(theLoaiSach);
+			em.merge(theLoaiSach);
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {

@@ -316,7 +316,6 @@ public class NhaXuatBan_GUI extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (btnAdd.getText().equals("Thêm")) {
 					enableEdit();
 					focusable();
@@ -838,7 +837,7 @@ public class NhaXuatBan_GUI extends JPanel {
 				nhaXuatBan.setDiaChi(txtDiaChi.getText());
 				nhaXuatBan.setSoDienThoai(txtSoDienThoai.getText());
 				nhaXuatBan.setEmail(txtEmail.getText());
-
+				nhaXuatBan.setTenNhaXuatBan(txtTenNXB.getText());
 				nhaXuatBan_DAO.themNhaXuatBan(nhaXuatBan);
 
 				JOptionPane.showMessageDialog(null, "Thêm nhà xuất bản thành công!");

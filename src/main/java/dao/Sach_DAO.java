@@ -71,7 +71,7 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 			sach_temp.setMaSanPham(maSachXoa);
 			if (sach != null) {
 				em.remove(sach);
-				em.persist(sach_temp);
+				em.merge(sach_temp);
 			}
 			em.getTransaction().commit();
 			return true;
@@ -98,7 +98,7 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 			sach_temp.setMaSanPham(maSach);
 			if (sach != null) {
 				em.remove(sach);
-				em.persist(sach_temp);
+				em.merge(sach_temp);
 			}
 			em.getTransaction().commit();
 			return true;
