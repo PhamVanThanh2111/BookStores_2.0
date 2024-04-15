@@ -24,16 +24,18 @@ public class ChiTietPhieuDatHang_DAO extends UnicastRemoteObject implements ChiT
 			em.getTransaction().begin();
 			em.persist(chiTietPhieuDatHang);
 			em.getTransaction().commit();
+			em.close();
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			em.getTransaction().rollback();
+			em.close();
 			return false;
 		}
 	}
 
 	@Override
-	public List<ChiTietPhieuDatHang> getAllChiTietPhieuDatHangTheoMaPhieuDatHang(String maPhieuDatHang)
+	public List<ChiTietPhieuDatHang> getAllChiTietPhieuDatHangTheoMa(String maPhieuDatHang)
 			throws RemoteException {
 		return em.createNamedQuery("maPhieuDatHang", ChiTietPhieuDatHang.class)
 				.setParameter("maPhieuDatHang", maPhieuDatHang)

@@ -26,12 +26,12 @@ public class ChiTietPhieuDatHang implements Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("maPhieuDatHang")
-	@JoinColumn(name = "maPhieuDatHang", columnDefinition = "nvarchar(7)", nullable = false)
+	@JoinColumn(name = "maPhieuDatHang", columnDefinition = "nvarchar(7)", nullable = true)
 	private PhieuDatHang phieuDatHang;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("maSanPham")
-	@JoinColumn(name = "maSanPham", columnDefinition = "nvarchar(9)", nullable = false)
+	@JoinColumn(name = "maSanPham", columnDefinition = "nvarchar(9)", nullable = true)
 	private SanPham sanPham;
 
 	@Column(name = "soLuong", nullable = false)

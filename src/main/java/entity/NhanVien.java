@@ -86,7 +86,7 @@ public class NhanVien implements Serializable{
 	}
 
 	public NhanVien(String maNhanVien, String tenNhanVien, String diaChi, String gioiTinh, Date ngaySinh,
-			Date ngayVaoLam, String cCCD, String email, String soDienThoai, String chucVu, String hinhAnh) {
+			Date ngayVaoLam, String cCCD, String email, String soDienThoai, String chucVu, TaiKhoan taiKhoan, Ca ca, String hinhAnh) {
 		super();
 		this.maNhanVien = maNhanVien;
 		this.tenNhanVien = tenNhanVien;
@@ -98,7 +98,9 @@ public class NhanVien implements Serializable{
 		this.email = email;
 		this.soDienThoai = soDienThoai;
 		this.chucVu = chucVu;
+		this.taiKhoan = taiKhoan;
 		this.hinhAnh = hinhAnh;
+		this.ca = ca;
 	}
 
 	public String getMaNhanVien() {

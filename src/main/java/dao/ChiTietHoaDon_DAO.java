@@ -16,19 +16,18 @@ public class ChiTietHoaDon_DAO implements ChiTietHoaDon_Impl {
 		em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
 	}
 	public boolean themChiTietHoaDon(List<ChiTietHoaDon> chiTietHoaDon) throws SQLException {
-		boolean result = false;
 		try {
 			em.getTransaction().begin();
 			for (ChiTietHoaDon cthd : chiTietHoaDon) {
 				em.persist(cthd);
 			}
 			em.getTransaction().commit();
-			result = true;
+			return true;
 		} catch (Exception e) {
 			em.getTransaction().rollback();
 			e.printStackTrace();
+			return false;
 		}
-		return false;
 	}
 
 	public List<ChiTietHoaDon> getAllChiTietHoaDonTheoMaHoaDon(String maHoaDon) throws SQLException {

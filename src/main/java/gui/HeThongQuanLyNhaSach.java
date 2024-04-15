@@ -23,7 +23,6 @@ import dao.NhaXuatBan_DAO;
 import dao.NhanVien_DAO;
 import dao.PhieuDatHang_DAO;
 import dao.Sach_DAO;
-import dao.SanPham_DAO;
 import dao.TheLoaiSach_DAO;
 import entity.NhanVien;
 
@@ -86,7 +85,6 @@ public class HeThongQuanLyNhaSach extends JFrame {
 	private NhanVien_DAO nhanVien_DAO;
 	private PhieuDatHang_DAO phieuDatHang_DAO;
 	private KhachHang_DAO khachHang_DAO;
-	private SanPham_DAO sanPham_DAO;
 	private TheLoaiSach_DAO theLoaiSach_DAO;
 	private NhaXuatBan_DAO nhaXuatBan_DAO;
 	private NhaCungCap_DAO nhaCungCap_DAO;
@@ -100,14 +98,12 @@ public class HeThongQuanLyNhaSach extends JFrame {
 	 * @throws SQLException
 	 * @throws RemoteException 
 	 */
-
 	public HeThongQuanLyNhaSach(NhanVien nhanVien) throws SQLException, RemoteException {
 
 		// initialization variable DAO
 		nhanVien_DAO = new NhanVien_DAO();
 		phieuDatHang_DAO = new PhieuDatHang_DAO();
 		khachHang_DAO = new KhachHang_DAO();
-		sanPham_DAO = new SanPham_DAO();
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		nhaCungCap_DAO = new NhaCungCap_DAO();
@@ -1109,7 +1105,6 @@ public class HeThongQuanLyNhaSach extends JFrame {
 
 	public HeThongQuanLyNhaSach() throws RemoteException {
 		// khai bao DAO
-		sanPham_DAO = new SanPham_DAO();
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
 		nhaCungCap_DAO = new NhaCungCap_DAO();

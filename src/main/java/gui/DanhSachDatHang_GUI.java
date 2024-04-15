@@ -380,7 +380,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 	
 	private void loadDataIntoTableChiTietPhieuDatTheoMaPhieuDat(String maPhieuDat) throws RemoteException {
 		modelCTPD.setRowCount(0);
-		for (ChiTietPhieuDatHang chiTietPhieuDatHang : chiTietPhieuDatHang_DAO.getAllChiTietPhieuDatHangTheoMaPhieuDatHang(maPhieuDat)) {
+		for (ChiTietPhieuDatHang chiTietPhieuDatHang : chiTietPhieuDatHang_DAO.getAllChiTietPhieuDatHangTheoMa(maPhieuDat)) {
 			Object[] objects = {chiTietPhieuDatHang.getPhieuDatHang().getMaPhieuDatHang(),
 								sanPham_DAO.getSanPhamTheoMa(chiTietPhieuDatHang.getSanPham().getMaSanPham()).getTenSanPham(),
 								chiTietPhieuDatHang.getSoLuong(),
@@ -434,7 +434,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 //				hoaDon_DAO.lapHoaDon(hoaDon);
 				
 				// thêm chi tiết hóa đơn
-				for (ChiTietPhieuDatHang chiTietPhieuDatHang : chiTietPhieuDatHang_DAO.getAllChiTietPhieuDatHangTheoMaPhieuDatHang(modelDSPD.getValueAt(row, 0).toString())) {
+				for (ChiTietPhieuDatHang chiTietPhieuDatHang : chiTietPhieuDatHang_DAO.getAllChiTietPhieuDatHangTheoMa(modelDSPD.getValueAt(row, 0).toString())) {
 					ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
 //					chiTietHoaDon.setMaHoaDon(maHoaDon);
 //					chiTietHoaDon.setMaSanPham(chiTietPhieuDatHang.getMaSanPham());

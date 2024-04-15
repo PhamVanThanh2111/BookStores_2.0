@@ -398,7 +398,11 @@ public class NhanVien_GUI extends JPanel {
 											btnLamMoi.setEnabled(false);
 											btnSua.setEnabled(false);
 											btnTim.setEnabled(false);
-											
+											try {
+												lblMaNhanVienValue.setText(phatSinhMa_DAO.getMaNhanVien());
+											} catch (SQLException e1) {
+												e1.printStackTrace();
+											}
 										}
 										else {
 											try {
@@ -428,7 +432,6 @@ public class NhanVien_GUI extends JPanel {
 	
 										@Override
 										public void actionPerformed(ActionEvent e) {
-											// TODO Auto-generated method stub
 											int row = table.getSelectedRow();
 											if (btnSua.getText().equals("Sửa")) {
 												if (row == -1)
@@ -981,12 +984,10 @@ public class NhanVien_GUI extends JPanel {
 					Date ngayVaoLam = nhanVien_DAO.getNhanVienTheoMa(model.getValueAt(row, 0).toString())
 							.getNgayVaoLam();
 					Date ngaySinh = nhanVien_DAO.getNhanVienTheoMa(model.getValueAt(row, 0).toString()).getNgaySinh();
-//						NhanVien nhanVien = new NhanVien(lblMaNhanVienValue.getText(), txtTenNhanVien.getText(), txtDiaChi.getText(),
-//								cbGioiTinh.getSelectedItem().toString(), ngaySinh, ngayVaoLam, txtcCCD.getText(),
-//								txtEmail.getText(), txtSoDienThoai.getText(), cbChucVu.getSelectedItem().toString(),
-//								taiKhoan, "C" + cbCa.getSelectedItem(), relativePath);
-					// tam thoi
-					NhanVien nhanVien = new NhanVien();
+					NhanVien nhanVien = new NhanVien(lblMaNhanVienValue.getText(), txtTenNhanVien.getText(), txtDiaChi.getText(),
+						cbGioiTinh.getSelectedItem().toString(), ngaySinh, ngayVaoLam, txtcCCD.getText(),
+								txtEmail.getText(), txtSoDienThoai.getText(), cbChucVu.getSelectedItem().toString(),
+								taiKhoan, new Ca("C" + cbCa.getSelectedItem()), relativePath);
 					nhanVien_DAO.suaNhanVien(nhanVien);
 					JOptionPane.showMessageDialog(null, "Sửa thành công nhân viên '" + model.getValueAt(row, 0) + "'!");
 					refresh();

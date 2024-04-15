@@ -32,10 +32,12 @@ public class PhieuDatHang_DAO extends UnicastRemoteObject implements PhieuDatHan
 			em.getTransaction().begin();
 			em.persist(phieuDatHang);
 			em.getTransaction().commit();
+			em.close();
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			em.getTransaction().rollback();
+			em.close();
 			return false;
 		}
 	}

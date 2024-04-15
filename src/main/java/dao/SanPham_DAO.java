@@ -32,7 +32,7 @@ public class SanPham_DAO extends UnicastRemoteObject implements SanPham_Impl {
 				.getResultList()
 				.stream()
 				.findFirst()
-				.orElse(null);
+				.orElse(null); 
 	}
 
 	@Override
