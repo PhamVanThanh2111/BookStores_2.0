@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import jakarta.persistence.*;
-
+import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "KhachHang")
 @NamedQueries({
@@ -17,6 +17,8 @@ public class KhachHang implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GenericGenerator(name = "generator", strategy = "entity.generateid.KhachHangGeneratorId")
+	@GeneratedValue(generator = "generator")
 	@Column(name = "maKhachHang", columnDefinition = "nvarchar(7)")
 	private String maKhachHang;
 

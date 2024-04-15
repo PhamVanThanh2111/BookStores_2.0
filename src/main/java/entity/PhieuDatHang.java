@@ -5,15 +5,8 @@ import java.sql.Date;
 import java.util.Objects;
 import java.util.Set;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "PhieuDatHang")
@@ -24,6 +17,8 @@ public class PhieuDatHang implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GenericGenerator(name = "generator", strategy = "entity.generateid.PhieuDatHangGeneratorId")
+	@GeneratedValue(generator = "generator")
 	@Column(name = "maPhieuDatHang", columnDefinition = "nvarchar(7)")
 	private String maPhieuDatHang;
 

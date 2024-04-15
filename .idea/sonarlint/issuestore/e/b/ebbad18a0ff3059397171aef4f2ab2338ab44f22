@@ -1,5 +1,7 @@
 
-W
-java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿ
-W	java:S107X"BConstructor has 11 parameters, which is greater than 7 authorized.(¯¢€…
-W	java:S125ô"<This block of commented-out lines of code should be removed.(òß¿•üÿÿÿÿ
+}
+java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿJ$9027fc49-4b94-41dd-985e-d0198e5a3cb9
+}	java:S107Q"BConstructor has 13 parameters, which is greater than 7 authorized.(¯¢€…J$b0b9cdb3-8c90-448a-a3fc-bfa9f9d232e8
+r
+java:S1874"0Remove this use of "strategy"; it is deprecated.(ª•à8¹¡Á‰î1J$124c9167-9536-4b7b-9f3f-21eab19c5271
+}	java:S125ï"<This block of commented-out lines of code should be removed.(òß¿•üÿÿÿÿJ$47a524fc-bb44-4162-8a17-3db28b677b59
