@@ -41,7 +41,6 @@ import javax.swing.ImageIcon;
 import com.toedter.calendar.JDateChooser;
 
 import dao.NhanVien_DAO;
-import dao.PhatSinhMa_DAO;
 import dao.TaiKhoan_DAO;
 import entity.Ca;
 import entity.NhanVien;
@@ -62,7 +61,6 @@ public class NhanVien_GUI extends JPanel {
 	private JTable table;
 	private JTableHeader tableHeader;
 	private NhanVien_DAO nhanVien_DAO;
-	private PhatSinhMa_DAO phatSinhMa_DAO;
 	private TaiKhoan_DAO taiKhoan_DAO;
 	private JComboBox<String> cbGioiTinh;
 	private JComboBox<String> cbCa;
@@ -96,7 +94,6 @@ public class NhanVien_GUI extends JPanel {
 
 		// khai bao DAO
 		nhanVien_DAO = new NhanVien_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
 		taiKhoan_DAO = new TaiKhoan_DAO();
 
 		ds = new ArrayList<NhanVien>();
@@ -398,11 +395,6 @@ public class NhanVien_GUI extends JPanel {
 											btnLamMoi.setEnabled(false);
 											btnSua.setEnabled(false);
 											btnTim.setEnabled(false);
-											try {
-												lblMaNhanVienValue.setText(phatSinhMa_DAO.getMaNhanVien());
-											} catch (SQLException e1) {
-												e1.printStackTrace();
-											}
 										}
 										else {
 											try {
@@ -812,37 +804,28 @@ public class NhanVien_GUI extends JPanel {
 				return false;
 			}
 			else {
-				try {
-					// Thêm tài khoản mới cho nhân viên mới
-					TaiKhoan taiKhoan = new TaiKhoan();
-					String taiKhoanString = phatSinhMa_DAO.getMaTaiKhoan();
-					taiKhoan.setTaiKhoan(taiKhoanString);
-					taiKhoan.setMatKhau(taiKhoanString);
-					taiKhoan_DAO.themTaiKhoan(taiKhoan);
+				// Thêm tài khoản mới cho nhân viên mới
+				TaiKhoan taiKhoan = new TaiKhoan(txtSoDienThoai.getText());
+				taiKhoan_DAO.themTaiKhoan(taiKhoan);
 
-					NhanVien nhanVien = new NhanVien();
-					nhanVien.setMaNhanVien(phatSinhMa_DAO.getMaNhanVien());
-					nhanVien.setTenNhanVien(txtTenNhanVien.getText());
-					nhanVien.setDiaChi(txtDiaChi.getText());
-					nhanVien.setGioiTinh(cbGioiTinh.getSelectedItem().toString());
-					nhanVien.setNgaySinh(new Date(dateChooserNgaySinh.getDate().getTime()));
-					nhanVien.setNgayVaoLam(new Date(new java.util.Date().getTime()));
-					nhanVien.setcCCD(txtcCCD.getText());
-					nhanVien.setEmail(txtEmail.getText());
-					nhanVien.setSoDienThoai(txtSoDienThoai.getText());
-					nhanVien.setChucVu(cbChucVu.getSelectedItem().toString());
-					nhanVien.setTaiKhoan(taiKhoan);
-					nhanVien.setCa(new Ca("C" + cbCa.getSelectedItem()));
-					nhanVien.setHinhAnh(relativePath);
-					nhanVien_DAO.themNhanVien(nhanVien);
-					JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công!");
-					refresh();
-					return true;
-				} catch (SQLException e1) {
-					JOptionPane.showMessageDialog(null, "Thêm nhân viên thất bại!");
-					e1.printStackTrace();
-					return false;
-				}
+				NhanVien nhanVien = new NhanVien();
+				nhanVien.setMaNhanVien(taiKhoan.getTaiKhoan());
+				nhanVien.setTenNhanVien(txtTenNhanVien.getText());
+				nhanVien.setDiaChi(txtDiaChi.getText());
+				nhanVien.setGioiTinh(cbGioiTinh.getSelectedItem().toString());
+				nhanVien.setNgaySinh(new Date(dateChooserNgaySinh.getDate().getTime()));
+				nhanVien.setNgayVaoLam(new Date(new java.util.Date().getTime()));
+				nhanVien.setcCCD(txtcCCD.getText());
+				nhanVien.setEmail(txtEmail.getText());
+				nhanVien.setSoDienThoai(txtSoDienThoai.getText());
+				nhanVien.setChucVu(cbChucVu.getSelectedItem().toString());
+				nhanVien.setTaiKhoan(taiKhoan);
+				nhanVien.setCa(new Ca("C" + cbCa.getSelectedItem()));
+				nhanVien.setHinhAnh(relativePath);
+				nhanVien_DAO.themNhanVien(nhanVien);
+				JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công!");
+				refresh();
+				return true;
 			}
 
 		}

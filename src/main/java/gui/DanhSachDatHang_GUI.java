@@ -32,7 +32,6 @@ import dao.DungCuHocTap_DAO;
 import dao.HoaDon_DAO;
 import dao.KhachHang_DAO;
 import dao.NhanVien_DAO;
-import dao.PhatSinhMa_DAO;
 import dao.PhieuDatHang_DAO;
 import dao.Sach_DAO;
 import dao.SanPham_DAO;
@@ -67,7 +66,6 @@ public class DanhSachDatHang_GUI extends JPanel {
 	private ChiTietPhieuDatHang_DAO chiTietPhieuDatHang_DAO;
 	private Sach_DAO sach_DAO;
 	private DungCuHocTap_DAO dungCuHocTap_DAO;
-	private PhatSinhMa_DAO phatSinhMa_DAO;
 	private HoaDon_DAO hoaDon_DAO;
 	private ChiTietHoaDon_DAO chiTietHoaDon_DAO;
 	private NhanVien_DAO nhanVien_DAO;
@@ -85,7 +83,6 @@ public class DanhSachDatHang_GUI extends JPanel {
 		chiTietPhieuDatHang_DAO = new ChiTietPhieuDatHang_DAO();
 		sach_DAO = new Sach_DAO();
 		dungCuHocTap_DAO = new DungCuHocTap_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
 		hoaDon_DAO = new HoaDon_DAO();
 		chiTietHoaDon_DAO = new ChiTietHoaDon_DAO();
 		nhanVien_DAO = new NhanVien_DAO();
@@ -420,40 +417,30 @@ public class DanhSachDatHang_GUI extends JPanel {
 		if (row != -1) {
 			PhieuDatHang phieuDatHang = phieuDatHang_DAO.getPhieuDatHangTheoMa(modelDSPD.getValueAt(row, 0).toString());
 			HoaDon hoaDon = new HoaDon();
-			try {
-				
-				// thêm hóa đơn
-				String maHoaDon = phatSinhMa_DAO.getMaHoaDon();
-			
-				hoaDon.setMaHoaDon(maHoaDon);
+			// thêm hóa đơn
 //				hoaDon.setMaNhanVien(phieuDatHang.getNhanVien().getma);
 //				hoaDon.setMaKhachHang(phieuDatHang.getMaKhachHang());
-				hoaDon.setNgayLap(new Date(new java.util.Date().getTime()));
-				hoaDon.setThanhTien(phieuDatHang.getThanhTien());
+			hoaDon.setNgayLap(new Date(new java.util.Date().getTime()));
+			hoaDon.setThanhTien(phieuDatHang.getThanhTien());
 //				hoaDon_DAO.lapHoaDon(hoaDon);
-				
-				// thêm chi tiết hóa đơn
-				for (ChiTietPhieuDatHang chiTietPhieuDatHang : chiTietPhieuDatHang_DAO.getAllChiTietPhieuDatHangTheoMa(modelDSPD.getValueAt(row, 0).toString())) {
-					ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
+			
+			// thêm chi tiết hóa đơn
+			for (ChiTietPhieuDatHang chiTietPhieuDatHang : chiTietPhieuDatHang_DAO.getAllChiTietPhieuDatHangTheoMa(modelDSPD.getValueAt(row, 0).toString())) {
+				ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
 //					chiTietHoaDon.setMaHoaDon(maHoaDon);
 //					chiTietHoaDon.setMaSanPham(chiTietPhieuDatHang.getMaSanPham());
-					chiTietHoaDon.setSoLuong(chiTietPhieuDatHang.getSoLuong());
-					chiTietHoaDon.setDonGia(chiTietPhieuDatHang.getDonGia());
+				chiTietHoaDon.setSoLuong(chiTietPhieuDatHang.getSoLuong());
+				chiTietHoaDon.setDonGia(chiTietPhieuDatHang.getDonGia());
 //					chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
-				}
-				// xóa chi tiết phiếu đặt hàng
-				chiTietPhieuDatHang_DAO.xoaChiTietPhieuDatHang(phieuDatHang.getMaPhieuDatHang());
-				// xóa phiếu đặt hàng
-				phieuDatHang_DAO.xoaPhieuDatHangTheoMa(phieuDatHang.getMaPhieuDatHang());
-				xuatHoaDon(maHoaDon);
-				JOptionPane.showMessageDialog(null, "Lập hóa đơn thành công!");
-				refresh();
-				return true;
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				return false;
 			}
+			// xóa chi tiết phiếu đặt hàng
+			chiTietPhieuDatHang_DAO.xoaChiTietPhieuDatHang(phieuDatHang.getMaPhieuDatHang());
+			// xóa phiếu đặt hàng
+			phieuDatHang_DAO.xoaPhieuDatHangTheoMa(phieuDatHang.getMaPhieuDatHang());
+			xuatHoaDon(hoaDon.getMaHoaDon());
+			JOptionPane.showMessageDialog(null, "Lập hóa đơn thành công!");
+			refresh();
+			return true;
 		}
 		else {
 			JOptionPane.showMessageDialog(null, "Bạn chưa chọn phiếu đặt hàng!");

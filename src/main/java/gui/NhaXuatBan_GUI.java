@@ -24,7 +24,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
 import dao.NhaXuatBan_DAO;
-import dao.PhatSinhMa_DAO;
 import entity.NhaXuatBan;
 import entity.NhanVien;
 
@@ -59,7 +58,6 @@ public class NhaXuatBan_GUI extends JPanel {
 	private JButton btnTim;
 
 	private NhaXuatBan_DAO nhaXuatBan_DAO;
-	private PhatSinhMa_DAO phatSinhMa_DAO;
 
 	private TimKiemNhaXuatBan_GUI timKiemNhaXuatBan_GUI;
 	private ArrayList<NhaXuatBan> ds;
@@ -75,7 +73,6 @@ public class NhaXuatBan_GUI extends JPanel {
 
 		// Khai bao DAO
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
 
 		ds = new ArrayList<NhaXuatBan>();
 
@@ -496,7 +493,6 @@ public class NhaXuatBan_GUI extends JPanel {
 
 		// Khai bao DAO
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
 
 		ds = new ArrayList<NhaXuatBan>();
 
@@ -830,23 +826,16 @@ public class NhaXuatBan_GUI extends JPanel {
 			txtEmail.requestFocus();
 			return false;
 		} else {
-			try {
-				NhaXuatBan nhaXuatBan = new NhaXuatBan();
-				nhaXuatBan.setMaNhaXuatBan(phatSinhMa_DAO.getMaNhaXuatBan());
-				nhaXuatBan.setDiaChi(txtDiaChi.getText());
-				nhaXuatBan.setSoDienThoai(txtSoDienThoai.getText());
-				nhaXuatBan.setEmail(txtEmail.getText());
-				nhaXuatBan.setTenNhaXuatBan(txtTenNXBValue.getText());
-				nhaXuatBan_DAO.themNhaXuatBan(nhaXuatBan);
+			NhaXuatBan nhaXuatBan = new NhaXuatBan();
+			nhaXuatBan.setDiaChi(txtDiaChi.getText());
+			nhaXuatBan.setSoDienThoai(txtSoDienThoai.getText());
+			nhaXuatBan.setEmail(txtEmail.getText());
+			nhaXuatBan.setTenNhaXuatBan(txtTenNXBValue.getText());
+			nhaXuatBan_DAO.themNhaXuatBan(nhaXuatBan);
 
-				JOptionPane.showMessageDialog(null, "Thêm nhà xuất bản thành công!");
-				refresh();
-				return true;
-			} catch (SQLException e1) {
-				JOptionPane.showMessageDialog(null, "Thêm nhà xuất bản thất bại!");
-				e1.printStackTrace();
-				return false;
-			}
+			JOptionPane.showMessageDialog(null, "Thêm nhà xuất bản thành công!");
+			refresh();
+			return true;
 		}
 	}
 

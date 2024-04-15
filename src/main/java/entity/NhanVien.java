@@ -20,8 +20,6 @@ public class NhanVien implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "generator", strategy  = "entity.generateid.NhanVienGeneratorId")
-	@GeneratedValue(generator = "generator")
 	@Column(name = "maNhanVien", columnDefinition = "nvarchar(6)")
 	private String maNhanVien;
 

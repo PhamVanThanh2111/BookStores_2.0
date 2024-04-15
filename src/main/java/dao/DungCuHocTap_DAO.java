@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 
 import dao.impl.DungCuHocTap_Impl;
 import entity.DungCuHocTap;
+import entity.generateid.DungCuHocTapGeneratorId;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
@@ -58,29 +59,39 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 
 	@Override
 	public boolean xoaDungCuHocTapVaoThungRac(String maDungCuHocTap) throws RemoteException, SQLException {
-		PhatSinhMa_DAO phatSinhMa = new PhatSinhMa_DAO();
-		String maDCHTXoa = phatSinhMa.getMaDCHTXoa();
-		try {
-			DungCuHocTap dungCuHocTap = em.find(DungCuHocTap.class, maDungCuHocTap);
-			em.getTransaction().begin();
-			if (dungCuHocTap != null) {
-				dungCuHocTap.setMaSanPham(maDCHTXoa);
-                em.merge(dungCuHocTap);
-			}
-			em.getTransaction().commit();
-			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
-			em.getTransaction().rollback();
-			JOptionPane.showMessageDialog(null, "Không thể xóa dụng cụ học tập này!");
-			return false;
-		}
+	    DungCuHocTapGeneratorId generatorId = new DungCuHocTapGeneratorId();
+	    String maDCHTXoa = generatorId.generate(null, null).toString();
+	    try {
+	        em.getTransaction().begin();
+	        DungCuHocTap dungCuHocTap = em.find(DungCuHocTap.class, maDungCuHocTap);
+	        DungCuHocTap dungCuHocTap_temp = new DungCuHocTap();
+	        dungCuHocTap_temp.setMaSanPham(maDCHTXoa);
+	        dungCuHocTap_temp.setTenSanPham(dungCuHocTap.getTenSanPham());
+	        dungCuHocTap_temp.setSoLuongTon(dungCuHocTap.getSoLuongTon());
+	        dungCuHocTap_temp.setGiaBan(dungCuHocTap.getGiaBan());
+	        dungCuHocTap_temp.setGiaNhap(dungCuHocTap.getGiaNhap());
+	        dungCuHocTap_temp.setNhaCungCap(dungCuHocTap.getNhaCungCap());
+	        dungCuHocTap_temp.setHinhAnh(dungCuHocTap.getHinhAnh());
+	        dungCuHocTap_temp.setXuatXu(dungCuHocTap.getXuatXu());
+	        if (dungCuHocTap != null) {
+	            em.remove(dungCuHocTap);
+	            em.persist(dungCuHocTap_temp);
+	        }
+	        em.getTransaction().commit();
+	        return true;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        em.getTransaction().rollback();
+	        JOptionPane.showMessageDialog(null, "Không thể xóa dụng cụ học tập này!");
+	        return false;
+	    }
 	}
+
 
 	@Override
 	public boolean khoiPhucDungCuHocTap(String maDungCuHocTapXoa) throws RemoteException, SQLException {
-		PhatSinhMa_DAO phatSinhMa = new PhatSinhMa_DAO();
-		String maDCHT = phatSinhMa.getMaDCHT();
+		DungCuHocTapGeneratorId phatSinhMa = new DungCuHocTapGeneratorId();
+		String maDCHT = phatSinhMa.generate(null, null).toString();
 		try {
 			DungCuHocTap dungCuHocTap = em.find(DungCuHocTap.class, maDungCuHocTapXoa);
 			em.getTransaction().begin();
@@ -102,7 +113,7 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 		try {
 			em.getTransaction().begin();
 			if (dungCuHocTap != null) {
-                em.persist(dungCuHocTap);
+                em.merge(dungCuHocTap);
 			}
 			em.getTransaction().commit();
 			return true;

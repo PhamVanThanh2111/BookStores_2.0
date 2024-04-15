@@ -5,6 +5,7 @@ import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -16,6 +17,8 @@ public class TaiKhoan implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GenericGenerator(name = "generator", strategy  = "entity.generateid.NhanVienGeneratorId")
+	@GeneratedValue(generator = "generator")
 	@Column(name = "taiKhoan", columnDefinition = "nvarchar(6)")
 	private String taiKhoan;
 	
@@ -29,14 +32,14 @@ public class TaiKhoan implements Serializable {
 		super();
 	}
 
-	public TaiKhoan(String taiKhoan) {
-		super();
-		this.taiKhoan = taiKhoan;
-	}
-
 	public TaiKhoan(String taiKhoan, String matKhau) {
 		super();
 		this.taiKhoan = taiKhoan;
+		this.matKhau = matKhau;
+	}
+
+	public TaiKhoan(String matKhau) {
+		super();
 		this.matKhau = matKhau;
 	}
 

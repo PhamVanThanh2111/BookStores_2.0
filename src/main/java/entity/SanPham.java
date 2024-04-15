@@ -17,8 +17,6 @@ public abstract class SanPham implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "generator", strategy = "entity.generateid.SanPhamGeneratorId")
-	@GeneratedValue(generator = "generator")
 	@Column(name = "maSanPham", columnDefinition = "nvarchar(9)")
 	protected String maSanPham;
 

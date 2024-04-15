@@ -27,7 +27,6 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
-import dao.PhatSinhMa_DAO;
 import dao.TheLoaiSach_DAO;
 import entity.NhanVien;
 import entity.TheLoaiSach;
@@ -64,7 +63,6 @@ public class TheLoaiSach_GUI extends JPanel {
 	private DefaultTableModel model;
 
 	private TheLoaiSach_DAO theLoaiSach_DAO;
-	private PhatSinhMa_DAO phatSinhMa_DAO;
 
 	private JDesktopPane desktopPane;
 
@@ -79,7 +77,6 @@ public class TheLoaiSach_GUI extends JPanel {
 
 		// khai bao DAO
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
 
 		ds = new ArrayList<TheLoaiSach>();
 
@@ -431,7 +428,6 @@ public class TheLoaiSach_GUI extends JPanel {
 
 		// khai bao DAO
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
 
 		ds = new ArrayList<TheLoaiSach>();
 
@@ -686,25 +682,18 @@ public class TheLoaiSach_GUI extends JPanel {
 			txtTenTheLoaiSach.requestFocus();
 			return false;
 		} else {
+			TheLoaiSach theLoaiSach = new TheLoaiSach();
+			theLoaiSach.setTenTheLoaiSach(txtTenTheLoaiSach.getText());
 			try {
-				TheLoaiSach theLoaiSach = new TheLoaiSach();
-				theLoaiSach.setMaTheLoaiSach(phatSinhMa_DAO.getMaTheLoaiSach());
-				theLoaiSach.setTenTheLoaiSach(txtTenTheLoaiSach.getText());
-				try {
-					theLoaiSach_DAO.themTheLoaiSach(theLoaiSach);
-				} catch (RemoteException e) {
-					e.printStackTrace();
-				}
-				txtMaTheLoaiSach.setText(theLoaiSach.getMaTheLoaiSach());
-				txtTenTheLoaiSach.setText(theLoaiSach.getTenTheLoaiSach());
-				JOptionPane.showMessageDialog(null, "Thêm thể loại sách thành công!");
-				refresh();
-				return true;
-			} catch (SQLException e1) {
-				JOptionPane.showMessageDialog(null, "Thêm thể loại sách thất bại!");
-				e1.printStackTrace();
-				return false;
+				theLoaiSach_DAO.themTheLoaiSach(theLoaiSach);
+			} catch (RemoteException e) {
+				e.printStackTrace();
 			}
+			txtMaTheLoaiSach.setText(theLoaiSach.getMaTheLoaiSach());
+			txtTenTheLoaiSach.setText(theLoaiSach.getTenTheLoaiSach());
+			JOptionPane.showMessageDialog(null, "Thêm thể loại sách thành công!");
+			refresh();
+			return true;
 		}
 	}
 

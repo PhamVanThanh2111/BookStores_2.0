@@ -17,7 +17,6 @@ import dao.ChiTietHoaDon_DAO;
 import dao.DungCuHocTap_DAO;
 import dao.HoaDon_DAO;
 import dao.KhachHang_DAO;
-import dao.PhatSinhMa_DAO;
 import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import entity.ChiTietHoaDon;
@@ -78,7 +77,6 @@ public class HoaDon_GUI extends JPanel {
 	private JLabel lblTongTienValue;
 	private HoaDon_DAO hoaDon_DAO;
 	private ChiTietHoaDon_DAO chiTietHoaDon_DAO;
-	private PhatSinhMa_DAO phatSinhMa_DAO;
 	private DungCuHocTap_DAO dungCuHocTap_DAO;
 	private Sach_DAO sach_DAO;
 	private JTextField txtMaSanPham;
@@ -102,7 +100,6 @@ public class HoaDon_GUI extends JPanel {
 		khachHang_DAO = new KhachHang_DAO();
 		hoaDon_DAO = new HoaDon_DAO();
 		chiTietHoaDon_DAO = new ChiTietHoaDon_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
 		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 		sach_DAO = new Sach_DAO();
 
@@ -716,14 +713,12 @@ public class HoaDon_GUI extends JPanel {
 	
 	private void lapHoaDon(String maNhanVien) throws SQLException, JRException, RemoteException {
 		HoaDon hoaDon = new HoaDon();
-		String maHoaDon = phatSinhMa_DAO.getMaHoaDon();
 		if (khachHang != null) {
 			hoaDon.setKhachHang(khachHang);
 		}
 		else {
 			khachHang = new KhachHang();
 		}
-		hoaDon.setMaHoaDon(maHoaDon);
 //		hoaDon.setNhanVien();
 		hoaDon.setNgayLap(new java.sql.Date(new Date().getTime()));
 		hoaDon.setThanhTien(tinhThanhTien());
@@ -739,7 +734,7 @@ public class HoaDon_GUI extends JPanel {
 //			chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
 			sanPham_DAO.banSanPham(maSanPham, soLuong);
 		}
-		xemHoaDon(maHoaDon);
+		xemHoaDon(hoaDon.getMaHoaDon());
 		danhSachHoaDon_GUI.refresh();
 		thongKe_GUI.showAllChart();
 		trangChu_GUI.refresh();

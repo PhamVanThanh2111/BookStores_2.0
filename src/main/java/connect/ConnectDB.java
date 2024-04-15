@@ -33,11 +33,9 @@ public class ConnectDB {
 		try {
 			connect();
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return con;
-	}
-	public static void main(String[] args) {
-		System.out.println(getConnection());
 	}
 }

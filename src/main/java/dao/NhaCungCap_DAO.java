@@ -34,7 +34,7 @@ public class NhaCungCap_DAO extends UnicastRemoteObject implements NhaCungCap_Im
 	@Override
 	public NhaCungCap getNhaCungCapTheoTen(String tenNhaCC) throws RemoteException {
 	    return em.createNamedQuery("getNhaCungCapTheoTen", NhaCungCap.class)
-	             .setParameter("tenNhaCC", tenNhaCC)
+	             .setParameter("tenNhaCungCap", tenNhaCC)
 	             .getResultList()
                  .stream()
                  .findFirst()

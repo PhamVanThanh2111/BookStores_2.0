@@ -37,7 +37,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import dao.NhaXuatBan_DAO;
-import dao.PhatSinhMa_DAO;
 import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import dao.TheLoaiSach_DAO;
@@ -46,6 +45,7 @@ import entity.NhanVien;
 import entity.Sach;
 import entity.SanPham;
 import entity.TheLoaiSach;
+import entity.generateid.SachGeneratorId;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -103,7 +103,6 @@ public class Sach_GUI extends JPanel {
 	private NhaXuatBan_DAO nhaXuatBan_DAO;
 	private TheLoaiSach_DAO theLoaiSach_DAO;
 	private SanPham_DAO sanPham_DAO;
-	private PhatSinhMa_DAO phatSinhMa_DAO;
 	private Sach_DAO sach_DAO;
 	
 	private TimKiemSach_GUI timKiemSach_GUI;
@@ -123,6 +122,8 @@ public class Sach_GUI extends JPanel {
 	private XSSFWorkbook wordkbook;
 
 	private KhoiPhucSach_GUI khoiPhucSach_GUI;
+	
+	private SachGeneratorId sachGeneratorId;
 
 	// private JButton btnChonHinhAnh;
 	/**
@@ -137,7 +138,7 @@ public class Sach_GUI extends JPanel {
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
 		sanPham_DAO = new SanPham_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
+		sachGeneratorId = new SachGeneratorId();
 		sach_DAO = new Sach_DAO();
 
 		ds = new ArrayList<Sach>();
@@ -448,8 +449,11 @@ public class Sach_GUI extends JPanel {
 		btnLamMoi.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				lamMoi();
+				try {
+					loadData(sach_DAO.getAllSach());
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 
@@ -487,7 +491,6 @@ public class Sach_GUI extends JPanel {
 		btnTim.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (timKiemSach_GUI == null || timKiemSach_GUI.isClosed()) {
 					try {
 						timKiemSach_GUI = new TimKiemSach_GUI(ds);
@@ -759,7 +762,6 @@ public class Sach_GUI extends JPanel {
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
 		sanPham_DAO = new SanPham_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
 		sach_DAO = new Sach_DAO();
 
 		ds = new ArrayList<Sach>();
@@ -951,8 +953,11 @@ public class Sach_GUI extends JPanel {
 		btnLamMoi.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				lamMoiKhachHang();
+				try {
+					loadData_KhachHang(sach_DAO.getAllSach());
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		pThongTin.add(btnLamMoi);
@@ -1106,11 +1111,9 @@ public class Sach_GUI extends JPanel {
 					} catch (RemoteException e1) {
 						e1.printStackTrace();
 					}
-					// System.out.println(sach.getHinhAnh());
 
 				}
 			}
-			//
 		});
 		scrollPaneSach.setViewportView(table);
 		// header of table
@@ -1297,7 +1300,7 @@ public class Sach_GUI extends JPanel {
 			} else {
 				try {
 					Sach sach = new Sach();
-					sach.setMaSanPham(phatSinhMa_DAO.getMaSach());
+					sach.setMaSanPham(sachGeneratorId.generate(null, null).toString());
 					sach.setTenSanPham(txtTenSach.getText());
 					sach.setXuatXu(txtXuatXu.getText());
 					sach.setGiaNhap(Float.parseFloat(txtGiaNhap.getText()));

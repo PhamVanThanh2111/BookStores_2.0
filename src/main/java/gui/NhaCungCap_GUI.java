@@ -31,7 +31,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
 import dao.NhaCungCap_DAO;
-import dao.PhatSinhMa_DAO;
 import entity.NhaCungCap;
 import entity.NhanVien;
 
@@ -54,7 +53,6 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 	private Border borderDefault;
 	private JLabel lblMaNCC;
 	private NhaCungCap_DAO nhaCungCap_DAO;
-	private PhatSinhMa_DAO phatSinhMa_DAO;
 	private JButton btnXoa, btnThem, btnSua, btnTim;
 	private ArrayList<NhaCungCap> ds;
 	private TimKiemNhaCungCap timKiemNhaCungCap;
@@ -63,7 +61,6 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 	public NhaCungCap_GUI(NhanVien nhanVien) throws RemoteException {
 
 		nhaCungCap_DAO = new NhaCungCap_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
 		ds = new ArrayList<NhaCungCap>();
 
 		JPanel pMain = new JPanel();
@@ -341,7 +338,6 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 	public NhaCungCap_GUI() throws RemoteException {
 
 		nhaCungCap_DAO = new NhaCungCap_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
 		ds = new ArrayList<NhaCungCap>();
 
 		JPanel pMain = new JPanel();
@@ -674,12 +670,10 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 	public void themNhaCungCap() throws SQLException, RemoteException {
 		if (txtTenNhaCungCap.getText().equalsIgnoreCase("") || txtSDT.getText().equalsIgnoreCase("")
 				|| txtEmail.getText().equalsIgnoreCase("") || txtDiaChi.getText().equalsIgnoreCase("")) {
-			JOptionPane.showMessageDialog(null, "Thông Tin Rỗng !");
+			JOptionPane.showMessageDialog(null, "Thông tin rỗng!");
 		} else {
 
 			NhaCungCap nhaCC = new NhaCungCap();
-
-			nhaCC.setMaNCC(phatSinhMa_DAO.getMaNhaCungCap().toString());
 			nhaCC.setTenNCC(txtTenNhaCungCap.getText());
 			nhaCC.setSoDienThoai(txtSDT.getText());
 			nhaCC.setDiaChi(txtDiaChi.getText());
@@ -739,12 +733,6 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 				openFocusTXT();
 				btnThem.setText("Xác Nhận");
 				btnXoa.setText("Hủy");
-				xoaTrang();
-				try {
-					lblMaNCC.setText(phatSinhMa_DAO.getMaNhaCungCap().toString());
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
 
 			} else {
 				if (btnThem.getText().equalsIgnoreCase("Xác Nhận")) {
@@ -758,7 +746,6 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 					} catch (SQLException e1) {
 						e1.printStackTrace();
 					} catch (RemoteException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}

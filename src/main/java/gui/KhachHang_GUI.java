@@ -27,7 +27,6 @@ import javax.swing.table.JTableHeader;
 import java.awt.Color;
 
 import dao.KhachHang_DAO;
-import dao.PhatSinhMa_DAO;
 import entity.KhachHang;
 
 import javax.swing.border.Border;
@@ -54,7 +53,6 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 	private JTableHeader tableHeader;
 	private JButton btnThem, btnXoa, btnSua, btnTim;
 	private JComboBox<String> cbGioiTinh;
-	private PhatSinhMa_DAO phatSinhMa_DAO;
 	private JLabel lblMaKhachHang;
 	private Border borderDefault;
 	private LayoutManager layoutDefaultCombobox;
@@ -69,7 +67,6 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 	public KhachHang_GUI() throws RemoteException {
 
 		khachHang_DAO = new KhachHang_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
 		ds = new ArrayList<KhachHang>();
 		setLayout(null);
 
@@ -380,17 +377,11 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 		if (o.equals(btnThem)) {
 			if (btnThem.getText().equalsIgnoreCase("Thêm")) {
 
-				try {
-					btnThem.setText("Xác Nhận");
-					btnXoa.setText("Hủy");
-					btnSua.setEnabled(false);
-					btnTim.setEnabled(false);
-					lblMaKhachHang.setText(phatSinhMa_DAO.getMaKhachHang().toString());
-					openText();
-
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
+				btnThem.setText("Xác Nhận");
+				btnXoa.setText("Hủy");
+				btnSua.setEnabled(false);
+				btnTim.setEnabled(false);
+				openText();
 
 			} else {
 				if (btnThem.getText().equalsIgnoreCase("Xác Nhận")) {
@@ -528,7 +519,6 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 				&& !cbGioiTinh.getSelectedItem().toString().equalsIgnoreCase("")
 				&& !txtDiaChi.getText().equalsIgnoreCase("")) {
 			KhachHang khachHang = new KhachHang();
-			khachHang.setMaKhachHang(phatSinhMa_DAO.getMaKhachHang());
 			khachHang.setTenKhachHang(txtTenKH.getText());
 			khachHang.setGioiTinh(cbGioiTinh.getSelectedItem().toString());
 			khachHang.setSoDienThoai(txtSDT.getText());

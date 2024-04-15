@@ -22,7 +22,6 @@ import dao.PhieuDatHang_DAO;
 import dao.Sach_DAO;
 import dao.KhachHang_DAO;
 import dao.NhanVien_DAO;
-import dao.PhatSinhMa_DAO;
 import dao.SanPham_DAO;
 import entity.ChiTietPhieuDatHang;
 import entity.ChiTietPhieuDatKey;
@@ -78,7 +77,6 @@ public class DatHang_GUI extends JPanel {
 	private JLabel lblTongTienValue;
 	private PhieuDatHang_DAO phieuDatHang_DAO;
 	private ChiTietPhieuDatHang_DAO chiTietPhieuDatHang_DAO;
-	private PhatSinhMa_DAO phatSinhMa_DAO;
 	private Sach_DAO sach_DAO;
 	private DungCuHocTap_DAO dungCuHocTap_DAO;
 	private NhanVien_DAO nhanVien_DAO;
@@ -98,7 +96,6 @@ public class DatHang_GUI extends JPanel {
 		khachHang_DAO = new KhachHang_DAO();
 		phieuDatHang_DAO = new PhieuDatHang_DAO();
 		chiTietPhieuDatHang_DAO = new ChiTietPhieuDatHang_DAO();
-		phatSinhMa_DAO = new PhatSinhMa_DAO();
 		sach_DAO = new Sach_DAO();
 		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 		nhanVien_DAO = new NhanVien_DAO();
@@ -739,8 +736,6 @@ public class DatHang_GUI extends JPanel {
 		try {
 			em.getTransaction().begin();
 			PhieuDatHang phieuDatHang = new PhieuDatHang();
-			String maPhieuDatHang = phatSinhMa_DAO.getMaPhieuDatHang();
-			phieuDatHang.setMaPhieuDatHang(maPhieuDatHang);
 			phieuDatHang.setNhanVien(nhanVien_DAO.getNhanVienTheoMa(maNhanVien));
 			phieuDatHang.setKhachHang(khachHang_DAO.getKhachHangTheoMa(txtMaKhachHang.getText()));
 			phieuDatHang.setNgayLap(new java.sql.Date(new Date().getTime()));
@@ -753,7 +748,6 @@ public class DatHang_GUI extends JPanel {
 				ChiTietPhieuDatHang chiTietPhieuDatHang = new ChiTietPhieuDatHang();
 				ChiTietPhieuDatKey chiTietPhieuDatKey = new ChiTietPhieuDatKey();
 				int soLuong = Integer.parseInt(model.getValueAt(i, 2).toString());
-				chiTietPhieuDatKey.setMaPhieuDatHang(maPhieuDatHang);
 				chiTietPhieuDatKey.setMaSanPham(sanPham.getMaSanPham());
 				chiTietPhieuDatHang.setPhieuDatHang(phieuDatHang);
 				chiTietPhieuDatHang.setSanPham(sanPham);

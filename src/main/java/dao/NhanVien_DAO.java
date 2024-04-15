@@ -61,7 +61,7 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 	public boolean themNhanVien(NhanVien nhanVien) throws RemoteException {
 		try {
 			em.getTransaction().begin();
-			em.persist(nhanVien);
+			em.merge(nhanVien);
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {

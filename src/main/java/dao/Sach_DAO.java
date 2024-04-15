@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 
 import dao.impl.Sach_Impl;
 import entity.Sach;
+import entity.generateid.SachGeneratorId;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
@@ -62,8 +63,8 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 	 */
 	@Override
 	public boolean xoaSachVaoThungRac(String maSach) throws RemoteException, SQLException {
-		PhatSinhMa_DAO phatSinhMa = new PhatSinhMa_DAO();
-		String maSachXoa = phatSinhMa.getMaSachXoa();
+		SachGeneratorId phatSinhMa = new SachGeneratorId();
+		String maSachXoa = phatSinhMa.generate(null, null).toString();
 		try {
 			em.getTransaction().begin();
 			Sach sach = em.find(Sach.class, maSach);
@@ -89,8 +90,8 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 	 */
 	@Override
 	public boolean khoiPhucSach(String maSachXoa) throws RemoteException, SQLException {
-		PhatSinhMa_DAO phatSinhMa = new PhatSinhMa_DAO();
-		String maSach = phatSinhMa.getMaSach();
+		SachGeneratorId phatSinhMa = new SachGeneratorId();
+		String maSach = phatSinhMa.generate(null, null).toString();
 		try {
 			em.getTransaction().begin();
 			Sach sach = em.find(Sach.class, maSachXoa);

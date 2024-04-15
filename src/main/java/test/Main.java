@@ -1,22 +1,34 @@
 package test;
 
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 
-import dao.PhatSinhMa_DAO;
+import dao.DungCuHocTap_DAO;
+import dao.Sach_DAO;
+import dao.TaiKhoan_DAO;
 import entity.Sach;
+import entity.TaiKhoan;
+import entity.generateid.DungCuHocTapGeneratorId;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class Main {
-	public static void main(String[] args) throws SQLException {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BookStores MSSQL");
-		EntityManager em = emf.createEntityManager();
+	public static void main(String[] args) throws SQLException, RemoteException {
+//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BookStores MSSQL");
+//		EntityManager em = emf.createEntityManager();
 //		emf.close();
 //		PhatSinhMa_DAO phatSinhMa_DAO = new PhatSinhMa_DAO();
 //		System.out.println(phatSinhMa_DAO.getMaSachXoa());
-		Sach sach = em.find(Sach.class, "XS0002");
-		System.out.println(sach.getTacGia());
-		
+//		Sach sach = em.find(Sach.class, "XS0002");
+//		System.out.println(sach.getTacGia());
+//		Sach_DAO sach_DAO = new Sach_DAO();
+//		DungCuHocTap_DAO dungCuHocTap_DAO = new DungCuHocTap_DAO();
+//		System.out.println(dungCuHocTap_DAO.xoaDungCuHocTapVaoThungRac("DCHT00020"));
+		TaiKhoan_DAO taiKhoan_DAO = new TaiKhoan_DAO();
+		TaiKhoan taiKhoan = new TaiKhoan();
+		taiKhoan.setMatKhau(taiKhoan.getTaiKhoan());
+		taiKhoan_DAO.themTaiKhoan(taiKhoan);
+		System.out.println(taiKhoan.getTaiKhoan());
 	}
 }
