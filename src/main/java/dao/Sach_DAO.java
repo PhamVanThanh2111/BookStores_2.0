@@ -55,16 +55,23 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 		return em.createNamedQuery("getAllSachXoa", Sach.class).getResultList();
 	}
 
+	/**
+	 * @param sach sách cần xóa. Trong đó, mã sách của sach là mã S.
+     * @return true nếu xóa sách thành công, ngược lại trả về false.
+     *
+	 */
 	@Override
 	public boolean xoaSachVaoThungRac(String maSach) throws RemoteException, SQLException {
 		PhatSinhMa_DAO phatSinhMa = new PhatSinhMa_DAO();
 		String maSachXoa = phatSinhMa.getMaSachXoa();
 		try {
-			Sach sach = em.find(Sach.class, maSach);
 			em.getTransaction().begin();
+			Sach sach = em.find(Sach.class, maSach);
+			Sach sach_temp = sach;
+			sach_temp.setMaSanPham(maSachXoa);
 			if (sach != null) {
-				sach.setMaSanPham(maSachXoa);
-                em.merge(sach);
+				em.remove(sach);
+				em.persist(sach_temp);
 			}
 			em.getTransaction().commit();
 			return true;
@@ -76,16 +83,22 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 		}
 	}
 
+	/**
+	 * @param sach có mã của sách cần khôi phục. Trong đó, mã sách của sach là mã sách đã xóa.
+     * @return true nếu khôi phục sách thành công, ngược lại trả về false.
+	 */
 	@Override
 	public boolean khoiPhucSach(String maSachXoa) throws RemoteException, SQLException {
 		PhatSinhMa_DAO phatSinhMa = new PhatSinhMa_DAO();
 		String maSach = phatSinhMa.getMaSach();
 		try {
-			Sach sach = em.find(Sach.class, maSachXoa);
 			em.getTransaction().begin();
+			Sach sach = em.find(Sach.class, maSachXoa);
+			Sach sach_temp = sach;
+			sach_temp.setMaSanPham(maSach);
 			if (sach != null) {
-				sach.setMaSanPham(maSach);
-                em.merge(sach);
+				em.remove(sach);
+				em.persist(sach_temp);
 			}
 			em.getTransaction().commit();
 			return true;

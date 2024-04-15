@@ -22,14 +22,12 @@ public class ChiTietPhieuDatHang_DAO extends UnicastRemoteObject implements ChiT
 	public boolean themChiTietPhieuDatHang(ChiTietPhieuDatHang chiTietPhieuDatHang) throws RemoteException {
 		try {
 			em.getTransaction().begin();
-			em.persist(chiTietPhieuDatHang);
+			em.merge(chiTietPhieuDatHang);
 			em.getTransaction().commit();
-			em.close();
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			em.getTransaction().rollback();
-			em.close();
 			return false;
 		}
 	}
@@ -37,7 +35,7 @@ public class ChiTietPhieuDatHang_DAO extends UnicastRemoteObject implements ChiT
 	@Override
 	public List<ChiTietPhieuDatHang> getAllChiTietPhieuDatHangTheoMa(String maPhieuDatHang)
 			throws RemoteException {
-		return em.createNamedQuery("maPhieuDatHang", ChiTietPhieuDatHang.class)
+		return em.createNamedQuery("getAllChiTietPhieuDatHangTheoMaPhieuDatHang", ChiTietPhieuDatHang.class)
 				.setParameter("maPhieuDatHang", maPhieuDatHang)
 				.getResultList();
 	}
