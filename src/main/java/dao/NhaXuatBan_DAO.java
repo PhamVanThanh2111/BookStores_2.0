@@ -9,9 +9,10 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 import entity.NhaXuatBan;
 
-public class NhaXuatBan_DAO extends UnicastRemoteObject implements NhaXuatBan_Impl{
+public class NhaXuatBan_DAO extends UnicastRemoteObject implements NhaXuatBan_Impl {
 
-    private EntityManager em;
+	private static final long serialVersionUID = 1L;
+	private EntityManager em;
 
     public NhaXuatBan_DAO() throws RemoteException {
         em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
@@ -42,7 +43,7 @@ public class NhaXuatBan_DAO extends UnicastRemoteObject implements NhaXuatBan_Im
         boolean result = false;
         try {
             em.getTransaction().begin();
-            em.persist(nhaXuatBan);
+            em.merge(nhaXuatBan);
             em.getTransaction().commit();
             result = true;
         } catch (Exception e) {

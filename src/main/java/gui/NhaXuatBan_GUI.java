@@ -467,8 +467,7 @@ public class NhaXuatBan_GUI extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				lamMoi();
+				loadData(nhaXuatBan_DAO.getAllNhaXuatBan());
 			}
 
 		});
@@ -837,7 +836,7 @@ public class NhaXuatBan_GUI extends JPanel {
 				nhaXuatBan.setDiaChi(txtDiaChi.getText());
 				nhaXuatBan.setSoDienThoai(txtSoDienThoai.getText());
 				nhaXuatBan.setEmail(txtEmail.getText());
-				nhaXuatBan.setTenNhaXuatBan(txtTenNXB.getText());
+				nhaXuatBan.setTenNhaXuatBan(txtTenNXBValue.getText());
 				nhaXuatBan_DAO.themNhaXuatBan(nhaXuatBan);
 
 				JOptionPane.showMessageDialog(null, "Thêm nhà xuất bản thành công!");
@@ -900,7 +899,7 @@ public class NhaXuatBan_GUI extends JPanel {
 					"Bạn có chắc muốn sửa nhà xuất bản? '" + model.getValueAt(row, 0) + "' chứ?", "Sửa?",
 					JOptionPane.YES_NO_OPTION);
 			if (option == JOptionPane.YES_OPTION) {
-				NhaXuatBan nhaXuatBan = new NhaXuatBan(lblMaNXBValue.getText(),txtTenNXB.getText()
+				NhaXuatBan nhaXuatBan = new NhaXuatBan(lblMaNXBValue.getText(),txtTenNXBValue.getText()
 						,txtDiaChi.getText(), txtSoDienThoai.getText(), txtEmail.getText());
 				nhaXuatBan_DAO.suaNhaXuatBanTheoMa(nhaXuatBan);
 				JOptionPane.showMessageDialog(null,

@@ -772,11 +772,7 @@ public class DatHang_GUI extends JPanel {
 	            em.getTransaction().rollback();
 	        }
 	        e.printStackTrace();
-		} finally {
-	        if (em != null) {
-	            em.close();
-	        }
-	    }
+		}
 	}
 	
 	private void lamMoi() {
