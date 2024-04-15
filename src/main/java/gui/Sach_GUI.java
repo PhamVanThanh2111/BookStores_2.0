@@ -419,7 +419,11 @@ public class Sach_GUI extends JPanel {
 					btnChonHinhAnh.setEnabled(true);
 					btnKhoiPhuc.setEnabled(false);
 				} else {
-					update();
+					try {
+						update();
+					} catch (RemoteException | SQLException e1) {
+						e1.printStackTrace();
+					}
 					unfocusable();
 					btnUpdate.setText("Sửa");
 					btnDelete.setText("Xóa");
@@ -554,7 +558,7 @@ public class Sach_GUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (khoiPhucSach_GUI == null || khoiPhucSach_GUI.isClosed()) {
 					try {
-						khoiPhucSach_GUI = new KhoiPhucSach_GUI(ds);
+						khoiPhucSach_GUI = new KhoiPhucSach_GUI(sach_DAO.getAllSachXoa());
 					} catch (RemoteException e1) {
 						e1.printStackTrace();
 					}
@@ -587,8 +591,11 @@ public class Sach_GUI extends JPanel {
 							btnUpdate.setEnabled(true);
 							btnUpdate.setEnabled(true);
 							model.setRowCount(0);
-							loadData(ds);
-							ds.removeAll(ds);
+							try {
+								loadData(sach_DAO.getAllSach());
+							} catch (RemoteException e1) {
+								e1.printStackTrace();
+							}
 							enableButton();
 							focusable();
 						}
@@ -722,13 +729,17 @@ public class Sach_GUI extends JPanel {
 		btnXuatFile.setFont(new Font("SansSerif", Font.BOLD, 14));
 		btnXuatFile.setBackground(new Color(73, 129, 158));
 		btnXuatFile.setBounds(1098, 10, 135, 27);
-//		btnXuatFile.addActionListener(new ActionListener() {
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				xuatFile(sanPham_DAO.getAllSach());
-//			}
-//		});
+		btnXuatFile.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					xuatFile(sach_DAO.getAllSach());
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
 		pDanhSach.add(btnXuatFile);
 
 		// unfocus
@@ -1176,11 +1187,11 @@ public class Sach_GUI extends JPanel {
 	}
 
 	// load cbTenTheLoaiSachs
-	private void loadDataIntoComboboxTenLoaiSach() {
-//		cmbTenLoaiSach.removeAllItems();
-//		for (TheLoaiSach theLoaiSach : theLoaiSach_DAO.getAllTheLoaiSach()) {
-//			cmbTenLoaiSach.addItem(theLoaiSach.gettenTheLoaiSach());
-//		}
+	private void loadDataIntoComboboxTenLoaiSach() throws RemoteException {
+		cmbTenLoaiSach.removeAllItems();
+		for (TheLoaiSach theLoaiSach : theLoaiSach_DAO.getAllTheLoaiSach()) {
+			cmbTenLoaiSach.addItem(theLoaiSach.getTenTheLoaiSach());
+		}
 	}
 
 	// làm mới dữ liệu trên bảng
@@ -1285,25 +1296,24 @@ public class Sach_GUI extends JPanel {
 				return false;
 			} else {
 				try {
-//					SanPham sanPham = new SanPham();
-//					sanPham.setMaSanPham(phatSinhMa_DAO.getMaSach());
-//					sanPham.setTenSanPham(txtTenSach.getText());
-//					sanPham.setXuatXu(txtXuatXu.getText());
-//					sanPham.setGiaNhap(Float.parseFloat(txtGiaNhap.getText()));
-//					sanPham.setGiaBan(Float.parseFloat(txtGiaBan.getText()));
-//					sanPham.setSoLuongTon(Integer.parseInt(txtSoLuong.getText()));
-//					sanPham.setHinhAnh(relativePath);
-//					nhaXuatBan = nhaXuatBan_DAO.getnhaXuatBanTheoTen(cmbTenNhaXuatBan.getSelectedItem().toString());
-//					sanPham.setMaNXB(nhaXuatBan.getMaNhaXuatBan());
-//					theLoaiSach = theLoaiSach_DAO.getTheLoaiSachTheoTen(cmbTenLoaiSach.getSelectedItem().toString());
-//					sanPham.setMaTheLoaiSach(theLoaiSach.getmaTheLoaiSach());
-//					sanPham.setTacGia(txtTacGia.getText());
-//					sanPham.setSoTrang(Integer.parseInt(txtSoTrang.getText()));
-//					sanPham.setNamXuatBan(Integer.parseInt(txtNamXuatBan.getText()));
-//					sanPham.setMaNhaCungCap(null);
-//					sanPham_DAO.themSanPham(sanPham);
+					Sach sach = new Sach();
+					sach.setMaSanPham(phatSinhMa_DAO.getMaSach());
+					sach.setTenSanPham(txtTenSach.getText());
+					sach.setXuatXu(txtXuatXu.getText());
+					sach.setGiaNhap(Float.parseFloat(txtGiaNhap.getText()));
+					sach.setGiaBan(Float.parseFloat(txtGiaBan.getText()));
+					sach.setSoLuongTon(Integer.parseInt(txtSoLuong.getText()));
+					sach.setHinhAnh(relativePath);
+					nhaXuatBan = nhaXuatBan_DAO.getNhaXuatBanTheoTen(cmbTenNhaXuatBan.getSelectedItem().toString());
+					sach.setNhaXuatBan(nhaXuatBan);
+					theLoaiSach = theLoaiSach_DAO.getTheLoaiSachTheoTen(cmbTenLoaiSach.getSelectedItem().toString());
+					sach.setTheLoaiSach(theLoaiSach);
+					sach.setTacGia(txtTacGia.getText());
+					sach.setSoTrang(Integer.parseInt(txtSoTrang.getText()));
+					sach.setNamXuatBan(Integer.parseInt(txtNamXuatBan.getText()));
+					sach_DAO.themSach(sach);
 					JOptionPane.showMessageDialog(null, "Thêm sách thành công!");
-//					refresh();
+					refresh();
 					return true;
 				} catch (Exception e1) {
 					JOptionPane.showMessageDialog(null, "Thêm sách thất bại!");
@@ -1312,6 +1322,10 @@ public class Sach_GUI extends JPanel {
 				}
 			}
 		}
+	}
+
+	private void refresh() throws RemoteException {
+		loadData(sach_DAO.getAllSach());
 	}
 
 	// Kiểm tra rỗng cho sách
@@ -1336,32 +1350,14 @@ public class Sach_GUI extends JPanel {
 	public boolean delete() {
 		int row = table.getSelectedRow();
 		if (row != -1) {
-			int tb = JOptionPane.showConfirmDialog(null, "Bạn Muốn Xóa Sản Phẩm? ", "Delete",
+			int tb = JOptionPane.showConfirmDialog(null, "Bạn có thực sự muốn xóa sách?", "Delete",
 					JOptionPane.YES_NO_OPTION);
 			if (tb == JOptionPane.YES_OPTION) {
 				if (tb == JOptionPane.YES_OPTION) {
 					try {
-//						SanPham sanPham = new SanPham();
-//						sanPham.setMaSanPham(txtMaSach.getText());
-//						sanPham.setTenSanPham(txtTenSach.getText());
-//						sanPham.setXuatXu(txtXuatXu.getText());
-//						sanPham.setGiaNhap(Float.parseFloat(txtGiaNhap.getText()));
-//						sanPham.setGiaBan(Float.parseFloat(txtGiaBan.getText()));
-//						sanPham.setSoLuongTon(Integer.parseInt(txtSoLuong.getText()));
-//						sanPham.setHinhAnh(relativePath);
-//						sanPham.setMaNXB(nhaXuatBan_DAO
-//								.getnhaXuatBanTheoTen(cmbTenNhaXuatBan.getSelectedItem().toString()).getMaNhaXuatBan());
-//						sanPham.setMaTheLoaiSach(theLoaiSach_DAO
-//								.getTheLoaiSachTheoTen(cmbTenLoaiSach.getSelectedItem().toString().toString())
-//								.getmaTheLoaiSach());
-//						sanPham.setTacGia(txtTacGia.getText());
-//						sanPham.setSoTrang(Integer.parseInt(txtSoTrang.getText()));
-//						sanPham.setNamXuatBan(Integer.parseInt(txtNamXuatBan.getText()));
-//						sanPham.setMaNhaCungCap("");
-
-						// sanPham_DAO.suaSanPhamTheoMa(sanPham);
-//						sanPham_DAO.suaMaSach(sanPham);
-//						refresh();
+						sach_DAO.xoaSachVaoThungRac(txtMaSach.getText());
+						JOptionPane.showMessageDialog(null, "Xóa thành công!");
+						refresh();
 					} catch (Exception e) {
 						JOptionPane.showMessageDialog(null, "Sản phẩm tồn tại trong hóa đơn!");
 					}
@@ -1372,7 +1368,7 @@ public class Sach_GUI extends JPanel {
 	}
 
 	// sửa sách
-	public boolean update() {
+	public boolean update() throws RemoteException, SQLException {
 		int row = table.getSelectedRow();
 		if (row == -1) {
 			JOptionPane.showMessageDialog(null, "Bạn phải chọn sách cần sửa!");
@@ -1410,28 +1406,24 @@ public class Sach_GUI extends JPanel {
 					"Bạn có chắc muốn sửa sách ? '" + model.getValueAt(row, 0) + "' chứ?", "Sửa?",
 					JOptionPane.YES_NO_OPTION);
 			if (option == JOptionPane.YES_OPTION) {
-//				SanPham sanPham = new SanPham();
-//				sanPham.setMaSanPham(txtMaSach.getText());
-//				sanPham.setTenSanPham(txtTenSach.getText());
-//				sanPham.setXuatXu(txtXuatXu.getText());
-//				sanPham.setGiaNhap(Float.parseFloat(txtGiaNhap.getText()));
-//				sanPham.setGiaBan(Float.parseFloat(txtGiaBan.getText()));
-//				sanPham.setSoLuongTon(Integer.parseInt(txtSoLuong.getText()));
-//				sanPham.setHinhAnh(relativePath);
-//				sanPham.setMaNXB(nhaXuatBan_DAO.getnhaXuatBanTheoTen(cmbTenNhaXuatBan.getSelectedItem().toString())
-//						.getMaNhaXuatBan());
-//				sanPham.setMaTheLoaiSach(
-//						theLoaiSach_DAO.getTheLoaiSachTheoTen(cmbTenLoaiSach.getSelectedItem().toString().toString())
-//								.getmaTheLoaiSach());
-//				sanPham.setTacGia(txtTacGia.getText());
-//				sanPham.setSoTrang(Integer.parseInt(txtSoTrang.getText()));
-//				sanPham.setNamXuatBan(Integer.parseInt(txtNamXuatBan.getText()));
-//				sanPham.setMaNhaCungCap("");
-
-				// sanPham_DAO.suaSanPhamTheoMa(sanPham);
-//				sanPham_DAO.suaSanPhamTheoMaSach(sanPham);
+				Sach sach = new Sach();
+				sach.setMaSanPham(txtMaSach.getText());
+				sach.setTenSanPham(txtTenSach.getText());
+				sach.setXuatXu(txtXuatXu.getText());
+				sach.setGiaNhap(Float.parseFloat(txtGiaNhap.getText()));
+				sach.setGiaBan(Float.parseFloat(txtGiaBan.getText()));
+				sach.setSoLuongTon(Integer.parseInt(txtSoLuong.getText()));
+				sach.setHinhAnh(relativePath);
+				nhaXuatBan = nhaXuatBan_DAO.getNhaXuatBanTheoTen(cmbTenNhaXuatBan.getSelectedItem().toString());
+				sach.setNhaXuatBan(nhaXuatBan);
+				theLoaiSach = theLoaiSach_DAO.getTheLoaiSachTheoTen(cmbTenLoaiSach.getSelectedItem().toString());
+				sach.setTheLoaiSach(theLoaiSach);
+				sach.setTacGia(txtTacGia.getText());
+				sach.setSoTrang(Integer.parseInt(txtSoTrang.getText()));
+				sach.setNamXuatBan(Integer.parseInt(txtNamXuatBan.getText()));
+				sach_DAO.suaSach(sach);
 				JOptionPane.showMessageDialog(null, "Sửa thành công sách '" + model.getValueAt(row, 0) + "'!");
-//				refresh();
+				refresh();
 				return true;
 			} else {
 				return false;
@@ -1469,7 +1461,7 @@ public class Sach_GUI extends JPanel {
 			return false;
 	}
 
-	public boolean xuatFile(ArrayList<SanPham> ds) {
+	public boolean xuatFile(List<Sach> list) {
 		fileChooser = new JFileChooser();
 		int userSelection = fileChooser.showSaveDialog(this);
 		if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -1520,44 +1512,44 @@ public class Sach_GUI extends JPanel {
 
 				cell = row.createCell(11, CellType.STRING);
 				cell.setCellValue("Năm Xuất Bản");
-				for (int i = 0; i < ds.size(); i++) {
+				for (int i = 0; i < list.size(); i++) {
 
 					row = (XSSFRow) sheet.createRow(3 + i);
 					cell = row.createCell(0, CellType.NUMERIC);
 					cell.setCellValue(i + 1);
 
 					cell = row.createCell(1, CellType.STRING);
-					cell.setCellValue(ds.get(i).getMaSanPham());
+					cell.setCellValue(list.get(i).getMaSanPham());
 
 					cell = row.createCell(2, CellType.STRING);
-					cell.setCellValue(ds.get(i).getTenSanPham());
+					cell.setCellValue(list.get(i).getTenSanPham());
 
 					cell = row.createCell(3, CellType.STRING);
-					cell.setCellValue(ds.get(i).getXuatXu());
+					cell.setCellValue(list.get(i).getXuatXu());
 
 					cell = row.createCell(4, CellType.STRING);
-					cell.setCellValue(ds.get(i).getGiaNhap());
+					cell.setCellValue(list.get(i).getGiaNhap());
 
 					cell = row.createCell(5, CellType.STRING);
-					cell.setCellValue(ds.get(i).getGiaBan());
+					cell.setCellValue(list.get(i).getGiaBan());
 
 					cell = row.createCell(6, CellType.STRING);
-					cell.setCellValue(ds.get(i).getSoLuongTon());
+					cell.setCellValue(list.get(i).getSoLuongTon());
 
-//					cell = row.createCell(7, CellType.STRING);
-//					cell.setCellValue(ds.get(i).getMaNXB());
-//
-//					cell = row.createCell(8, CellType.STRING);
-//					cell.setCellValue(ds.get(i).getMaTheLoaiSach());
-//
-//					cell = row.createCell(9, CellType.STRING);
-//					cell.setCellValue(ds.get(i).getTacGia());
-//
-//					cell = row.createCell(10, CellType.STRING);
-//					cell.setCellValue(ds.get(i).getSoTrang());
-//
-//					cell = row.createCell(11, CellType.STRING);
-//					cell.setCellValue(ds.get(i).getNamXuatBan());
+					cell = row.createCell(7, CellType.STRING);
+					cell.setCellValue(list.get(i).getNhaXuatBan().getTenNhaXuatBan());
+
+					cell = row.createCell(8, CellType.STRING);
+					cell.setCellValue(list.get(i).getTheLoaiSach().getTenTheLoaiSach());
+
+					cell = row.createCell(9, CellType.STRING);
+					cell.setCellValue(list.get(i).getTacGia());
+
+					cell = row.createCell(10, CellType.STRING);
+					cell.setCellValue(list.get(i).getSoTrang());
+
+					cell = row.createCell(11, CellType.STRING);
+					cell.setCellValue(list.get(i).getNamXuatBan());
 
 				}
 				FileOutputStream fis = new FileOutputStream(excelFilePath);

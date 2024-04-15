@@ -125,15 +125,12 @@ public class KhoiPhucSach_GUI extends JInternalFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int row = table.getSelectedRow();
-//				SanPham sanpham = new SanPham();
-//				sanpham.setMaSanPham((String) model.getValueAt(row, 0));
-//				try {
-//					sanPham_DAO.khoiPhucSanPham01(sanpham);
-//
-//					loadData(sanPham_DAO.getAllSachXoa());
-//				} catch (SQLException e1) {
-//					e1.printStackTrace();
-//				}
+				try {
+					sach_DAO.khoiPhucSach((String) model.getValueAt(row, 0));
+					loadData(sach_DAO.getAllSachXoa());
+				} catch (RemoteException | SQLException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		pMain.add(btnKhoiPhuc);
@@ -147,21 +144,21 @@ public class KhoiPhucSach_GUI extends JInternalFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int row = table.getSelectedRow();
-//				if (row == -1) {
-//					JOptionPane.showMessageDialog(null, "Bạn Chưa Chọn Sản Phẩm !");
-//				} else {
-//					int tb = JOptionPane.showConfirmDialog(null, "Bạn Muốn Xóa Sản Phẩm? ", "Delete",
-//							JOptionPane.YES_NO_OPTION);
-//					if (tb == JOptionPane.YES_OPTION) {
-//						try {
-//							sanPham_DAO.xoaSachTheoMa((String) model.getValueAt(row, 0));
-//							loadData(sanPham_DAO.getAllSachXoa());
-//						} catch (SQLException e1) {
-//							e1.printStackTrace();
-//						}
-//					}
-//
-//				}
+				if (row == -1) {
+					JOptionPane.showMessageDialog(null, "Bạn chưa chọn sản phẩm cần xóa!");
+				} else {
+					int tb = JOptionPane.showConfirmDialog(null, "Bạn muốn xóa sản phẩm?", "Delete",
+							JOptionPane.YES_NO_OPTION);
+					if (tb == JOptionPane.YES_OPTION) {
+						try {
+							sach_DAO.xoaSachTheoMaSach((String) model.getValueAt(row, 0));
+							loadData(sach_DAO.getAllSachXoa());
+						} catch (RemoteException e1) {
+							e1.printStackTrace();
+						}
+					}
+
+				}
 
 			}
 		});
@@ -198,16 +195,23 @@ public class KhoiPhucSach_GUI extends JInternalFrame {
 		public void loadData(List<Sach> ds) {
 			model.setRowCount(0);
 			for (Sach sach : ds) {
-//				Object[] object = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getXuatXu(),
-//						sanPham.getGiaNhap(), sanPham.getGiaBan(), sanPham.getSoLuongTon(),
-//						nhaXuatBan_DAO.getnhaXuatBanTheoMa(sanPham.getMaNXB()).getTenNhaXuatBan(),
-//						theLoaiSach_DAO.getTheLoaiSachTheoMa(sanPham.getMaTheLoaiSach()).gettenTheLoaiSach(),
-//						sanPham.getTacGia(), sanPham.getSoTrang(), sanPham.getNamXuatBan(), };
-//				model.addRow(object);
+				Object[] object = { sach.getMaSanPham(), 
+						sach.getTenSanPham(), 
+						sach.getXuatXu(),
+						sach.getGiaNhap(), 
+						sach.getGiaBan(), 
+						sach.getSoLuongTon(),
+						sach.getNhaXuatBan().getTenNhaXuatBan(),
+						sach.getTheLoaiSach().getTenTheLoaiSach(),
+						sach.getTacGia(), 
+						sach.getSoTrang(), 
+						sach.getNamXuatBan() };
+				model.addRow(object);
 			}
 		}
 	private void loadALL() throws RemoteException {
 		model.setRowCount(0);
+		
 		for (Sach sach : sach_DAO.getAllSach()) {
 			ds.add(sach);
 		}

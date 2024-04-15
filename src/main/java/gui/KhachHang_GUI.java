@@ -140,6 +140,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 		btnThem.setFont(new Font("SansSerif", Font.BOLD, 14));
 		btnThem.setBackground(new Color(73, 129, 158));
 		btnThem.setBounds(93, 660, 135, 40);
+		btnThem.setIcon(new ImageIcon(KhachHang_GUI.class.getResource("/image/HeThong/add_person.png")));
 		pDanhSach.add(btnThem);
 
 		btnXoa = new JButton("Xóa");
@@ -147,6 +148,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 		btnXoa.setFont(new Font("SansSerif", Font.BOLD, 14));
 		btnXoa.setBackground(new Color(73, 129, 158));
 		btnXoa.setBounds(243, 660, 135, 40);
+		btnXoa.setIcon(new ImageIcon(KhachHang_GUI.class.getResource("/image/HeThong/remove_person.png")));
 		pDanhSach.add(btnXoa);
 
 		btnSua = new JButton("Sửa");
@@ -154,6 +156,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 		btnSua.setFont(new Font("SansSerif", Font.BOLD, 14));
 		btnSua.setBackground(new Color(73, 129, 158));
 		btnSua.setBounds(393, 660, 135, 40);
+		btnSua.setIcon(new ImageIcon(KhachHang_GUI.class.getResource("/image/HeThong/update_person.png")));
 		pDanhSach.add(btnSua);
 
 		btnTim = new JButton("Tìm");
@@ -162,6 +165,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 		btnTim.setFont(new Font("SansSerif", Font.BOLD, 14));
 		btnTim.setBackground(new Color(73, 129, 158));
 		btnTim.setBounds(542, 660, 135, 40);
+		btnTim.setIcon(new ImageIcon(KhachHang_GUI.class.getResource("/image/HeThong/find_person.png")));
 		pDanhSach.add(btnTim);
 
 		JButton btnLamMoi = new JButton("Làm Mới");
@@ -170,6 +174,18 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 		btnLamMoi.setFont(new Font("SansSerif", Font.BOLD, 14));
 		btnLamMoi.setBackground(new Color(73, 129, 158));
 		btnLamMoi.setBounds(693, 660, 135, 40);
+		btnLamMoi.setIcon(new ImageIcon(KhachHang_GUI.class.getResource("/image/HeThong/refresh.png")));
+		btnLamMoi.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					loadData(khachHang_DAO.getAllKhachHang());
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
 		pDanhSach.add(btnLamMoi);
 
 		JPanel pNhapThongTin = new JPanel();
@@ -365,7 +381,6 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 			if (btnThem.getText().equalsIgnoreCase("Thêm")) {
 
 				try {
-					xoaTrang();
 					btnThem.setText("Xác Nhận");
 					btnXoa.setText("Hủy");
 					btnSua.setEnabled(false);
@@ -403,14 +418,12 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 					btnXoa.setText("Xóa");
 					btnSua.setEnabled(true);
 					btnTim.setEnabled(true);
-					xoaTrang();
 					closeText();
-
 				} else {
 					if (btnXoa.getText().equalsIgnoreCase("Xóa")) {
 						int r = table.getSelectedRow();
 						if (r == -1) {
-							JOptionPane.showMessageDialog(null, "Bạn Chưa Chọn Khách Hàng !");
+							JOptionPane.showMessageDialog(null, "Bạn chưa chọn khách hàng!");
 						} else {
 							try {
 								xoaKhachHang();
@@ -424,7 +437,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 				if (o.equals(btnSua)) {
 					int r = table.getSelectedRow();
 					if (r == -1) {
-						JOptionPane.showMessageDialog(null, "Bạn Chưa Chọn Khách Hàng !");
+						JOptionPane.showMessageDialog(null, "Bạn chưa chọn khách hàng!");
 					} else {
 						if (btnSua.getText().equalsIgnoreCase("Sửa")) {
 							btnSua.setText("Xác Nhận");
@@ -433,7 +446,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 							btnXoa.setEnabled(false);
 							openText();
 						} else {
-							if (btnSua.getText().equalsIgnoreCase("Xác Nhận")) {
+							if (btnSua.getText().equalsIgnoreCase("Xác nhận")) {
 								btnSua.setText("Sửa");
 								btnTim.setText("Tìm");
 								try {
@@ -533,13 +546,13 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 	public void xoaKhachHang() throws SQLException {
 		int row = table.getSelectedRow();
 		if (row != -1) {
-			int tb = JOptionPane.showConfirmDialog(null, "Bạn Muốn Xóa Khách Hàng ? ", "Delete",
+			int tb = JOptionPane.showConfirmDialog(null, "Bạn muốn xóa khách hàng?", "Delete",
 					JOptionPane.YES_NO_OPTION);
 			if (tb == JOptionPane.YES_OPTION) {
 				try {
 					khachHang_DAO.xoaKhachHangTheoMa((String) model.getValueAt(row, 1));
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "Khách Hàng Đang Có Hóa Đơn Trong Cửa Hàng !");
+					JOptionPane.showMessageDialog(null, "Khách hàng đang có thông tin trong hóa đơn!");
 				}
 
 			}
@@ -599,7 +612,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 		if (txtTenKH.getText().equalsIgnoreCase("") || txtSDT.getText().equalsIgnoreCase("")
 				|| cbGioiTinh.getSelectedItem().toString().equalsIgnoreCase("")
 				|| txtDiaChi.getText().equalsIgnoreCase("")) {
-			JOptionPane.showMessageDialog(null, "Thông Tin Rỗng !");
+			JOptionPane.showMessageDialog(null, "Thông tin rỗng!");
 
 		}
 		if (!txtTenKH.getText().equalsIgnoreCase("") && !txtSDT.getText().equalsIgnoreCase("")
@@ -609,11 +622,10 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 			khachHang.setMaKhachHang(lblMaKhachHang.getText());
 			khachHang.setTenKhachHang(txtTenKH.getText());
 			khachHang.setSoDienThoai(txtSDT.getText());
-			JOptionPane.showMessageDialog(null, "Số Điện Thoại Đã Tồn Tại !");
 			khachHang.setDiaChi(txtDiaChi.getText());
 			khachHang.setGioiTinh(cbGioiTinh.getSelectedItem().toString());
 			khachHang_DAO.suaKhachHangTheoMa(khachHang);
-			JOptionPane.showMessageDialog(null, "Cập Nhập Khách Hàng Thành Công");
+			JOptionPane.showMessageDialog(null, "Cập nhật thông tin khách hàng thành công!");
 			loadData(khachHang_DAO.getAllKhachHang());
 		}
 		return false;

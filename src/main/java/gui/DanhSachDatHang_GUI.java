@@ -160,15 +160,14 @@ public class DanhSachDatHang_GUI extends JPanel {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 				int row = tableDSPD.getSelectedRow();
 				PhieuDatHang phieuDatHang;
 				try {
 					phieuDatHang = phieuDatHang_DAO.getPhieuDatHangTheoMa(modelDSPD.getValueAt(row, 0).toString());
+					loadDataIntoTableChiTietPhieuDatTheoMaPhieuDat(phieuDatHang.getMaPhieuDatHang());
 				} catch (RemoteException e1) {
 					e1.printStackTrace();
 				}
-//				loadDataIntoTableChiTietPhieuDatTheoMaPhieuDat(phieuDatHang.getMaPhieuDatHang());
 				lblMaPhieuDatHangValue.setText(modelDSPD.getValueAt(row, 0).toString());
 				lblTenKhachHang.setText(modelDSPD.getValueAt(row, 1).toString());
 				lblSDThoai.setText(modelDSPD.getValueAt(row, 2).toString());
@@ -389,8 +388,8 @@ public class DanhSachDatHang_GUI extends JPanel {
 		}
 	}
 	
-	public void refresh() {
-//		loadData(phieuDatHang_DAO.getAllPhieuDatHang());
+	public void refresh() throws RemoteException {
+		loadData(phieuDatHang_DAO.getAllPhieuDatHang());
 	}
 	
 	private boolean delete() throws RemoteException {
