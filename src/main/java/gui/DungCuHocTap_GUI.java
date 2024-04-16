@@ -263,7 +263,6 @@ public class DungCuHocTap_GUI extends JPanel {
 							} catch (RemoteException e1) {
 								e1.printStackTrace();
 							}
-							lamMoi();
 						}
 					}
 				}
@@ -1018,7 +1017,7 @@ public class DungCuHocTap_GUI extends JPanel {
 
 	}
 
-	public void themDCHT() throws RemoteException {
+	private void themDCHT() throws RemoteException {
 		try {
 			if (txtmaDCHT.getText().equalsIgnoreCase("") || txttenDCHT.getText().equalsIgnoreCase("")
 					|| txtgiaNhap.getText().equalsIgnoreCase("") || txtgiaBan.getText().equalsIgnoreCase("")
@@ -1052,7 +1051,7 @@ public class DungCuHocTap_GUI extends JPanel {
 		}
 	}
 
-	public boolean xoaDungCuHocTap() {
+	private boolean xoaDungCuHocTap() {
 		int row = table.getSelectedRow();
 		if (row != -1) {
 			int tb = JOptionPane.showConfirmDialog(null, "Bạn có muốn xóa dụng cụ học tập?", "Delete",
@@ -1069,7 +1068,7 @@ public class DungCuHocTap_GUI extends JPanel {
 		return false;
 	}
 
-	public boolean suaDCHT() throws SQLException, RemoteException {
+	private boolean suaDCHT() throws SQLException, RemoteException {
 		if (txtmaDCHT.getText().equalsIgnoreCase("") || txttenDCHT.getText().equalsIgnoreCase("")
 				|| txtgiaNhap.getText().equalsIgnoreCase("") || txtgiaBan.getText().equalsIgnoreCase("")
 				|| txtXuatXu.getText().equalsIgnoreCase("") || txtsoLuong.getText().equalsIgnoreCase("")

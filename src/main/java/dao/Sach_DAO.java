@@ -18,11 +18,9 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 	private static final long serialVersionUID = 1L;
 
 	private EntityManager em;
-	private SanPham_DAO sanPham_DAO;
 	public Sach_DAO() throws RemoteException {
 		super();
 		em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
-		sanPham_DAO = new SanPham_DAO();
 	}
 	
 	@Override
@@ -82,11 +80,8 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 			sach_temp.setNamXuatBan(sach.getNamXuatBan());
 			sach_temp.setHinhAnh(sach.getHinhAnh());
 			if (sach != null) {
-				System.out.println(sach_temp.getMaSanPham());
 				xoaSachTheoMaSach(maSach);
-				sanPham_DAO.xoaSanPhamTheoMa(maSach);
 				themSach(sach_temp);
-				System.out.println(sach_temp.getMaSanPham());
 			}
 			return true;
 		} catch (Exception e) {
@@ -103,9 +98,7 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 	@Override
 	public boolean khoiPhucSach(String maSachXoa) throws RemoteException, SQLException {
 		try {
-			em.getTransaction().begin();
 			Sach sach = em.find(Sach.class, maSachXoa);
-			SanPham sanPham = em.find(SanPham.class, maSachXoa);
 			Sach sach_temp = new Sach();
 			sach_temp.setMaSanPham(maSachXoa.substring(1));
 			sach_temp.setTenSanPham(sach.getTenSanPham());
@@ -120,15 +113,12 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 			sach_temp.setNamXuatBan(sach.getNamXuatBan());
 			sach_temp.setHinhAnh(sach.getHinhAnh());
 			if (sach != null) {
-				em.remove(sach);
-				em.remove(sanPham);
-				em.persist(sach_temp);
+				xoaSachTheoMaSach(maSachXoa);
+				themSach(sach_temp);
 			}
-			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
-			em.getTransaction().rollback();
 			return false;
 		}
 	}

@@ -127,10 +127,12 @@ public class KhoiPhucSach_GUI extends JInternalFrame {
 				int row = table.getSelectedRow();
 				try {
 					sach_DAO.khoiPhucSach((String) model.getValueAt(row, 0));
+					System.out.println((String) model.getValueAt(row, 0));
 					loadData(sach_DAO.getAllSachXoa());
 				} catch (RemoteException | SQLException e1) {
 					e1.printStackTrace();
 				}
+				
 			}
 		});
 		pMain.add(btnKhoiPhuc);

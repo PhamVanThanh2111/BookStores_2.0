@@ -4,8 +4,10 @@ import java.rmi.RemoteException;
 import java.sql.SQLException;
 
 import dao.DungCuHocTap_DAO;
+import dao.NhanVien_DAO;
 import dao.Sach_DAO;
 import dao.TaiKhoan_DAO;
+import entity.NhanVien;
 import entity.Sach;
 import entity.TaiKhoan;
 import entity.generateid.DungCuHocTapGeneratorId;
@@ -31,7 +33,8 @@ public class Main {
 //		taiKhoan.setMatKhau(taiKhoan.getTaiKhoan());
 //		taiKhoan_DAO.themTaiKhoan(taiKhoan);
 //		System.out.println(taiKhoan.getTaiKhoan());
-		String a = "123";
-		System.out.println(a.substring(1));
+		Sach_DAO sach_DAO = new Sach_DAO();
+//		sach_DAO.xoaSachVaoThungRac("S00011");
+		sach_DAO.khoiPhucSach("XS00011");
 	}
 }

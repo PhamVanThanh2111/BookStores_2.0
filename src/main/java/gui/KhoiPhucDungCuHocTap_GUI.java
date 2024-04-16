@@ -40,7 +40,6 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 	private JTable table;
 	private JTableHeader tableHeader;
 	private JButton btnXoa, btnKhoiPhuc;
-	private SanPham_DAO sanPham_DAO;
 	private List<DungCuHocTap> ds;
 	private NhaCungCap_DAO nhaCungCap_DAO;
 	private DungCuHocTap_DAO dungCuHocTap_DAO;
@@ -54,7 +53,6 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 
 	public KhoiPhucDungCuHocTap_GUI(List<DungCuHocTap> ds) throws RemoteException {
 		this.ds = ds;
-		sanPham_DAO = new SanPham_DAO();
 		nhaCungCap_DAO = new NhaCungCap_DAO();
 		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 		sach_DAO = new Sach_DAO();
@@ -117,7 +115,7 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 				DungCuHocTap dungCuHocTap = new DungCuHocTap();
 				dungCuHocTap.setMaSanPham((String) model.getValueAt(row, 0));
 				try {
-					dungCuHocTap_DAO.khoiPhucDungCuHocTap(dungCuHocTap.getMaSanPham());
+					dungCuHocTap_DAO.khoiPhucDungCuHocTap((String) model.getValueAt(row, 0));
 					loadData(dungCuHocTap_DAO.getAllDungCuHocTapXoa());
 				} catch (RemoteException | SQLException e1) {
 					e1.printStackTrace();
@@ -184,12 +182,16 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 
 	private void loadData(List<DungCuHocTap> ds) {
 		model.setRowCount(0);
-//		for (SanPham sanPham : ds) {
-//			Object[] o = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getXuatXu(), sanPham.getGiaNhap(),
-//					sanPham.getGiaBan(), sanPham.getSoLuongTon(),
-//					nhaCungCap_DAO.getNhaCCTheoMa(sanPham.getMaNhaCungCap()).getTenNCC() };
-//			model.addRow(o);
-//		}
+		for (DungCuHocTap dungCuHocTap : ds) {
+			Object[] o = { dungCuHocTap.getMaSanPham(), 
+					dungCuHocTap.getTenSanPham(), 
+					dungCuHocTap.getXuatXu(), 
+					dungCuHocTap.getGiaNhap(),
+					dungCuHocTap.getGiaBan(), 
+					dungCuHocTap.getSoLuongTon(),
+					dungCuHocTap.getNhaCungCap().getTenNCC() };
+			model.addRow(o);
+		}
 	}
 
 	private void loadALL() throws RemoteException {

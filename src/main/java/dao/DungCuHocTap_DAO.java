@@ -61,9 +61,7 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 	@Override
 	public boolean xoaDungCuHocTapVaoThungRac(String maDungCuHocTap) throws RemoteException, SQLException {
 	    try {
-	        em.getTransaction().begin();
 	        DungCuHocTap dungCuHocTap = em.find(DungCuHocTap.class, maDungCuHocTap);
-	        SanPham sanPham = em.find(SanPham.class, maDungCuHocTap);
 	        DungCuHocTap dungCuHocTap_temp = new DungCuHocTap();
 	        dungCuHocTap_temp.setMaSanPham("X" + maDungCuHocTap);
 	        dungCuHocTap_temp.setTenSanPham(dungCuHocTap.getTenSanPham());
@@ -74,15 +72,12 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 	        dungCuHocTap_temp.setHinhAnh(dungCuHocTap.getHinhAnh());
 	        dungCuHocTap_temp.setXuatXu(dungCuHocTap.getXuatXu());
 	        if (dungCuHocTap != null) {
-	            em.remove(dungCuHocTap);
-	            em.remove(sanPham);
-	            em.persist(dungCuHocTap_temp);
+	        	xoaDungCuHocTapTheoMa(maDungCuHocTap);
+	        	themDungCuHocTap(dungCuHocTap_temp);
 	        }
-	        em.getTransaction().commit();
 	        return true;
 	    } catch (Exception e) {
 	        e.printStackTrace();
-	        em.getTransaction().rollback();
 	        JOptionPane.showMessageDialog(null, "Không thể xóa dụng cụ học tập này!");
 	        return false;
 	    }
@@ -91,13 +86,10 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 
 	@Override
 	public boolean khoiPhucDungCuHocTap(String maDungCuHocTapXoa) throws RemoteException, SQLException {
-		DungCuHocTapGeneratorId phatSinhMa = new DungCuHocTapGeneratorId();
-		String maDCHT = phatSinhMa.generate(null, null).toString();
 		try {
-			em.getTransaction().begin();
 			DungCuHocTap dungCuHocTap = em.find(DungCuHocTap.class, maDungCuHocTapXoa);
 			DungCuHocTap dungCuHocTap_temp = new DungCuHocTap();
-			dungCuHocTap_temp.setMaSanPham(maDCHT);
+			dungCuHocTap_temp.setMaSanPham(maDungCuHocTapXoa.substring(1));
 	        dungCuHocTap_temp.setTenSanPham(dungCuHocTap.getTenSanPham());
 	        dungCuHocTap_temp.setSoLuongTon(dungCuHocTap.getSoLuongTon());
 	        dungCuHocTap_temp.setGiaBan(dungCuHocTap.getGiaBan());
@@ -106,14 +98,12 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 	        dungCuHocTap_temp.setHinhAnh(dungCuHocTap.getHinhAnh());
 	        dungCuHocTap_temp.setXuatXu(dungCuHocTap.getXuatXu());
 			if (dungCuHocTap != null) {
-				em.remove(dungCuHocTap);
-                em.persist(dungCuHocTap_temp);
+				xoaDungCuHocTapTheoMa(maDungCuHocTapXoa);
+				themDungCuHocTap(dungCuHocTap_temp);
 			}
-			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
-			em.getTransaction().rollback();
 			return false;
 		}
 	}
@@ -123,7 +113,7 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 		try {
 			em.getTransaction().begin();
 			if (dungCuHocTap != null) {
-                em.merge(dungCuHocTap);
+                em.persist(dungCuHocTap);
 			}
 			em.getTransaction().commit();
 			return true;

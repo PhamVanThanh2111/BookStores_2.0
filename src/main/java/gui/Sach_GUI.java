@@ -1133,7 +1133,6 @@ public class Sach_GUI extends JPanel {
 		table.getColumnModel().getColumn(7).setCellRenderer(centerRenderer);
 		table.getColumnModel().getColumn(8).setCellRenderer(centerRenderer);
 		table.getColumnModel().getColumn(9).setCellRenderer(centerRenderer);
-		// table.getColumnModel().getColumn(10).setCellRenderer(centerRenderer);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_SUBSEQUENT_COLUMNS);
 
 		JLabel lblChiTitSch = new JLabel("Chi Tiết Sách");
@@ -1197,7 +1196,7 @@ public class Sach_GUI extends JPanel {
 	}
 
 	// làm mới dữ liệu trên bảng
-	public void lamMoi() {
+	private void lamMoi() {
 		txtMaSach.setText("");
 		txtTenSach.setText("");
 		txtGiaNhap.setText("");
@@ -1213,7 +1212,7 @@ public class Sach_GUI extends JPanel {
 		lblHinhAnh.removeAll();
 	}
 	// làm mới dữ liệu trên bảng
-		public void lamMoiKhachHang() {
+		private void lamMoiKhachHang() {
 			txtMaSach.setText("");
 			txtTenSach.setText("");
 			txtXuatXu.setText("");
@@ -1228,12 +1227,8 @@ public class Sach_GUI extends JPanel {
 			lblHinhAnh.removeAll();
 		}
 
-//	public void refresh() {
-//		loadData(sanPham_DAO.getAllSach());
-//	}
-
 	// Thêm sách
-	public boolean add() {
+	private boolean add() {
 		if (kiemTraRong()) {
 			JOptionPane.showMessageDialog(null, "Bạn phải điền đầy đủ thông tin!");
 			return false;
@@ -1349,28 +1344,23 @@ public class Sach_GUI extends JPanel {
 	}
 
 	// xóa sách
-	public boolean delete() {
+	private boolean delete() throws RemoteException, SQLException {
 		int row = table.getSelectedRow();
 		if (row != -1) {
 			int tb = JOptionPane.showConfirmDialog(null, "Bạn có thực sự muốn xóa sách?", "Delete",
 					JOptionPane.YES_NO_OPTION);
 			if (tb == JOptionPane.YES_OPTION) {
-				if (tb == JOptionPane.YES_OPTION) {
-					try {
-						sach_DAO.xoaSachVaoThungRac(txtMaSach.getText());
-						JOptionPane.showMessageDialog(null, "Xóa thành công!");
-						refresh();
-					} catch (Exception e) {
-						JOptionPane.showMessageDialog(null, "Sản phẩm tồn tại trong hóa đơn!");
-					}
-				}
+					sach_DAO.xoaSachVaoThungRac((String) model.getValueAt(row, 0));
+					System.out.println((String) model.getValueAt(row, 0));
+					JOptionPane.showMessageDialog(null, "Xóa thành công!");
+					refresh();
 			}
 		}
 		return false;
 	}
 
 	// sửa sách
-	public boolean update() throws RemoteException, SQLException {
+	private boolean update() throws RemoteException, SQLException {
 		int row = table.getSelectedRow();
 		if (row == -1) {
 			JOptionPane.showMessageDialog(null, "Bạn phải chọn sách cần sửa!");
@@ -1463,7 +1453,7 @@ public class Sach_GUI extends JPanel {
 			return false;
 	}
 
-	public boolean xuatFile(List<Sach> list) {
+	private boolean xuatFile(List<Sach> list) {
 		fileChooser = new JFileChooser();
 		int userSelection = fileChooser.showSaveDialog(this);
 		if (userSelection == JFileChooser.APPROVE_OPTION) {
