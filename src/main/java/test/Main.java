@@ -23,12 +23,15 @@ public class Main {
 //		Sach sach = em.find(Sach.class, "XS0002");
 //		System.out.println(sach.getTacGia());
 //		Sach_DAO sach_DAO = new Sach_DAO();
+//		System.out.println(sach_DAO.xoaSachVaoThungRac("S00012"));
 //		DungCuHocTap_DAO dungCuHocTap_DAO = new DungCuHocTap_DAO();
 //		System.out.println(dungCuHocTap_DAO.xoaDungCuHocTapVaoThungRac("DCHT00020"));
-		TaiKhoan_DAO taiKhoan_DAO = new TaiKhoan_DAO();
-		TaiKhoan taiKhoan = new TaiKhoan();
-		taiKhoan.setMatKhau(taiKhoan.getTaiKhoan());
-		taiKhoan_DAO.themTaiKhoan(taiKhoan);
-		System.out.println(taiKhoan.getTaiKhoan());
+//		TaiKhoan_DAO taiKhoan_DAO = new TaiKhoan_DAO();
+//		TaiKhoan taiKhoan = new TaiKhoan();
+//		taiKhoan.setMatKhau(taiKhoan.getTaiKhoan());
+//		taiKhoan_DAO.themTaiKhoan(taiKhoan);
+//		System.out.println(taiKhoan.getTaiKhoan());
+		String a = "123";
+		System.out.println(a.substring(1));
 	}
 }

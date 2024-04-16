@@ -58,4 +58,21 @@ public class SanPham_DAO extends UnicastRemoteObject implements SanPham_Impl {
 		return em.createNamedQuery("getSanPhamGanHetHang", SanPham.class).getResultList();
 	}
 
+	@Override
+	public boolean xoaSanPhamTheoMa(String maSanPham) throws RemoteException {
+		try {
+			SanPham sanPham = em.find(SanPham.class, maSanPham);
+			em.getTransaction().begin();
+			if (sanPham != null) {
+                em.remove(sanPham);
+			}
+			em.getTransaction().commit();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			em.getTransaction().rollback();
+			return false;
+		}
+	}
+
 }

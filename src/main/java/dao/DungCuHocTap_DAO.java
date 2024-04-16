@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 
 import dao.impl.DungCuHocTap_Impl;
 import entity.DungCuHocTap;
+import entity.SanPham;
 import entity.generateid.DungCuHocTapGeneratorId;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
@@ -59,13 +60,12 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 
 	@Override
 	public boolean xoaDungCuHocTapVaoThungRac(String maDungCuHocTap) throws RemoteException, SQLException {
-	    DungCuHocTapGeneratorId generatorId = new DungCuHocTapGeneratorId();
-	    String maDCHTXoa = generatorId.generate(null, null).toString();
 	    try {
 	        em.getTransaction().begin();
 	        DungCuHocTap dungCuHocTap = em.find(DungCuHocTap.class, maDungCuHocTap);
+	        SanPham sanPham = em.find(SanPham.class, maDungCuHocTap);
 	        DungCuHocTap dungCuHocTap_temp = new DungCuHocTap();
-	        dungCuHocTap_temp.setMaSanPham(maDCHTXoa);
+	        dungCuHocTap_temp.setMaSanPham("X" + maDungCuHocTap);
 	        dungCuHocTap_temp.setTenSanPham(dungCuHocTap.getTenSanPham());
 	        dungCuHocTap_temp.setSoLuongTon(dungCuHocTap.getSoLuongTon());
 	        dungCuHocTap_temp.setGiaBan(dungCuHocTap.getGiaBan());
@@ -75,6 +75,7 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 	        dungCuHocTap_temp.setXuatXu(dungCuHocTap.getXuatXu());
 	        if (dungCuHocTap != null) {
 	            em.remove(dungCuHocTap);
+	            em.remove(sanPham);
 	            em.persist(dungCuHocTap_temp);
 	        }
 	        em.getTransaction().commit();
@@ -93,11 +94,20 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 		DungCuHocTapGeneratorId phatSinhMa = new DungCuHocTapGeneratorId();
 		String maDCHT = phatSinhMa.generate(null, null).toString();
 		try {
-			DungCuHocTap dungCuHocTap = em.find(DungCuHocTap.class, maDungCuHocTapXoa);
 			em.getTransaction().begin();
+			DungCuHocTap dungCuHocTap = em.find(DungCuHocTap.class, maDungCuHocTapXoa);
+			DungCuHocTap dungCuHocTap_temp = new DungCuHocTap();
+			dungCuHocTap_temp.setMaSanPham(maDCHT);
+	        dungCuHocTap_temp.setTenSanPham(dungCuHocTap.getTenSanPham());
+	        dungCuHocTap_temp.setSoLuongTon(dungCuHocTap.getSoLuongTon());
+	        dungCuHocTap_temp.setGiaBan(dungCuHocTap.getGiaBan());
+	        dungCuHocTap_temp.setGiaNhap(dungCuHocTap.getGiaNhap());
+	        dungCuHocTap_temp.setNhaCungCap(dungCuHocTap.getNhaCungCap());
+	        dungCuHocTap_temp.setHinhAnh(dungCuHocTap.getHinhAnh());
+	        dungCuHocTap_temp.setXuatXu(dungCuHocTap.getXuatXu());
 			if (dungCuHocTap != null) {
-				dungCuHocTap.setMaSanPham(maDCHT);
-                em.merge(dungCuHocTap);
+				em.remove(dungCuHocTap);
+                em.persist(dungCuHocTap_temp);
 			}
 			em.getTransaction().commit();
 			return true;

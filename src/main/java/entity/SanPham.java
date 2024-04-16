@@ -17,7 +17,7 @@ public abstract class SanPham implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "maSanPham", columnDefinition = "nvarchar(9)")
+	@Column(name = "maSanPham", columnDefinition = "nvarchar(10)")
 	protected String maSanPham;
 
 	@Column(name = "tenSanPham", columnDefinition = "nvarchar(50)", nullable = false)

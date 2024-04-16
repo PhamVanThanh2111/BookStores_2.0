@@ -523,17 +523,12 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 			khachHang.setGioiTinh(cbGioiTinh.getSelectedItem().toString());
 			khachHang.setSoDienThoai(txtSDT.getText());
 			khachHang.setDiaChi(txtDiaChi.getText());
-			if (!kiemTraTrungSDT(txtSDT.getText())) {
-				khachHang_DAO.themKhachHang(khachHang);
-				JOptionPane.showMessageDialog(null, "Thêm Khách Hàng Thành Công");
-			} else {
-				JOptionPane.showMessageDialog(null, "Số Điện Thoại Đã Tồn Tại");
-
-			}
+			khachHang_DAO.themKhachHang(khachHang);
+			JOptionPane.showMessageDialog(null, "Thêm khách hàng thành công!");
 		}
 	}
 
-	public void xoaKhachHang() throws SQLException {
+	private void xoaKhachHang() throws SQLException {
 		int row = table.getSelectedRow();
 		if (row != -1) {
 			int tb = JOptionPane.showConfirmDialog(null, "Bạn muốn xóa khách hàng?", "Delete",
@@ -541,6 +536,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 			if (tb == JOptionPane.YES_OPTION) {
 				try {
 					khachHang_DAO.xoaKhachHangTheoMa((String) model.getValueAt(row, 1));
+					JOptionPane.showMessageDialog(null, "Xóa khách hàng thành công!");
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(null, "Khách hàng đang có thông tin trong hóa đơn!");
 				}
@@ -588,16 +584,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 
 	}
 
-	private boolean kiemTraTrungSDT(String sDT) throws Exception {
-		for (KhachHang khachHang : khachHang_DAO.getAllKhachHang()) {
-			if (khachHang.getSoDienThoai().equalsIgnoreCase(sDT.trim())) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	public boolean suaKhachHang() throws Exception {
+	private boolean suaKhachHang() throws Exception {
 
 		if (txtTenKH.getText().equalsIgnoreCase("") || txtSDT.getText().equalsIgnoreCase("")
 				|| cbGioiTinh.getSelectedItem().toString().equalsIgnoreCase("")

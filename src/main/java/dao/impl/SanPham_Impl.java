@@ -14,4 +14,6 @@ public interface SanPham_Impl extends Remote {
 	public boolean banSanPham(String maSanPham, int soLuongBan) throws RemoteException;
 	
 	public List<SanPham> getSanPhamGanHetHang() throws RemoteException;
+
+	public boolean xoaSanPhamTheoMa(String maSanPham) throws RemoteException;
 }

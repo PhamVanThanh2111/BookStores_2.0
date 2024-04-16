@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 
 import dao.impl.Sach_Impl;
 import entity.Sach;
+import entity.SanPham;
 import entity.generateid.SachGeneratorId;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
@@ -17,9 +18,11 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 	private static final long serialVersionUID = 1L;
 
 	private EntityManager em;
+	private SanPham_DAO sanPham_DAO;
 	public Sach_DAO() throws RemoteException {
 		super();
 		em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
+		sanPham_DAO = new SanPham_DAO();
 	}
 	
 	@Override
@@ -63,22 +66,31 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 	 */
 	@Override
 	public boolean xoaSachVaoThungRac(String maSach) throws RemoteException, SQLException {
-		SachGeneratorId phatSinhMa = new SachGeneratorId();
-		String maSachXoa = phatSinhMa.generate(null, null).toString();
 		try {
-			em.getTransaction().begin();
 			Sach sach = em.find(Sach.class, maSach);
-			Sach sach_temp = sach;
-			sach_temp.setMaSanPham(maSachXoa);
+			Sach sach_temp = new Sach();
+			sach_temp.setMaSanPham("X" + maSach);
+			sach_temp.setTenSanPham(sach.getTenSanPham());
+			sach_temp.setXuatXu(sach.getXuatXu());
+			sach_temp.setGiaNhap(sach.getGiaNhap());
+			sach_temp.setGiaBan(sach.getGiaBan());
+			sach_temp.setSoLuongTon(sach.getSoLuongTon());
+			sach_temp.setNhaXuatBan(sach.getNhaXuatBan());
+			sach_temp.setTheLoaiSach(sach.getTheLoaiSach());
+			sach_temp.setTacGia(sach.getTacGia());
+			sach_temp.setSoTrang(sach.getSoTrang());
+			sach_temp.setNamXuatBan(sach.getNamXuatBan());
+			sach_temp.setHinhAnh(sach.getHinhAnh());
 			if (sach != null) {
-				em.remove(sach);
-				em.merge(sach_temp);
+				System.out.println(sach_temp.getMaSanPham());
+				xoaSachTheoMaSach(maSach);
+				sanPham_DAO.xoaSanPhamTheoMa(maSach);
+				themSach(sach_temp);
+				System.out.println(sach_temp.getMaSanPham());
 			}
-			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
-			em.getTransaction().rollback();
 			JOptionPane.showMessageDialog(null, "Không thể xóa sách này!");
 			return false;
 		}
@@ -90,16 +102,27 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 	 */
 	@Override
 	public boolean khoiPhucSach(String maSachXoa) throws RemoteException, SQLException {
-		SachGeneratorId phatSinhMa = new SachGeneratorId();
-		String maSach = phatSinhMa.generate(null, null).toString();
 		try {
 			em.getTransaction().begin();
 			Sach sach = em.find(Sach.class, maSachXoa);
-			Sach sach_temp = sach;
-			sach_temp.setMaSanPham(maSach);
+			SanPham sanPham = em.find(SanPham.class, maSachXoa);
+			Sach sach_temp = new Sach();
+			sach_temp.setMaSanPham(maSachXoa.substring(1));
+			sach_temp.setTenSanPham(sach.getTenSanPham());
+			sach_temp.setXuatXu(sach.getXuatXu());
+			sach_temp.setGiaNhap(sach.getGiaNhap());
+			sach_temp.setGiaBan(sach.getGiaBan());
+			sach_temp.setSoLuongTon(sach.getSoLuongTon());
+			sach_temp.setNhaXuatBan(sach.getNhaXuatBan());
+			sach_temp.setTheLoaiSach(sach.getTheLoaiSach());
+			sach_temp.setTacGia(sach.getTacGia());
+			sach_temp.setSoTrang(sach.getSoTrang());
+			sach_temp.setNamXuatBan(sach.getNamXuatBan());
+			sach_temp.setHinhAnh(sach.getHinhAnh());
 			if (sach != null) {
 				em.remove(sach);
-				em.merge(sach_temp);
+				em.remove(sanPham);
+				em.persist(sach_temp);
 			}
 			em.getTransaction().commit();
 			return true;

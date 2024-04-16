@@ -22,7 +22,7 @@ public class ChiTietHoaDon implements Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("maSanPham")
-	@JoinColumn(name = "maSanPham", columnDefinition = "nvarchar(9)", nullable = false)
+	@JoinColumn(name = "maSanPham", columnDefinition = "nvarchar(10)", nullable = false)
 	private SanPham sanPham;
 
 	@Column(name = "soLuong", nullable = false)
