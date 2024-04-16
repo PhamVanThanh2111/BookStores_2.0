@@ -2,9 +2,7 @@ package dao;
 
 import java.rmi.RemoteException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import dao.impl.KhachHang_Impl;
 import entity.KhachHang;
@@ -82,10 +80,36 @@ public class KhachHang_DAO implements KhachHang_Impl {
 	}
 
 	@Override
-	public List<KhachHang> getDanhSachKhachHangMuaNhieuTienNhat() throws RemoteException {
-		List<KhachHang> result = em.createNamedQuery("getKhachHangMuaNhieuTienNhat", KhachHang.class)
-				.getResultList();
-		return result;
+	public Map<KhachHang, Double> getKhachHangMuaNhieuTienNhat() throws RemoteException {
+		List<?> result = em.createNamedQuery("getKhachHangMuaNhieuTienNhat").getResultList();
+		Map<KhachHang, Double> map = new HashMap<>();
+		if (result.isEmpty())
+			return null;
+		result.stream().map(o -> (Object[]) o).forEach(o -> {
+			try {
+				map.put(getKhachHangTheoMa((String) o[0]), (Double) o[1]);
+			} catch (RemoteException e) {
+				throw new RuntimeException(e);
+			}
+		});
+		return map;
 	}
+
+	@Override
+	public Map<KhachHang, Double> getDanhSachMuoiKhachHangMuaNhieuNhat() throws RemoteException {
+		List<?> result = em.createNamedQuery("getMuoiKhachHangMuaNhieu").setMaxResults(10).getResultList();
+		Map<KhachHang, Double> map = new LinkedHashMap<>();
+		if (result.isEmpty())
+			return null;
+		result.stream().map(o -> (Object[]) o).forEach(o -> {
+			try {
+				map.put(getKhachHangTheoMa((String) o[0]), (Double) o[1]);
+			} catch (RemoteException e) {
+				throw new RuntimeException(e);
+			}
+		});
+		return map;
+	}
+
 
 }
