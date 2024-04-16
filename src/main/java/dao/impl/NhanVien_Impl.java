@@ -3,6 +3,7 @@ package dao.impl;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
+import java.util.Map;
 
 import entity.NhanVien;
 
@@ -33,4 +34,8 @@ public interface NhanVien_Impl extends Remote {
 
 	// sửa nhân viên
 	public boolean suaNhanVien(NhanVien nhanVien) throws RemoteException;
+	// get getDoanhThuNhanVien
+	public Map<NhanVien, Double> getDoanhThuNhanVien()throws RemoteException;
+	Map<NhanVien, Integer> getTongHoaDonSoLuongNhanVien() throws RemoteException;
+
 }

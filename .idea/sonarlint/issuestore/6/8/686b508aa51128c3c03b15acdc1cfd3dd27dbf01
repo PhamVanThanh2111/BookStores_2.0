@@ -1,12 +1,22 @@
 
-	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÛÏš…ÿÿÿÿÿJ$76feec3c-d13d-4448-bb0b-6786b9aaa827
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÛÏš…ÿÿÿÿÿJ$d7bc9b40-06c4-4b21-bfbd-cc0599c41da3
 
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡ºJ$46f43ec7-63a8-4182-9456-92b85328203d
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡ºJ$e5cdd5a1-e9d0-4552-a144-8f6e1d322b4e
 l
-java:S2160"+Override the "equals" method in this class.(ÛÏš…ÿÿÿÿÿJ$e499afcb-e382-4121-b944-8e113184519c
+java:S2160"+Override the "equals" method in this class.(ÛÏš…ÿÿÿÿÿJ$d53638d5-e40d-4f53-909e-beff16f5a358
 e
-java:S1948"$Make "em" transient or serializable.(‘æ¿ÚúÿÿÿÿJ$e91e1c53-6c2a-4c98-89ce-70916bc9cbcf
+java:S1948"$Make "em" transient or serializable.(‘æ¿ÚúÿÿÿÿJ$3d6dc586-672e-495d-9a3a-eb0ac5ae3aab
 s
-java:S11358"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$a2d71730-3a70-4bdb-b0d0-b876ecc01144
+java:S1135:"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$2b117332-711c-4559-9e7e-726ef3ed38c1
 s
-java:S1135i"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$ca949ada-e2f9-4353-ab24-7425ca308fde
+java:S1135m"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$51153cb6-7f6e-448e-9a7e-5a6716fd80ce
+g
+java:S1168u"$Return an empty map instead of null.(¥¹ï8Óí§¬î1J$524296af-18ba-4851-bd01-5ec1c813155f
+m	java:S106x"+Replace this use of System.out by a logger.(à›•§8Ô¤§¬î1J$934c50be-e0ed-4591-8d57-6c5ff91b7990
+z
+java:S1135{"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8Ö¤§¬î1J$787d33a8-c989-46c6-b97c-35eabec647df
+h
+java:S1168†"$Return an empty map instead of null.(¥¹ï8Ë‘»¼î1J$2015a19d-e835-4935-b24b-dc5f5dae0c61
+s	java:S106‡"+Replace this use of System.out by a logger.(˜Ö“ñüÿÿÿÿ8Ó‘»¼î1J$ea80b177-040b-4a46-b2ed-37a040ce9fcb
+{
+java:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8±ó´¼î1J$77b54900-e72d-479e-a465-aee8972b66f4

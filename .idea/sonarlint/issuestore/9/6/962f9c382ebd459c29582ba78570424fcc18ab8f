@@ -8,3 +8,8 @@ g
 java:S1168W"$Return an empty map instead of null.(¥¹ï8ı…Æªî1J$61e9f1ba-2da2-4785-87d8-02f446bf84d2
 g
 java:S1168g"$Return an empty map instead of null.(¥¹ï8€†Æªî1J$3fb6d144-631e-44fb-880e-0ccf6d310d73
+O
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8Ëøô¬î1
+g
+java:S1128
+"ERemove this unused import 'jakarta.persistence.EntityManagerFactory'.(‹ ñºûÿÿÿÿ8Ëøô¬î1

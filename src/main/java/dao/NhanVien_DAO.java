@@ -2,7 +2,9 @@ package dao;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import dao.impl.NhanVien_Impl;
 import entity.NhanVien;
@@ -34,7 +36,7 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 	@Override
 	public NhanVien getNhanVienTheoSDT(String sdtNV) throws RemoteException {
 		return em.createNamedQuery("getNhanVienTheoSoDienThoai", NhanVien.class)
-				.setParameter("cCCD", sdtNV)
+				.setParameter("soDienThoai", sdtNV)
 				.getResultList()
 				.stream()
 				.findFirst()
@@ -107,5 +109,39 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 		// TODO Auto-generated method stub
 		return em.createNamedQuery("getAllNhanVien", NhanVien.class).getResultList();
 	}
-
+	@Override
+	public Map<NhanVien, Double> getDoanhThuNhanVien() throws RemoteException {
+		List<?> result = em.createNamedQuery("getDoanhThuTheoNhanVien").getResultList();
+		Map<NhanVien, Double> map = new LinkedHashMap<>();
+		if(result.isEmpty())
+			return null;
+		result.stream().map(o -> (Object[]) o).forEach(o -> {
+			try {
+				System.out.println((String) o[0]);
+				map.put(this.getNhanVienTheoMa((String) o[0]), (Double) o[1]);
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
+		return map;
+	}
+	@Override
+	public Map<NhanVien, Integer> getTongHoaDonSoLuongNhanVien() throws RemoteException {
+		List<?> result = em.createNamedQuery("getHoaDonSoLuongNhanVien").getResultList();
+		Map<NhanVien, Integer> map = new LinkedHashMap<>();
+		if (result.isEmpty())
+			return null;
+		System.out.println(result.size());
+		result.stream().map(o -> (Object[]) o).forEach(o -> {
+			try {
+				Long a = (Long) o[1];
+				map.put(getNhanVienTheoMa((String) o[0]), a.intValue());
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
+		return map;
+	}
 }
