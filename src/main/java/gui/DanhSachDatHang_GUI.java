@@ -36,6 +36,7 @@ import dao.PhieuDatHang_DAO;
 import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import entity.ChiTietHoaDon;
+import entity.ChiTietHoaDonKey;
 import entity.ChiTietPhieuDatHang;
 import entity.HoaDon;
 import entity.PhieuDatHang;
@@ -218,8 +219,11 @@ public class DanhSachDatHang_GUI extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					lapHoaDon();
-				} catch (JRException | RemoteException e1) {
+					int option = JOptionPane.showConfirmDialog(null, "Bạn có chắc muốn lập hóa đơn?", "Lập hóa đơn", JOptionPane.YES_NO_OPTION);
+					if (option == JOptionPane.YES_OPTION) {
+						lapHoaDon();
+					}
+				} catch (JRException | RemoteException | SQLException e1) {
 					e1.printStackTrace();
 				}
 				
@@ -411,30 +415,37 @@ public class DanhSachDatHang_GUI extends JPanel {
 		}
 	}
 	
-	private boolean lapHoaDon() throws JRException, RemoteException {
+	private boolean lapHoaDon() throws JRException, RemoteException, SQLException {
 		
 		int row = tableDSPD.getSelectedRow();
 		if (row != -1) {
 			PhieuDatHang phieuDatHang = phieuDatHang_DAO.getPhieuDatHangTheoMa(modelDSPD.getValueAt(row, 0).toString());
 			HoaDon hoaDon = new HoaDon();
+			
 			// thêm hóa đơn
-//				hoaDon.setMaNhanVien(phieuDatHang.getNhanVien().getma);
-//				hoaDon.setMaKhachHang(phieuDatHang.getMaKhachHang());
-			hoaDon.setNgayLap(new Date(new java.util.Date().getTime()));
+			hoaDon.setNhanVien(phieuDatHang.getNhanVien());
+			hoaDon.setKhachHang(phieuDatHang.getKhachHang());
+			hoaDon.setNgayLap(phieuDatHang.getNgayLap());
 			hoaDon.setThanhTien(phieuDatHang.getThanhTien());
-//				hoaDon_DAO.lapHoaDon(hoaDon);
+			hoaDon_DAO.themHoaDon(hoaDon);
 			
 			// thêm chi tiết hóa đơn
 			for (ChiTietPhieuDatHang chiTietPhieuDatHang : chiTietPhieuDatHang_DAO.getAllChiTietPhieuDatHangTheoMa(modelDSPD.getValueAt(row, 0).toString())) {
 				ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
-//					chiTietHoaDon.setMaHoaDon(maHoaDon);
-//					chiTietHoaDon.setMaSanPham(chiTietPhieuDatHang.getMaSanPham());
+				ChiTietHoaDonKey chiTietHoaDonKey = new ChiTietHoaDonKey();
+				chiTietHoaDonKey.setMaHoaDon(hoaDon.getMaHoaDon());
+				chiTietHoaDonKey.setMaSanPham(chiTietPhieuDatHang.getSanPham().getMaSanPham());
+				chiTietHoaDon.setId(chiTietHoaDonKey);
+				chiTietHoaDon.setHoaDon(hoaDon);
+				chiTietHoaDon.setSanPham(chiTietPhieuDatHang.getSanPham());
 				chiTietHoaDon.setSoLuong(chiTietPhieuDatHang.getSoLuong());
 				chiTietHoaDon.setDonGia(chiTietPhieuDatHang.getDonGia());
-//					chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
+				chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
 			}
+			
 			// xóa chi tiết phiếu đặt hàng
 			chiTietPhieuDatHang_DAO.xoaChiTietPhieuDatHang(phieuDatHang.getMaPhieuDatHang());
+			
 			// xóa phiếu đặt hàng
 			phieuDatHang_DAO.xoaPhieuDatHangTheoMa(phieuDatHang.getMaPhieuDatHang());
 			xuatHoaDon(hoaDon.getMaHoaDon());

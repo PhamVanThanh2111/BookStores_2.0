@@ -732,41 +732,32 @@ public class DatHang_GUI extends JPanel {
 //	}
 	
 	private void lapPhieuDatHang(String maNhanVien) throws SQLException, RemoteException {
-		EntityManager em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
-		try {
-			em.getTransaction().begin();
-			PhieuDatHang phieuDatHang = new PhieuDatHang();
-			phieuDatHang.setNhanVien(nhanVien_DAO.getNhanVienTheoMa(maNhanVien));
-			phieuDatHang.setKhachHang(khachHang_DAO.getKhachHangTheoMa(txtMaKhachHang.getText()));
-			phieuDatHang.setNgayLap(new java.sql.Date(new Date().getTime()));
-			phieuDatHang.setThanhTien(tinhThanhTien());
-			
-			phieuDatHang_DAO.lapPhieuDatHang(phieuDatHang);
-			
-			for (int i = 0; i < model.getRowCount(); i++) {
-				SanPham sanPham = sanPham_DAO.getSanPhamTheoTen(model.getValueAt(i, 0).toString());
-				ChiTietPhieuDatHang chiTietPhieuDatHang = new ChiTietPhieuDatHang();
-				ChiTietPhieuDatKey chiTietPhieuDatKey = new ChiTietPhieuDatKey();
-				int soLuong = Integer.parseInt(model.getValueAt(i, 2).toString());
-				chiTietPhieuDatKey.setMaSanPham(sanPham.getMaSanPham());
-				chiTietPhieuDatHang.setPhieuDatHang(phieuDatHang);
-				chiTietPhieuDatHang.setSanPham(sanPham);
-				chiTietPhieuDatHang.setId(chiTietPhieuDatKey);
-				chiTietPhieuDatHang.setSoLuong(soLuong);
-				chiTietPhieuDatHang.setDonGia(Float.parseFloat(model.getValueAt(i, 3).toString()));
-				chiTietPhieuDatHang_DAO.themChiTietPhieuDatHang(chiTietPhieuDatHang);
-				sanPham_DAO.banSanPham(sanPham.getMaSanPham(), soLuong);
-			}
-			
-			JOptionPane.showMessageDialog(null, "Đặt hàng thành công!");
-			danhSachDatHang_GUI.refresh();
-			em.getTransaction().commit();
-		} catch (Exception e) {
-			if (em.getTransaction().isActive()) {
-	            em.getTransaction().rollback();
-	        }
-	        e.printStackTrace();
+		PhieuDatHang phieuDatHang = new PhieuDatHang();
+		phieuDatHang.setNhanVien(nhanVien_DAO.getNhanVienTheoMa(maNhanVien));
+		phieuDatHang.setKhachHang(khachHang_DAO.getKhachHangTheoMa(txtMaKhachHang.getText()));
+		phieuDatHang.setNgayLap(new java.sql.Date(new Date().getTime()));
+		phieuDatHang.setThanhTien(tinhThanhTien());
+		
+		phieuDatHang_DAO.lapPhieuDatHang(phieuDatHang);
+		
+		for (int i = 0; i < model.getRowCount(); i++) {
+			SanPham sanPham = sanPham_DAO.getSanPhamTheoTen(model.getValueAt(i, 0).toString());
+			ChiTietPhieuDatHang chiTietPhieuDatHang = new ChiTietPhieuDatHang();
+			ChiTietPhieuDatKey chiTietPhieuDatKey = new ChiTietPhieuDatKey();
+			int soLuong = Integer.parseInt(model.getValueAt(i, 2).toString());
+			chiTietPhieuDatKey.setMaSanPham(sanPham.getMaSanPham());
+			chiTietPhieuDatKey.setMaPhieuDatHang(phieuDatHang.getMaPhieuDatHang());
+			chiTietPhieuDatHang.setPhieuDatHang(phieuDatHang);
+			chiTietPhieuDatHang.setSanPham(sanPham);
+			chiTietPhieuDatHang.setId(chiTietPhieuDatKey);
+			chiTietPhieuDatHang.setSoLuong(soLuong);
+			chiTietPhieuDatHang.setDonGia(Float.parseFloat(model.getValueAt(i, 3).toString()));
+			chiTietPhieuDatHang_DAO.themChiTietPhieuDatHang(chiTietPhieuDatHang);
+			sanPham_DAO.banSanPham(sanPham.getMaSanPham(), soLuong);
 		}
+		
+		JOptionPane.showMessageDialog(null, "Đặt hàng thành công!");
+		danhSachDatHang_GUI.refresh();
 	}
 	
 	private void lamMoi() {

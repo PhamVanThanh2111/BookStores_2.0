@@ -6,6 +6,7 @@ import java.util.List;
 
 import dao.impl.ChiTietPhieuDatHangImpl;
 import entity.ChiTietPhieuDatHang;
+import entity.ChiTietPhieuDatKey;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
@@ -43,11 +44,11 @@ public class ChiTietPhieuDatHang_DAO extends UnicastRemoteObject implements ChiT
 	@Override
 	public boolean xoaChiTietPhieuDatHang(String maPhieuDatHang) throws RemoteException {
 		try {
-			ChiTietPhieuDatHang chiTietPhieuDatHang = em.find(ChiTietPhieuDatHang.class, maPhieuDatHang);
 			em.getTransaction().begin();
-			if (chiTietPhieuDatHang != null) {
-				em.remove(chiTietPhieuDatHang);
-			}
+			List<ChiTietPhieuDatKey> list = getAllChiTietPhieuDatKeyByPhieuDatId(maPhieuDatHang);
+			list.forEach(e -> {
+				em.remove(em.find(ChiTietPhieuDatHang.class, e));
+			});
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
@@ -55,6 +56,19 @@ public class ChiTietPhieuDatHang_DAO extends UnicastRemoteObject implements ChiT
 			em.getTransaction().rollback();
 			return false;
 		}
+	}
+
+	@Override
+	public ChiTietPhieuDatHang getChiTietPhieuDatHangById(ChiTietPhieuDatKey chiTietPhieuDatKey)
+			throws RemoteException {
+		return em.find(ChiTietPhieuDatHang.class, chiTietPhieuDatKey);
+	}
+
+	@Override
+	public List<ChiTietPhieuDatKey> getAllChiTietPhieuDatKeyByPhieuDatId(String maPhieuDatHang) throws RemoteException {
+		return em.createNamedQuery("getAllChiTietPhieuDatKeyByPhieuDatId", ChiTietPhieuDatKey.class)
+				.setParameter("maPhieuDatHang", maPhieuDatHang)
+				.getResultList();
 	}
 	
 }

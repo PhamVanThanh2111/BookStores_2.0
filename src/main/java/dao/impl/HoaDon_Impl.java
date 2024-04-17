@@ -3,7 +3,6 @@ package dao.impl;
 import entity.HoaDon;
 
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.List;
 
 public interface HoaDon_Impl {

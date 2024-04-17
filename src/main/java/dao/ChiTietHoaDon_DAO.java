@@ -15,12 +15,10 @@ public class ChiTietHoaDon_DAO implements ChiTietHoaDon_Impl {
 		super();
 		em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
 	}
-	public boolean themChiTietHoaDon(List<ChiTietHoaDon> chiTietHoaDon) throws SQLException {
+	public boolean themChiTietHoaDon(ChiTietHoaDon chiTietHoaDon) throws SQLException {
 		try {
 			em.getTransaction().begin();
-			for (ChiTietHoaDon cthd : chiTietHoaDon) {
-				em.persist(cthd);
-			}
+			em.merge(chiTietHoaDon);
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {

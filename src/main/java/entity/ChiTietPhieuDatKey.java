@@ -1,14 +1,14 @@
 package entity;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 
 @Embeddable
 public class ChiTietPhieuDatKey {
-	private static final long serialVersionUID = 1L;
 
 	@Column(name = "maPhieuDatHang", columnDefinition = "nvarchar(7)", nullable = false)
 	private String maPhieuDatHang;

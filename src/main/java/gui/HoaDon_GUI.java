@@ -17,9 +17,11 @@ import dao.ChiTietHoaDon_DAO;
 import dao.DungCuHocTap_DAO;
 import dao.HoaDon_DAO;
 import dao.KhachHang_DAO;
+import dao.NhanVien_DAO;
 import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import entity.ChiTietHoaDon;
+import entity.ChiTietHoaDonKey;
 import entity.DungCuHocTap;
 import entity.HoaDon;
 import entity.KhachHang;
@@ -47,6 +49,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -69,21 +73,25 @@ public class HoaDon_GUI extends JPanel {
 	private JTextField txtSoDienThoai;
 	private JTextField txtDiaChi;
 	private JTextField txtConLai;
+	private JTextField txtMaSanPham;
+	private JTextField txtSearchSanPham;
 	private JTableHeader tableHeader;
+	private JLabel lblTongTienValue;
+	
+	private SanPham sanPham;
+	private KhachHang khachHang;
+	
 	private SanPham_DAO sanPham_DAO;
 	private KhachHang_DAO khachHang_DAO;
-	private KhachHang khachHang;
-	private SanPham sanPham;
-	private JLabel lblTongTienValue;
 	private HoaDon_DAO hoaDon_DAO;
 	private ChiTietHoaDon_DAO chiTietHoaDon_DAO;
 	private DungCuHocTap_DAO dungCuHocTap_DAO;
 	private Sach_DAO sach_DAO;
-	private JTextField txtMaSanPham;
+	private NhanVien_DAO nhanVien_DAO;
+	
 	private DanhSachHoaDon_GUI danhSachHoaDon_GUI;
 	private ThongKe_GUI thongKe_GUI;
 	private TrangChu_GUI trangChu_GUI;
-	private JTextField txtSearchSanPham;
 	
 	/**
 	 * Create the panel.
@@ -102,10 +110,7 @@ public class HoaDon_GUI extends JPanel {
 		chiTietHoaDon_DAO = new ChiTietHoaDon_DAO();
 		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 		sach_DAO = new Sach_DAO();
-
-		// connect
-		ConnectDB.getInstance();
-		ConnectDB.getConnection();
+		nhanVien_DAO = new NhanVien_DAO();
 
 		setLayout(null);
 
@@ -719,20 +724,24 @@ public class HoaDon_GUI extends JPanel {
 		else {
 			khachHang = new KhachHang();
 		}
-//		hoaDon.setNhanVien();
+		hoaDon.setNhanVien(nhanVien_DAO.getNhanVienTheoMa(maNhanVien));
 		hoaDon.setNgayLap(new java.sql.Date(new Date().getTime()));
 		hoaDon.setThanhTien(tinhThanhTien());
-//		hoaDon_DAO.lapHoaDon(hoaDon);
+		hoaDon_DAO.themHoaDon(hoaDon);
 		for (int i = 0; i < model.getRowCount(); i++) {
-			String maSanPham = sanPham_DAO.getSanPhamTheoTen(model.getValueAt(i, 0).toString()).getMaSanPham();
-			int soLuong = Integer.parseInt(model.getValueAt(i, 2).toString());
+			SanPham sanPham = sanPham_DAO.getSanPhamTheoTen(model.getValueAt(i, 0).toString());
 			ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
-//			chiTietHoaDon.setMaHoaDon(maHoaDon);
-//			chiTietHoaDon.setMaSanPham(maSanPham);
+			ChiTietHoaDonKey chiTietHoaDonKey = new ChiTietHoaDonKey();
+			int soLuong = Integer.parseInt(model.getValueAt(i, 2).toString());
+			chiTietHoaDonKey.setMaSanPham(sanPham.getMaSanPham());
+			chiTietHoaDonKey.setMaHoaDon(hoaDon.getMaHoaDon());
+			chiTietHoaDon.setHoaDon(hoaDon);
+			chiTietHoaDon.setSanPham(sanPham);
+			chiTietHoaDon.setId(chiTietHoaDonKey);
 			chiTietHoaDon.setSoLuong(soLuong);
 			chiTietHoaDon.setDonGia(Float.parseFloat(model.getValueAt(i, 3).toString()));
-//			chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
-			sanPham_DAO.banSanPham(maSanPham, soLuong);
+			chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
+			sanPham_DAO.banSanPham(sanPham.getMaSanPham(), soLuong);
 		}
 		xemHoaDon(hoaDon.getMaHoaDon());
 		danhSachHoaDon_GUI.refresh();
@@ -785,23 +794,27 @@ public class HoaDon_GUI extends JPanel {
 		}
 	}
 	
-//	private void searchInComboBox() {
-//		cbTenSP.addPropertyChangeListener(new PropertyChangeListener() {
-//			public void propertyChange(PropertyChangeEvent evt) {
-//				String searchText = cbTenSP.getEditor().getItem().toString().toLowerCase();
-//				if (searchText.isEmpty() && cbLoaiSP.getSelectedIndex() != -1) {
-//					loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
-//				}
-//				else {
-//					ArrayList<String> filteredItems = new ArrayList<String>();
-//					for (String item : getDanhSachComboBoxTenSanPham()) {
-//						if (item.toLowerCase().contains(searchText)) {
-//							filteredItems.add(item);
-//						}
-//					}
-//					themArrayListVaoComboBox(filteredItems, cbTenSP);
-//				}
-//			}
-//		});
-//	}
+	private void searchInComboBox() {
+		cbTenSP.addPropertyChangeListener(new PropertyChangeListener() {
+			public void propertyChange(PropertyChangeEvent evt) {
+				String searchText = cbTenSP.getEditor().getItem().toString().toLowerCase();
+				if (searchText.isEmpty() && cbLoaiSP.getSelectedIndex() != -1) {
+					try {
+						loadDataIntoComboboxTenSP(cbLoaiSP.getSelectedItem().toString());
+					} catch (RemoteException e) {
+						e.printStackTrace();
+					}
+				}
+				else {
+					ArrayList<String> filteredItems = new ArrayList<String>();
+					for (String item : getDanhSachComboBoxTenSanPham()) {
+						if (item.toLowerCase().contains(searchText)) {
+							filteredItems.add(item);
+						}
+					}
+					themArrayListVaoComboBox(filteredItems, cbTenSP);
+				}
+			}
+		});
+	}
 }
