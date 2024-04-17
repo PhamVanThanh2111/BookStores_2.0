@@ -10,10 +10,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.rmi.RemoteException;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -63,6 +61,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 	private JTable tableCTPD;
 	private JTableHeader tableHeaderDSPD;
 	private JTableHeader tableHeaderCTPD;
+	
 	private PhieuDatHang_DAO phieuDatHang_DAO;
 	private ChiTietPhieuDatHang_DAO chiTietPhieuDatHang_DAO;
 	private Sach_DAO sach_DAO;

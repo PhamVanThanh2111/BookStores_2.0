@@ -542,24 +542,30 @@ public class ThongKe_GUI extends JPanel {
 	}
 	
 	private boolean kiemTraNgayHopLe(Date tuNgay, Date denNgay) {
-		if (tuNgay.after(denNgay)) {
-			JOptionPane.showMessageDialog(null, "Thứ tự ngày không hợp lệ!");
-			dateChooserTuNgay.setDate(null);
+		try {
+			if (tuNgay.after(denNgay)) {
+				JOptionPane.showMessageDialog(null, "Thứ tự ngày không hợp lệ!");
+				dateChooserTuNgay.setDate(null);
+				dateChooserDenNgay.setDate(null);
+				return false;
+			}
+			else if (denNgay.after(new Date())) {
+				JOptionPane.showMessageDialog(null, "Không được chọn sau ngày hiện tại!");
+				dateChooserDenNgay.setDate(null);
+				return false;
+			}
+			else if (tinhKhoangCachGiuaHaiNgay(tuNgay, denNgay) >= 7) {
+				JOptionPane.showMessageDialog(null, "Tối đa 7 ngày!");
+				dateChooserTuNgay.setDate(null);
+				dateChooserDenNgay.setDate(null);
+				return false;
+			}
+			return true;
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Bạn phải chọn \"Từ ngày\" trước!");
 			dateChooserDenNgay.setDate(null);
 			return false;
 		}
-		else if (denNgay.after(new Date())) {
-			JOptionPane.showMessageDialog(null, "Không được chọn sau ngày hiện tại!");
-			dateChooserDenNgay.setDate(null);
-			return false;
-		}
-		else if (tinhKhoangCachGiuaHaiNgay(tuNgay, denNgay) >= 7) {
-			JOptionPane.showMessageDialog(null, "Tối đa 7 ngày!");
-			dateChooserTuNgay.setDate(null);
-			dateChooserDenNgay.setDate(null);
-			return false;
-		}
-		return true;
 	}
 	
 	// load danh sách sản phẩm gần hết hàng

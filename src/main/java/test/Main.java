@@ -56,5 +56,6 @@ public class Main {
 		hoaDon.setNgayLap(java.sql.Date.valueOf(java.time.LocalDate.now()));
 		hoaDon_DAO.themHoaDon(hoaDon);
 		
+//		System.out.println(hoaDon_DAO.getSoLuongSanPhamBanDuocTheoNgay(new Date(new java.util.Date().getTime())));
 	}
 }

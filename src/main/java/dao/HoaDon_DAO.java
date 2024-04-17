@@ -81,9 +81,9 @@ public class HoaDon_DAO implements HoaDon_Impl {
 
 	@Override
 	public long getSoLuongSanPhamBanDuocTheoNgay(Date date) throws RemoteException {
-		Integer result = em.createNamedQuery("getSoLuongSanPhamBanTheoNgay", Integer.class)
-                .setParameter("ngaylap", date)
-                .getSingleResult();
-        return result == null ? 0 : result;
+	    Long result = em.createNamedQuery("getSoLuongSanPhamBanTheoNgay", Long.class)
+	                    .setParameter("ngaylap", date)
+	                    .getSingleResult();
+	    return result == null ? 0 : result;
 	}
 }
