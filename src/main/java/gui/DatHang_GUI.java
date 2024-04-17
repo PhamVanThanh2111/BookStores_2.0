@@ -1,4 +1,4 @@
-	package gui;
+package gui;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -24,12 +24,9 @@ import dao.SanPham_DAO;
 import entity.ChiTietPhieuDatHang;
 import entity.ChiTietPhieuDatKey;
 import entity.PhieuDatHang;
-import entity.Sach;
 import entity.KhachHang;
 import entity.NhanVien;
 import entity.SanPham;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Persistence;
 
 import javax.swing.border.LineBorder;
 import javax.swing.JScrollPane;
@@ -48,14 +45,9 @@ import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
 
 public class DatHang_GUI extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JTable table;
 	private DefaultTableModel model;

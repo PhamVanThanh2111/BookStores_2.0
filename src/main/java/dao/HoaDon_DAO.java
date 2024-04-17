@@ -2,19 +2,11 @@ package dao;
 
 import java.rmi.RemoteException;
 import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
 
 import dao.impl.HoaDon_Impl;
 import entity.HoaDon;
-import entity.KhachHang;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 

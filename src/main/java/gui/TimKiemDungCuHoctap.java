@@ -1,6 +1,5 @@
 package gui;
 
-
 import javax.swing.JInternalFrame;
 import javax.swing.JButton;
 import java.awt.Color;
@@ -9,7 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JLabel;
@@ -17,32 +15,27 @@ import javax.swing.JTextField;
 
 import dao.DungCuHocTap_DAO;
 import dao.NhaCungCap_DAO;
-import dao.SanPham_DAO;
 import entity.DungCuHocTap;
 import entity.NhaCungCap;
-import entity.SanPham;
 import javax.swing.JComboBox;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class TimKiemDungCuHoctap extends JInternalFrame {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField txtMaDCHT;
 	private JTextField txtTenDCHT;
 	private JTextField txtGiaBan;
 	private JTextField txtSoLuong;
-	private List<DungCuHocTap> ds;
-	private SanPham_DAO sanPham_DAO;
+	private JButton btnTim;
 	private JComboBox<String> cbNhaCC;
+	private List<DungCuHocTap> ds;
+	
 	private NhaCungCap_DAO nhaCungCap_DAO;
 	private DungCuHocTap_DAO dungCuHocTap_DAO;
-	private JButton btnTim;
+	
 
 	public TimKiemDungCuHoctap(List<DungCuHocTap> ds) throws RemoteException {
-		sanPham_DAO = new SanPham_DAO();
 		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 		nhaCungCap_DAO = new NhaCungCap_DAO();
 		this.ds = ds;

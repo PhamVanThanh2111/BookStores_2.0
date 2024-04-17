@@ -9,8 +9,6 @@ import javax.swing.JOptionPane;
 
 import dao.impl.Sach_Impl;
 import entity.Sach;
-import entity.SanPham;
-import entity.generateid.SachGeneratorId;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 

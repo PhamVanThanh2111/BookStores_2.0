@@ -2,7 +2,6 @@ package dao;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.sql.SQLException;
 import java.util.List;
 
 import dao.impl.NhaCungCap_Impl;

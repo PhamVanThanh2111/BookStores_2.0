@@ -739,6 +739,7 @@ public class HoaDon_GUI extends JPanel {
 		trangChu_GUI.refresh();
 	}
 	
+	@SuppressWarnings("unused")
 	private void xemHoaDon(String maHoaDon) throws JRException {
 		HashMap<String, Object> params = new HashMap<String, Object>();
 		params.put("maPhieu", maHoaDon);
@@ -784,6 +785,7 @@ public class HoaDon_GUI extends JPanel {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private void searchInComboBox() {
 		cbTenSP.addPropertyChangeListener(new PropertyChangeListener() {
 			public void propertyChange(PropertyChangeEvent evt) {

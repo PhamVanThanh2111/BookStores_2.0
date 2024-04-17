@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JInternalFrame;
@@ -23,11 +22,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
 import dao.DungCuHocTap_DAO;
-import dao.NhaCungCap_DAO;
 import dao.Sach_DAO;
-import dao.SanPham_DAO;
 import entity.DungCuHocTap;
-import entity.SanPham;
 
 import javax.swing.JButton;
 
@@ -41,7 +37,6 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 	private JTableHeader tableHeader;
 	private JButton btnXoa, btnKhoiPhuc;
 	private List<DungCuHocTap> ds;
-	private NhaCungCap_DAO nhaCungCap_DAO;
 	private DungCuHocTap_DAO dungCuHocTap_DAO;
 	private Sach_DAO sach_DAO;
 	private JButton btnquayLai;
@@ -53,7 +48,6 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 
 	public KhoiPhucDungCuHocTap_GUI(List<DungCuHocTap> ds) throws RemoteException {
 		this.ds = ds;
-		nhaCungCap_DAO = new NhaCungCap_DAO();
 		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 		sach_DAO = new Sach_DAO();
 		

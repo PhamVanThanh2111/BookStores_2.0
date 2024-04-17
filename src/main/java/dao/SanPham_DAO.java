@@ -6,8 +6,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
-
 import dao.impl.SanPham_Impl;
 import entity.SanPham;
 import jakarta.persistence.EntityManager;

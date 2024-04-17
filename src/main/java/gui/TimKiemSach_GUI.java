@@ -6,11 +6,9 @@ import javax.swing.border.EmptyBorder;
 
 import dao.NhaXuatBan_DAO;
 import dao.Sach_DAO;
-import dao.SanPham_DAO;
 import dao.TheLoaiSach_DAO;
 import entity.NhaXuatBan;
 import entity.Sach;
-import entity.SanPham;
 import entity.TheLoaiSach;
 
 import javax.swing.JLabel;
@@ -27,17 +25,12 @@ import javax.swing.JFrame;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class TimKiemSach_GUI extends JInternalFrame {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField txtMaSach;
 	private JTextField txtTenSach;
@@ -53,7 +46,6 @@ public class TimKiemSach_GUI extends JInternalFrame {
 	private JComboBox<String> cmbNhaXuatBan;
 	private List<Sach> ds;
 
-	private SanPham_DAO sanPham_DAO;
 	private NhaXuatBan_DAO nhaXuatBan_DAO;
 	private TheLoaiSach_DAO theLoaiSach_DAO;
 	private Sach_DAO sach_DAO;
@@ -68,7 +60,6 @@ public class TimKiemSach_GUI extends JInternalFrame {
 	public TimKiemSach_GUI(List<Sach> ds2) throws RemoteException {
 
 		// khai bao DAO
-		sanPham_DAO = new SanPham_DAO();
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
 		sach_DAO = new Sach_DAO();
