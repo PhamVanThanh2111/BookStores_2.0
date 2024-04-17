@@ -22,8 +22,8 @@ public class HoaDon implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "generator", strategy = "entity.generateid.HoaDonGeneratorId")
-	@GeneratedValue(generator = "generator")
+	@GenericGenerator(name = "hoaDonGenerator", strategy = "entity.generateid.HoaDonGeneratorId")
+	@GeneratedValue(generator = "hoaDonGenerator")
 	@Column(name = "maHoaDon", columnDefinition = "nvarchar(7)")
 	private String maHoaDon;
 

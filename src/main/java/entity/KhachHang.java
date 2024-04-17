@@ -19,8 +19,8 @@ public class KhachHang implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "generator", strategy = "entity.generateid.KhachHangGeneratorId")
-	@GeneratedValue(generator = "generator")
+	@GenericGenerator(name = "khachHangGenerator", strategy = "entity.generateid.KhachHangGeneratorId")
+	@GeneratedValue(generator = "khachHangGenerator")
 	@Column(name = "maKhachHang", columnDefinition = "nvarchar(7)")
 	private String maKhachHang;
 

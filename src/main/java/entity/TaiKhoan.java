@@ -17,8 +17,8 @@ public class TaiKhoan implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "generator", strategy  = "entity.generateid.NhanVienGeneratorId")
-	@GeneratedValue(generator = "generator")
+	@GenericGenerator(name = "taiKhoanGenerator", strategy  = "entity.generateid.NhanVienGeneratorId")
+	@GeneratedValue(generator = "taiKhoanGenerator")
 	@Column(name = "taiKhoan", columnDefinition = "nvarchar(6)")
 	private String taiKhoan;
 	

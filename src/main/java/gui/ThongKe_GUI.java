@@ -109,7 +109,6 @@ public class ThongKe_GUI extends JPanel {
 		hoaDon_DAO = new HoaDon_DAO();
 		sanPham_DAO = new SanPham_DAO();
 		chiTietHoaDon_DAO = new ChiTietHoaDon_DAO();
-		
 		setLayout(null);
 		
 		JPanel pnlMain = new JPanel();
@@ -339,7 +338,6 @@ public class ThongKe_GUI extends JPanel {
 		int i = 0;
 		while (i <= tinhKhoangCachGiuaHaiNgay(tuNgay, denNgay)) {
 			datasetDoanhThu.addValue(tinhDoanhThuTheoNgay(getSQLDate(plusDays(tuNgay, i))), "Doanh thu 1", dateFormat.format(plusDays(tuNgay, i)).toString());
-			System.out.println(tinhDoanhThuTheoNgay(getSQLDate(plusDays(tuNgay, i))));
 			i++;
 		}
 		chartDoanhThu = ChartFactory.createBarChart("DOANH THU", "NGÀY", "VND", datasetDoanhThu, PlotOrientation.VERTICAL, true, true, false);

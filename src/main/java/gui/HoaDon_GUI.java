@@ -339,13 +339,8 @@ public class HoaDon_GUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (tinhThanhTien() > 0) {
 					try {
-						try {
-							lapHoaDon(nhanVien.getMaNhanVien());
-						} catch (JRException | RemoteException e1) {
-							e1.printStackTrace();
-						}
-						
-					} catch (SQLException e1) {
+						lapHoaDon(nhanVien.getMaNhanVien());
+					} catch (JRException | RemoteException | SQLException e1) {
 						e1.printStackTrace();
 					}
 				}
@@ -683,12 +678,12 @@ public class HoaDon_GUI extends JPanel {
 	private void loadDataIntoComboboxTenSP(String loaiSanPham) throws RemoteException {
 		cbTenSP.removeAllItems();
 		if (loaiSanPham.equals("Sách")) {
-			for (Sach sanPham : sach_DAO.getAllSach()) {
+			for (SanPham sanPham : sach_DAO.getAllSach()) {
 				cbTenSP.addItem(sanPham.getTenSanPham());
 			}
 		}
 		else {
-			for (DungCuHocTap dungCuHocTap : dungCuHocTap_DAO.getAllDungCuHocTap()) {
+			for (SanPham sanPham : dungCuHocTap_DAO.getAllDungCuHocTap()) {
 				cbTenSP.addItem(sanPham.getTenSanPham());
 			}
 		}

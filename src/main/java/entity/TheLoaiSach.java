@@ -16,8 +16,8 @@ public class TheLoaiSach implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "generator", strategy = "entity.generateid.TheLoaiSachGeneratorId")
-	@GeneratedValue(generator = "generator")
+	@GenericGenerator(name = "TheLoaiSachGenerator", strategy = "entity.generateid.TheLoaiSachGeneratorId")
+	@GeneratedValue(generator = "TheLoaiSachGenerator")
 	@Column(name = "maTheLoaiSach", columnDefinition = "nvarchar(7)")
 	private String maTheLoaiSach;
 	

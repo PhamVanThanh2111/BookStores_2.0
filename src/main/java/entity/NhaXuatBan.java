@@ -17,8 +17,8 @@ public class NhaXuatBan implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "generator", strategy = "entity.generateid.NhaXuatBanGeneratorId")
-	@GeneratedValue(generator = "generator")
+	@GenericGenerator(name = "nhaXuatBanGenerator", strategy = "entity.generateid.NhaXuatBanGeneratorId")
+	@GeneratedValue(generator = "nhaXuatBanGenerator")
 	@Column(name = "maNhaXuatBan", columnDefinition = "nvarchar(7)")
 	private String maNhaXuatBan;
 

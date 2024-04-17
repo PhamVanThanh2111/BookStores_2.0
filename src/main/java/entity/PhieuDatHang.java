@@ -17,8 +17,8 @@ public class PhieuDatHang implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "generator", strategy = "entity.generateid.PhieuDatHangGeneratorId")
-	@GeneratedValue(generator = "generator")
+	@GenericGenerator(name = "phieuDatHangGenerator", strategy = "entity.generateid.PhieuDatHangGeneratorId")
+	@GeneratedValue(generator = "phieuDatHangGenerator")
 	@Column(name = "maPhieuDatHang", columnDefinition = "nvarchar(7)")
 	private String maPhieuDatHang;
 
