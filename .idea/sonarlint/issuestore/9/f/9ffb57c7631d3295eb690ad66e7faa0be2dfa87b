@@ -55,22 +55,22 @@ g
 java:S1192Å"IDefine a constant instead of duplicating this literal "Sach_GUI" 9 times.(Äÿã¨8”Ñµÿí1
 k
 java:S1192Ö"MDefine a constant instead of duplicating this literal "TrangChu_GUI" 4 times.(—ßâó8”Ñµÿí1
-s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Èßùıÿÿÿÿ8šÑµÿí1
-s	java:S117­"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—§ûÿÿÿÿÿ8›Ñµÿí1
-s	java:S117±"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯—â˜ÿÿÿÿÿ8›Ñµÿí1
-s	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÇÁøÿÿÿÿ8›Ñµÿí1
-n	java:S117Ã	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾°‹ª8›Ñµÿí1
-n	java:S117Ä	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›¨êÀ8œÑµÿí1
-s	java:S117Å	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“¿™ùÿÿÿÿ8œÑµÿí1
-n	java:S117Æ	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä¢ª´8œÑµÿí1
-n	java:S117Ç	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ŒÛ•8œÑµÿí1
-s	java:S117®"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó“ûÿÿÿÿ8Ñµÿí1
+s	java:S117¡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Èßùıÿÿÿÿ8šÑµÿí1
+s	java:S117±"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—§ûÿÿÿÿÿ8›Ñµÿí1
+s	java:S117µ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯—â˜ÿÿÿÿÿ8â‰àî1
+s	java:S117½"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÇÁøÿÿÿÿ8›Ñµÿí1
+n	java:S117Ç	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾°‹ª8œÑµÿí1
+n	java:S117È	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›¨êÀ8œÑµÿí1
+s	java:S117É	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“¿™ùÿÿÿÿ8œÑµÿí1
+n	java:S117Ê	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä¢ª´8œÑµÿí1
+n	java:S117Ë	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ŒÛ•8ã‰àî1
+s	java:S117²"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó“ûÿÿÿÿ8Ñµÿí1
 F
-java:S1604©"(Make this anonymous inner class a lambda(¤¼ÚÑ8¡Ñµÿí1
+java:S1604­"(Make this anonymous inner class a lambda(¤¼ÚÑ8¡Ñµÿí1
+p
+java:S2095½"MUse try-with-resources or close this "ExecutorService" in a "finally" clause.(ÒÀîìüÿÿÿÿ8Õµÿí1
 o
 java:S2095r"MUse try-with-resources or close this "ExecutorService" in a "finally" clause.(ÒÀîìüÿÿÿÿ8Õµÿí1
-p
-java:S2095¹"MUse try-with-resources or close this "ExecutorService" in a "finally" clause.(ÒÀîìüÿÿÿÿ8Õµÿí1
 ~	java:S116G"]Rename this field "danhSachHoaDon_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢±’”úÿÿÿÿ8“Õµÿí1
 z	java:S116H"^Rename this field "danhSachDatHang_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ¥«ô8”Õµÿí1
 r	java:S116I"VRename this field "thongKe_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Òş˜8”Õµÿí1
@@ -99,27 +99,25 @@ java:S1948W"/Make "khachHang_DAO" transient or serializable.(÷˜Íøÿÿÿÿ8¢Õµÿí1
 I
 java:S1948[",Make "hoaDon_DAO" transient or serializable.(¢ê‹”8¢Õµÿí1
 o
-java:S3776e"RRefactor this method to reduce its Cognitive Complexity from 62 to the 15 allowed.(ÏÚ¦ÿ8®Õµÿí1
+java:S3776e"RRefactor this method to reduce its Cognitive Complexity from 64 to the 15 allowed.(ÏÚ¦ÿ8®Õµÿí1
 
 java:S1130e"sRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from constructor's body.(ÏÚ¦ÿ8°Õµÿí1
 k
 java:S3252w"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8ºÕµÿí1
 [
 java:S3252‚"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(®Ğ–8¼Õµÿí1
-i
-java:S1602‰",Remove useless curly braces around statement(À…ÛÉJ$b1fcaa3e-e301-483a-9b68-7e54e75f4f7b
 n
-java:S1602­",Remove useless curly braces around statement(—§ûÿÿÿÿÿJ$f40c9ed1-c7b1-4313-a89e-3b5e4c0eaca6
+java:S1602±",Remove useless curly braces around statement(—§ûÿÿÿÿÿJ$f40c9ed1-c7b1-4313-a89e-3b5e4c0eaca6
 O
-java:S1602¹",Remove useless curly braces around statement(ÂÇÁøÿÿÿÿ8ŞÙµÿí1
+java:S1602½",Remove useless curly braces around statement(ÂÇÁøÿÿÿÿ8ŞÙµÿí1
 u
-java:S3776Ò"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(ÈâÃŞùÿÿÿÿ8âÙµÿí1
+java:S3776Ö"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(ÈâÃŞùÿÿÿÿ8âÙµÿí1
 l
-java:S3252İ"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8äÙµÿí1
+java:S3252á"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8äÙµÿí1
 [
-java:S3252è"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(®Ğ–8åÙµÿí1
+java:S3252ì"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(®Ğ–8åÙµÿí1
 J
-java:S1602Ë",Remove useless curly braces around statement(Æ”æÓ8ŠÚµÿí1
+java:S1602Ï",Remove useless curly braces around statement(Æ”æÓ8ŠÚµÿí1
 J
-java:S1602×",Remove useless curly braces around statement( óúæ8‹Úµÿí1
-g	java:S106ê"+Replace this use of System.err by a logger.(ı×¯ÍJ$0065e81e-5cf1-401d-afc0-8ef8091960fa
+java:S1602Û",Remove useless curly braces around statement( óúæ8‹Úµÿí1
+g	java:S106î"+Replace this use of System.err by a logger.(ı×¯ÍJ$0065e81e-5cf1-401d-afc0-8ef8091960fa

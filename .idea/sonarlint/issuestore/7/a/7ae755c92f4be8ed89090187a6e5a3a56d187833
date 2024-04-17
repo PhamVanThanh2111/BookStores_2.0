@@ -1,2 +1,45 @@
 
-|	java:S125	"<This block of commented-out lines of code should be removed.(¢íŒÂıÿÿÿÿJ$44f43bbe-1595-449b-b937-0b15d3980983
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬Ë÷ùÿÿÿÿ8†£üßî1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó„ãÈûÿÿÿÿ8‡£üßî1
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ôı8‡£üßî1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãĞ°şÿÿÿÿ8‡£üßî1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ¼â„8ˆ£üßî1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óğ˜Œ8ˆ£üßî1
+t
+java:S2095 "RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(ÛÈşÿÿÿÿ8¦£üßî1
+h
+java:S2095!"KUse try-with-resources or close this "EntityManager" in a "finally" clause.(ì¶Ğ8¦£üßî1
+^
+java:S1854"ARemove this useless assignment to local variable "khachHang_DAO".(æ¼â„8®£üßî1
+b
+java:S1854"@Remove this useless assignment to local variable "nhanVien_DAO".(ãĞ°şÿÿÿÿ8°£üßî1
+`
+java:S1854"DRemove this useless assignment to local variable "dungCuHocTap_DAO".(¸ôı8³£üßî1
+b
+java:S1854"@Remove this useless assignment to local variable "taiKhoan_DAO".(Ó„ãÈûÿÿÿÿ8´£üßî1
+^
+java:S1854"<Remove this useless assignment to local variable "sach_DAO".(¬Ë÷ùÿÿÿÿ8µ£üßî1
+Š
+java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(¦Ã+8¸£üßî1
+O
+java:S1481"-Remove this unused "sach_DAO" local variable.(¬Ë÷ùÿÿÿÿ8½£üßî1
+S
+java:S1481"1Remove this unused "taiKhoan_DAO" local variable.(Ó„ãÈûÿÿÿÿ8¿£üßî1
+Q
+java:S1481"5Remove this unused "dungCuHocTap_DAO" local variable.(¸ôı8Ç£üßî1
+S
+java:S1481"1Remove this unused "nhanVien_DAO" local variable.(ãĞ°şÿÿÿÿ8É£üßî1
+O
+java:S1481"2Remove this unused "khachHang_DAO" local variable.(æ¼â„8É£üßî1
+]	java:S125""<This block of commented-out lines of code should be removed.(“Ñ´–ùÿÿÿÿ8Í£üßî1
+X	java:S125/"<This block of commented-out lines of code should be removed.(±Õ™á8Î£üßî1
+G
+java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8Û£üßî1
+U
+java:S1128"8Remove this unused import 'dao.ChiTietPhieuDatHang_DAO'.(½ğÜ€8Ü£üßî1
+E
+java:S1128"(Remove this unused import 'entity.Sach'.(ÙÛÈÜ8Ü£üßî1
+N
+java:S1128",Remove this unused import 'entity.TaiKhoan'.(Ï±Ê¡üÿÿÿÿ8Ü£üßî1
+h
+java:S1128"FRemove this unused import 'entity.generateid.DungCuHocTapGeneratorId'.(™¼Ü„ÿÿÿÿÿ8İ£üßî1

@@ -1,6 +1,7 @@
 package test;
 
 import dao.HoaDon_DAO;
+import dao.impl.HoaDon_Impl;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -10,7 +11,7 @@ import java.rmi.RemoteException;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TestHoaDonDao {
-    private HoaDon_DAO hoaDonDao;
+    private HoaDon_Impl hoaDonDao;
     @BeforeAll
     void TestHoaDonDao() throws Exception {
         hoaDonDao = new HoaDon_DAO();
