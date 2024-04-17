@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Set;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "SanPham")
@@ -12,6 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
 @NamedQueries({
 	@NamedQuery(name = "getSanPhamTheoTen", query = "SELECT sp FROM SanPham sp WHERE sp.tenSanPham = :tenSanPham"),
 	@NamedQuery(name = "getSanPhamGanHetHang", query = "SELECT sp FROM SanPham sp WHERE sp.soLuongTon <= 10"),
+	@NamedQuery(name = "getSanPhamBanChay", query = "SELECT sp.maSanPham, SUM(cthd.soLuong) as total FROM SanPham sp JOIN sp.chiTietHoaDons cthd GROUP BY sp.maSanPham ORDER BY total DESC"),
 })
 public abstract class SanPham implements Serializable {
 	private static final long serialVersionUID = 1L;

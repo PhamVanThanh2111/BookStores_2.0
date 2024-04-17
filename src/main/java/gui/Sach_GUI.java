@@ -38,12 +38,10 @@ import javax.swing.JButton;
 
 import dao.NhaXuatBan_DAO;
 import dao.Sach_DAO;
-import dao.SanPham_DAO;
 import dao.TheLoaiSach_DAO;
 import entity.NhaXuatBan;
 import entity.NhanVien;
 import entity.Sach;
-import entity.SanPham;
 import entity.TheLoaiSach;
 import entity.generateid.SachGeneratorId;
 
@@ -56,9 +54,6 @@ import javax.swing.JFileChooser;
 import javax.swing.SwingConstants;
 
 public class Sach_GUI extends JPanel {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField txtMaSach;
 	private JTextField txtTenSach;
@@ -91,53 +86,39 @@ public class Sach_GUI extends JPanel {
 	private JButton btnDelete;
 	private JButton btnUpdate;
 	private JButton btnLamMoi;
-	// private JButton btnChonHinhAnh;
+	private JButton btnXuatFile;
+	private JButton btnTim;
+	private JButton btnChonHinhAnh;
+	private JButton btnKhoiPhuc;
+	
 	private JTableHeader tableHeader;
 	private DefaultTableModel model;
 	private JTable table;
-
 	private JPanel pDanhSach;
-
 	private JScrollPane scrollPaneSach;
 
 	private NhaXuatBan_DAO nhaXuatBan_DAO;
 	private TheLoaiSach_DAO theLoaiSach_DAO;
-	private SanPham_DAO sanPham_DAO;
 	private Sach_DAO sach_DAO;
 	
 	private TimKiemSach_GUI timKiemSach_GUI;
+	private KhoiPhucSach_GUI khoiPhucSach_GUI;
 	private NhaXuatBan nhaXuatBan;
 	private TheLoaiSach theLoaiSach;
 	private List<Sach> ds;
 	private Border borderDefault;
-	private JButton btnXuatFile;
 
-	private JButton btnTim;
-	private JButton btnChonHinhAnh;
-	private JButton btnKhoiPhuc;
 	private String relativePath;
 
 	private JFileChooser fileChooser;
 	private File selectedFile;
 	private XSSFWorkbook wordkbook;
 
-	private KhoiPhucSach_GUI khoiPhucSach_GUI;
-	
 	private SachGeneratorId sachGeneratorId;
 
-	// private JButton btnChonHinhAnh;
-	/**
-	 * Create the panel.
-	 * @throws RemoteException 
-	 * 
-	 * @throws SQLException
-	 */
 	public Sach_GUI(NhanVien nhanVien) throws RemoteException {
-
-		// Khai báo Dao
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
-		sanPham_DAO = new SanPham_DAO();
 		sachGeneratorId = new SachGeneratorId();
 		sach_DAO = new Sach_DAO();
 
@@ -760,7 +741,6 @@ public class Sach_GUI extends JPanel {
 		// Khai báo DAO
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
-		sanPham_DAO = new SanPham_DAO();
 		sach_DAO = new Sach_DAO();
 
 		ds = new ArrayList<Sach>();
@@ -1194,38 +1174,6 @@ public class Sach_GUI extends JPanel {
 			cmbTenLoaiSach.addItem(theLoaiSach.getTenTheLoaiSach());
 		}
 	}
-
-	// làm mới dữ liệu trên bảng
-	private void lamMoi() {
-		txtMaSach.setText("");
-		txtTenSach.setText("");
-		txtGiaNhap.setText("");
-		txtXuatXu.setText("");
-		txtGiaBan.setText("");
-		txtSoLuong.setText("");
-		txtSoTrang.setText("");
-		txtNamXuatBan.setText("");
-		txtTacGia.setText("");
-		cmbTenLoaiSach.setSelectedIndex(-1);
-		cmbTenNhaXuatBan.setSelectedIndex(-1);
-		lblHinhAnh.setIcon(null);
-		lblHinhAnh.removeAll();
-	}
-	// làm mới dữ liệu trên bảng
-		private void lamMoiKhachHang() {
-			txtMaSach.setText("");
-			txtTenSach.setText("");
-			txtXuatXu.setText("");
-			txtGiaBan.setText("");
-			txtSoLuong.setText("");
-			txtSoTrang.setText("");
-			txtNamXuatBan.setText("");
-			txtTacGia.setText("");
-			cmbTenLoaiSach.setSelectedIndex(-1);
-			cmbTenNhaXuatBan.setSelectedIndex(-1);
-			lblHinhAnh.setIcon(null);
-			lblHinhAnh.removeAll();
-		}
 
 	// Thêm sách
 	private boolean add() {

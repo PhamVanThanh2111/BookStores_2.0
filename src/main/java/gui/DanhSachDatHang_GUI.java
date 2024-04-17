@@ -10,10 +10,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.rmi.RemoteException;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -28,12 +26,8 @@ import javax.swing.table.JTableHeader;
 import connect.ConnectDB;
 import dao.ChiTietHoaDon_DAO;
 import dao.ChiTietPhieuDatHang_DAO;
-import dao.DungCuHocTap_DAO;
 import dao.HoaDon_DAO;
-import dao.KhachHang_DAO;
-import dao.NhanVien_DAO;
 import dao.PhieuDatHang_DAO;
-import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import entity.ChiTietHoaDon;
 import entity.ChiTietHoaDonKey;
@@ -63,31 +57,19 @@ public class DanhSachDatHang_GUI extends JPanel {
 	private JTable tableCTPD;
 	private JTableHeader tableHeaderDSPD;
 	private JTableHeader tableHeaderCTPD;
+	
 	private PhieuDatHang_DAO phieuDatHang_DAO;
 	private ChiTietPhieuDatHang_DAO chiTietPhieuDatHang_DAO;
-	private Sach_DAO sach_DAO;
-	private DungCuHocTap_DAO dungCuHocTap_DAO;
 	private HoaDon_DAO hoaDon_DAO;
 	private ChiTietHoaDon_DAO chiTietHoaDon_DAO;
-	private NhanVien_DAO nhanVien_DAO;
-	private KhachHang_DAO khachHang_DAO;
 	private SanPham_DAO sanPham_DAO;
 	
-	/**
-	 * Create the panel.
-	 * @throws RemoteException 
-	 */
 	public DanhSachDatHang_GUI() throws RemoteException {
-		
 		// declare variables DAO
 		phieuDatHang_DAO = new PhieuDatHang_DAO();
 		chiTietPhieuDatHang_DAO = new ChiTietPhieuDatHang_DAO();
-		sach_DAO = new Sach_DAO();
-		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 		hoaDon_DAO = new HoaDon_DAO();
 		chiTietHoaDon_DAO = new ChiTietHoaDon_DAO();
-		nhanVien_DAO = new NhanVien_DAO();
-		khachHang_DAO = new KhachHang_DAO();
 		sanPham_DAO = new SanPham_DAO();
 		
 		setLayout(null);

@@ -4,8 +4,6 @@ import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 
 @Embeddable
 public class ChiTietPhieuDatKey {

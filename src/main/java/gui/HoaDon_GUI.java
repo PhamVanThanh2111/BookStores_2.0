@@ -22,11 +22,9 @@ import dao.Sach_DAO;
 import dao.SanPham_DAO;
 import entity.ChiTietHoaDon;
 import entity.ChiTietHoaDonKey;
-import entity.DungCuHocTap;
 import entity.HoaDon;
 import entity.KhachHang;
 import entity.NhanVien;
-import entity.Sach;
 import entity.SanPham;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -59,15 +57,12 @@ import java.util.HashMap;
 
 public class HoaDon_GUI extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JTable table;
 	private DefaultTableModel model;
-	private JTextField txtSoLuong;
 	private JComboBox<String> cbTenSP;
 	private JComboBox<String> cbLoaiSP;
+	private JTextField txtSoLuong;
 	private JTextField txtMaKhachHang;
 	private JTextField txtTenKhachHang;
 	private JTextField txtSoDienThoai;
@@ -738,12 +733,13 @@ public class HoaDon_GUI extends JPanel {
 			chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
 			sanPham_DAO.banSanPham(sanPham.getMaSanPham(), soLuong);
 		}
-		xemHoaDon(hoaDon.getMaHoaDon());
+//		xemHoaDon(hoaDon.getMaHoaDon());
 		danhSachHoaDon_GUI.refresh();
 		thongKe_GUI.showAllChart();
 		trangChu_GUI.refresh();
 	}
 	
+	@SuppressWarnings("unused")
 	private void xemHoaDon(String maHoaDon) throws JRException {
 		HashMap<String, Object> params = new HashMap<String, Object>();
 		params.put("maPhieu", maHoaDon);
@@ -789,6 +785,7 @@ public class HoaDon_GUI extends JPanel {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private void searchInComboBox() {
 		cbTenSP.addPropertyChangeListener(new PropertyChangeListener() {
 			public void propertyChange(PropertyChangeEvent evt) {

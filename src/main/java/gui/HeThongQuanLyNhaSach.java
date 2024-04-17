@@ -42,9 +42,9 @@ import javax.swing.JButton;
 public class HeThongQuanLyNhaSach extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
-	private JPanel pContent;
 	private CardLayout cardLayoutContent;
+	private JPanel pContent;
+	private JPanel contentPane;
 	private JLabel lblNhanVien;
 	private JLabel lblTrangChu;
 	private JLabel lblKhachHang;
@@ -68,6 +68,7 @@ public class HeThongQuanLyNhaSach extends JFrame {
 	private JSeparator sprDoc1;
 	private JSeparator sprDoc2;
 	private JSeparator sprDoc3;
+	
 	private DanhSachHoaDon_GUI danhSachHoaDon_GUI;
 	private DanhSachDatHang_GUI danhSachDatHang_GUI;
 	private ThongKe_GUI thongKe_GUI;
@@ -82,6 +83,7 @@ public class HeThongQuanLyNhaSach extends JFrame {
 	private TheLoaiSach_GUI theLoaiSach_GUI_NhanVien;
 	private NhaXuatBan_GUI nhaXuatBan_GUI_NhanVien;
 	private NhaCungCap_GUI nhaCungCap_GUI_NhanVien;
+	
 	private NhanVien_DAO nhanVien_DAO;
 	private PhieuDatHang_DAO phieuDatHang_DAO;
 	private KhachHang_DAO khachHang_DAO;

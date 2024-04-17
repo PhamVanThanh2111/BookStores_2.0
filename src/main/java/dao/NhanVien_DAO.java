@@ -55,7 +55,6 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 
 	@Override
 	public NhanVien getNhanVienTheoTaiKhoan(String maTK) throws RemoteException {
-		// TODO Auto-generated method stub
 		return em.find(NhanVien.class, maTK);
 	}
 
@@ -106,21 +105,18 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 
 	@Override
 	public List<NhanVien> getAllNhanVien() throws RemoteException {
-		// TODO Auto-generated method stub
 		return em.createNamedQuery("getAllNhanVien", NhanVien.class).getResultList();
 	}
 	@Override
 	public Map<NhanVien, Double> getDoanhThuNhanVien() throws RemoteException {
-		List<?> result = em.createNamedQuery("getDoanhThuTheoNhanVien").getResultList();
+		List<?> result = em.createNamedQuery("getDoanhThuTheoNhanVien").setMaxResults(7).getResultList();
 		Map<NhanVien, Double> map = new LinkedHashMap<>();
 		if(result.isEmpty())
 			return null;
 		result.stream().map(o -> (Object[]) o).forEach(o -> {
 			try {
-				System.out.println((String) o[0]);
 				map.put(this.getNhanVienTheoMa((String) o[0]), (Double) o[1]);
 			} catch (RemoteException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});
@@ -128,17 +124,15 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 	}
 	@Override
 	public Map<NhanVien, Integer> getTongHoaDonSoLuongNhanVien() throws RemoteException {
-		List<?> result = em.createNamedQuery("getHoaDonSoLuongNhanVien").getResultList();
+		List<?> result = em.createNamedQuery("getHoaDonSoLuongNhanVien").setMaxResults(7).getResultList();
 		Map<NhanVien, Integer> map = new LinkedHashMap<>();
 		if (result.isEmpty())
 			return null;
-		System.out.println(result.size());
 		result.stream().map(o -> (Object[]) o).forEach(o -> {
 			try {
 				Long a = (Long) o[1];
 				map.put(getNhanVienTheoMa((String) o[0]), a.intValue());
 			} catch (RemoteException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});

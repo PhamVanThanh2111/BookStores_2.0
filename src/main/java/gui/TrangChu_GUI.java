@@ -14,19 +14,13 @@ import java.time.format.DateTimeFormatter;
 import javax.swing.border.LineBorder;
 
 import dao.Ca_DAO;
-import dao.HoaDon_DAO;
-import entity.HoaDon;
 import entity.NhanVien;
 
 import javax.swing.ImageIcon;
 
 
 public class TrangChu_GUI extends JPanel {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-	private HoaDon_DAO hoaDon_DAO;
 	private JLabel lblSoLuongGiaoDichValue;
 	private JLabel lblTongThuValue;
 	private Ca_DAO ca_DAO;
@@ -34,14 +28,7 @@ public class TrangChu_GUI extends JPanel {
 	private JLabel lblTieuDe;
 	private NhanVien nhanVien;
 	
-	/**
-	 * Create the panel.
-	 * @throws RemoteException 
-	 */
 	public TrangChu_GUI(NhanVien nhanVien) throws RemoteException {
-		
-		// khai bao DAO
-		hoaDon_DAO = new HoaDon_DAO();
 		ca_DAO = new Ca_DAO();
 		this.nhanVien = nhanVien;
 		

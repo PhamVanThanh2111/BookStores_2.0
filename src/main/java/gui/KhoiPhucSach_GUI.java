@@ -13,12 +13,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
-import dao.NhaXuatBan_DAO;
 import dao.Sach_DAO;
-import dao.SanPham_DAO;
-import dao.TheLoaiSach_DAO;
 import entity.Sach;
-import entity.SanPham;
 
 import javax.swing.JButton;
 import java.awt.Font;
@@ -27,7 +23,6 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class KhoiPhucSach_GUI extends JInternalFrame {
@@ -40,9 +35,6 @@ public class KhoiPhucSach_GUI extends JInternalFrame {
 	
 	private JPanel pMain;
 	
-	private SanPham_DAO sanPham_DAO;
-	private NhaXuatBan_DAO nhaXuatBan_DAO;
-	private TheLoaiSach_DAO theLoaiSach_DAO;
 	private Sach_DAO sach_DAO;
 	private JScrollPane scrollPaneSach;
 	
@@ -61,9 +53,6 @@ public class KhoiPhucSach_GUI extends JInternalFrame {
 	 */
 	public KhoiPhucSach_GUI(List<Sach> ds) throws RemoteException {
 		this.ds = ds;
-		sanPham_DAO = new SanPham_DAO();
-		nhaXuatBan_DAO = new NhaXuatBan_DAO();
-		theLoaiSach_DAO = new TheLoaiSach_DAO();
 		sach_DAO = new Sach_DAO();
 		
 		setBounds(100, 100, 1199, 506);

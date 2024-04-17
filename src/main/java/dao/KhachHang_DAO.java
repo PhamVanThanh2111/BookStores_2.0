@@ -1,13 +1,14 @@
 package dao;
 
 import java.rmi.RemoteException;
-import java.sql.SQLException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 import dao.impl.KhachHang_Impl;
 import entity.KhachHang;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class KhachHang_DAO implements KhachHang_Impl {

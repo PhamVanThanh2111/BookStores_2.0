@@ -9,8 +9,6 @@ import javax.swing.JOptionPane;
 
 import dao.impl.DungCuHocTap_Impl;
 import entity.DungCuHocTap;
-import entity.SanPham;
-import entity.generateid.DungCuHocTapGeneratorId;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 

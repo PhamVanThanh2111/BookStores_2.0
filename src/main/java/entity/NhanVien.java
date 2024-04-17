@@ -6,7 +6,6 @@ import java.util.Objects;
 import java.util.Set;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "NhanVien")
