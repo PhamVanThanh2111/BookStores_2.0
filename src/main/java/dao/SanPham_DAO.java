@@ -2,13 +2,15 @@ package dao;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+
+import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
 
 import dao.impl.SanPham_Impl;
-import entity.Sach;
 import entity.SanPham;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
 public class SanPham_DAO extends UnicastRemoteObject implements SanPham_Impl {
@@ -73,6 +75,25 @@ public class SanPham_DAO extends UnicastRemoteObject implements SanPham_Impl {
 			em.getTransaction().rollback();
 			return false;
 		}
+	}
+
+	@Override
+	public Map<SanPham, Long> getSanPhamBanChay() throws RemoteException {
+		List<?> result = em.createNamedQuery("getSanPhamBanChay").setMaxResults(8).getResultList();
+		Map<SanPham, Long> map = new LinkedHashMap<SanPham, Long>();
+		result.stream()
+		.map(o -> (Object[]) o)
+		.forEach(o -> {
+            try {
+            	String maSanPham = (String) o[0];
+                SanPham sanPham = em.find(SanPham.class, maSanPham);
+                Long soLuongBan = (Long) o[1];
+                map.put(sanPham, soLuongBan);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+		return map;
 	}
 
 }

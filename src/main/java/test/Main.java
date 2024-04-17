@@ -3,6 +3,7 @@ package test;
 import java.rmi.RemoteException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.Map;
 
 import dao.ChiTietPhieuDatHang_DAO;
 import dao.DungCuHocTap_DAO;
@@ -10,11 +11,13 @@ import dao.HoaDon_DAO;
 import dao.KhachHang_DAO;
 import dao.NhanVien_DAO;
 import dao.Sach_DAO;
+import dao.SanPham_DAO;
 import dao.TaiKhoan_DAO;
 import entity.HoaDon;
 import entity.KhachHang;
 import entity.NhanVien;
 import entity.Sach;
+import entity.SanPham;
 import entity.TaiKhoan;
 import entity.generateid.DungCuHocTapGeneratorId;
 import jakarta.persistence.EntityManager;
@@ -29,6 +32,8 @@ public class Main {
 		NhanVien_DAO nhanVien_DAO = new NhanVien_DAO();
 		KhachHang_DAO khachHang_DAO = new KhachHang_DAO();
 		HoaDon_DAO hoaDon_DAO = new HoaDon_DAO();
+		SanPham_DAO sanPham_DAO = new SanPham_DAO();
+		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BookStores MSSQL");
 		EntityManager em = emf.createEntityManager();
 //		emf.close();
@@ -47,15 +52,17 @@ public class Main {
 //		ChiTietPhieuDatHang_DAO chiTietPhieuDatHang_DAO = new ChiTietPhieuDatHang_DAO();
 //		chiTietPhieuDatHang_DAO.xoaChiTietPhieuDatHang("PD00002");
 		
-		NhanVien nhanvien = em.find(NhanVien.class, "NV0001");
-		KhachHang khachHang = em.find(KhachHang.class, "KH00001");
-		HoaDon hoaDon = new HoaDon();
-		hoaDon.setKhachHang(khachHang);
-		hoaDon.setNhanVien(nhanvien);
-		hoaDon.setThanhTien(20000);
-		hoaDon.setNgayLap(java.sql.Date.valueOf(java.time.LocalDate.now()));
-		hoaDon_DAO.themHoaDon(hoaDon);
+//		NhanVien nhanvien = em.find(NhanVien.class, "NV0001");
+//		KhachHang khachHang = em.find(KhachHang.class, "KH00001");
+//		HoaDon hoaDon = new HoaDon();
+//		hoaDon.setKhachHang(khachHang);
+//		hoaDon.setNhanVien(nhanvien);
+//		hoaDon.setThanhTien(20000);
+//		hoaDon.setNgayLap(java.sql.Date.valueOf(java.time.LocalDate.now()));
+//		hoaDon_DAO.themHoaDon(hoaDon);
 		
 //		System.out.println(hoaDon_DAO.getSoLuongSanPhamBanDuocTheoNgay(new Date(new java.util.Date().getTime())));
+//		Map<SanPham, Long> maps = sanPham_DAO.getSanPhamBanChay();
+//		maps.forEach((k, v) -> System.out.println(k.getTenSanPham() + " - " + v));
 	}
 }

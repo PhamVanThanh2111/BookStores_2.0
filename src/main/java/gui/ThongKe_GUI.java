@@ -20,9 +20,6 @@ import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.chart.renderer.category.StandardBarPainter;
 import org.jfree.chart.title.LegendTitle;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.awt.BorderLayout;
@@ -33,17 +30,14 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import dao.ChiTietHoaDon_DAO;
 import dao.HoaDon_DAO;
+import dao.KhachHang_DAO;
+import dao.NhanVien_DAO;
 import dao.SanPham_DAO;
-import entity.ChiTietHoaDon;
-import entity.HoaDon;
 import entity.SanPham;
 
 import java.beans.PropertyChangeListener;
 import java.rmi.RemoteException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.beans.PropertyChangeEvent;
 import javax.swing.JTabbedPane;
@@ -66,20 +60,23 @@ public class ThongKe_GUI extends JPanel {
 	private JFreeChart chartSoLuong;
 	private CategoryPlot categorySoLuong;
 	private ChartPanel chartPanelSoLuong;
-	private JPanel pnlThongKeDoanhThu;
 	private HoaDon_DAO hoaDon_DAO;
 	private SanPham_DAO sanPham_DAO;
+	private NhanVien_DAO nhanVien_DAO;
+	private KhachHang_DAO khachHang_DAO;
+	
+	private JPanel pnlThongKeDoanhThu;
 	private JPanel pnlThongKeSoLuong;
-	private ChiTietHoaDon_DAO chiTietHoaDon_DAO;
 	private JPanel pnlChucNang;
-	private JLabel lblTuNgay;
-	private JLabel lblDenNgay;
-	private JDateChooser dateChooserTuNgay;
-	private JDateChooser dateChooserDenNgay;
+	private JPanel pnlSoLuongTonKho;
 	private JPanel pnlDoanhThu;
 	private JPanel pnlSanPhamBanChay;
-	private JPanel pnlSoLuongTonKho;
 	private JPanel pnlNangSuatNhanVien;
+	private JLabel lblTuNgay;
+	private JLabel lblDenNgay;
+	private JLabel lblDanhSachSanPham;
+	private JDateChooser dateChooserTuNgay;
+	private JDateChooser dateChooserDenNgay;
 	private JFreeChart chartSanPhamBanChay;
 	private CategoryPlot categorySanPhamBanChay;
 	private DefaultCategoryDataset datasetSanPhamBanChay;
@@ -100,7 +97,6 @@ public class ThongKe_GUI extends JPanel {
 	private DefaultCategoryDataset datasetSoLuongHoaDonVaSanPhamNhanVien;
 	private ChartPanel chartPanelSoLuongHoaDonVaSanPhamNhanVien;
 	private JSeparator separator;
-	private JLabel lblDanhSachSanPham;
 	private JTable table;
 	private DefaultTableModel model;
 
@@ -108,7 +104,9 @@ public class ThongKe_GUI extends JPanel {
 		// khai bao DAO
 		hoaDon_DAO = new HoaDon_DAO();
 		sanPham_DAO = new SanPham_DAO();
-		chiTietHoaDon_DAO = new ChiTietHoaDon_DAO();
+		nhanVien_DAO = new NhanVien_DAO();
+		khachHang_DAO = new KhachHang_DAO();
+		
 		setLayout(null);
 		
 		JPanel pnlMain = new JPanel();
@@ -397,18 +395,13 @@ public class ThongKe_GUI extends JPanel {
 		chartPanelSoLuong.repaint();
 	}
 	
-	private void showBarChartSanPhamBanChay() { 
+	private void showBarChartSanPhamBanChay() throws RemoteException { 
 		datasetSanPhamBanChay = new DefaultCategoryDataset();
 		
 		// add value
-//		ResultSet resultSet = hoaDon_DAO.getDanhSachSanPhamBanChay();
-//		try {
-//			while (resultSet.next()) {
-//				datasetSanPhamBanChay.addValue(resultSet.getInt(3), "Sản phẩm", resultSet.getString(2));
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
+		sanPham_DAO.getSanPhamBanChay().forEach((sanPham, soLuongDaBan) -> {
+			datasetSanPhamBanChay.addValue(soLuongDaBan, "Sản phẩm", sanPham.getTenSanPham());
+		});
 		
 		chartSanPhamBanChay = ChartFactory.createBarChart("CÁC SẢN PHẨM BÁN CHẠY", "SẢN PHẨM", "SỐ LƯỢNG", datasetSanPhamBanChay, PlotOrientation.VERTICAL, true, true, false);
 	
@@ -426,17 +419,12 @@ public class ThongKe_GUI extends JPanel {
 	    pnlSanPhamBanChay.validate();
 	}
 	
-	private void showBarChartKhachHangMuaNhieuNhat() {
+	private void showBarChartKhachHangMuaNhieuNhat() throws RemoteException {
 		datasetKhachHangMuaNhieuNhat = new DefaultCategoryDataset();
-		// add value
-//		ResultSet resultSet = hoaDon_DAO.getDanhSachKhachHangMuaNhieuNhat();
-//		try {
-//			while (resultSet.next()) {
-//				datasetKhachHangMuaNhieuNhat.addValue(resultSet.getFloat(2), "VNĐ", resultSet.getString(1));
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
+
+		khachHang_DAO.getDanhSachMuoiKhachHangMuaNhieuNhat().forEach((khachHang, soTien) -> {
+			datasetKhachHangMuaNhieuNhat.addValue(soTien, "VNĐ", khachHang.getTenKhachHang());
+		});
 		
 		chartKhachHangMuaNhieuNhat = ChartFactory.createBarChart("KHÁCH HÀNG MUA NHIỀU NHẤT", "TÊN KHÁCH HÀNG", "VNĐ", datasetKhachHangMuaNhieuNhat, PlotOrientation.VERTICAL, true, true, false);
 		
@@ -454,25 +442,22 @@ public class ThongKe_GUI extends JPanel {
 	    pnlKhachHangMuaNhieuNhat.validate();
 	}
 	
-	private void showBarChartThongKeNangSuatNhanVien() { 
+	private void showBarChartThongKeNangSuatNhanVien() throws RemoteException { 
 		datasetDoanhThuNhanVien = new DefaultCategoryDataset();
 		datasetSoLuongHoaDonVaSanPhamNhanVien = new DefaultCategoryDataset();
 		
-//		ResultSet resultSet = hoaDon_DAO.getDanhSachNhanVienTheoDoanhThu();
 		// add value
-//		try {
-//			while (resultSet.next()) {
-//				datasetDoanhThuNhanVien.addValue(resultSet.getFloat(5), "Doanh thu", resultSet.getString(2));
-//				datasetSoLuongHoaDonVaSanPhamNhanVien.addValue(resultSet.getInt(3), "Hóa đơn", resultSet.getString(2));
-//				datasetSoLuongHoaDonVaSanPhamNhanVien.addValue(resultSet.getInt(4), "Sản phẩm", resultSet.getString(2));
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
+		nhanVien_DAO.getDoanhThuNhanVien().forEach((nhanVien, doanhThu) -> {
+            datasetDoanhThuNhanVien.addValue(doanhThu, "Doanh thu", nhanVien.getTenNhanVien());
+        });
+		
+		nhanVien_DAO.getTongHoaDonSoLuongNhanVien().forEach((nhanVien, soLuongSanPham) -> {
+			datasetSoLuongHoaDonVaSanPhamNhanVien.addValue(nhanVien.getHoaDons().size(), "Hóa đơn", nhanVien.getTenNhanVien());
+			datasetSoLuongHoaDonVaSanPhamNhanVien.addValue(soLuongSanPham, "Sản phẩm", nhanVien.getTenNhanVien());
+		});
 
 		// chart 1
 		chartDoanhThuNhanVien = ChartFactory.createBarChart("DOANH THU NHÂN VIÊN", "TÊN NHÂN VIÊN", "VNĐ", datasetDoanhThuNhanVien, PlotOrientation.VERTICAL, true, true, false);
-		
 		categoryDoanhThuNhanVien = chartDoanhThuNhanVien.getCategoryPlot();
 		categoryDoanhThuNhanVien.setBackgroundPaint(new Color(255, 255, 255));
 		

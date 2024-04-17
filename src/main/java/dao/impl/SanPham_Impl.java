@@ -3,6 +3,7 @@ package dao.impl;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
+import java.util.Map;
 
 import entity.SanPham;
 
@@ -16,4 +17,6 @@ public interface SanPham_Impl extends Remote {
 	public List<SanPham> getSanPhamGanHetHang() throws RemoteException;
 
 	public boolean xoaSanPhamTheoMa(String maSanPham) throws RemoteException;
+
+	public Map<SanPham, Long> getSanPhamBanChay() throws RemoteException;
 }
