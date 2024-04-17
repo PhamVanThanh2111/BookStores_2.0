@@ -5,6 +5,7 @@ import entity.KhachHang;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
+import java.util.Map;
 
 public interface KhachHang_Impl extends Remote {
 	List<KhachHang> getAllKhachHang() throws RemoteException;
@@ -19,5 +20,7 @@ public interface KhachHang_Impl extends Remote {
 
 	boolean themKhachHang(KhachHang khachHang) throws RemoteException;
 
-	List<KhachHang> getDanhSachKhachHangMuaNhieuTienNhat() throws RemoteException;
+	Map<KhachHang,Double> getKhachHangMuaNhieuTienNhat() throws RemoteException;
+
+	Map<KhachHang,Double> getDanhSachMuoiKhachHangMuaNhieuNhat() throws RemoteException;
 }

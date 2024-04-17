@@ -11,7 +11,9 @@ import org.hibernate.annotations.GenericGenerator;
 @NamedQueries({
 		@NamedQuery(name = "getAllKhachHang", query = "select kh from KhachHang kh"),
 		@NamedQuery(name = "getKhachHangTheoSoDienThoai", query = "select kh from KhachHang kh where kh.soDienThoai = :soDienThoai"),
-		@NamedQuery(name="getKhachHangMuaNhieuTienNhat",query="select kh from KhachHang kh join kh.hoaDons hd group by kh having sum(hd.thanhTien) = (select max(total) from (select sum(hd.thanhTien) as total from HoaDon hd group by hd.khachHang))")
+		@NamedQuery(name="getKhachHangMuaNhieuTienNhat",query="select kh.maKhachHang,sum(hd.thanhTien) as total  from KhachHang kh join kh.hoaDons hd group by kh having sum(hd.thanhTien) = (select max(total) from (select sum(hd.thanhTien) as total from HoaDon hd group by hd.khachHang))"),
+		@NamedQuery(name="getMuoiKhachHangMuaNhieu",query="select kh.maKhachHang,sum(hd.thanhTien) as total  from KhachHang kh join kh.hoaDons hd group by kh order by total desc"),
+		@NamedQuery(name = "getHoaDonSoLuongNhanVien", query = "select nv.maNhanVien, sum(ct.soLuong) as total from NhanVien nv join nv.hoaDons hd join hd.chiTietHoaDons ct group by nv.maNhanVien order by total desc"),
 })
 public class KhachHang implements Serializable {
 	private static final long serialVersionUID = 1L;
