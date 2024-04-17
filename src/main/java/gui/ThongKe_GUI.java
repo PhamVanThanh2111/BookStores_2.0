@@ -23,6 +23,7 @@ import org.jfree.chart.title.LegendTitle;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -43,6 +44,7 @@ import java.beans.PropertyChangeListener;
 import java.rmi.RemoteException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.beans.PropertyChangeEvent;
 import javax.swing.JTabbedPane;
 import javax.swing.JSeparator;
@@ -55,9 +57,6 @@ import javax.swing.ListSelectionModel;
 
 public class ThongKe_GUI extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private DefaultCategoryDataset datasetDoanhThu;
 	private JFreeChart chartDoanhThu;
@@ -105,10 +104,6 @@ public class ThongKe_GUI extends JPanel {
 	private JTable table;
 	private DefaultTableModel model;
 
-	/**
-	 * Create the panel.
-	 * @throws RemoteException 
-	 */
 	public ThongKe_GUI() throws RemoteException {
 		// khai bao DAO
 		hoaDon_DAO = new HoaDon_DAO();
@@ -260,9 +255,11 @@ public class ThongKe_GUI extends JPanel {
 					Date tuNgay = dateChooserTuNgay.getDate();
 					Date denNgay = dateChooserDenNgay.getDate();
 					if (kiemTraNgayHopLe(tuNgay, denNgay)) {
-						thongKeTrongKhoang(doiLocalDate(tuNgay), doiLocalDate(denNgay));
-//					System.out.println(doiLocalDate(tuNgay));
-//					System.out.println(doiLocalDate(denNgay));
+						try {
+							thongKeTrongKhoang(tuNgay, denNgay);
+						} catch (RemoteException e) {
+							e.printStackTrace();
+						}
 					}
 				}
 			}
@@ -291,8 +288,11 @@ public class ThongKe_GUI extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				showAllChart();
+				try {
+					showAllChart();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 				dateChooserTuNgay.setDate(null);
 				dateChooserDenNgay.setDate(null);
 			}
@@ -313,8 +313,11 @@ public class ThongKe_GUI extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				thongKeTrongKhoang(LocalDate.now(), LocalDate.now());
+				try {
+					thongKeTrongKhoang(new Date(), new Date());
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		pnlChucNang.add(btnThongKe);
@@ -330,20 +333,22 @@ public class ThongKe_GUI extends JPanel {
 		pnlNangSuatNhanVien.add(pnlThongKeSoLuongHoaDonVaSanPhamNhanVien);
 	}
 	
-	private void showBarChartDoanhThu(LocalDate tuNgay, LocalDate denNgay) {
+	private void showBarChartDoanhThu(Date tuNgay, Date denNgay) throws RemoteException {
 		datasetDoanhThu = new DefaultCategoryDataset();
-		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		int i = 0;
-		while (i <= tinhKhoangCachGiuaHaiNgay(doiDate(tuNgay), doiDate(denNgay))) {
-			datasetDoanhThu.addValue(tinhDoanhThuTheoNgay(tuNgay.plusDays(i)), "Doanh thu 1", dateFormat.format(tuNgay.plusDays(i)).toString());
+		while (i <= tinhKhoangCachGiuaHaiNgay(tuNgay, denNgay)) {
+			datasetDoanhThu.addValue(tinhDoanhThuTheoNgay(getSQLDate(plusDays(tuNgay, i))), "Doanh thu 1", dateFormat.format(plusDays(tuNgay, i)).toString());
+			System.out.println(tinhDoanhThuTheoNgay(getSQLDate(plusDays(tuNgay, i))));
 			i++;
 		}
 		chartDoanhThu = ChartFactory.createBarChart("DOANH THU", "NGÀY", "VND", datasetDoanhThu, PlotOrientation.VERTICAL, true, true, false);
 		
 		categoryDoanhThu = chartDoanhThu.getCategoryPlot();
-		categoryDoanhThu.setBackgroundPaint(new Color(255, 255, 255));//change background color
+		// change background color
+		categoryDoanhThu.setBackgroundPaint(new Color(255, 255, 255));
 
-	    //set  bar chart color
+	    // set  bar chart color
 	    ((BarRenderer)categoryDoanhThu.getRenderer()).setBarPainter(new StandardBarPainter());
 
 	    BarRenderer rendererDoanhThu = (BarRenderer)chartDoanhThu.getCategoryPlot().getRenderer();
@@ -359,25 +364,25 @@ public class ThongKe_GUI extends JPanel {
 		chartPanelDoanhThu.removeAll();
 		chartPanelDoanhThu.repaint();
 		chartPanelDoanhThu.validate();
-		
 	}
 	
-	private void showBarChartSoLuong(LocalDate tuNgay, LocalDate denNgay) {
+	private void showBarChartSoLuong(Date tuNgay, Date denNgay) throws RemoteException {
 		datasetSoLuong = new DefaultCategoryDataset();
-		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		
 		// add value
 		int i = 0;
-		while (i <= tinhKhoangCachGiuaHaiNgay(doiDate(tuNgay), doiDate(denNgay))) {
-//			datasetSoLuong.addValue(hoaDon_DAO.getListHoaDonTheoNgay(tuNgay.plusDays(i)).size(), "Hóa đơn", dateFormat.format(tuNgay.plusDays(i)).toString());
-			datasetSoLuong.addValue(tinhSoLuongSanPhamBanDuocTheoNgay(tuNgay.plusDays(i)), "Sản phẩm", dateFormat.format(tuNgay.plusDays(i)).toString());
+		while (i <= tinhKhoangCachGiuaHaiNgay(tuNgay, denNgay)) {
+			datasetSoLuong.addValue(hoaDon_DAO.getHoaDonTheoNgay(getSQLDate(plusDays(tuNgay, i))).size(), "Hóa đơn", dateFormat.format(plusDays(tuNgay, i)).toString());
+			datasetSoLuong.addValue(tinhSoLuongSanPhamBanDuocTheoNgay(getSQLDate(plusDays(tuNgay, i))), "Sản phẩm", dateFormat.format(plusDays(tuNgay, i)).toString());
 			i++;
 		}
 		
 		chartSoLuong = ChartFactory.createBarChart("SỐ LƯỢNG SẢN PHẨM VÀ SỐ LƯỢNG HÓA ĐƠN BÁN ĐƯỢC", "NGÀY", "SỐ LƯỢNG", datasetSoLuong, PlotOrientation.VERTICAL, true, true, false);
 		
 		categorySoLuong = chartSoLuong.getCategoryPlot();
-		categorySoLuong.setBackgroundPaint(new Color(255, 255, 255)); //change background color
+		//change background color
+		categorySoLuong.setBackgroundPaint(new Color(255, 255, 255)); 
 
 	    //set  bar chart color
 	    ((BarRenderer)categorySoLuong.getRenderer()).setBarPainter(new StandardBarPainter());
@@ -502,27 +507,17 @@ public class ThongKe_GUI extends JPanel {
 	    pnlThongKeSoLuongHoaDonVaSanPhamNhanVien.validate();
 	}
 	
-	private float tinhDoanhThuTheoNgay(LocalDate date) {
-		float doanhThu = 0;
-//		for (HoaDon hoaDon : hoaDon_DAO.getListHoaDonTheoNgay(date)) {
-//			doanhThu += hoaDon.getThanhTien();
-//		}
-		return doanhThu;
+	private double tinhDoanhThuTheoNgay(java.sql.Date date) throws RemoteException {
+		return hoaDon_DAO.getTongDoanhThuTheoNgay(date);
 	}
 	
-	private int tinhSoLuongSanPhamBanDuocTheoNgay(LocalDate date) {
-		int soLuong = 0;
-//		for (HoaDon hoaDon : hoaDon_DAO.getListHoaDonTheoNgay(date)) {
-//			for (ChiTietHoaDon chiTietHoaDon : chiTietHoaDon_DAO.getAllChiTietHoaDonTheoMaHoaDon(hoaDon.getMaHoaDon())) {
-//				soLuong += chiTietHoaDon.getSoLuong();
-//			}
-//		}
-		return soLuong;
+	private long tinhSoLuongSanPhamBanDuocTheoNgay(java.sql.Date date) throws RemoteException {
+		return hoaDon_DAO.getSoLuongSanPhamBanDuocTheoNgay(date);
 	}
 	
-	public void showAllChart() {
-		showBarChartDoanhThu(LocalDate.now().minusDays(6), LocalDate.now());
-		showBarChartSoLuong(LocalDate.now().minusDays(6), LocalDate.now());
+	public void showAllChart() throws RemoteException {
+		showBarChartDoanhThu(plusDays(new Date(), -6), new Date());
+		showBarChartSoLuong(plusDays(new Date(), -6), new Date());
 		showBarChartKhachHangMuaNhieuNhat();
 		showBarChartSanPhamBanChay();
 		showBarChartThongKeNangSuatNhanVien();
@@ -532,17 +527,20 @@ public class ThongKe_GUI extends JPanel {
 		return (int) ((d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24));
 	}
 	
-	private void thongKeTrongKhoang(LocalDate tuNgay, LocalDate denNgay) {
+	private void thongKeTrongKhoang(Date tuNgay, Date denNgay) throws RemoteException {
 		showBarChartDoanhThu(tuNgay, denNgay);
 		showBarChartSoLuong(tuNgay, denNgay);
 	}
 	
-	private LocalDate doiLocalDate(Date date) {
-		return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+	private java.sql.Date getSQLDate(Date date) {
+		return new java.sql.Date(date.getTime());
 	}
 	
-	private Date doiDate(LocalDate localDate) {
-		return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+	private Date plusDays(Date date, int days) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		calendar.add(Calendar.DATE, days);
+		return calendar.getTime();
 	}
 	
 	private boolean kiemTraNgayHopLe(Date tuNgay, Date denNgay) {
@@ -569,9 +567,9 @@ public class ThongKe_GUI extends JPanel {
 	// load danh sách sản phẩm gần hết hàng
 	private void loadSanPhamGanHetHang() throws RemoteException {
 		model.setRowCount(0);
-//		for (SanPham sanPham : sanPham_DAO.getSanPhamGanHetHang()) {
-//			Object[] objects = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getSoLuongTon()};
-//			model.addRow(objects);
-//		}
+		for (SanPham sanPham : sanPham_DAO.getSanPhamGanHetHang()) {
+			Object[] objects = { sanPham.getMaSanPham(), sanPham.getTenSanPham(), sanPham.getSoLuongTon()};
+			model.addRow(objects);
+		}
 	}
 }

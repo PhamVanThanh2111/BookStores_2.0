@@ -14,7 +14,9 @@ import org.hibernate.annotations.GenericGenerator;
 		@NamedQuery(name = "getAllHoaDon", query = "select hd from HoaDon hd"),
 		@NamedQuery(name = "getHoaDonTheoMaNhanVienVaNgayHienTai", query = "select hd from HoaDon hd where hd.nhanVien.id = :maNhanVien and hd.ngayLap = :ngayHienTai"),
         @NamedQuery(name = "getHoaDonTheoNgay", query = "select hd from HoaDon hd where hd.ngayLap=:ngaylap"),
-		@NamedQuery(name = "getHoaDonsNhieuTienNhat", query = "select hd from HoaDon hd where hd.thanhTien = (select max(hd.thanhTien) from HoaDon hd)")
+		@NamedQuery(name = "getHoaDonsNhieuTienNhat", query = "select hd from HoaDon hd where hd.thanhTien = (select max(hd.thanhTien) from HoaDon hd)"),
+		@NamedQuery(name = "getDoanhThuTheoNgay", query = "select sum(hd.thanhTien) from HoaDon hd where hd.ngayLap = :ngaylap"),
+		@NamedQuery(name = "getSoLuongSanPhamBanTheoNgay", query = "select sum(cthd.soLuong) from ChiTietHoaDon cthd where cthd.hoaDon.ngayLap = :ngaylap"),
 })
 public class HoaDon implements Serializable {
 	private static final long serialVersionUID = 1L;

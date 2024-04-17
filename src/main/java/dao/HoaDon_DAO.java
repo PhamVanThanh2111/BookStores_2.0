@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
+
 import dao.impl.HoaDon_Impl;
 import entity.HoaDon;
 import entity.KhachHang;
@@ -69,15 +71,19 @@ public class HoaDon_DAO implements HoaDon_Impl {
         return em.createNamedQuery("getHoaDonsNhieuTienNhat", HoaDon.class).getResultList();
     }
 
+	@Override
+	public double getTongDoanhThuTheoNgay(Date date) throws RemoteException {
+		Double result = em.createNamedQuery("getDoanhThuTheoNgay", Double.class)
+				.setParameter("ngaylap", date)
+				.getSingleResult();
+		return result == null ? 0.0 : result;
+	}
 
-    // thống kê danh sách các sản phẩm bán chạy nhất
-    public ResultSet getDanhSachSanPhamBanChay() {
-    	
-        return null;
-    }
-
-    // thống kê doanh thu và số lượng hóa đơn của các nhân viên có doanh thu cao
-    public ResultSet getDanhSachNhanVienTheoDoanhThu() {
-        return null;
-    }
+	@Override
+	public long getSoLuongSanPhamBanDuocTheoNgay(Date date) throws RemoteException {
+		Integer result = em.createNamedQuery("getSoLuongSanPhamBanTheoNgay", Integer.class)
+                .setParameter("ngaylap", date)
+                .getSingleResult();
+        return result == null ? 0 : result;
+	}
 }

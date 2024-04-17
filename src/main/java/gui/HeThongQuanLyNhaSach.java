@@ -1031,7 +1031,11 @@ public class HeThongQuanLyNhaSach extends JFrame {
 		};
 
 		Runnable loadDataThongKe = () -> {
-			thongKe_GUI.showAllChart();
+			try {
+				thongKe_GUI.showAllChart();
+			} catch (RemoteException e1) {
+				e1.printStackTrace();
+			}
 		};
 
 		Runnable loadDataDanhSachDatHang = () -> {

@@ -1,6 +1,7 @@
 package test;
 
 import java.rmi.RemoteException;
+import java.sql.Date;
 import java.sql.SQLException;
 
 import dao.ChiTietPhieuDatHang_DAO;
@@ -46,14 +47,14 @@ public class Main {
 //		ChiTietPhieuDatHang_DAO chiTietPhieuDatHang_DAO = new ChiTietPhieuDatHang_DAO();
 //		chiTietPhieuDatHang_DAO.xoaChiTietPhieuDatHang("PD00002");
 		
-		NhanVien nhanvien = em.find(NhanVien.class, "NV0001");
-		KhachHang khachHang = em.find(KhachHang.class, "KH00001");
-		HoaDon hoaDon = new HoaDon();
-		hoaDon.setKhachHang(khachHang);
-		hoaDon.setNhanVien(nhanvien);
-		hoaDon.setThanhTien(20000);
-		hoaDon.setNgayLap(java.sql.Date.valueOf(java.time.LocalDate.now()));
-		hoaDon_DAO.themHoaDon(hoaDon);
+//		NhanVien nhanvien = em.find(NhanVien.class, "NV0001");
+//		KhachHang khachHang = em.find(KhachHang.class, "KH00001");
+//		HoaDon hoaDon = new HoaDon();
+//		hoaDon.setKhachHang(khachHang);
+//		hoaDon.setNhanVien(nhanvien);
+//		hoaDon.setThanhTien(20000);
+//		hoaDon.setNgayLap(java.sql.Date.valueOf(java.time.LocalDate.now()));
+//		hoaDon_DAO.themHoaDon(hoaDon);
 		
 	}
 }
