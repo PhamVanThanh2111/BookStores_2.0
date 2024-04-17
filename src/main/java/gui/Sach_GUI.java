@@ -1019,7 +1019,6 @@ public class Sach_GUI extends JPanel {
 		pDanhSach.setBounds(0, 362, 1300, 358);
 		pMain.add(pDanhSach);
 		pDanhSach.setLayout(null);
-
 		scrollPaneSach = new JScrollPane();
 		scrollPaneSach.setBounds(20, 44, 1260, 295);
 		scrollPaneSach.setToolTipText("Chọn vào Sách cần hiển thị thông tin");
