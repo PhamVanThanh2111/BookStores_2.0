@@ -37,8 +37,6 @@ P
  src/main/java/entity/HoaDon.java,3\4\3478d5524ee18dc973f49781ada17cec21c61d02
 Y
 )src/main/java/dao/impl/NhanVien_Impl.java,0\9\09eb0480de5830b69711d166dba75b191cd35d12
-U
-%src/main/java/test/TestHoaDonDao.java,8\e\8ebeb4d45fc2cc1e3466bf85af278909291d0f79
 ^
 .src/main/java/dao/impl/ChiTietHoaDon_Impl.java,6\7\679a15a08a8c4bd092dbc561794cc0ed92eda18c
 X
@@ -55,8 +53,6 @@ Z
 .src/main/java/dao/ChiTietPhieuDatHang_DAO.java,2\8\28bf83f8baada506f9e4c8d6c78986e19eed5c0a
 F
 BookStores_Mapping.iml,a\4\a4c9991eb66070dd69a8608f613014b4813bcc5f
-X
-(src/main/java/test/TestKhachHangDao.java,b\2\b21c825edcbd5dad499ca6f9d9dd453bf5d145f0
 V
 &src/main/java/gui/TheLoaiSach_GUI.java,8\c\8cb2c0d04b2f7796b68c267e5b7419f3bd93c10d
 Z
@@ -109,3 +105,9 @@ R
 "src/main/java/entity/TaiKhoan.java,6\0\60ff67b589af4a0c2ef8d4ff8c0fc84991f65c15
 d
 4src/main/java/entity/generateid/SachGeneratorId.java,a\2\a276157003453ef4d373664301d061998f164df7
+U
+%src/test/java/test/TestHoaDonDao.java,f\5\f542dbb149817ec4d73a9de59ea3a0611de1839d
+X
+(src/test/java/test/TestKhachHangDao.java,3\b\3b10c8b681b50ac262187d7873395f08190cc9cb
+v
+Fsrc/main/java/entity/generateid/StringPrefixedSequenceIdGenerator.java,5\c\5cd9b7e233649324f93e50bce778d7f4d946e645

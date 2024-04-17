@@ -1,6 +1,8 @@
 package test;
 
 import dao.KhachHang_DAO;
+import dao.impl.KhachHang_Impl;
+import entity.KhachHang;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -10,7 +12,7 @@ import java.rmi.RemoteException;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TestKhachHangDao {
-    private KhachHang_DAO khachHang_DAO;
+    private KhachHang_Impl khachHang_DAO;
 
     @BeforeAll
     void TestKhachHangDao() throws RemoteException {
@@ -21,13 +23,16 @@ public class TestKhachHangDao {
         khachHang_DAO = null;
     }
     @Test
-    void testGetKhachHangMuaNhieu(){
+    void testThemKhachHang(){
         try {
-//            khachHang_DAO.getDanhSachKhachHangMuaNhieuTienNhat().forEach((khachHang, aDouble) -> {
-//                System.out.println(khachHang.getMaKhachHang() + " " + aDouble);
-//            });
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            KhachHang khachHang = new KhachHang();
+            khachHang.setTenKhachHang("Nguyen Van A");
+            khachHang.setGioiTinh("Nam");
+            khachHang.setSoDienThoai("0123456789");
+            khachHang.setDiaChi("Ha Noi");
+            khachHang_DAO.themKhachHang(khachHang);
+            } catch (RemoteException ex) {
+            throw new RuntimeException(ex);
         }
     }
 }

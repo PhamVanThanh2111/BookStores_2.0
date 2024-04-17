@@ -1,14 +1,10 @@
 
-h	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(½×ë<8ÌÒü¯í1
+d
+java:S1192<"HDefine a constant instead of duplicating this literal "ngaylap" 3 times.(»¯~8‚–ÿßî1
+h	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(½×ë<8…–ÿßî1
 n
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8ÝÒü¯í1
-u
-java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8À¨ô¯í1J$c8de2aec-9f1b-42ba-9b82-a67d8a2a4da0
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8¶–ÿßî1
 ‚
-java:S1128"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª8Á¨ô¯í1J$dcfd4eb6-04bb-453f-b158-8da39f4fdca1
+java:S1128"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª8—þßî1J$0373c42e-48ef-4254-9f44-50884443177c
 s
-java:S1128	"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Á¨ô¯í1J$cdae93f0-7de7-4629-9bfb-3bda7f30b3e3
-L
-java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òþÿÿÿÿ8éÒü¯í1
-J
-java:S1128"-Remove this unused import 'entity.KhachHang'.(§¶Á³8êÒü¯í1
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8—þßî1J$53cb7921-92d6-4796-ba51-dba4b730f965
