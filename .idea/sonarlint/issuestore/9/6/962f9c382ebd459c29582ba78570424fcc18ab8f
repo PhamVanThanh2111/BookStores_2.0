@@ -1,15 +1,10 @@
 
-	java:S112\"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‚ßøæî1J$43cf1170-33eb-4bff-81ec-851ca4d0a20d
-	java:S112l"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ƒßøæî1J$d6edcf57-bb39-410c-9e5a-5e41c4dbca3f
-”	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(•œÓœüÿÿÿÿ8â…Æªî1J$bc642574-bd7c-4afa-b895-401b611438b7
+	java:S112]"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‚ßøæî1J$80bf34f8-3e56-45aa-a36c-a14873557eb9
+	java:S112m"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ƒßøæî1J$7923cc91-3b5b-47f0-b2eb-3024063d528d
+”	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(•œÓœüÿÿÿÿ8â…Æªî1J$8f624a35-0257-40d5-b735-62f9beb70bae
 ”
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8Êßøæî1J$c419e5d8-1eb1-4bba-8e41-51eb87f65d11
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8Êßøæî1J$5f6c9f0b-1b4a-4598-aea7-cbdca61c8243
 g
-java:S1168W"$Return an empty map instead of null.(¥¹ï8ı…Æªî1J$7c04834d-1b3e-43a9-90cd-fc7a8df978ac
+java:S1168X"$Return an empty map instead of null.(¥¹ï8ı…Æªî1J$20c33ea2-b0f0-40ea-9e5d-208eae917616
 g
-java:S1168g"$Return an empty map instead of null.(¥¹ï8€†Æªî1J$26097955-6aeb-431b-a6de-e8e82d620887
-u
-java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8Ëøô¬î1J$91914c32-1c0e-4635-a5b6-32c71b85b929
-
-java:S1128
-"ERemove this unused import 'jakarta.persistence.EntityManagerFactory'.(‹ ñºûÿÿÿÿ8Ëøô¬î1J$ab21808c-6d1b-440e-af83-c58913782848
+java:S1168h"$Return an empty map instead of null.(¥¹ï8€†Æªî1J$d6c663cc-bbbd-47d3-abfd-28478651833b

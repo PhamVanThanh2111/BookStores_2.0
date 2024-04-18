@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.util.Objects;
 import java.util.Set;
 
+import entity.generateid.StringPrefixedSequenceIdGenerator;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -22,8 +23,11 @@ public class HoaDon implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "hoaDonGenerator", strategy = "entity.generateid.HoaDonGeneratorId")
-	@GeneratedValue(generator = "hoaDonGenerator")
+	@GeneratedValue(generator = "HD-generator")
+	@GenericGenerator(name = "HD-generator", parameters = {
+			@org.hibernate.annotations.Parameter(name = "prefix", value = "HD"),
+			@org.hibernate.annotations.Parameter(name = "numberFormat", value = "%05d")},
+			strategy = "entity.generateid.MyGenerator")
 	@Column(name = "maHoaDon", columnDefinition = "nvarchar(7)")
 	private String maHoaDon;
 

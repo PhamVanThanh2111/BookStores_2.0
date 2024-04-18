@@ -1,7 +1,5 @@
 
 }
-java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿJ$b5c4844e-0b10-47b6-a7ff-78a855360140
-}	java:S107P"BConstructor has 13 parameters, which is greater than 7 authorized.(¯¢€…J$bc5f0c61-48cb-4c1b-8e48-f041201563e9
-}	java:S125î"<This block of commented-out lines of code should be removed.(òß¿•üÿÿÿÿJ$0dc458a3-751f-4c5e-8f84-20053ec23460
-Š
-java:S1128	"GRemove this unused import 'org.hibernate.annotations.GenericGenerator'.(ƒİŸÉ8ü…Š«î1J$9fb9ff6a-e25a-428a-b4be-00a85ba66c3a
+java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿJ$b5c4844e-0b10-47b6-a7ff-78a855360140
+}	java:S107O"BConstructor has 13 parameters, which is greater than 7 authorized.(¯¢€…J$bc5f0c61-48cb-4c1b-8e48-f041201563e9
+}	java:S125í"<This block of commented-out lines of code should be removed.(òß¿•üÿÿÿÿJ$0dc458a3-751f-4c5e-8f84-20053ec23460

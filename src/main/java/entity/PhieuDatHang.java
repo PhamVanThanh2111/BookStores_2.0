@@ -5,9 +5,10 @@ import java.sql.Date;
 import java.util.Objects;
 import java.util.Set;
 
+import entity.generateid.StringPrefixedSequenceIdGenerator;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
-
+import org.hibernate.annotations.Parameter;
 @Entity
 @Table(name = "PhieuDatHang")
 @NamedQueries({
@@ -17,8 +18,11 @@ public class PhieuDatHang implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "phieuDatHangGenerator", strategy = "entity.generateid.PhieuDatHangGeneratorId")
-	@GeneratedValue(generator = "phieuDatHangGenerator")
+	@GeneratedValue(generator = "PD-generator")
+	@GenericGenerator(name = "PD-generator", parameters = {
+			@Parameter(name = "prefix", value = "PD"),
+			@Parameter(name = "numberFormat", value = "%05d")},
+			strategy = "entity.generateid.MyGenerator")
 	@Column(name = "maPhieuDatHang", columnDefinition = "nvarchar(7)")
 	private String maPhieuDatHang;
 

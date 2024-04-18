@@ -111,3 +111,11 @@ X
 (src/test/java/test/TestKhachHangDao.java,3\b\3b10c8b681b50ac262187d7873395f08190cc9cb
 v
 Fsrc/main/java/entity/generateid/StringPrefixedSequenceIdGenerator.java,5\c\5cd9b7e233649324f93e50bce778d7f4d946e645
+Z
+*src/main/java/entity/ChiTietHoaDonKey.java,b\3\b3ab26178613eabb2ff98fc3657b208e6db3aa21
+`
+0src/main/java/entity/generateid/MyGenerator.java,5\f\5fc4ca4ef32474c8d1e816d46aeb85781bb785a3
+P
+ src/test/java/test/TestSach.java,9\d\9df12b64b1473349d69ab2d7df047969c63416f9
+O
+src/main/java/dao/Sach_DAO.java,8\8\88ead751392a4476508bd14d9b8171b460621282

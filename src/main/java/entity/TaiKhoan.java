@@ -3,13 +3,10 @@ package entity;
 import java.io.Serializable;
 import java.util.Objects;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import entity.generateid.StringPrefixedSequenceIdGenerator;
+import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 @Entity
 @Table(name = "TaiKhoan")
@@ -17,8 +14,11 @@ public class TaiKhoan implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "taiKhoanGenerator", strategy  = "entity.generateid.NhanVienGeneratorId")
-	@GeneratedValue(generator = "taiKhoanGenerator")
+	@GeneratedValue(generator = "NV-generator")
+	@GenericGenerator(name = "NV-generator", parameters = {
+			@Parameter(name = "prefix", value = "NV"),
+			@Parameter(name = "numberFormat", value = "%04d")},
+			strategy = "entity.generateid.MyGenerator")
 	@Column(name = "taiKhoan", columnDefinition = "nvarchar(6)")
 	private String taiKhoan;
 	

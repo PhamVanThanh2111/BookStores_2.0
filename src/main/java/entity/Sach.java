@@ -2,14 +2,9 @@ package entity;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
-import jakarta.persistence.Table;
-
+import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 @Entity
 @Table(name = "Sach")
 @NamedQueries({
@@ -87,5 +82,16 @@ public class Sach extends SanPham implements Serializable {
 	public void setNhaXuatBan(NhaXuatBan nhaXuatBan) {
 		this.nhaXuatBan = nhaXuatBan;
 	}
+
+//	@Override
+//    @Id
+//	@GeneratedValue(generator = "KH-generator")
+//	@GenericGenerator(name = "KH-generator", parameters = {
+//			@Parameter(name = "prefix", value = "KH"),
+//			@Parameter(name = "numberFormat", value = "%05d")},
+//			strategy = "entity.generateid.MyGenerator")
+//	public String getMaSanPham() {
+//		return super.getMaSanPham();
+//	}
 
 }

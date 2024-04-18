@@ -1,5 +1,7 @@
 
 „
-java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿ8á¿ùåî1J$b3b8632b-40bd-4c0d-8c33-3538448205b2
-s
-java:S1874"0Remove this use of "strategy"; it is deprecated.(°×ñ½8ë¿ùåî1J$b1872b38-c97f-41f0-8537-9d442a215d28
+java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿ8È¤õèî1J$b6c421d6-0ae3-46e9-aa77-8f6e563fdef1
+x
+java:S1874"0Remove this use of "strategy"; it is deprecated.(É””øÿÿÿÿ8æ¯ÿèî1J$adcb3b6a-1f52-4280-b8fa-965702c81046
+˜
+java:S1128"PRemove this unused import 'entity.generateid.StringPrefixedSequenceIdGenerator'.(Î§ôÿúÿÿÿÿ8êÍùî1J$7b3eae27-78fc-4e44-bcbd-fb42c44d9b2b
