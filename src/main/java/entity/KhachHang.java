@@ -26,7 +26,7 @@ public class KhachHang implements Serializable {
     @GenericGenerator(name = "test_seq", strategy = "entity.generateid.StringPrefixedSequenceIdGenerator", parameters = {
             @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "KH"),
             @Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%05d"),
-            @Parameter(name = "optimizer", value = "pooled-hi") // Sử dụng chiến lược HiLo
+            @Parameter(name = "optimizer", value = "pooled-hi"), // Sử dụng chiến lược HiLo
     })
     @Column(name = "maKhachHang", columnDefinition = "nvarchar(7)")
     private String maKhachHang;
