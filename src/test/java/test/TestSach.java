@@ -24,7 +24,7 @@ public class TestSach {
     }
     @Test
     void themSach() throws RemoteException {
-        Sach sach = sach_impl.getSachTheoMa("S00011");
+        Sach sach = sach_impl.getSachTheoMa("S00010");
 		Sach sach_temp = new Sach();
 		sach_temp.setTenSanPham(sach.getTenSanPham());
         System.out.println(sach_temp.getMaSanPham());

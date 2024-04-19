@@ -83,15 +83,5 @@ public class Sach extends SanPham implements Serializable {
 		this.nhaXuatBan = nhaXuatBan;
 	}
 
-//	@Override
-//    @Id
-//	@GeneratedValue(generator = "KH-generator")
-//	@GenericGenerator(name = "KH-generator", parameters = {
-//			@Parameter(name = "prefix", value = "KH"),
-//			@Parameter(name = "numberFormat", value = "%05d")},
-//			strategy = "entity.generateid.MyGenerator")
-//	public String getMaSanPham() {
-//		return super.getMaSanPham();
-//	}
 
 }

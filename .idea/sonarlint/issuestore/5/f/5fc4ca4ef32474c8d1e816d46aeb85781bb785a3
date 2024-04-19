@@ -1,4 +1,7 @@
 
-G	java:S106"+Replace this use of System.out by a logger.(ôêè8ùƒûüî1
-P
-java:S1874"3Remove this use of "createQuery"; it is deprecated.(âÜëÉ8üƒûüî1
+v
+java:S1874$"3Remove this use of "createQuery"; it is deprecated.(âÜëÉ8àÒ¢ï1J$f9ff54b9-248c-45e9-96cc-c767c8da8eb5
+v
+java:S18745"3Remove this use of "createQuery"; it is deprecated.(âÜëÉ8’àÒ¢ï1J$45453a3c-a1c5-404c-abf0-9cf8517fbda4
+p
+java:S1128"-Remove this unused import 'entity.KhachHang'.(§¶Á³8—àÒ¢ï1J$6a6011d6-2188-49bb-af3b-ace16ad94391
