@@ -1,0 +1,72 @@
+
+p
+java:S2293°"YReplace the type specification in this constructor call with the diamond operator ("<>").(ış÷ì
+Œ
+java:S1192÷"uDefine a constant instead of duplicating this literal "Chá»n vÃ o hÃ³a Ä‘Æ¡n cáº§n hiá»ƒn thá»‹ thÃ´ng tin" 3 times.(ªÅìØ
+f
+java:S1192c"KDefine a constant instead of duplicating this literal "SansSerif" 15 times.(¯‘×¥ûÿÿÿÿ
+g
+java:S1192—"KDefine a constant instead of duplicating this literal "dd/MM/yyyy" 3 times.(“¡ƒ³şÿÿÿÿ
+K
+java:S1066µ"/Merge this if statement with the enclosing one.(‹˜¡ûùÿÿÿÿ
+F
+java:S1066×"/Merge this if statement with the enclosing one.(ƒİæ¸
+?
+java:S1604Ë"(Make this anonymous inner class a lambda(ğÕşÅ
+D
+java:S1604â"(Make this anonymous inner class a lambda(‘òÂÏùÿÿÿÿ
+b	java:S1012"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(·ê¯­
+o	java:S116C"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡¾® ÿÿÿÿÿ
+q	java:S116D"\Rename this field "chiTietHoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø³¬·
+l	java:S116E"XRename this field "khachHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š’:
+q	java:S116F"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â·åğùÿÿÿÿ
+p	java:S116G"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´ºî¿şÿÿÿÿ
+G
+java:S1948C",Make "hoaDon_DAO" transient or serializable.(‡¾® ÿÿÿÿÿ
+I
+java:S1948D"3Make "chiTietHoaDon_DAO" transient or serializable.(ø³¬·
+D
+java:S1948E"/Make "khachHang_DAO" transient or serializable.(š’:
+I
+java:S1948F".Make "nhanVien_DAO" transient or serializable.(Â·åğùÿÿÿÿ
+H
+java:S1948G"-Make "sanPham_DAO" transient or serializable.(´ºî¿şÿÿÿÿ
+h
+java:S3776K"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(‘ÒÜ¦
+A
+java:S1197ü"*Move the array designators [] to the type.(¿·ÿ±
+N
+java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135”"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135š"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135 "2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+]
+java:S3252¹"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿ
+A
+java:S1197Ï"*Move the array designators [] to the type.(Áúî
+N
+java:S1135á"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135ç"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135í"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135ó"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135ù"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+]
+java:S3252„"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿ
+W	java:S125‹"<This block of commented-out lines of code should be removed.(õˆ«ùÿÿÿÿ
+Š
+java:S1130 "nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(¬¦ø¤ûÿÿÿÿ
+i
+java:S3776¯"RRefactor this method to reduce its Cognitive Complexity from 39 to the 15 allowed.(ä”ğÁ
+…
+java:S1130¯"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(ä”ğÁ
+]
+java:S1126í"AReplace this if-then-else statement by a single return statement.(‡Ú÷şÿÿÿÿ
+X
+java:S1126ô"AReplace this if-then-else statement by a single return statement.(°õ®Ş

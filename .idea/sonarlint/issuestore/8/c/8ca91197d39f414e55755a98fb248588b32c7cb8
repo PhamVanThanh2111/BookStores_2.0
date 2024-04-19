@@ -1,10 +1,10 @@
 
-d
-java:S1192<"HDefine a constant instead of duplicating this literal "ngaylap" 3 times.(»¯~8‚–ÿßî1
-h	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(½×ë<8…–ÿßî1
+Š
+java:S1192;"HDefine a constant instead of duplicating this literal "ngaylap" 3 times.(»¯~8‚–ÿßî1J$3f196c03-1735-4ac6-9ddf-e992de718f75
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.( ¢ÁÆ8íáÁ«ï1J$b6b9a735-6c92-4c2f-9b23-126436ce208d
+”
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8¶–ÿßî1J$f7403b88-2eaa-4891-bf4a-f22c913f9bb7
 n
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8¶–ÿßî1
-‚
-java:S1128"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª8—şßî1J$0373c42e-48ef-4254-9f44-50884443177c
-s
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8—şßî1J$53cb7921-92d6-4796-ba51-dba4b730f965
+java:S2160"+Override the "equals" method in this class.( ¢ÁÆ8ÆâÁ«ï1J$fc4df023-fd87-440b-90c9-79033e6a3435
+l
+java:S1948"$Make "em" transient or serializable.(‘æ¿Úúÿÿÿÿ8ÊâÁ«ï1J$63476d4d-c90a-4884-a4dd-a41867439602

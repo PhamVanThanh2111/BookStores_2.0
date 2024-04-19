@@ -15,12 +15,12 @@ public class ChiTietHoaDon implements Serializable {
 	@EmbeddedId
 	private ChiTietHoaDonKey id;
 
-	@ManyToOne()
+	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("maHoaDon")
 	@JoinColumn(name = "maHoaDon", columnDefinition = "nvarchar(7)", nullable = false)
 	private HoaDon hoaDon;
 
-	@ManyToOne()
+	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("maSanPham")
 	@JoinColumn(name = "maSanPham", columnDefinition = "nvarchar(10)", nullable = false)
 	private SanPham sanPham;

@@ -50,11 +50,11 @@ public class NhanVien implements Serializable {
     @Column(name = "chucVu", columnDefinition = "nvarchar(10)", nullable = false)
     private String chucVu;
 
-    @OneToOne()
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "taiKhoan", columnDefinition = "nvarchar(6)", nullable = false)
     private TaiKhoan taiKhoan;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "maCa", columnDefinition = "nvarchar(3)", nullable = false)
     private Ca ca;
 

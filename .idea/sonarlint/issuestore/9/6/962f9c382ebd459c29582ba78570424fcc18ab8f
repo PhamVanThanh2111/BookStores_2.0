@@ -1,10 +1,14 @@
 
-	java:S112]"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‚ßøæî1J$80bf34f8-3e56-45aa-a36c-a14873557eb9
-	java:S112m"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ƒßøæî1J$7923cc91-3b5b-47f0-b2eb-3024063d528d
-”	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(•œÓœüÿÿÿÿ8â…Æªî1J$8f624a35-0257-40d5-b735-62f9beb70bae
+	java:S112_"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‚ßøæî1J$2b21947d-81b0-44e1-ad4a-a69ea7255be1
+	java:S112o"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ƒßøæî1J$1a767951-f47a-4a9c-b99c-e827d1e0ad11
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(â²¿‚8ÊóÁ«ï1J$5c8a8bed-f22a-49fd-9949-2066b9baa752
 ”
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8Êßøæî1J$5f6c9f0b-1b4a-4598-aea7-cbdca61c8243
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8Êßøæî1J$ef60de93-e727-4622-8a0f-ebe912e23799
+n
+java:S2160"+Override the "equals" method in this class.(â²¿‚8³ôÁ«ï1J$fd24646c-05cf-4bca-bc7f-95a6de436927
+l
+java:S1948"$Make "em" transient or serializable.(‘æ¿Úúÿÿÿÿ8¹ôÁ«ï1J$5bad7416-0fad-467e-a4a4-29f9ed23c176
 g
-java:S1168X"$Return an empty map instead of null.(¥¹ï8ı…Æªî1J$20c33ea2-b0f0-40ea-9e5d-208eae917616
+java:S1168Z"$Return an empty map instead of null.(¥¹ï8ı…Æªî1J$97ef40f8-40aa-47a9-9e8a-c7f6842b5249
 g
-java:S1168h"$Return an empty map instead of null.(¥¹ï8€†Æªî1J$d6c663cc-bbbd-47d3-abfd-28478651833b
+java:S1168j"$Return an empty map instead of null.(¥¹ï8€†Æªî1J$052fd95a-791f-4b45-8f98-df8b1b6f1d24

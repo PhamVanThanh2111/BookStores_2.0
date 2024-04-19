@@ -9,9 +9,6 @@ import org.hibernate.annotations.Parameter;
 
 @Entity
 @Table(name = "TaiKhoan")
-@NamedQueries({
-	@NamedQuery(name = "getTaiKhoanMoiNhat", query = "select tk.taiKhoan from TaiKhoan tk order by tk.taiKhoan desc"),
-})
 public class TaiKhoan implements Serializable {
 	private static final long serialVersionUID = 1L;
 

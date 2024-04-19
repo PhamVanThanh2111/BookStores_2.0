@@ -26,17 +26,16 @@ import jakarta.persistence.Persistence;
 
 public class Main {
 	public static void main(String[] args) throws SQLException, RemoteException {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BookStores MSSQL");
-	
-		Sach_DAO sach_DAO = new Sach_DAO();
-		TaiKhoan_DAO taiKhoan_DAO = new TaiKhoan_DAO();
-		DungCuHocTap_DAO dungCuHocTap_DAO = new DungCuHocTap_DAO();
-		NhanVien_DAO nhanVien_DAO = new NhanVien_DAO();
-		KhachHang_DAO khachHang_DAO = new KhachHang_DAO();
-		HoaDon_DAO hoaDon_DAO = new HoaDon_DAO();
-		SanPham_DAO sanPham_DAO = new SanPham_DAO();
+//		Sach_DAO sach_DAO = new Sach_DAO();
+//		TaiKhoan_DAO taiKhoan_DAO = new TaiKhoan_DAO();
+//		DungCuHocTap_DAO dungCuHocTap_DAO = new DungCuHocTap_DAO();
+//		NhanVien_DAO nhanVien_DAO = new NhanVien_DAO();
+//		KhachHang_DAO khachHang_DAO = new KhachHang_DAO();
+//		HoaDon_DAO hoaDon_DAO = new HoaDon_DAO();
+//		SanPham_DAO sanPham_DAO = new SanPham_DAO();
 		
-//		EntityManager em = emf.createEntityManager();
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BookStores MSSQL");
+		EntityManager em = emf.createEntityManager();
 //		emf.close();
 //		System.out.println(phatSinhMa_DAO.getMaSachXoa());
 //		Sach sach = em.find(Sach.class, "XS0002");
@@ -67,6 +66,5 @@ public class Main {
 //		maps.forEach((k, v) -> System.out.println(k.getTenSanPham() + " - " + v));
 	
 //		System.out.println(hoaDon_DAO.getTongDoanhThuTheoNgay(new Date(new java.util.Date().getTime())));
-		System.out.println(taiKhoan_DAO.getMaTaiKhoanMoiNhat());
 	}
 }

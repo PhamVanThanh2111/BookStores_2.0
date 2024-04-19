@@ -25,12 +25,12 @@ public class ChiTietPhieuDatHang implements Serializable {
 	@EmbeddedId
 	private ChiTietPhieuDatKey id;
 
-	@ManyToOne()
+	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("maPhieuDatHang")
 	@JoinColumn(name = "maPhieuDatHang", columnDefinition = "nvarchar(7)", nullable = true)
 	private PhieuDatHang phieuDatHang;
 
-	@ManyToOne()
+	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("maSanPham")
 	@JoinColumn(name = "maSanPham", columnDefinition = "nvarchar(10)", nullable = true)
 	private SanPham sanPham;
