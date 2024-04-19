@@ -24,4 +24,8 @@ public interface HoaDon_Impl extends Remote {
     public double getTongDoanhThuTheoNgay(Date date) throws RemoteException;
     
     public long getSoLuongSanPhamBanDuocTheoNgay(Date date) throws RemoteException;
+
+    public List<HoaDon> getHoaDonTheoMaNhanVien(String maNhanVien) throws RemoteException;
+    
+    public List<HoaDon> getHoaDonTheoMaKhachHang(String maKhachHang) throws RemoteException;
 }

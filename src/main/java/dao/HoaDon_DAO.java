@@ -80,4 +80,18 @@ public class HoaDon_DAO extends UnicastRemoteObject implements HoaDon_Impl {
 	                    .getSingleResult();
 	    return result == null ? 0 : result;
 	}
+
+	@Override
+	public List<HoaDon> getHoaDonTheoMaNhanVien(String maNhanVien) throws RemoteException {
+		return em.createNamedQuery("getHoaDonTheoMaNhanVien", HoaDon.class)
+				.setParameter("maNhanVien", maNhanVien)
+				.getResultList();
+	}
+
+	@Override
+	public List<HoaDon> getHoaDonTheoMaKhachHang(String maKhachHang) throws RemoteException {
+		return em.createNamedQuery("getHoaDonTheoMaKhachHang", HoaDon.class)
+				.setParameter("maKhachHang", maKhachHang)
+				.getResultList();
+	}
 }
