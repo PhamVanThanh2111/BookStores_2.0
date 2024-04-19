@@ -1,16 +1,15 @@
 
-~	java:S125"<This block of commented-out lines of code should be removed.(Ýáûã8‰“õ²ï1J$70724ac3-94d8-497b-9314-2f12115acc6d
-m	java:S106"+Replace this use of System.err by a logger.(ý×¯Í8‹“õ²ï1J$7a0ef9d9-d821-4090-9eb2-8d413ae40f92
-]	java:S125!"<This block of commented-out lines of code should be removed.(—×è–øÿÿÿÿ8Æ½õ²ï1
-I
-java:S1128",Remove this unused import 'java.rmi.Naming'.(Ü›¾¬8È½õ²ï1
-A
-java:S1128"%Remove this unused import 'dao.impl'.(Ïé³%8È½õ²ï1
+“	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ð²Ý8í€»³ï1J$a400643d-1029-4d17-adff-18207b83f95b
+
+java:S1854!">Remove this useless assignment to local variable "hoaDon_DAO".( ð²Ý8ø€»³ï1J$63df4a27-276d-4607-b567-822b136e0401
+~	java:S125"<This block of commented-out lines of code should be removed.(Ýáûã8‰“õ²ï1J$56caf389-8e40-47ab-af11-552049ff2ca1
+m	java:S106"+Replace this use of System.err by a logger.(ý×¯Í8‹“õ²ï1J$ed1634e2-0be8-4c6d-aa6e-6304b437a34f
+r
+java:S1481!"/Remove this unused "hoaDon_DAO" local variable.( ð²Ý8ý€»³ï1J$dcf7715f-ca81-4230-9159-cae88448163e
+~	java:S125""<This block of commented-out lines of code should be removed.(”×Ïî8ý€»³ï1J$ad37a939-c2f5-4f6d-a774-06f998374e72
 l
-java:S1128"*Remove this unused import 'entity.HoaDon'.(…õ»38ñÅÒ²ï1J$a6dd9dac-aabf-4cce-afe9-57553196fa10
+java:S1128"*Remove this unused import 'entity.HoaDon'.(…õ»38ñÅÒ²ï1J$43ef9b1b-c0c9-46aa-bd78-a179bf56a29b
 t
-java:S1128",Remove this unused import 'entity.TaiKhoan'.(Ï±Ê¡üÿÿÿÿ8ñÅÒ²ï1J$8a5e28ef-597f-4382-b9f6-38d5b1e0ed85
+java:S1128",Remove this unused import 'entity.TaiKhoan'.(Ï±Ê¡üÿÿÿÿ8ñÅÒ²ï1J$aa061136-52fc-488c-8bac-878907ae719d
 }
-java:S1128"5Remove this unused import 'gui.HeThongQuanLyNhaSach'.(ÓüÜâûÿÿÿÿ8ñÅÒ²ï1J$1a6fb170-4887-4bd4-aef8-8c418826b5fa
-D
-java:S1068"'Remove this unused "URL" private field.(µë¼²8É½õ²ï1
+java:S1128"5Remove this unused import 'gui.HeThongQuanLyNhaSach'.(ÓüÜâûÿÿÿÿ8ñÅÒ²ï1J$43f1534f-8803-4cf2-be6f-06f302f2320a

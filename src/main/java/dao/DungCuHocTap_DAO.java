@@ -60,18 +60,18 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 	public boolean xoaDungCuHocTapVaoThungRac(String maDungCuHocTap) throws RemoteException, SQLException {
 	    try {
 	        DungCuHocTap dungCuHocTap = em.find(DungCuHocTap.class, maDungCuHocTap);
-	        DungCuHocTap dungCuHocTap_temp = new DungCuHocTap();
-	        dungCuHocTap_temp.setMaSanPham("X" + maDungCuHocTap);
-	        dungCuHocTap_temp.setTenSanPham(dungCuHocTap.getTenSanPham());
-	        dungCuHocTap_temp.setSoLuongTon(dungCuHocTap.getSoLuongTon());
-	        dungCuHocTap_temp.setGiaBan(dungCuHocTap.getGiaBan());
-	        dungCuHocTap_temp.setGiaNhap(dungCuHocTap.getGiaNhap());
-	        dungCuHocTap_temp.setNhaCungCap(dungCuHocTap.getNhaCungCap());
-	        dungCuHocTap_temp.setHinhAnh(dungCuHocTap.getHinhAnh());
-	        dungCuHocTap_temp.setXuatXu(dungCuHocTap.getXuatXu());
+//	        DungCuHocTap dungCuHocTap_temp = new DungCuHocTap();
+//	        dungCuHocTap_temp.setMaSanPham("X" + maDungCuHocTap);
+//	        dungCuHocTap_temp.setTenSanPham(dungCuHocTap.getTenSanPham());
+//	        dungCuHocTap_temp.setSoLuongTon(dungCuHocTap.getSoLuongTon());
+//	        dungCuHocTap_temp.setGiaBan(dungCuHocTap.getGiaBan());
+//	        dungCuHocTap_temp.setGiaNhap(dungCuHocTap.getGiaNhap());
+//	        dungCuHocTap_temp.setNhaCungCap(dungCuHocTap.getNhaCungCap());
+//	        dungCuHocTap_temp.setHinhAnh(dungCuHocTap.getHinhAnh());
+//	        dungCuHocTap_temp.setXuatXu(dungCuHocTap.getXuatXu());
 	        if (dungCuHocTap != null) {
 	        	xoaDungCuHocTapTheoMa(maDungCuHocTap);
-	        	themDungCuHocTap(dungCuHocTap_temp);
+//	        	themDungCuHocTap(dungCuHocTap_temp);
 	        }
 	        return true;
 	    } catch (Exception e) {

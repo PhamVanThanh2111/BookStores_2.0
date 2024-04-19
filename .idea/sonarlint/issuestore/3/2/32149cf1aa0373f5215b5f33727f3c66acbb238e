@@ -1,14 +1,13 @@
 
-‘	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ï¼€üÿÿÿÿJ$6ef94232-7aeb-41ff-a299-2428bece95cd
-‘	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ï¼€üÿÿÿÿJ$f99debe7-9f55-4587-8486-9c7f7ebbd5f6
-ˆ	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(è³êJ$66864a13-0f14-4ad6-bb97-cf0929abc6c4
+‘	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ï¼€üÿÿÿÿJ$7ff5797c-d374-4e2a-bcf7-9ac31946b648
+ˆ	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(è³êJ$87d060fc-3f63-4419-b56c-39253ba33b33
 
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡ºJ$5e22f885-86da-43e6-85fa-29e16e9d5c35
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡ºJ$d7da6a13-662a-40dd-b8e7-ed7979369db6
 s
-java:S2589b"7Remove this expression which always evaluates to "true"(¨ÃÀÛJ$af85270f-33a2-4e11-a064-024901d97653
-s
-java:S2589H"7Remove this expression which always evaluates to "true"(¨ÃÀÛJ$ad047b5c-183a-4245-bcf4-46cf69e3ff86
+java:S2589b"7Remove this expression which always evaluates to "true"(¨ÃÀÛJ$44920988-2d13-415d-8b93-87601932c102
 g
-java:S2160"+Override the "equals" method in this class.(è³êJ$44c425b8-f45f-483e-9a37-2e266488f6ef
+java:S2160"+Override the "equals" method in this class.(è³êJ$03683b44-76df-40c8-8789-5f9697187b10
 e
-java:S1948"$Make "em" transient or serializable.(‘æ¿ÚúÿÿÿÿJ$55044ea1-a020-4514-89c0-7ee20bdd0bbc
+java:S1948"$Make "em" transient or serializable.(‘æ¿ÚúÿÿÿÿJ$08bf3728-91e5-420f-8bf3-bf8dddbe3ae8
+~	java:S125?"<This block of commented-out lines of code should be removed.(ôÍê‡8³Ú×¶ï1J$c8f17de6-1204-4e74-b495-1c41f26bcf42
+~	java:S125J"<This block of commented-out lines of code should be removed.(ñ•ğŠ8µğ×¶ï1J$0bbb2e8b-b6a5-4528-8dc4-aa24f17a34b3

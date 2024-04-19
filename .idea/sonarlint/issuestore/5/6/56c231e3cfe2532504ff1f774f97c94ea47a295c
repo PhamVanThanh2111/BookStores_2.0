@@ -1,0 +1,175 @@
+
+š
+java:S2293{"YReplace the type specification in this constructor call with the diamond operator ("<>").(ñ„ÀÑûÿÿÿÿJ$a0d24c0e-7096-453e-8910-b6ac989b9b0d
+›
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(É’³ÊûÿÿÿÿJ$55bf9065-1a7a-4d1c-a05c-fe607a66f9fb
+›
+java:S2293Œ"YReplace the type specification in this constructor call with the diamond operator ("<>").(¤†ƒğÿÿÿÿÿJ$22d77a9a-abb7-4368-8291-7879200bd32e
+›
+java:S2293è"YReplace the type specification in this constructor call with the diamond operator ("<>").(ñ„ÀÑûÿÿÿÿJ$f6bcaaa4-2282-45fc-b9a2-3e9446bf46e9
+›
+java:S2293å"YReplace the type specification in this constructor call with the diamond operator ("<>").(É’³ÊûÿÿÿÿJ$b812a283-5c7d-4748-95c8-6a9070f8d696
+›
+java:S2293ï"YReplace the type specification in this constructor call with the diamond operator ("<>").(¤†ƒğÿÿÿÿÿJ$bedf078b-9676-4fec-95d4-e39ff6858a45
+
+java:S1192à"SDefine a constant instead of duplicating this literal "Thá»ƒ Loáº¡i SÃ¡ch" 3 times.(Íñ£ûJ$7408db8d-36b8-43d3-bbb6-fcb17063a080
+‡
+java:S1192ß"JDefine a constant instead of duplicating this literal "GiÃ¡ BÃ¡n" 3 times.(ÿäâJ$e1e5b3de-0e48-4e37-a931-d8a686f03b71
+‘
+java:S1192ß"TDefine a constant instead of duplicating this literal "Sá»‘ LÆ°á»£ng Tá»“n" 3 times.(ÿäâJ$df5bb0da-fa3d-49cb-8050-182fbd1fc2c3
+ˆ
+java:S1192º"KDefine a constant instead of duplicating this literal "TÃªn SÃ¡ch" 4 times.(ƒñ—ŞJ$5cd831d4-9637-4b49-b41c-7586880e7a45
+‰
+java:S1192ß"LDefine a constant instead of duplicating this literal "Xuáº¥t Xá»©" 3 times.(ÿäâJ$1e6ec3eb-9352-4472-a7a2-535b0494b8bc
+Š
+java:S1192–"HDefine a constant instead of duplicating this literal "Tahoma" 28 times.(è’š¸ÿÿÿÿÿJ$db176737-a62c-4741-971b-e5e89a35f5ab
+ˆ
+java:S1192à"KDefine a constant instead of duplicating this literal "TÃ¡c Giáº£" 3 times.(Íñ£ûJ$45dcd0d6-d370-4c61-a3cf-3a0f2f0b754d
+
+java:S1192"RDefine a constant instead of duplicating this literal "NhÃ  Xuáº¥t Báº£n" 5 times.(Ì”±ûJ$2ab6ef34-49ba-4286-a3c1-6fb9e600e45d
+ˆ
+java:S1192à"KDefine a constant instead of duplicating this literal "Sá»‘ Trang" 3 times.(Íñ£ûJ$5f17ba4c-b4bb-4009-88d5-b04fd88a7a79
+ˆ
+java:S1192°"KDefine a constant instead of duplicating this literal "SansSerif" 32 times.(ÏõÜJ$4a244f83-e35b-495b-bcd8-e262be40eaf9
+‡
+java:S1192¯"JDefine a constant instead of duplicating this literal "MÃ£ SÃ¡ch" 4 times.(‘©÷îJ$6f2a56ab-26f4-426b-966d-dc89a799254c
+
+java:S1192à"RDefine a constant instead of duplicating this literal "NÄƒm Xuáº¥t Báº£n" 3 times.(Íñ£ûJ$631635f6-c7a6-4c7d-a975-4e1058b747f5
+e
+java:S1604»"(Make this anonymous inner class a lambda(ÎùÔòJ$62cb4068-7ee6-41bd-8228-28368f3f8bc0
+e
+java:S1604â"(Make this anonymous inner class a lambda(»„¦²J$2cf902f0-02a8-488f-beb5-f706d5e51633
+e
+java:S1604"(Make this anonymous inner class a lambda(õé—J$75ab4eff-f60d-4a4a-8fa8-fef876c8f673
+j
+java:S1604«"(Make this anonymous inner class a lambda(‘òÂÏùÿÿÿÿJ$4a53ece3-1883-4549-92c5-dd6fd7521890
+e
+java:S1604Õ"(Make this anonymous inner class a lambda(ğÕşÅJ$62a3be7b-09a0-4845-ad70-da4565227db5
+j
+java:S1604Š"(Make this anonymous inner class a lambda(µŒÄßùÿÿÿÿJ$98ed7214-38f6-4635-8806-7f20071390fe
+j
+java:S1604™"(Make this anonymous inner class a lambda(ÙÛïıÿÿÿÿJ$7ff6e576-0321-4175-baa4-4fdb62f64d11
+e
+java:S1604É"(Make this anonymous inner class a lambda(ªÀ•ŒJ$f708e751-ab7f-45d0-8c59-86458783f36e
+j
+java:S1604¢"(Make this anonymous inner class a lambda(‘òÂÏùÿÿÿÿJ$7a7ac54e-f733-480d-9aa6-a63e1e09dcce
+e
+java:S1604Ë"(Make this anonymous inner class a lambda(ğÕşÅJ$baf3ac39-2257-4af3-8577-6d8a855fe62e
+	java:S1017"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(€ëıÄúÿÿÿÿJ$57e76fbd-d2f2-4b56-887e-306e316f3da5
+„
+java:S2184¯"BCast one of the operands of this addition operation to a "double".(ÑØÕúÿÿÿÿJ$3f138c41-249f-42cc-aca2-4700dac579e6
+
+java:S2259Ş"MA "NullPointerException" could be thrown; "timKiemSach_GUI" is nullable here.(ÚøåğıÿÿÿÿJ$9535d032-fbae-4709-ae18-75fa46e03683
+
+java:S2259Õ"MA "NullPointerException" could be thrown; "timKiemSach_GUI" is nullable here.(ÚøåğıÿÿÿÿJ$599f2033-98c1-48c8-9655-f565ebd92352
+
+java:S2259¢"NA "NullPointerException" could be thrown; "khoiPhucSach_GUI" is nullable here.(ËÆßîøÿÿÿÿJ$2a0088f8-1213-453b-bba9-eaa2b5c29a70
+”	java:S116c"YRename this field "nhaXuatBan_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏÏ²üJ$f53c57b5-8507-4f24-9d3b-90f1766a27cb
+•	java:S116d"ZRename this field "theLoaiSach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³‹Œ™J$0fd882f0-8260-4651-844d-caf04e135a90
+“	java:S116e"SRename this field "sach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ò¤äÿÿÿÿÿJ$1112a66a-8d58-4ec3-b6bf-221fedf993ce
+•	java:S116g"ZRename this field "timKiemSach_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÌûüéJ$77c051b4-3200-4329-bb02-9fb8c9ee1a78
+–	java:S116h"[Rename this field "khoiPhucSach_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±åÒíJ$7b4a26e2-91ee-4d63-ae65-1a9196a0e2ce
+—
+java:S1450q"[Remove the "selectedFile" field and declare it as a local variable in the relevant methods.(ËÜ¬×J$aa5c5c5d-61fb-4201-9e74-78ae99a9a9e8
+”
+java:S1450r"XRemove the "wordkbook" field and declare it as a local variable in the relevant methods.(ÙÃ¤J$14c822b4-4cc1-4283-8949-e52e532e4be9
+l
+java:S1948c"0Make "nhaXuatBan_DAO" transient or serializable.(ÏÏ²üJ$caba8d6e-3ebc-4691-8b70-e4c694d42a41
+m
+java:S1948d"1Make "theLoaiSach_DAO" transient or serializable.(³‹Œ™J$d6cd8b2a-0c62-4b4e-918f-67f6e1510aea
+k
+java:S1948e"*Make "sach_DAO" transient or serializable.(÷Ò¤äÿÿÿÿÿJ$4b97edd1-ddb8-4af6-a60d-df250b88e488
+j
+java:S1948l"/Make "borderDefault" transient or serializable.(¨÷kJ$3a4a25ca-7bad-4a9b-92c2-7a9b0d4590f0
+g
+java:S1948r"+Make "wordkbook" transient or serializable.(ÙÃ¤J$078235a4-9552-45d8-98a5-f522c242c228
+
+java:S3776v"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(ïÚÊÿJ$ddf3a1e9-50c0-4b86-8b60-5e986514e836
+x	java:S125†"<This block of commented-out lines of code should be removed.(ÜÙ³ôJ$e09fa2bd-6aab-4adc-8896-bf3a1c81d7ec
+w	java:S125‹"<This block of commented-out lines of code should be removed.(ç’Ã,J$ca00e5d9-11bb-4aaa-ba35-73d5230ab69f
+x	java:S125¾"<This block of commented-out lines of code should be removed.(ÛâòÂJ$5e31ca6a-7983-48cf-9f11-48838c70f9ba
+}	java:S125Ç"<This block of commented-out lines of code should be removed.(é‡œ÷øÿÿÿÿJ$23b29711-4596-4795-b760-0c5911004023
+x	java:S125Ò"<This block of commented-out lines of code should be removed.(ììŒÚJ$5c120392-9b25-4162-aa5b-0255da625b03
+x	java:S125ò"<This block of commented-out lines of code should be removed.(ÃÖù°J$5f25c529-c399-4d42-8d1e-7e9897a579d7
+x	java:S125ü"<This block of commented-out lines of code should be removed.(ÈÂşÛJ$cc16e63d-e34d-4727-b079-678c522b9566
+}	java:S125‡"<This block of commented-out lines of code should be removed.(äğ¸ûıÿÿÿÿJ$360d5908-c8b6-4702-985f-360332093836
+x	java:S125‘"<This block of commented-out lines of code should be removed.(ÊÕ“àJ$4a3fb8bc-d8c0-4b19-90d5-372dea5e8e26
+x	java:S125¥"<This block of commented-out lines of code should be removed.(õé´J$cd3e982d-a5fa-4392-a958-2022b6e1596f
+}	java:S125°"<This block of commented-out lines of code should be removed.(Ïøı˜ÿÿÿÿÿJ$c3d1c285-c76b-4ee9-b3bb-cdf122fb0aa8
+t
+java:S1135¿"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$83bdc216-cb93-4f57-b200-46f99d558f19
+t
+java:S1135…"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$11f2ae5a-7d4a-495b-a77c-d986715a7e46
+x	java:S125Å"<This block of commented-out lines of code should be removed.(Êê—’J$86e973be-2296-4790-aced-bb89a6e4182e
+x	java:S125á"<This block of commented-out lines of code should be removed.(¸ƒ ‰J$0ecec687-1742-4138-97c9-92f333b95be8
+x	java:S125æ"<This block of commented-out lines of code should be removed.(€œÎÅJ$f5b5eaff-228f-4cee-acd0-5cf1d03d5339
+}	java:S125ë"<This block of commented-out lines of code should be removed.(úãããûÿÿÿÿJ$6e5a4284-f498-44f6-b930-3f1434482250
+x	java:S125ò"<This block of commented-out lines of code should be removed.(Ìá–£J$ec495228-3ade-4b86-8c5c-80a6478312e6
+j
+java:S2114ü"(Remove or correct this "removeAll" call.(­¨ŠÚùÿÿÿÿJ$f72b4f3f-28a1-4924-be15-744abf80e165
+x	java:S125¥"<This block of commented-out lines of code should be removed.(¸ƒ ‰J$8d6021ba-b8c5-4103-aed1-ce014b36db64
+x	java:S125ª"<This block of commented-out lines of code should be removed.(€œÎÅJ$10c7f7d9-78b8-4219-b4b7-518105e289bc
+}	java:S125¯"<This block of commented-out lines of code should be removed.(úãããûÿÿÿÿJ$414a2238-f304-4d2b-8edf-2a4555023a07
+x	java:S125¶"<This block of commented-out lines of code should be removed.(Ìá–£J$26baefda-ae39-4578-8e81-b91d62f85513
+g
+java:S1197ß"*Move the array designators [] to the type.(ÿäâJ$19dc646b-3858-49a9-8245-b6cd67f3ae55
+t
+java:S1135ò"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$10145b90-a55e-479d-a07f-399811cd5f71
+t
+java:S1135ø"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$6ca9a8fa-c655-4847-b0f2-99092d978505
+t
+java:S1135ş"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$43798a9d-b978-4db5-8201-0d0aaad063ba
+t
+java:S1135„"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$7519b14f-b7da-48f8-9de2-aa0f45bf34a2
+k
+java:S1905Œ")Remove this unnecessary cast to "String".(—Ñ¬ÆıÿÿÿÿJ$9f8dd9a9-227d-4df1-a6df-a5801f79aa88
+x	java:S125 "<This block of commented-out lines of code should be removed.(ÿ¦½ˆJ$fb04e3d4-bf5e-4773-87f1-4ff1af1c6877
+ƒ
+java:S3252¯"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿJ$05826989-fb35-43e6-b749-3db0e18bbb81
+x	java:S125ó"<This block of commented-out lines of code should be removed.(ÜÙ³ôJ$82cb81be-b94c-44b1-81af-1c719f163b79
+w	java:S125ø"<This block of commented-out lines of code should be removed.(ç’Ã,J$0449d8d2-69fd-4623-a51b-c662d56117fd
+}	java:S125Ğ"<This block of commented-out lines of code should be removed.(¸ÂŠôûÿÿÿÿJ$c8de9c67-22a7-46cb-8b96-fd976d242f53
+}	java:S125‚"<This block of commented-out lines of code should be removed.(ÇÃñûÿÿÿÿJ$05faafc5-9968-4d3e-af6a-5821f22e37c3
+x	java:S125Ø"<This block of commented-out lines of code should be removed.(¸ƒ ‰J$0f401363-37a6-4cde-99f7-708d5629a2b0
+x	java:S125İ"<This block of commented-out lines of code should be removed.(€œÎÅJ$6f435e64-2067-4691-8906-6928eafc9254
+}	java:S125â"<This block of commented-out lines of code should be removed.(úãããûÿÿÿÿJ$c80db81d-c6fc-4db2-a7eb-a5f0a52a921c
+x	java:S125è"<This block of commented-out lines of code should be removed.(Ìá–£J$96c98ab0-65c2-4b1c-b028-8b1de7c59604
+j
+java:S2114ë"(Remove or correct this "removeAll" call.(­¨ŠÚùÿÿÿÿJ$62689899-279c-4319-b524-53fdf9398e8d
+l
+java:S1197ƒ"*Move the array designators [] to the type.(ü¸ô¸øÿÿÿÿJ$c25c19bc-cf79-4aaf-a43b-ed0e152169e8
+t
+java:S1135–"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$c3ef42e8-c7d4-4082-b327-a0321e3c976f
+t
+java:S1135œ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$38d2ad40-1a07-4394-928e-2eb1fd4a3cb2
+t
+java:S1135¢"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$8523983b-31a1-489c-afb2-65b706f98935
+t
+java:S1135¨"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$66a8046c-0877-48a8-9924-20908607752c
+t
+java:S1135®"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$61848a07-2155-4a96-b379-fa0775d6cbd5
+k
+java:S1905²")Remove this unnecessary cast to "String".(—Ñ¬ÆıÿÿÿÿJ$cedfec51-32c4-4cfa-b36b-822a57e60403
+ƒ
+java:S3252Î"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿJ$93579f78-d9d8-434f-afe3-82ea9f0122e4
+	java:S100ú"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ£ô¹şÿÿÿÿJ$e9f75ab9-0b27-4818-aee0-da4d1bcd0e59
+
+java:S1117Š	"?Rename "nhaXuatBan" which hides the field declared at line 105.(ÄÓÛÑûÿÿÿÿJ$8918f552-2487-427e-8c7b-0d347e025be6
+}
+java:S1117’	"@Rename "theLoaiSach" which hides the field declared at line 106.(ÆÓ÷ìJ$1daeb743-a6cf-4ad0-b869-bf488b9f7b55
+”
+java:S3776˜	"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(ƒ¾ÉûÿÿÿÿJ$077d75f9-2069-4186-b54f-244495cb3e68
+ƒ
+java:S1126ú	"AReplace this if-then-else statement by a single return statement.(„ô«½üÿÿÿÿJ$69ac0f6f-10ca-47b2-8614-b891f4b9ce28
+	java:S125’
+"<This block of commented-out lines of code should be removed.(Ê­æ–8Â¤¥´ï1J$66bfc529-3c9a-4762-be7a-9e3b85796aa3
+°
+java:S1130›
+"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(¹±å¯úÿÿÿÿJ$dec77002-045f-4b13-b48f-3b3d1a88d558
+l
+java:S1905‡"*Remove this unnecessary cast to "XSSFRow".(ñ³€ÍúÿÿÿÿJ$ddcf04f9-8a2a-4619-a44d-5e6727f62c92
+l
+java:S1905­"*Remove this unnecessary cast to "XSSFRow".(ñŸ†¢øÿÿÿÿJ$c5ffc2e1-d98f-48b5-8c91-476d98f00060
+x	java:S125ß"<This block of commented-out lines of code should be removed.(Æñ¬­J$759afd69-37c8-401d-a1cf-d0a906d29dd0
+x	java:S125§"<This block of commented-out lines of code should be removed.(ú¨î™J$f69af7f4-1709-4bd9-9839-4fdcbd80dc1e
+x	java:S125¼"<This block of commented-out lines of code should be removed.(’õ—J$6ddc3761-ead3-40f9-9614-eb204b5ca5f2
