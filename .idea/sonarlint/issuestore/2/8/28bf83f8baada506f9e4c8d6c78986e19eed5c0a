@@ -1,8 +1,10 @@
 
-g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(§ÍßÆûÿÿÿÿ
-g
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º
-F
-java:S2160"+Override the "equals" method in this class.(§ÍßÆûÿÿÿÿ
-?
-java:S1948"$Make "em" transient or serializable.(‘æ¿Úúÿÿÿÿ
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(§ÍßÆûÿÿÿÿJ$3bc2dbde-92f0-4095-bdb9-0c5b36c45eb8
+
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡ºJ$60dc7265-ddf2-446b-b247-05a1abf69d67
+l
+java:S2160"+Override the "equals" method in this class.(§ÍßÆûÿÿÿÿJ$942ca661-d54e-43a2-a5ea-74c0da237f84
+e
+java:S1948"$Make "em" transient or serializable.(‘æ¿ÚúÿÿÿÿJ$c196720f-78ec-4443-9ec7-1a6a51832d3e
+o
+java:S16021",Remove useless curly braces around statement(¥ƒãË8î…¹ï1J$0b7154cd-074a-49f3-b0a2-e6d5cc6e2f40

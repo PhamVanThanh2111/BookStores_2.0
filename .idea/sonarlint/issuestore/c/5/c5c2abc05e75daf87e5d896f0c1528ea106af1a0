@@ -1,0 +1,18 @@
+
+X	java:S125"<This block of commented-out lines of code should be removed.(İáûã8¸¬¹ï1
+G	java:S106"+Replace this use of System.err by a logger.(ı×¯Í8‘¸¬¹ï1
+]	java:S125!"<This block of commented-out lines of code should be removed.(—×è–øÿÿÿÿ8‘¸¬¹ï1
+I
+java:S1128",Remove this unused import 'java.rmi.Naming'.(Ü›¾¬8“¸¬¹ï1
+G
+java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8“¸¬¹ï1
+R
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8“¸¬¹ï1
+A
+java:S1128"%Remove this unused import 'dao.impl'.(Ïé³%8“¸¬¹ï1
+@
+java:S1128"#Remove this unused import 'entity'.(ğ§ªø8“¸¬¹ï1
+W
+java:S1128"5Remove this unused import 'gui.HeThongQuanLyNhaSach'.(ÓüÜâûÿÿÿÿ8“¸¬¹ï1
+D
+java:S1068"'Remove this unused "URL" private field.(µë¼²8”¸¬¹ï1

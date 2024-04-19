@@ -1,12 +1,13 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-public class ChiTietPhieuDatKey {
+public class ChiTietPhieuDatKey implements Serializable {
 
 	@Column(name = "maPhieuDatHang", columnDefinition = "nvarchar(7)", nullable = false)
 	private String maPhieuDatHang;

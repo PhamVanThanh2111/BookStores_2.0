@@ -1,85 +1,95 @@
 
-u
-java:S2293ö"YReplace the type specification in this constructor call with the diamond operator ("<>").(¼ŠÉüÿÿÿÿ
-u
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(­ö¥¶ûÿÿÿÿ
-p
-java:S2293è"YReplace the type specification in this constructor call with the diamond operator ("<>").(’‡é¸
-p
-java:S2293ƒ"YReplace the type specification in this constructor call with the diamond operator ("<>").(†ÜŸë
+›
+java:S2293÷"YReplace the type specification in this constructor call with the diamond operator ("<>").(¼ŠÉüÿÿÿÿJ$d99e459b-964d-4746-bc7e-dd1730732de5
+›
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(­ö¥¶ûÿÿÿÿJ$0b957f83-9731-4546-9a76-c191c7e6d371
+–
+java:S2293æ"YReplace the type specification in this constructor call with the diamond operator ("<>").(’‡é¸J$cfe1e041-3a44-4e1a-a3bc-0d48c05679aa
+–
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(†ÜŸëJ$280e6f83-6d48-46a3-ad93-1e0ce17d2a97
+
+java:S2293Ÿ"YReplace the type specification in this constructor call with the diamond operator ("<>").(­ºâ…8á‚ÙŠï1J$a96c951b-8ee5-4204-a000-5053b0cdce76
+‡
+java:S1192"KDefine a constant instead of duplicating this literal "SansSerif" 31 times.(¹¤±ÆJ$d8c892e1-9e7e-452a-96c2-40e49c1336e7
 w
-java:S2293¡"YReplace the type specification in this constructor call with the diamond operator ("<>").(­ºâ…8á‚ÙŠï1
-a
-java:S1192~"KDefine a constant instead of duplicating this literal "SansSerif" 31 times.(¹¤±Æ
-Q
-java:S1141²"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
-r	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒ¤‰àşÿÿÿÿ8‚ƒÙŠï1
-r	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒ¤‰àşÿÿÿÿ8ƒƒÙŠï1
-r	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒ¤‰àşÿÿÿÿ8„ƒÙŠï1
-?
-java:S1604Ë"(Make this anonymous inner class a lambda(‹œ¾í
-?
-java:S1604ü"(Make this anonymous inner class a lambda(á½²¤
-?
-java:S1604•"(Make this anonymous inner class a lambda(´Õ«Ê
-?
-java:S1604°"(Make this anonymous inner class a lambda(±ÕÛø
->
-java:S1604å"(Make this anonymous inner class a lambda(©ŞøR
-D
-java:S1604ü"(Make this anonymous inner class a lambda(‘òÂÏùÿÿÿÿ
-D
-java:S1604 "(Make this anonymous inner class a lambda(ÛåÅ¤ùÿÿÿÿ
-K
-java:S1604–"(Make this anonymous inner class a lambda(²ş‡áıÿÿÿÿ8•ƒÙŠï1
-g	java:S101:"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(øŠÄ¥øÿÿÿÿ
-k	java:S116O"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë„ûÕ
-r	java:S116P"XRename this field "khachHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷˜Íøÿÿÿÿ
-j	java:S116Q"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ê‹”
-q	java:S116R"\Rename this field "chiTietHoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆáĞ—
-w	java:S116S"[Rename this field "dungCuHocTap_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÌºùÕ8ò†ÙŠï1
-t	java:S116T"SRename this field "sach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( İìÑøÿÿÿÿ8ò†ÙŠï1
-s	java:S116U"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÊ’Á8ò†ÙŠï1
-w	java:S116W"]Rename this field "danhSachHoaDon_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢±’”úÿÿÿÿ
-k	java:S116X"VRename this field "thongKe_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Òş˜
-q	java:S116Y"WRename this field "trangChu_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶êÎ§úÿÿÿÿ
-Q
-java:S1948P"/Make "khachHang_DAO" transient or serializable.(÷˜Íøÿÿÿÿ8ƒ‡ÙŠï1
-I
-java:S1948Q",Make "hoaDon_DAO" transient or serializable.(¢ê‹”8„‡ÙŠï1
-P
-java:S1948R"3Make "chiTietHoaDon_DAO" transient or serializable.(ˆáĞ—8„‡ÙŠï1
+java:S1141³"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿJ$9c2d6eda-4b58-45ba-85f3-34b334f5ea1b
+˜	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûò¦Óşÿÿÿÿ8‚ƒÙŠï1J$fa5ba4cc-ada0-44d3-98b9-92c899565c27
+˜	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûò¦Óşÿÿÿÿ8ƒƒÙŠï1J$e315a5de-95f8-4417-8d47-4f26e8d310cf
+˜	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûò¦Óşÿÿÿÿ8„ƒÙŠï1J$382a2409-10f2-4bb4-81a9-4dba973e1b68
+e
+java:S1604Ì"(Make this anonymous inner class a lambda(‹œ¾íJ$a968ce1a-dc33-4bdd-91d3-03a730c37f08
+e
+java:S1604ı"(Make this anonymous inner class a lambda(á½²¤J$1e0cc761-afce-42ec-b891-b65a289980a2
+e
+java:S1604–"(Make this anonymous inner class a lambda(´Õ«ÊJ$eeabb222-cfb9-47a7-8fbe-5be2fcdcccad
+e
+java:S1604±"(Make this anonymous inner class a lambda(±ÕÛøJ$9eee48ed-699a-4452-b2e1-12327786b66a
+d
+java:S1604æ"(Make this anonymous inner class a lambda(©ŞøRJ$387df552-b501-4682-8f25-794fa13eb03b
+j
+java:S1604ı"(Make this anonymous inner class a lambda(‘òÂÏùÿÿÿÿJ$306efde6-d579-4ee2-9f56-f483d7562165
+j
+java:S1604¡"(Make this anonymous inner class a lambda(ÛåÅ¤ùÿÿÿÿJ$58d80058-b0fb-406a-9d9f-e5f3d9ce175e
+q
+java:S1604”"(Make this anonymous inner class a lambda(²ş‡áıÿÿÿÿ8•ƒÙŠï1J$d8677cb3-0e7d-4ffc-a678-5e066e65aaa0
+	java:S101="MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(øŠÄ¥øÿÿÿÿJ$d5cd0264-d2d3-4e69-ac34-bcb3db008135
+	java:S116R"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´ºî¿şÿÿÿÿ8ŸÒ”ºï1J$83bef854-1260-42b0-b5cd-c2bc13dccd84
+™	java:S116S"XRename this field "khachHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š’:8ŸÒ”ºï1J$fcdc3397-cd2d-4ca5-b4e8-ad04acdf1042
+œ	java:S116T"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡¾® ÿÿÿÿÿ8ŸÒ”ºï1J$5c462f97-ca3c-4543-918b-8389c5cbeea9
+	java:S116U"\Rename this field "chiTietHoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø³¬·8ŸÒ”ºï1J$9ab99ad9-113d-4474-9ba0-a5cef4afbd2d
+	java:S116V"[Rename this field "dungCuHocTap_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ğ­Ö8ŸÒ”ºï1J$cf1076bb-e555-468e-a2b2-aeb21d6d7b8a
+š	java:S116W"SRename this field "sach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ò¤äÿÿÿÿÿ8ŸÒ”ºï1J$40d480ef-4037-4798-85a1-24820d329396
+	java:S116X"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â·åğùÿÿÿÿ8ŸÒ”ºï1J$886a62e9-d82a-4098-9484-014837a64b27
+	java:S116Z"]Rename this field "danhSachHoaDon_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢±’”úÿÿÿÿJ$3b9e94fe-198b-48e5-a112-5fd580d57298
+‘	java:S116["VRename this field "thongKe_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Òş˜J$e6c8de7f-cb78-4b3a-a0e9-8d6b669a2d47
+—	java:S116\"WRename this field "trangChu_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶êÎ§úÿÿÿÿJ$50bbf09e-821b-4d53-8a98-91ff8c3c17d6
 u
-java:S3776_"SRefactor this method to reduce its Cognitive Complexity from 121 to the 15 allowed.(ƒ¤‰àşÿÿÿÿ8‘‡ÙŠï1
-@
-java:S1197ä"*Move the array designators [] to the type.(Ú…á.
-N
-java:S1135ô"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
-N
-java:S1135ú"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
-N
-java:S1135€"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
-N
-java:S1135†"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
-N
-java:S1135Œ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
-3
-java:S1116"Remove this empty statement.(ä¬Şá
-]
-java:S3252«"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿ
-N
-java:S1135´"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+java:S1948R"-Make "sanPham_DAO" transient or serializable.(´ºî¿şÿÿÿÿ8¤Ò”ºï1J$bf4eca7d-53e0-48c0-99e1-e5c9113f9ea4
+q
+java:S1948S"/Make "khachHang_DAO" transient or serializable.(š’:8¤Ò”ºï1J$40b426b3-14c4-460a-a809-192f14881a23
+t
+java:S1948T",Make "hoaDon_DAO" transient or serializable.(‡¾® ÿÿÿÿÿ8¤Ò”ºï1J$e95508bc-b579-4d62-9332-302f92721af1
+v
+java:S1948U"3Make "chiTietHoaDon_DAO" transient or serializable.(ø³¬·8¤Ò”ºï1J$544accc1-4dc3-424f-b51e-d70b269ae048
+u
+java:S1948V"2Make "dungCuHocTap_DAO" transient or serializable.(—ğ­Ö8¤Ò”ºï1J$f16a2785-36dd-41a0-81ab-7dc6952b55bc
+r
+java:S1948W"*Make "sach_DAO" transient or serializable.(÷Ò¤äÿÿÿÿÿ8¥Ò”ºï1J$c8f3347d-6864-4439-94ef-51248a1febab
+v
+java:S1948X".Make "nhanVien_DAO" transient or serializable.(Â·åğùÿÿÿÿ8¥Ò”ºï1J$727323ea-9e94-4e07-8f36-91ba8c1d08d7
+›
+java:S3776`"SRefactor this method to reduce its Cognitive Complexity from 121 to the 15 allowed.(ûò¦Óşÿÿÿÿ8‘‡ÙŠï1J$b0357d91-9982-4c8f-bdde-56e42a008712
+f
+java:S1197å"*Move the array designators [] to the type.(Ú…á.J$8e51d3f4-8fb8-4dd4-9136-e14e7309a898
+t
+java:S1135õ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$e49111b9-1f63-465e-ba1a-350344ce4768
+t
+java:S1135û"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$8cdd7d2d-6665-4860-bb0d-4a82d5bd58bc
+t
+java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$0484441b-5cb5-4829-83d9-145dec9183b6
+t
+java:S1135‡"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$a1572b03-a98c-4006-8a09-b7b994e8d036
+t
+java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$0f93bd80-6016-4693-8965-f62458eeb6b0
 Y
-java:S1117©";Rename "sanPham" which hides the field declared at line 76.(Úòôí8º‰ÙŠï1
-R	java:S125ú"<This block of commented-out lines of code should be removed.( ³…£
-Y
-java:S1117¤";Rename "sanPham" which hides the field declared at line 76.(ØÄ„»8Ú‰ÙŠï1
-Y
-java:S1117©";Rename "sanPham" which hides the field declared at line 76.(Ô®Ü8Ü‰ÙŠï1
-¤
-java:S1130Å"€Remove the declaration of thrown exception 'net.sf.jasperreports.engine.JRException', as it cannot be thrown from method's body.(½é½…ùÿÿÿÿ8ë‰ÙŠï1
-Y
-java:S1117Ò";Rename "sanPham" which hides the field declared at line 76.(ÓÕ©›8ö‰ÙŠï1
-Y	java:S125à"<This block of commented-out lines of code should be removed.(¯ÇÓš8ü‰ÙŠï1
-U
-java:S1117„"9Rename "model" which hides the field declared at line 62.(ğ£Ñıÿÿÿÿ
+java:S1116"Remove this empty statement.(ä¬ŞáJ$62c8ced1-b485-4a2a-aaf3-a041710d2adc
+ƒ
+java:S3252¬"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿJ$ffd20fef-7057-4014-a6de-cd168cb6c3f4
+t
+java:S1135µ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$348c6dd9-ec3c-4c2f-8abe-1767dbb3fb9a
+
+java:S1117ª";Rename "sanPham" which hides the field declared at line 79.(Úòôí8º‰ÙŠï1J$adcc3900-a9ef-42a7-b48e-5f1155732dde
+x	java:S125û"<This block of commented-out lines of code should be removed.( ³…£J$880041d4-af87-4593-b77e-d76486e96e82
+
+java:S1117¤";Rename "sanPham" which hides the field declared at line 79.(ØÄ„»8Ú‰ÙŠï1J$7f326591-9b63-45c8-80a4-9da59eaf87f3
+
+java:S1117©";Rename "sanPham" which hides the field declared at line 79.(Ô®Ü8Ü‰ÙŠï1J$d094c2d8-6a82-4ac0-be47-eae20e9738f5
+·
+java:S1130Å"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(½é½…ùÿÿÿÿ8°Ó›ºï1J$529aca74-d1d8-4f79-a9f5-19d2d307a79f
+Ê
+java:S1130Å"€Remove the declaration of thrown exception 'net.sf.jasperreports.engine.JRException', as it cannot be thrown from method's body.(½é½…ùÿÿÿÿ8°Ó›ºï1J$01a7399e-1031-4d6b-8cff-09b40101ed09
+
+java:S1117Ğ";Rename "sanPham" which hides the field declared at line 79.(ÓÕ©›8ö‰ÙŠï1J$09f1351e-6c5e-462a-93b4-09438cde0d70
+	java:S125Ş"<This block of commented-out lines of code should be removed.(¯ÇÓš8ü‰ÙŠï1J$f76540e3-e139-4eb8-b601-6e3b9b7dfd57
+{
+java:S1117‚"9Rename "model" which hides the field declared at line 65.(ğ£ÑıÿÿÿÿJ$4cc076c7-bc67-4813-b910-dcfa6baeab92
