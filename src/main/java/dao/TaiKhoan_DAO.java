@@ -81,5 +81,9 @@ public class TaiKhoan_DAO extends UnicastRemoteObject implements TaiKhoan_Impl {
 	public String getMatKhauTheoMaNhanVien(String ma) throws RemoteException {
 		return em.find(TaiKhoan.class, ma).getMatKhau();
 	}
-	
+
+	@Override
+	public String getMaTaiKhoanMoiNhat() throws RemoteException {
+		return em.createNamedQuery("getTaiKhoanMoiNhat", String.class).getSingleResult();
+	}
 }

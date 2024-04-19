@@ -18,4 +18,6 @@ public interface TaiKhoan_Impl extends Remote {
 	public TaiKhoan getTaiKhoanTheoMaTaiKhoan(String maTK) throws RemoteException;
 
 	public String getMatKhauTheoMaNhanVien(String ma) throws RemoteException;
+
+	public String getMaTaiKhoanMoiNhat() throws RemoteException;
 }
