@@ -8,10 +8,7 @@ import dao.impl.NhaCungCap_Impl;
 import entity.NhaCungCap;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
-public class NhaCungCap_DAO extends UnicastRemoteObject implements NhaCungCap_Impl{
-	/**
-	 * 
-	 */
+public class NhaCungCap_DAO extends UnicastRemoteObject implements NhaCungCap_Impl {
 	private static final long serialVersionUID = 1L;
 	private EntityManager em;
 

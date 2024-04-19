@@ -427,8 +427,7 @@ public class DanhSachHoaDon_GUI extends JPanel {
 									chiTietHoaDon.getDonGia()};
 				modelChiTietHoaDon.addRow(objects);
 			}
-		} catch (RemoteException | SQLException e) {
-			// TODO Auto-generated catch block
+		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 	}

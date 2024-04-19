@@ -1,6 +1,7 @@
 package dao;
 
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
@@ -10,8 +11,9 @@ import entity.HoaDon;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
-public class HoaDon_DAO implements HoaDon_Impl {
-    private EntityManager em;
+public class HoaDon_DAO extends UnicastRemoteObject implements HoaDon_Impl {
+	private static final long serialVersionUID = 1L;
+	private EntityManager em;
 
     public HoaDon_DAO() throws RemoteException {
         super();
@@ -53,13 +55,13 @@ public class HoaDon_DAO implements HoaDon_Impl {
     }
 
     @Override
-    public List<HoaDon> getHoaDonTheoNgay(Date ngay) {
+    public List<HoaDon> getHoaDonTheoNgay(Date ngay) throws RemoteException {
         return em.createNamedQuery("getHoaDonTheoNgay", HoaDon.class).setParameter("ngaylap", ngay).getResultList();
 
     }
 
     @Override
-    public List<HoaDon> getHoaDonsNhieuTienNhat() {
+    public List<HoaDon> getHoaDonsNhieuTienNhat() throws RemoteException {
         return em.createNamedQuery("getHoaDonsNhieuTienNhat", HoaDon.class).getResultList();
     }
 

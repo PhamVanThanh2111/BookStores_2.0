@@ -8,7 +8,7 @@ import entity.Ca;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
-public class Ca_DAO extends UnicastRemoteObject implements Ca_Impl{
+public class Ca_DAO extends UnicastRemoteObject implements Ca_Impl {
 
 	private static final long serialVersionUID = 1L;
 

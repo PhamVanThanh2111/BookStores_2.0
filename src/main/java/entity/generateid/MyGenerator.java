@@ -15,7 +15,8 @@ import java.util.Properties;
 
 public class MyGenerator implements IdentifierGenerator, Configurable {
 
-    private String prefix;
+	private static final long serialVersionUID = 1L;
+	private String prefix;
     private String numberFormat;
     private boolean isSanPham = false;
 

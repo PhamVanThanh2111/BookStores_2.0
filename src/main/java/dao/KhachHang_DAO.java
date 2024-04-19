@@ -1,6 +1,7 @@
 package dao;
 
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -11,7 +12,8 @@ import entity.KhachHang;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
-public class KhachHang_DAO implements KhachHang_Impl {
+public class KhachHang_DAO extends UnicastRemoteObject implements KhachHang_Impl {
+	private static final long serialVersionUID = 1L;
 	private EntityManager em;
 
 	public KhachHang_DAO() throws RemoteException {

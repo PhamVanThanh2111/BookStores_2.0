@@ -64,5 +64,7 @@ public class Main {
 //		System.out.println(hoaDon_DAO.getSoLuongSanPhamBanDuocTheoNgay(new Date(new java.util.Date().getTime())));
 //		Map<SanPham, Long> maps = sanPham_DAO.getSanPhamBanChay();
 //		maps.forEach((k, v) -> System.out.println(k.getTenSanPham() + " - " + v));
+	
+//		System.out.println(hoaDon_DAO.getTongDoanhThuTheoNgay(new Date(new java.util.Date().getTime())));
 	}
 }

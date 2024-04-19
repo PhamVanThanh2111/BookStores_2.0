@@ -22,15 +22,11 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
 import dao.DungCuHocTap_DAO;
-import dao.Sach_DAO;
 import entity.DungCuHocTap;
 
 import javax.swing.JButton;
 
 public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private DefaultTableModel model;
 	private JTable table;
@@ -38,18 +34,11 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 	private JButton btnXoa, btnKhoiPhuc;
 	private List<DungCuHocTap> ds;
 	private DungCuHocTap_DAO dungCuHocTap_DAO;
-	private Sach_DAO sach_DAO;
 	private JButton btnquayLai;
-
-	/**
-	 * Launch the application.
-	 * @throws RemoteException 
-	 */
 
 	public KhoiPhucDungCuHocTap_GUI(List<DungCuHocTap> ds) throws RemoteException {
 		this.ds = ds;
 		dungCuHocTap_DAO = new DungCuHocTap_DAO();
-		sach_DAO = new Sach_DAO();
 		
 		setBounds(100, 100, 882, 495);
 		getContentPane().setLayout(null);
@@ -129,21 +118,19 @@ public class KhoiPhucDungCuHocTap_GUI extends JInternalFrame {
 			public void actionPerformed(ActionEvent e) {
 				int row = table.getSelectedRow();
 				if (row == -1) {
-					JOptionPane.showMessageDialog(null, "Bạn Chưa Chọn Sản Phẩm !");
+					JOptionPane.showMessageDialog(null, "Bạn chưa chọn dụng cụ học tập cần xóa!");
 				} else {
-					int tb = JOptionPane.showConfirmDialog(null, "Bạn Muốn Xóa Sản Phẩm? ", "Delete",
+					int tb = JOptionPane.showConfirmDialog(null, "Bạn có muốn xóa dụng cụ học tập này?", "Delete",
 							JOptionPane.YES_NO_OPTION);
 					if (tb == JOptionPane.YES_OPTION) {
 						try {
-							sach_DAO.xoaSachTheoMaSach((String) model.getValueAt(row, 0));
+							dungCuHocTap_DAO.xoaDungCuHocTapTheoMa((String) model.getValueAt(row, 0));
 							loadData(dungCuHocTap_DAO.getAllDungCuHocTapXoa());
 						} catch (RemoteException e1) {
 							e1.printStackTrace();
 						}
 					}
-
 				}
-
 			}
 		});
 		pMain.add(btnXoa);

@@ -1,37 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hoaDon_report" pageWidth="595" pageHeight="500" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d579833-d12e-4050-8878-216f05e69a76">
-	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConnectData"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[Ik5oYW5WaWVuIiAsMzk0LDE0Nyw5ZjI1ZTljNy02MGEwLTRlYzctYjk1MS1mZTQ3NDE4N2Y1NGY7
+IkNoaVRpZXRIb2FEb24iICwzNSw0MCwxMWZjZmE3OS0wMTg2LTQ5ODUtOTYxMS04ZGUzMjljNjg1
+YmU7IlNhblBoYW0iICwyMTIsNDg2LDYyZGFlODg0LTIxNjMtNDY1Ny1hMTkzLWNlYjVkMDk5NmNi
+MzsiS2hhY2hIYW5nIiAsNzQ3LDI1LDE3ZTZjMzBlLWI4MTMtNDBkNS05YzEzLTE1ODhkZWYwYWFk
+MzsiQ2hpVGlldEhvYURvbiIgLDYwMiwyNjUsMGQzMDM3OTctOWU3Ny00OGZmLThhNTgtZDRjMTQ2
+N2JlODEwOyJIb2FEb24iICwyMTIsMjUsMmJmYmNlZmItYjRkNy00NzM2LWFlZTEtMjM4ZDMyZGIw
+NWNmOw==]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConnectBook"/>
 	<parameter name="maPhieu" class="java.lang.String" nestedType="java.lang.String" evaluationTime="Early"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT
-    HD.maHoaDon,
-    HD.maNhanVien,
-    KH.tenKhachHang,
-    NV.tenNhanVien,
-    HD.ngayLap,
-    CTHD.maSanPham,
-    SP.tenSanPham,
-    CTHD.donGia,
-    CTHD.soLuong,
-    SUM(CTHD.soLuong * CTHD.donGia) AS Tong,
-    TT.ThanhTien
-FROM
-    HoaDon HD
-    LEFT JOIN KhachHang KH ON HD.maKhachHang = KH.maKhachHang
-    INNER JOIN ChiTietHoaDon CTHD ON HD.maHoaDon = CTHD.maHoaDon
-    INNER JOIN NhanVien NV ON HD.maNhanVien = NV.maNhanVien
-    INNER JOIN SanPham SP ON CTHD.maSanPham = SP.maSanPham
-    INNER JOIN (
-        SELECT maHoaDon, SUM(soLuong * donGia) AS ThanhTien
-        FROM ChiTietHoaDon
-        GROUP BY maHoaDon
-    ) TT ON HD.maHoaDon = TT.maHoaDon
-WHERE
-    HD.maHoaDon = $P{maPhieu}
-GROUP BY
-    HD.maHoaDon, HD.maNhanVien, KH.tenKhachHang, NV.tenNhanVien, HD.ngayLap, CTHD.maSanPham, SP.tenSanPham, CTHD.donGia, CTHD.soLuong, TT.ThanhTien]]>
+		<![CDATA[SELECT HD."maHoaDon",
+	HD."maNhanVien",
+	KH."tenKhachHang",
+	NV."tenNhanVien",
+	HD."ngayLap",
+	CTHD."maSanPham",
+	SP."tenSanPham",
+	CTHD."donGia",
+	CTHD."soLuong",
+	SUM( CTHD.soLuong * CTHD.donGia) AS Tong,
+	ThanhTien
+FROM "HoaDon" HD
+	LEFT JOIN "KhachHang" KH ON 
+	 HD."maKhachHang" = KH."maKhachHang" 
+	INNER JOIN "ChiTietHoaDon" CTHD ON 
+	 HD."maHoaDon" = CTHD."maHoaDon" 
+	INNER JOIN "NhanVien" NV ON 
+	 HD."maNhanVien" = NV."maNhanVien" 
+	INNER JOIN "SanPham" SP ON 
+	 CTHD."maSanPham" = SP."maSanPham" 
+	INNER JOIN (SELECT "maHoaDon",
+	SUM( soLuong * donGia) AS ThanhTien
+FROM "ChiTietHoaDon"
+GROUP BY "ChiTietHoaDon"."maHoaDon"
+	 )  TT ON HD."maHoaDon" = 'NULL' 
+WHERE 
+	 HD."maHoaDon" = $P{maPhieu} 
+GROUP BY HD."maHoaDon",
+	HD."maNhanVien",
+	KH."tenKhachHang",
+	NV."tenNhanVien",
+	HD."ngayLap",
+	CTHD."maSanPham",
+	SP."tenSanPham",
+	CTHD."donGia",
+	CTHD."soLuong"]]>
 	</queryString>
 	<field name="maHoaDon" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="maHoaDon"/>
@@ -61,7 +78,7 @@ GROUP BY
 		<property name="com.jaspersoft.studio.field.name" value="tenSanPham"/>
 		<property name="com.jaspersoft.studio.field.label" value="tenSanPham"/>
 	</field>
-	<field name="donGia" class="java.lang.Double">
+	<field name="donGia" class="java.lang.Float">
 		<property name="com.jaspersoft.studio.field.name" value="donGia"/>
 		<property name="com.jaspersoft.studio.field.label" value="donGia"/>
 	</field>
