@@ -84,12 +84,6 @@ public class NhanVien_GUI extends JPanel {
 	private ArrayList<NhanVien> ds;
 	private Border borderDefault;
 
-	/**
-	 * Create the panel.
-	 * @throws RemoteException 
-	 * 
-	 * @throws SQLException
-	 */
 	public NhanVien_GUI() throws RemoteException {
 
 		// khai bao DAO
