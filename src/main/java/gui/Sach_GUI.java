@@ -43,7 +43,6 @@ import entity.NhaXuatBan;
 import entity.NhanVien;
 import entity.Sach;
 import entity.TheLoaiSach;
-import entity.generateid.SachGeneratorId;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -114,12 +113,9 @@ public class Sach_GUI extends JPanel {
 	private File selectedFile;
 	private XSSFWorkbook wordkbook;
 
-	private SachGeneratorId sachGeneratorId;
-
 	public Sach_GUI(NhanVien nhanVien) throws RemoteException {
 		nhaXuatBan_DAO = new NhaXuatBan_DAO();
 		theLoaiSach_DAO = new TheLoaiSach_DAO();
-		sachGeneratorId = new SachGeneratorId();
 		sach_DAO = new Sach_DAO();
 
 		ds = new ArrayList<Sach>();
@@ -1241,7 +1237,6 @@ public class Sach_GUI extends JPanel {
 			} else {
 				try {
 					Sach sach = new Sach();
-					sach.setMaSanPham(sachGeneratorId.generate(null, null).toString());
 					sach.setTenSanPham(txtTenSach.getText());
 					sach.setXuatXu(txtXuatXu.getText());
 					sach.setGiaNhap(Float.parseFloat(txtGiaNhap.getText()));

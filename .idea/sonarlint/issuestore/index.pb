@@ -69,32 +69,16 @@ Q
 !src/main/java/entity/SanPham.java,d\e\ded78218f61491b39252c0b62193181fc0d3e974
 X
 (src/main/java/dao/impl/SanPham_Impl.java,a\6\a6700c3ef6cd5631e48b8b1497d995aeff22b009
-f
-6src/main/java/entity/generateid/HoaDonGeneratorId.java,e\a\ead024e8e8040ea335d8aefc324413506ef3d6e8
 l
 <src/main/java/entity/generateid/DungCuHocTapGeneratorId.java,e\c\ecb1c9f959aa337331ccdb958c5ba481f428bdc8
-h
-8src/main/java/entity/generateid/NhanVienGeneratorId.java,0\0\007723a2d74bd78dace111c9ba1642ca2564243c
 V
 &src/main/java/entity/PhieuDatHang.java,d\2\d254e1f80945dec6bda351f4dc50ce733cc166b2
-k
-;src/main/java/entity/generateid/TheLoaiSachGeneratorId.java,d\4\d45febec7065b5f48f9b41572f4f35207d07d4cd
 U
 %src/main/java/entity/TheLoaiSach.java,4\c\4cdfa12c303edd4db86a116ce0d3a61de12852c3
 T
 $src/main/java/entity/NhaXuatBan.java,7\3\73c6719aa89559a06b716b2f6b2631b409a64f59
-g
-7src/main/java/entity/generateid/SanPhamGeneratorId.java,5\b\5b49147d17651561ed1226cba1069c78389dd0bf
 N
 src/main/java/entity/Sach.java,a\7\a72e848804e5ba266c2501b65d31c2d9feed8798
-l
-<src/main/java/entity/generateid/PhieuDatHangGeneratorId.java,8\5\8576ef0f8a329b867c17b45645cdf52217ccc1d6
-j
-:src/main/java/entity/generateid/NhaXuatBanGeneratorId.java,8\0\804825be9398bf318c24f5a9aa0181dbfb75ec57
-j
-:src/main/java/entity/generateid/NhaCungCapGeneratorId.java,2\b\2ba87e9ace6f36efdc949f483b9d8a7a447d8814
-i
-9src/main/java/entity/generateid/KhachHangGeneratorId.java,a\5\a55c06d0cbc01b4d4fe6d6eecf8ad202a3bee13b
 V
 &src/main/java/entity/DungCuHocTap.java,3\6\36cceb20acf0da366aa8d24f693f28230c57315a
 \
@@ -119,3 +103,9 @@ P
  src/test/java/test/TestSach.java,9\d\9df12b64b1473349d69ab2d7df047969c63416f9
 O
 src/main/java/dao/Sach_DAO.java,8\8\88ead751392a4476508bd14d9b8171b460621282
+P
+ src/test/java/test/TestDcht.java,0\0\003f3ec9281a7728a5e2089b97b8679b51c21bab
+]
+-src/main/java/dao/impl/DungCuHocTap_Impl.java,b\6\b63992828cd3e3cb12c239c79350083211fd5fc5
+W
+'src/main/java/dao/DungCuHocTap_DAO.java,3\2\32149cf1aa0373f5215b5f33727f3c66acbb238e

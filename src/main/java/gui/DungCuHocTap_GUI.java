@@ -46,7 +46,6 @@ import entity.DungCuHocTap;
 import entity.NhaCungCap;
 import entity.NhanVien;
 import entity.SanPham;
-import entity.generateid.DungCuHocTapGeneratorId;
 
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
@@ -88,19 +87,13 @@ public class DungCuHocTap_GUI extends JPanel {
 	private JButton btnXuatFile;
 	private JButton btnKhoiPhuc;
 	private XSSFWorkbook wordkbook;
-	private DungCuHocTapGeneratorId phatSinhMa_DAO;
 
-	/**
-	 * Create the panel.
-	 * @throws RemoteException 
-	 */
 	public DungCuHocTap_GUI(NhanVien nhanVien) throws RemoteException {
 
 		// khai bao DAO
 		sanPham_DAO = new SanPham_DAO();
 		nhaCC_DAO = new NhaCungCap_DAO();
 		dungCuHocTap_DAO = new DungCuHocTap_DAO();
-		phatSinhMa_DAO = new DungCuHocTapGeneratorId();
 		
 		ds = new ArrayList<DungCuHocTap>();
 
@@ -208,7 +201,6 @@ public class DungCuHocTap_GUI extends JPanel {
 					btnDelete.setText("Hủy");
 					btnUpdate.setEnabled(false);
 					openText();
-					txtmaDCHT.setText(phatSinhMa_DAO.generate(null, null).toString());
 				} else {
 					int tb = JOptionPane.showConfirmDialog(null, "Bạn có muốn thêm dụng cụ học tập?", "Delete",
 							JOptionPane.YES_NO_OPTION);
@@ -1030,7 +1022,6 @@ public class DungCuHocTap_GUI extends JPanel {
 					JOptionPane.showMessageDialog(null, "Dữ liệu không phù hợp!");
 				} else {
 					DungCuHocTap dungCuHocTap = new DungCuHocTap();
-					dungCuHocTap.setMaSanPham(phatSinhMa_DAO.generate(null, null).toString());
 					dungCuHocTap.setTenSanPham(txttenDCHT.getText());
 					dungCuHocTap.setXuatXu(txtXuatXu.getText());
 					dungCuHocTap.setGiaNhap(Float.parseFloat(txtgiaNhap.getText()));

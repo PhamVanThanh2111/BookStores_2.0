@@ -1,7 +1,0 @@
-
-›
-java:S1488"ZImmediately return this expression instead of assigning it to the temporary variable "ma".(›íşÿÿÿÿJ$ba4b8c53-d5bc-43b6-a9e3-1bdf6f85a74c
-
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(’Æ’J$743a9988-8020-4089-a8f0-1857638631bb
-‡
-java:S2095"KUse try-with-resources or close this "EntityManager" in a "finally" clause.(’Æ’J$5dd13636-ec1e-4779-afc9-6dd7528222a0

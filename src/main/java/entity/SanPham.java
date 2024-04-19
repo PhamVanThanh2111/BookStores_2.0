@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.util.Set;
 
 import jakarta.persistence.*;
-
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 @Entity
 @Table(name = "SanPham")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -17,6 +18,11 @@ public abstract class SanPham implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(generator = "SP-generator")
+	@GenericGenerator(name = "SP-generator", parameters = {
+			@Parameter(name = "isSanPham", value = "true"),
+			@Parameter(name = "numberFormat", value = "%05d")},
+			strategy = "entity.generateid.MyGenerator")
 	@Column(name = "maSanPham", columnDefinition = "nvarchar(10)")
 	protected String maSanPham;
 

@@ -95,7 +95,6 @@ public class HeThongQuanLyNhaSach extends JFrame {
 	private DungCuHocTap_DAO dungCuHocTap_DAO;
 	
 	public HeThongQuanLyNhaSach(NhanVien nhanVien) throws SQLException, RemoteException {
-
 		// initialization variable DAO
 		nhanVien_DAO = new NhanVien_DAO();
 		phieuDatHang_DAO = new PhieuDatHang_DAO();

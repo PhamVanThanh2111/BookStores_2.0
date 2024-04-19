@@ -1,9 +1,8 @@
 
 „
 java:S1710
-"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿ8èÑĞşî1J$a0e43aae-698f-4c4e-8e0d-d3a353d3747d
-]	java:S125Y"<This block of commented-out lines of code should be removed.(°èò¡úÿÿÿÿ8ÇÚéÿî1
-d
-java:S1128"GRemove this unused import 'org.hibernate.annotations.GenericGenerator'.(ƒİŸÉ8ÈÚéÿî1
-]
-java:S1128"@Remove this unused import 'org.hibernate.annotations.Parameter'.(”Œ€å8ÈÚéÿî1
+"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿ8èÑĞşî1J$48376bc1-7e28-4867-810f-511885dbf688
+Š
+java:S1128"GRemove this unused import 'org.hibernate.annotations.GenericGenerator'.(ƒİŸÉ8ÈÚéÿî1J$01f62253-18cb-497c-9172-aaa3734cf549
+ƒ
+java:S1128"@Remove this unused import 'org.hibernate.annotations.Parameter'.(”Œ€å8ÈÚéÿî1J$3d5d361c-d1c8-4de8-83dc-2a49de6fb1b4
