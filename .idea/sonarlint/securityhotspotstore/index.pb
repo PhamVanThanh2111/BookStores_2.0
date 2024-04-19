@@ -109,3 +109,11 @@ P
 -src/main/java/dao/impl/DungCuHocTap_Impl.java,b\6\b63992828cd3e3cb12c239c79350083211fd5fc5
 W
 'src/main/java/dao/DungCuHocTap_DAO.java,3\2\32149cf1aa0373f5215b5f33727f3c66acbb238e
+P
+ src/main/java/Server/Server.java,1\4\148de37c495bc1c22d5de3a69967777a598264e1
+P
+ src/main/java/client/Client.java,c\5\c5c2abc05e75daf87e5d896f0c1528ea106af1a0
+Y
+)src/main/java/gui/DanhSachHoaDon_GUI.java,9\b\9b67590b97edb10cc994ee75840c3973035acaf6
+M
+src/main/java/dao/Ca_DAO.java,9\1\91d476a2dca4c7b4f6c0937a93dddb6b094cf18f

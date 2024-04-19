@@ -1,0 +1,31 @@
+
+У	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(аЁ▓▌8Ыё╘ня1J$ca10465f-f881-410f-ae69-85fe018d284f
+У	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ЇЦ╜л8Ыё╘ня1J$d29383f5-fa1b-4e75-a78f-ee377d13749b
+У	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·┐вЎ8Ыё╘ня1J$a7bf5716-5fa6-4767-b60d-feb21e670b6e
+Ш	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ё┼Нў∙    8Ыё╘ня1J$892132f2-1710-4efc-b5e2-0b870ffb9984
+У	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Л╥Ь└8Ыё╘ня1J$6420d036-52ad-4ded-80d6-40ba53e40649
+В
+java:S1854"?Remove this useless assignment to local variable "sanPham_DAO".(Л╥Ь└8её╘ня1J$ecdebc43-694e-4d26-bfce-16ccff810d52
+Н
+java:S1854"ERemove this useless assignment to local variable "chiTietHoaDon_DAO".(ё┼Нў∙    8её╘ня1J$470090bd-6179-4443-99a3-a9bf6fa56e8d
+Г
+java:S1854"@Remove this useless assignment to local variable "nhanVien_DAO".(·┐вЎ8её╘ня1J$cf4e8c1f-98e4-4cee-835e-b7b2ea24d8cb
+Д
+java:S1854"ARemove this useless assignment to local variable "khachHang_DAO".(ЇЦ╜л8её╘ня1J$e6eba154-901b-497a-b987-7c79203aa439
+Г	java:S125"<This block of commented-out lines of code should be removed.(ёе∙Ъ°    8зё╘ня1J$cab81261-2f4a-4532-8c85-0cacb3cab9b1
+u
+java:S1481"2Remove this unused "khachHang_DAO" local variable.(ЇЦ╜л8кё╘ня1J$90e236d1-0003-4532-b433-3d51cebbe1c4
+t
+java:S1481"1Remove this unused "nhanVien_DAO" local variable.(·┐вЎ8кё╘ня1J$3ba8a622-5fdd-4ec6-ba5d-4ec2b958a925
+~
+java:S1481"6Remove this unused "chiTietHoaDon_DAO" local variable.(ё┼Нў∙    8лё╘ня1J$8e3b6235-8e46-4d21-9195-5d72c1f3e2be
+s
+java:S1481"0Remove this unused "sanPham_DAO" local variable.(Л╥Ь└8лё╘ня1J$35e4e121-1af7-4985-9024-d07c23c2fa11
+m	java:S106""+Replace this use of System.out by a logger.(ялся8мё╘ня1J$7a2e38ef-e624-4dfb-9629-56727f7f7210
+z
+java:S1128"2Remove this unused import 'javax.swing.UIManager'.(є╖┬Ю√    8пё╘ня1J$6e404bad-77c6-42e8-8784-a32a13a457fa
+К
+java:S1128
+"GRemove this unused import 'com.formdev.flatlaf.themes.FlatMacLightLaf'.(ёг╨■8пё╘ня1J$eb0cd6de-7755-44b3-8b0f-6a01f355dac3
+}
+java:S1128"5Remove this unused import 'gui.HeThongQuanLyNhaSach'.(╙№▄т√    8пё╘ня1J$b8a41932-45d0-4dcd-9256-4671a65fd63e
