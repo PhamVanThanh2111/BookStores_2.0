@@ -67,10 +67,10 @@ n	java:S117Ñ	"QRename this local variable to match the regular expression '^[a
 s	java:S117¸"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó“ûÿÿÿÿ8Ø˜Ş¶ï1
 F
 java:S1604³"(Make this anonymous inner class a lambda(¤¼ÚÑ8Œ™Ş¶ï1
-•
-java:S2095o"MUse try-with-resources or close this "ExecutorService" in a "finally" clause.(ÒÀîìüÿÿÿÿ8şşÿ³ï1J$c741f30a-c514-4729-a0ca-e9fbc5c2aa89
 p
 java:S2095Ã"MUse try-with-resources or close this "ExecutorService" in a "finally" clause.(ÒÀîìüÿÿÿÿ8Ñ›Ş¶ï1
+•
+java:S2095o"MUse try-with-resources or close this "ExecutorService" in a "finally" clause.(ÒÀîìüÿÿÿÿ8şşÿ³ï1J$c741f30a-c514-4729-a0ca-e9fbc5c2aa89
 ¤	java:S116G"]Rename this field "danhSachHoaDon_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢±’”úÿÿÿÿ8“Õµÿí1J$a30992a9-98f6-4c19-971a-ec5d1d16d620
  	java:S116H"^Rename this field "danhSachDatHang_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ¥«ô8”Õµÿí1J$3b25c238-b276-4f98-8cc7-f98e0b93d07f
 ˜	java:S116I"VRename this field "thongKe_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Òş˜8”Õµÿí1J$ea209a63-e1be-4124-9fac-29c2600e6792

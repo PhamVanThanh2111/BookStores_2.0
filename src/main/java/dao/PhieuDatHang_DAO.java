@@ -27,16 +27,16 @@ public class PhieuDatHang_DAO extends UnicastRemoteObject implements PhieuDatHan
 	}
 
 	@Override
-	public boolean lapPhieuDatHang(PhieuDatHang phieuDatHang) throws RemoteException {
+	public PhieuDatHang lapPhieuDatHang(PhieuDatHang phieuDatHang) throws RemoteException {
 		try {
 			em.getTransaction().begin();
 			em.persist(phieuDatHang);
 			em.getTransaction().commit();
-			return true;
+			return phieuDatHang;
 		} catch (Exception e) {
 			e.printStackTrace();
 			em.getTransaction().rollback();
-			return false;
+			return null;
 		}
 	}
 

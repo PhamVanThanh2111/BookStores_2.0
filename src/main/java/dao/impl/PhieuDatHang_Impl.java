@@ -14,7 +14,7 @@ public interface PhieuDatHang_Impl extends Remote {
 	public PhieuDatHang getPhieuDatHangTheoMa(String maPhieuDatHang) throws RemoteException;
 	
 	// them hoa don
-	public boolean lapPhieuDatHang(PhieuDatHang phieuDatHang) throws RemoteException;
+	public PhieuDatHang lapPhieuDatHang(PhieuDatHang phieuDatHang) throws RemoteException;
 
 	// xoa phieu dat hang
 	public boolean xoaPhieuDatHangTheoMa(String maPhieuDatHang) throws RemoteException;

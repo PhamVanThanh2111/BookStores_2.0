@@ -21,16 +21,16 @@ public class TaiKhoan_DAO extends UnicastRemoteObject implements TaiKhoan_Impl {
 	}
 	
 	@Override
-	public boolean themTaiKhoan(TaiKhoan tk) throws RemoteException {
+	public TaiKhoan themTaiKhoan(TaiKhoan tk) throws RemoteException {
 		try {
 			em.getTransaction().begin();
 			em.persist(tk);
 			em.getTransaction().commit();
-			return true;
+			return tk;
 		} catch (Exception e) {
 			e.printStackTrace();
 			em.getTransaction().rollback();
-			return false;
+			return null;
 		}
 	}
 

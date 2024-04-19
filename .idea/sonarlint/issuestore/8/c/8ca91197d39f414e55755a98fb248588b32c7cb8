@@ -1,10 +1,10 @@
 
 Š
-java:S1192;"HDefine a constant instead of duplicating this literal "ngaylap" 3 times.(»¯~8‚–ÿßî1J$6914e00c-2210-4f09-b3ed-b6aac4d0a60e
-	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.( ¢ÁÆ8íáÁ«ï1J$0d2afe73-0824-4bb0-ba2f-9b41cde945d6
+java:S1192:"HDefine a constant instead of duplicating this literal "ngaylap" 3 times.(»¯~8‚–ÿßî1J$715293c6-c8db-4168-b9f2-29ae1b2d61b2
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.( ¢ÁÆ8íáÁ«ï1J$6922a10a-c8fc-42bd-920d-c28c8e0619d8
 ”
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8¶–ÿßî1J$d3567641-1993-4c96-8ac0-f1eb26ebcd36
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8¶–ÿßî1J$024dba3f-4f59-4a84-8d4a-5d73be89a9b8
 n
-java:S2160"+Override the "equals" method in this class.( ¢ÁÆ8ÆâÁ«ï1J$f0ea4bf6-7717-43c6-a6e1-7c52abdaf67d
+java:S2160"+Override the "equals" method in this class.( ¢ÁÆ8ÆâÁ«ï1J$95f2636f-423e-4199-848f-d85d20d906c0
 l
-java:S1948"$Make "em" transient or serializable.(‘æ¿Úúÿÿÿÿ8ÊâÁ«ï1J$229ab7b2-d332-4d5d-8898-8ffb381ce2f6
+java:S1948"$Make "em" transient or serializable.(‘æ¿Úúÿÿÿÿ8ÊâÁ«ï1J$00c9140d-76d5-4ebc-bfe2-d612f418fd14

@@ -7,7 +7,7 @@ import java.util.List;
 import entity.TaiKhoan;
 
 public interface TaiKhoan_Impl extends Remote {
-	public boolean themTaiKhoan(TaiKhoan tk) throws RemoteException;
+	public TaiKhoan themTaiKhoan(TaiKhoan tk) throws RemoteException;
 
 	public boolean xoaTaiKhoan(String maTaiKhoan) throws RemoteException;
 

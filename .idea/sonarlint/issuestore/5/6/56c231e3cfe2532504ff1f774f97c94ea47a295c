@@ -59,11 +59,11 @@ java:S1604Ë"(Make this anonymous inner class a lambda(ğÕşÅJ$baf3ac39-2257-4af
 „
 java:S2184¯"BCast one of the operands of this addition operation to a "double".(ÑØÕúÿÿÿÿJ$3f138c41-249f-42cc-aca2-4700dac579e6
 
-java:S2259Ş"MA "NullPointerException" could be thrown; "timKiemSach_GUI" is nullable here.(ÚøåğıÿÿÿÿJ$9535d032-fbae-4709-ae18-75fa46e03683
-
 java:S2259Õ"MA "NullPointerException" could be thrown; "timKiemSach_GUI" is nullable here.(ÚøåğıÿÿÿÿJ$599f2033-98c1-48c8-9655-f565ebd92352
 
 java:S2259¢"NA "NullPointerException" could be thrown; "khoiPhucSach_GUI" is nullable here.(ËÆßîøÿÿÿÿJ$2a0088f8-1213-453b-bba9-eaa2b5c29a70
+
+java:S2259Ş"MA "NullPointerException" could be thrown; "timKiemSach_GUI" is nullable here.(ÚøåğıÿÿÿÿJ$9535d032-fbae-4709-ae18-75fa46e03683
 ”	java:S116c"YRename this field "nhaXuatBan_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏÏ²üJ$f53c57b5-8507-4f24-9d3b-90f1766a27cb
 •	java:S116d"ZRename this field "theLoaiSach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³‹Œ™J$0fd882f0-8260-4651-844d-caf04e135a90
 “	java:S116e"SRename this field "sach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ò¤äÿÿÿÿÿJ$1112a66a-8d58-4ec3-b6bf-221fedf993ce
