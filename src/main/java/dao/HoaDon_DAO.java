@@ -31,18 +31,17 @@ public class HoaDon_DAO extends UnicastRemoteObject implements HoaDon_Impl {
     }
 
     @Override
-    public boolean themHoaDon(HoaDon hoaDon) throws RemoteException {
-        boolean result = false;
+    public HoaDon themHoaDon(HoaDon hoaDon) throws RemoteException {
         try {
             em.getTransaction().begin();
             em.persist(hoaDon);
             em.getTransaction().commit();
-            result = true;
+            return hoaDon;
         } catch (Exception e) {
             em.getTransaction().rollback();
             e.printStackTrace();
         }
-        return result;
+        return null;
     }
 
     @Override

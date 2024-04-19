@@ -13,7 +13,7 @@ public interface HoaDon_Impl extends Remote {
     //lay hoa don theo ma
     public HoaDon getHoaDonTheoMa(String maHoaDon) throws RemoteException;
     //them hoa don
-    public boolean themHoaDon(HoaDon hoaDon) throws RemoteException;
+    public HoaDon themHoaDon(HoaDon hoaDon) throws RemoteException;
     // get danh sach hoa don cua nhan vien theo ngay
     public List<HoaDon> getHoaDonTheoNhanVienNgayHienTai(String maNhanVien) throws RemoteException;
     // get danh sach hoa don theo ngay

@@ -51,9 +51,9 @@ java:S2184φ"BCast one of the operands of this addition operation to a "double"
 •
 java:S2259"QA "NullPointerException" could be thrown; "timKiemDungCuHoctap" is nullable here.(ίτ‹8Π»Ξ¶ο1J$0a05ca90-470e-4665-97af-76004609a620
 •
-java:S2259Η"LA "NullPointerException" could be thrown; "khoiPhucDuLieu" is nullable here.(‹¨–ÿÿÿÿÿ8Π»Ξ¶ο1J$28f2eff2-e64c-4889-824c-690798c4eb23
-•
 java:S2259„"QA "NullPointerException" could be thrown; "timKiemDungCuHoctap" is nullable here.(ίτ‹8Π»Ξ¶ο1J$e935c91d-b921-4d29-b4c1-25bf3e9d7543
+•
+java:S2259Η"LA "NullPointerException" could be thrown; "khoiPhucDuLieu" is nullable here.(‹¨–ÿÿÿÿÿ8Π»Ξ¶ο1J$28f2eff2-e64c-4889-824c-690798c4eb23
 	java:S116T"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(΄ΊξΏώÿÿÿÿ8Τ»Ξ¶ο1J$232f744f-c487-43d4-91d4-576e41a2ed81
 –	java:S116U"TRename this field "nhaCC_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒΈ8Τ»Ξ¶ο1J$2af627cd-4685-4d90-88f4-12b6441d9ca1
 	java:S116V"[Rename this field "dungCuHocTap_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—π­Φ8Τ»Ξ¶ο1J$49f40715-297b-4432-a934-aabc09d81361

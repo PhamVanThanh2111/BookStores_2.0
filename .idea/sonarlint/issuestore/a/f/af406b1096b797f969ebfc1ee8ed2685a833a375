@@ -1,48 +1,64 @@
 
 
-java:S2293Ê"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŠÕÎ£8üÈŒáî1J$495c48ae-9a21-4724-90d4-8f1817e63693
+java:S2293Ì"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŠÕÎ£8üÈŒáî1J$8600325d-a8e7-42a3-b142-7e0e61fa9a31
 
-java:S1192Z"HDefine a constant instead of duplicating this literal "Tahoma" 16 times.(Ìå¡Øüÿÿÿÿ8ıÈŒáî1J$f9fc3af0-ade9-41c8-95c0-81f02e6c3038
+java:S1192\"HDefine a constant instead of duplicating this literal "Tahoma" 16 times.(Ìå¡Øüÿÿÿÿ8ıÈŒáî1J$b6fd3357-1975-4696-9515-b44ebab8f48f
 k
-java:S1604µ"(Make this anonymous inner class a lambda(©ŞøR8ÿÈŒáî1J$92782bf7-7f12-4bb3-9b68-ab0f3de5c973
+java:S1604·"(Make this anonymous inner class a lambda(©ŞøR8ÿÈŒáî1J$e4cd8c58-fead-449f-8aae-0e535eae1eb0
 q
-java:S1604Ç"(Make this anonymous inner class a lambda(¢œûÿÿÿÿ8ÿÈŒáî1J$2e0fa9f4-ba0d-4a9f-ba26-51bf53c795cb
-	java:S101/"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(‘‰Ø8‚ÉŒáî1J$f77341a7-083c-4abd-9d7e-fbbd8a872330
-¢	java:S116="[Rename this field "phieuDatHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô¾Ñïøÿÿÿÿ8ÉÉŒáî1J$8f039f19-da40-434a-8c44-fe38bda8b5b6
-©	java:S116>"bRename this field "chiTietPhieuDatHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™ºî¤ÿÿÿÿÿ8ÊÉŒáî1J$120a1ed0-d0e2-419c-9ebf-f46a20b4d40d
-—	java:S116?"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ê‹”8ÊÉŒáî1J$1196ab7a-a97c-40e6-8a6e-6f7a3b00faa4
-	java:S116@"\Rename this field "chiTietHoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆáĞ—8ÊÉŒáî1J$5475c469-1ce9-41c1-9cbf-dc95940b7336
-˜	java:S116A"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë„ûÕ8ÊÉŒáî1J$5bab9623-b6d4-4f79-a3e2-21710e7755d9
+java:S1604É"(Make this anonymous inner class a lambda(¢œûÿÿÿÿ8ÿÈŒáî1J$6affad84-cc2f-4033-8227-75a2ef2540ae
+	java:S1012"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(‘‰Ø8‚ÉŒáî1J$ea432648-98a1-4b9a-aa19-e2de68cceb46
+¢	java:S116="[Rename this field "phieuDatHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûĞ¸öşÿÿÿÿ8ÉÉŒáî1J$e0a1f670-0810-4042-b0fc-ca382ca3f075
+©	java:S116>"bRename this field "chiTietPhieuDatHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›çîËúÿÿÿÿ8ÊÉŒáî1J$3bbd5c30-bd31-4e9b-8f66-361094e4039e
+œ	java:S116?"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡¾® ÿÿÿÿÿ8ÊÉŒáî1J$bc13671a-1fed-4527-9b00-8cf656825fd2
+	java:S116@"\Rename this field "chiTietHoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø³¬·8ÊÉŒáî1J$185ce25f-98db-4a73-8145-3d95be7492d9
+	java:S116A"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´ºî¿şÿÿÿÿ8ÊÉŒáî1J$c5e7f1ea-37b8-49c8-8c1f-21bae6e8b10c
 ‡
-java:S16594"DDeclare "lblTien" and all following declarations on a separate line.(‰›ıû8ÑÉŒáî1J$47262ad4-a801-4c01-bdc1-d88683ecac88
+java:S16594"DDeclare "lblTien" and all following declarations on a separate line.(‰›ıû8ÑÉŒáî1J$95cac367-d500-41af-92c0-2b2434cb51c3
 l
-java:S16595"$Declare "btnXoa" on a separate line.(³µ«Éùÿÿÿÿ8ÑÉŒáî1J$57d5f35b-016d-4fe3-938d-92319063bfe1
+java:S16595"$Declare "btnXoa" on a separate line.(³µ«Éùÿÿÿÿ8ÑÉŒáî1J$b5c4afa6-df1b-409b-9297-eada8fee0382
+z
+java:S1948="2Make "phieuDatHang_DAO" transient or serializable.(ûĞ¸öşÿÿÿÿ8­Ã¢¸ï1J$3366759d-ee38-4db6-9c40-603cb327ed4d
+
+java:S1948>"9Make "chiTietPhieuDatHang_DAO" transient or serializable.(›çîËúÿÿÿÿ8­Ã¢¸ï1J$dbb92a98-9044-46af-8f57-fda2455c7965
+t
+java:S1948?",Make "hoaDon_DAO" transient or serializable.(‡¾® ÿÿÿÿÿ8®Ã¢¸ï1J$34db5928-ba0d-45aa-ae67-9bb86f63af28
+v
+java:S1948@"3Make "chiTietHoaDon_DAO" transient or serializable.(ø³¬·8®Ã¢¸ï1J$22029552-531c-4500-8564-b1fa6c08e1f0
+u
+java:S1948A"-Make "sanPham_DAO" transient or serializable.(´ºî¿şÿÿÿÿ8®Ã¢¸ï1J$ec70adb5-5614-4c32-b518-c3abe7f5f521
 š
-java:S1149Ê"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(ŠÕÎ£8ÖÉŒáî1J$b2195b20-02a6-4ed2-aa4f-a3661d52e975
+java:S1149Ì"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(ŠÕÎ£8ÖÉŒáî1J$8993ad88-dffc-4586-a027-628e0ec5ee35
 r
-java:S1197e"*Move the array designators [] to the type.(·å÷—ıÿÿÿÿ8àÉŒáî1J$944728fa-07b5-40c8-bc87-dc24e600c1d5
+java:S1197g"*Move the array designators [] to the type.(·å÷—ıÿÿÿÿ8àÉŒáî1J$7e1dbee9-32c7-4cde-9dd8-6b2148fbeb3f
 z
-java:S1135w"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8èÉŒáî1J$0a592913-bb9b-4aa7-b5f1-76cfa6481cd6
+java:S1135y"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8èÉŒáî1J$7bf99f85-4082-44e7-a004-89f3056a47a4
 z
-java:S1135}"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8éÉŒáî1J$e9fe91a4-ca4f-4a96-803c-4b0aae0e4dc9
+java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8éÉŒáî1J$7deeb2d9-ce93-493c-bb43-08faa741f9a0
 {
-java:S1135ƒ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8éÉŒáî1J$e74379e3-ff08-4b1b-9941-9485764fafe8
+java:S1135…"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8éÉŒáî1J$8bdef3f0-9870-4137-975a-c04f481cdadf
 {
-java:S1135‰"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8éÉŒáî1J$30e7c6fe-b421-43c2-bec2-12a9e15fb9ad
+java:S1135‹"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8éÉŒáî1J$ce948918-d384-4a62-94e0-73e5464f3dc1
 Š
-java:S3252§"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿ8ïÉŒáî1J$b25a2c24-1004-421e-9d3f-a5c41c5d4f2f
+java:S3252©"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿ8ïÉŒáî1J$49317535-50ad-4c11-a05f-deb5a0ae825a
 n
-java:S1197™"*Move the array designators [] to the type.(Áúî8üÉŒáî1J$fcf3d188-d1da-4519-b5be-5c5d7fc11a42
+java:S1197›"*Move the array designators [] to the type.(Áúî8üÉŒáî1J$c8c81246-b3b5-4925-8f5e-245ddec02745
 {
-java:S1135«"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ÿÉŒáî1J$8b7524da-78e7-40d6-b87d-268b5229c8bd
+java:S1135­"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ÿÉŒáî1J$12be7d06-5e9e-4751-8b6f-1e401ecb5a70
 {
-java:S1135±"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ÊŒáî1J$c10f38ef-4549-4fc9-9cd7-05cbbec3a39b
+java:S1135³"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ÊŒáî1J$ed569324-d94a-4e36-a176-bacce39c6388
 {
-java:S1135·"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ÊŒáî1J$d4fbeb95-1179-45b7-8e31-c39b8c6a49e9
+java:S1135¹"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ÊŒáî1J$8d744570-c296-47c9-bc6d-1f0c7e6184f5
 {
-java:S1135½"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8‚ÊŒáî1J$0a1976b0-67ed-429f-bdc2-d8ef8d386460
+java:S1135¿"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8‚ÊŒáî1J$fd92edae-3fb0-4a08-8a13-b0779d2f7933
 {
-java:S1135Ã"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8‚ÊŒáî1J$3f077896-4d24-4090-b06a-09a6c2e84463
+java:S1135Å"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8‚ÊŒáî1J$c305bd1e-3914-4a9f-8f07-1e5d1dfb6a1e
 Š
-java:S3252Î"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿ8„ÊŒáî1J$1548a283-0968-4025-ade3-482bfd5d11d3
-	java:S125»"<This block of commented-out lines of code should be removed.(ƒŞòÎ8­§Ï£ï1J$ec718270-2633-4d83-b7cd-9f69a790c3b4
+java:S3252Ğ"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿ8„ÊŒáî1J$965d15ff-dc8b-4c44-abce-af5afa5e9070
+º
+java:S1130ã"qRemove the declaration of thrown exception 'java.rmi.RemoteException', as it cannot be thrown from method's body.(…¤ò•ùÿÿÿÿ8‚Ä¢¸ï1J$48f64db5-3d5a-4326-99e8-a9434b8e97cf
+Å
+java:S1130œ"€Remove the declaration of thrown exception 'net.sf.jasperreports.engine.JRException', as it cannot be thrown from method's body.(©Óó³8ŒÄ¢¸ï1J$bf6d5e03-c20d-452b-8de3-20ae9551d7a3
+²
+java:S1130œ"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(©Óó³8ŒÄ¢¸ï1J$73374247-3088-4657-993a-f1fbd0b340d6
+	java:S125½"<This block of commented-out lines of code should be removed.(ƒŞòÎ8­§Ï£ï1J$e457fa0e-5ba0-4bd4-a62f-816bc9679c34

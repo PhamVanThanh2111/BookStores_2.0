@@ -1,0 +1,32 @@
+
+o
+java:S2293m"YReplace the type specification in this constructor call with the diamond operator ("<>").(Æ€¢Ï
+]
+java:S1192W"GDefine a constant instead of duplicating this literal "Tahoma" 5 times.(©Öêˆ
+K
+java:S1066Á"/Merge this if statement with the enclosing one.(ê®ÇÜþÿÿÿÿ
+K
+java:S1066Æ"/Merge this if statement with the enclosing one.(Ê¿¹¯üÿÿÿÿ
+E
+java:S1066Ë"/Merge this if statement with the enclosing one.(Ëûá
+K
+java:S1066Ð"/Merge this if statement with the enclosing one.(ÜÿÙÈøÿÿÿÿ
+>
+java:S1604D"(Make this anonymous inner class a lambda(Ò…÷Ì
+?
+java:S1604«"(Make this anonymous inner class a lambda(ðÕþÅ
+n	java:S116%"YRename this field "nhaCungCap_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŽÛ·â
+p	java:S116&"[Rename this field "dungCuHocTap_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ð­Ö
+F
+java:S1948%"0Make "nhaCungCap_DAO" transient or serializable.(ŽÛ·â
+H
+java:S1948&"2Make "dungCuHocTap_DAO" transient or serializable.(—ð­Ö
+h
+java:S3776*"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ˆ÷Ÿï
+N
+java:S1135¯"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+i
+java:S3776¼"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(áý…Å
+R	java:S125×"<This block of commented-out lines of code should be removed.(­á‘
+N
+java:S1135á"2Complete the task associated to this TODO comment.(ÕÌ®þÿÿÿÿ
