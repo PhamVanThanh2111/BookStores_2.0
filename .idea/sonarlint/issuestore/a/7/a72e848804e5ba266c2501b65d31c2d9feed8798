@@ -1,3 +1,9 @@
 
-}
-java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿJ$74f39480-7e6b-49e2-8ec2-75805995abcf
+„
+java:S1710
+"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿ8èÑĞşî1J$a0e43aae-698f-4c4e-8e0d-d3a353d3747d
+]	java:S125Y"<This block of commented-out lines of code should be removed.(°èò¡úÿÿÿÿ8ÇÚéÿî1
+d
+java:S1128"GRemove this unused import 'org.hibernate.annotations.GenericGenerator'.(ƒİŸÉ8ÈÚéÿî1
+]
+java:S1128"@Remove this unused import 'org.hibernate.annotations.Parameter'.(”Œ€å8ÈÚéÿî1

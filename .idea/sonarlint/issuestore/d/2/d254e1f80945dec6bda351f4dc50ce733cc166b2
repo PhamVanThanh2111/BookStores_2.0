@@ -1,6 +1,8 @@
 
 }
-java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿJ$d3b40b3f-a985-4992-a843-52f6d6cea5d8
+java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿJ$6d9083dc-abb9-4322-99a7-68b801d5801e
 x
-java:S1874"0Remove this use of "strategy"; it is deprecated.(¦ëæøÿÿÿÿ8šÃ‰î1J$6258d5db-d2f1-41bb-b9c1-c75041152c32
-|	java:S125w"<This block of commented-out lines of code should be removed.(òß¿•üÿÿÿÿJ$b2db3165-c62b-458e-89aa-6c4e29ee1ed1
+java:S1874"0Remove this use of "strategy"; it is deprecated.(É””øÿÿÿÿ8õ«µùî1J$f9f10808-f1c5-4d81-9129-361aa3c7a60f
+|	java:S125{"<This block of commented-out lines of code should be removed.(òß¿•üÿÿÿÿJ$908c7018-c678-4268-8b57-e1a327e65180
+˜
+java:S1128"PRemove this unused import 'entity.generateid.StringPrefixedSequenceIdGenerator'.(Î§ôÿúÿÿÿÿ8ü«µùî1J$60c058bd-14c8-4741-bb0a-577b9e9a1721

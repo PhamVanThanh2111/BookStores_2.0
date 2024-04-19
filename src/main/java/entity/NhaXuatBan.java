@@ -4,9 +4,10 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
+import entity.generateid.StringPrefixedSequenceIdGenerator;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
-
+import org.hibernate.annotations.Parameter;
 @Entity
 @Table(name = "NhaXuatBan")
 @NamedQueries({ @NamedQuery(name = "getAllNhaXuatBan", query = "SELECT nxb FROM NhaXuatBan nxb"),
@@ -17,8 +18,11 @@ public class NhaXuatBan implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "nhaXuatBanGenerator", strategy = "entity.generateid.NhaXuatBanGeneratorId")
-	@GeneratedValue(generator = "nhaXuatBanGenerator")
+	@GeneratedValue(generator = "NXB-generator")
+	@GenericGenerator(name = "NXB-generator", parameters = {
+			@Parameter(name = "prefix", value = "NXB"),
+			@Parameter(name = "numberFormat", value = "%04d")},
+			strategy = "entity.generateid.MyGenerator")
 	@Column(name = "maNhaXuatBan", columnDefinition = "nvarchar(7)")
 	private String maNhaXuatBan;
 

@@ -1,5 +1,7 @@
 
 ~
-java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(Úè³m8çõÖ‰î1J$afa5aff5-0c6e-45f7-bfc9-e322b32f800b
+java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(Úè³m8‚…À÷î1J$cc0a1a2d-905f-415e-8c6b-4712e6d235b6
 x
-java:S1874"0Remove this use of "strategy"; it is deprecated.(Œ—»‹øÿÿÿÿ8ñõÖ‰î1J$b27a24e1-3c8e-47d7-889f-0ecc66f30a15
+java:S1874"0Remove this use of "strategy"; it is deprecated.(É””øÿÿÿÿ8ÊÈ±ùî1J$10fd9799-ce1b-41f2-9753-29318a7ffa78
+˜
+java:S1128"PRemove this unused import 'entity.generateid.StringPrefixedSequenceIdGenerator'.(Î§ôÿúÿÿÿÿ8ĞÈ±ùî1J$74dccdab-1a4f-4cf5-91a5-fab0a1f4348f

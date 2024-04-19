@@ -22,12 +22,11 @@ public class KhachHang implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "test_seq")
-    @GenericGenerator(name = "test_seq", strategy = "entity.generateid.StringPrefixedSequenceIdGenerator", parameters = {
-            @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "KH"),
-            @Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%05d"),
-            @Parameter(name = "optimizer", value = "pooled-hi"), // Sử dụng chiến lược HiLo
-    })
+    @GeneratedValue(generator = "KH-generator")
+    @GenericGenerator(name = "KH-generator", parameters = {
+            @Parameter(name = "prefix", value = "KH"),
+            @Parameter(name = "numberFormat", value = "%05d")},
+            strategy = "entity.generateid.MyGenerator")
     @Column(name = "maKhachHang", columnDefinition = "nvarchar(7)")
     private String maKhachHang;
 

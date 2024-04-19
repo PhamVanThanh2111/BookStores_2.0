@@ -1,0 +1,14 @@
+
+k	java:S117C"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Œ÷Åÿÿÿÿÿ
+k	java:S117d"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Œ÷Åÿÿÿÿÿ
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¢±Š»üÿÿÿÿ
+g
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º
+M
+java:S2589P"7Remove this expression which always evaluates to "true"(ÍÕ’’
+M
+java:S2589q"7Remove this expression which always evaluates to "true"(ÍÕ’’
+F
+java:S2160"+Override the "equals" method in this class.(¢±Š»üÿÿÿÿ
+?
+java:S1948"$Make "em" transient or serializable.(‘æ¿Úúÿÿÿÿ

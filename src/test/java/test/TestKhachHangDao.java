@@ -18,20 +18,24 @@ public class TestKhachHangDao {
     void TestKhachHangDao() throws RemoteException {
         this.khachHang_DAO = new KhachHang_DAO();
     }
+
     @AfterAll
     void close() {
         khachHang_DAO = null;
     }
+
     @Test
-    void testThemKhachHang(){
+    void testThemKhachHang() {
         try {
             KhachHang khachHang = new KhachHang();
             khachHang.setTenKhachHang("Nguyen Van A");
+            System.out.println(khachHang.getMaKhachHang());
             khachHang.setGioiTinh("Nam");
             khachHang.setSoDienThoai("0123456789");
             khachHang.setDiaChi("Ha Noi");
             khachHang_DAO.themKhachHang(khachHang);
-            } catch (RemoteException ex) {
+            System.out.println(khachHang.getMaKhachHang());
+        } catch (RemoteException ex) {
             throw new RuntimeException(ex);
         }
     }
