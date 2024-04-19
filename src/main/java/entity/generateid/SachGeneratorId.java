@@ -8,6 +8,8 @@ import org.hibernate.id.IdentifierGenerator;
 import java.io.Serializable;
 
 public class SachGeneratorId implements IdentifierGenerator {
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public Serializable generate(SharedSessionContractImplementor session, Object object) {
 	    String prefix = "S";

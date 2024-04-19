@@ -11,36 +11,30 @@ import org.hibernate.type.Type;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Properties;
-public class MyGenerator
-        implements IdentifierGenerator, Configurable {
 
-    private String prefix;
-    private String numberFormat;
+public class MyGenerator implements IdentifierGenerator, Configurable {
 
-    @Override
-    public Serializable generate(
-            SharedSessionContractImplementor session, Object obj)
-            throws HibernateException {
-//        System.out.println("MyGenerator.generate()");
-        String query = String.format("select %s from %s",
-                session.getEntityPersister(obj.getClass().getName(), obj)
-                        .getIdentifierPropertyName(),
-                obj.getClass().getSimpleName());
+	private static final long serialVersionUID = 1L;
+	private String prefix;
+	private String numberFormat;
 
-        List<?> ids = session.createQuery(query).getResultList();
+	@Override
+	public Serializable generate(SharedSessionContractImplementor session, Object obj) throws HibernateException {
+		String query = String.format("select %s from %s",
+				session.getEntityPersister(obj.getClass().getName(), obj).getIdentifierPropertyName(),
+				obj.getClass().getSimpleName());
 
-        Long max = ids.stream().map(o -> o.toString().replace(prefix, ""))
-                .mapToLong(Long::parseLong)
-                .max()
-                .orElse(0L);
+		@SuppressWarnings("deprecation")
+		List<?> ids = session.createQuery(query).getResultList();
 
-        return prefix +String.format(numberFormat,  (max + 1));
-    }
+		Long max = ids.stream().map(o -> o.toString().replace(prefix, "")).mapToLong(Long::parseLong).max().orElse(0L);
 
-    @Override
-    public void configure(Type type, Properties properties,
-                          ServiceRegistry serviceRegistry) throws MappingException {
-        prefix = properties.getProperty("prefix");
-        numberFormat = properties.getProperty("numberFormat");
-    }
+		return prefix + String.format(numberFormat, (max + 1));
+	}
+
+	@Override
+	public void configure(Type type, Properties properties, ServiceRegistry serviceRegistry) throws MappingException {
+		prefix = properties.getProperty("prefix");
+		numberFormat = properties.getProperty("numberFormat");
+	}
 }

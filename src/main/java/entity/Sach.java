@@ -3,8 +3,6 @@ package entity;
 import java.io.Serializable;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 @Entity
 @Table(name = "Sach")
 @NamedQueries({

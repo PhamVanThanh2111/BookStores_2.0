@@ -13,7 +13,8 @@ import java.io.Serializable;
 import java.util.Properties;
 
 public class StringPrefixedSequenceIdGenerator extends SequenceStyleGenerator {
-    public static final String VALUE_PREFIX_PARAMETER = "valuePrefix";
+	private static final long serialVersionUID = 1L;
+	public static final String VALUE_PREFIX_PARAMETER = "valuePrefix";
     public static final String VALUE_PREFIX_DEFAULT = "";
     private String valuePrefix;
 

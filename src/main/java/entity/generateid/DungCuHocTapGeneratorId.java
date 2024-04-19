@@ -1,9 +1,6 @@
 package entity.generateid;
 
 import java.io.Serializable;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.IdentifierGenerator;
@@ -12,6 +9,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
 public class DungCuHocTapGeneratorId implements IdentifierGenerator {
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public Serializable generate(SharedSessionContractImplementor session, Object object) {
 	    String prefix = "DCHT";
