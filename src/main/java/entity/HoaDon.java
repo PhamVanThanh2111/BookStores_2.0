@@ -5,7 +5,6 @@ import java.sql.Date;
 import java.util.Objects;
 import java.util.Set;
 
-import entity.generateid.StringPrefixedSequenceIdGenerator;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 

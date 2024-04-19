@@ -13,12 +13,11 @@ import org.hibernate.type.Type;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Properties;
-public class MyGenerator
-        implements IdentifierGenerator, Configurable {
+
+public class MyGenerator implements IdentifierGenerator, Configurable {
 
     private String prefix;
     private String numberFormat;
-
     private boolean isSanPham = false;
 
     @Override
@@ -34,14 +33,14 @@ public class MyGenerator
                 obj.getClass().getSimpleName());
 
         List<?> ids = session.createQuery(query).getResultList();
-
         Long max = ids.stream().map(o -> o.toString().replace(prefix, ""))
                 .mapToLong(Long::parseLong)
                 .max()
                 .orElse(0L);
 
-        return prefix +String.format(numberFormat,  (max + 1));
+        return prefix + String.format(numberFormat, (max + 1));
     }
+
     private Serializable generateSanPham(
             SharedSessionContractImplementor session, Object obj)
             throws HibernateException {
@@ -52,24 +51,25 @@ public class MyGenerator
 
         List<?> ids = session.createQuery(query).getResultList();
         String prefixSp;
-        if(obj instanceof Sach){
+        if (obj instanceof Sach) {
             prefixSp = "S";
             Long max = ids.stream().map(o -> o.toString().replace(prefixSp, ""))
                     .mapToLong(Long::parseLong)
                     .max()
                     .orElse(0L);
 
-            return prefixSp +String.format(numberFormat,  (max + 1));
-        }else {
+            return prefixSp + String.format(numberFormat, (max + 1));
+        } else {
             prefixSp = "DCHT";
             Long max = ids.stream().map(o -> o.toString().replace(prefixSp, ""))
                     .mapToLong(Long::parseLong)
                     .max()
                     .orElse(0L);
 
-            return prefixSp +String.format(numberFormat,  (max + 1));
+            return prefixSp + String.format(numberFormat, (max + 1));
         }
     }
+
     @Override
     public void configure(Type type, Properties properties,
                           ServiceRegistry serviceRegistry) throws MappingException {

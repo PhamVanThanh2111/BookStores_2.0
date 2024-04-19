@@ -3,7 +3,6 @@ package entity;
 import java.io.Serializable;
 import java.util.Objects;
 
-import entity.generateid.StringPrefixedSequenceIdGenerator;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;

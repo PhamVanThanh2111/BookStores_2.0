@@ -200,15 +200,20 @@ public class DanhSachDatHang_GUI extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				try {
-					int option = JOptionPane.showConfirmDialog(null, "Bạn có chắc muốn lập hóa đơn?", "Lập hóa đơn", JOptionPane.YES_NO_OPTION);
-					if (option == JOptionPane.YES_OPTION) {
-						lapHoaDon();
-					}
-				} catch (JRException | RemoteException | SQLException e1) {
-					e1.printStackTrace();
+				int row = tableDSPD.getSelectedRow();
+				if (row == -1) {
+					JOptionPane.showMessageDialog(null, "Bạn chưa chọn phiếu đặt hàng!");
 				}
-				
+				else {
+					try {
+						int option = JOptionPane.showConfirmDialog(null, "Bạn có chắc muốn lập hóa đơn?", "Lập hóa đơn", JOptionPane.YES_NO_OPTION);
+						if (option == JOptionPane.YES_OPTION) {
+							lapHoaDon();
+						}
+					} catch (JRException | RemoteException | SQLException e1) {
+						e1.printStackTrace();
+					}
+				}
 			}
 		});
 		pDanhSachDatHang.add(btnLapHD);
@@ -373,6 +378,11 @@ public class DanhSachDatHang_GUI extends JPanel {
 	
 	public void refresh() throws RemoteException {
 		loadData(phieuDatHang_DAO.getAllPhieuDatHang());
+		modelCTPD.setRowCount(0);
+		lblMaPhieuDatHangValue.setText("");
+		lblTenKhachHang.setText("");
+		lblSDThoai.setText("");
+		lblTenNhanVien.setText("");
 	}
 	
 	private boolean delete() throws RemoteException {
@@ -430,7 +440,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 			
 			// xóa phiếu đặt hàng
 			phieuDatHang_DAO.xoaPhieuDatHangTheoMa(phieuDatHang.getMaPhieuDatHang());
-			xuatHoaDon(hoaDon.getMaHoaDon());
+//			xuatHoaDon(hoaDon.getMaHoaDon());
 			JOptionPane.showMessageDialog(null, "Lập hóa đơn thành công!");
 			refresh();
 			return true;
@@ -441,8 +451,9 @@ public class DanhSachDatHang_GUI extends JPanel {
 		}
 	}
 	
+	
+	@SuppressWarnings("unused")
 	private void xuatHoaDon(String ma)  {
-		
 		try {
 			Hashtable<String, Object> map = new Hashtable<String, Object>();
 			JasperReport  jasperReport = JasperCompileManager.compileReport("src/report/hoaDonNV_report.jrxml");
