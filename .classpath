@@ -27,9 +27,8 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
-			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -38,24 +37,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="library/commons-beanutils-1.9.4.jar"/>
-	<classpathentry kind="lib" path="library/commons-collections-3.2.2.jar"/>
-	<classpathentry kind="lib" path="library/commons-collections4-4.2.jar"/>
-	<classpathentry kind="lib" path="library/commons-compress-1.24.0.jar"/>
-	<classpathentry kind="lib" path="library/commons-digester-2.1.jar"/>
-	<classpathentry kind="lib" path="library/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="library/flatlaf-3.2.1.jar"/>
-	<classpathentry kind="lib" path="library/groovy-all-2.0.8.jar"/>
-	<classpathentry kind="lib" path="library/itext-2.1.7.jar"/>
-	<classpathentry kind="lib" path="library/itextpdf-5.5.13.jar"/>
-	<classpathentry kind="lib" path="library/jasperreports-6.21.0.jar"/>
 	<classpathentry kind="lib" path="library/jasperreports-6.21.2.jar"/>
 	<classpathentry kind="lib" path="library/jcalendar-1.4.jar"/>
-	<classpathentry kind="lib" path="library/jcommon-1.0.23.jar"/>
 	<classpathentry kind="lib" path="library/jfreechart-1.0.19.jar"/>
-	<classpathentry kind="lib" path="library/jiconfont-font_awesome-4.7.0.0.jar"/>
-	<classpathentry kind="lib" path="library/jiconfont-swing-1.0.1.jar"/>
-	<classpathentry kind="lib" path="library/xmlbeans-3.0.2.jar"/>
 	<classpathentry kind="src" path="target/generated-sources/annotations">
 		<attributes>
 			<attribute name="ignore_optional_problems" value="true"/>
@@ -64,16 +49,17 @@
 			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
-		<attributes>
-			<attribute name="ignore_optional_problems" value="true"/>
-			<attribute name="test" value="true"/>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="m2e-apt" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="library/jcommon-1.0.23.jar"/>
 	<classpathentry kind="lib" path="library/poi-4.0.1.jar"/>
 	<classpathentry kind="lib" path="library/poi-ooxml-4.0.1.jar"/>
+	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="ignore_optional_problems" value="true"/>
+			<attribute name="m2e-apt" value="true"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
