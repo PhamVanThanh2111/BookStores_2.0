@@ -2,7 +2,7 @@ package dao;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
+import java.util.List;
 
 import dao.impl.TaiKhoan_Impl;
 import entity.TaiKhoan;
@@ -67,8 +67,7 @@ public class TaiKhoan_DAO extends UnicastRemoteObject implements TaiKhoan_Impl {
 	}
 
 	@Override
-	public ArrayList<TaiKhoan_Impl> getDanhSachTaiKhoan() throws RemoteException {
-		// TODO Auto-generated method stub
+	public List<TaiKhoan> getDanhSachTaiKhoan() throws RemoteException {
 		return null;
 	}
 
@@ -80,6 +79,11 @@ public class TaiKhoan_DAO extends UnicastRemoteObject implements TaiKhoan_Impl {
 	@Override
 	public String getMatKhauTheoMaNhanVien(String ma) throws RemoteException {
 		return em.find(TaiKhoan.class, ma).getMatKhau();
+	}
+
+	@Override
+	public String getTaiKhoanMoiNhat() throws RemoteException {
+		return em.createNamedQuery("getTaiKhoanMoiNhat", String.class).getSingleResult();
 	}
 	
 }

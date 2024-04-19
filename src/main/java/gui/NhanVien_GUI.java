@@ -11,7 +11,6 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.rmi.RemoteException;
 import java.sql.Date;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,9 +47,6 @@ import entity.TaiKhoan;
 import javax.swing.JDesktopPane;
 
 public class NhanVien_GUI extends JPanel {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JDateChooser dateChooserNgaySinh;
 	private JTextField txtDiaChi;
