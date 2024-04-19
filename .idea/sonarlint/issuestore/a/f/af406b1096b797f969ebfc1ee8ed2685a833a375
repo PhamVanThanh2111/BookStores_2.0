@@ -1,67 +1,48 @@
 
 w
-java:S2293Ρ"YReplace the type specification in this constructor call with the diamond operator ("<>").(ΥΞ£8όΘαξ1
+java:S2293Κ"YReplace the type specification in this constructor call with the diamond operator ("<>").(ΥΞ£8όΘαξ1
 j
-java:S1192l"HDefine a constant instead of duplicating this literal "Tahoma" 16 times.(Με΅Ψόÿÿÿÿ8ύΘαξ1
+java:S1192Z"HDefine a constant instead of duplicating this literal "Tahoma" 16 times.(Με΅Ψόÿÿÿÿ8ύΘαξ1
 E
-java:S1604Η"(Make this anonymous inner class a lambda(©ήψR8ÿΘαξ1
+java:S1604µ"(Make this anonymous inner class a lambda(©ήψR8ÿΘαξ1
 K
-java:S1604Ω"(Make this anonymous inner class a lambda(Άϋÿÿÿÿ8ÿΘαξ1
-i	java:S1015"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(‘‰Ψ8‚Ιαξ1
-|	java:S116B"[Rename this field "phieuDatHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ΤΎΡοψÿÿÿÿ8ΙΙαξ1
-ƒ	java:S116C"bRename this field "chiTietPhieuDatHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™Ίξ¤ÿÿÿÿÿ8ΚΙαξ1
-t	java:S116D"SRename this field "sach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( έμΡψÿÿÿÿ8ΚΙαξ1
-w	java:S116E"[Rename this field "dungCuHocTap_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ΜΊωΥ8ΚΙαξ1
-q	java:S116F"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Άκ‹”8ΚΙαξ1
-x	java:S116G"\Rename this field "chiTietHoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(αΠ—8ΚΙαξ1
-s	java:S116H"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ΞΚ’Α8ΚΙαξ1
-y	java:S116I"XRename this field "khachHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(χΝψÿÿÿÿ8ΚΙαξ1
-r	java:S116J"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(λ„ϋΥ8ΚΙαξ1
+java:S1604Η"(Make this anonymous inner class a lambda(Άϋÿÿÿÿ8ÿΘαξ1
+i	java:S101/"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(‘‰Ψ8‚Ιαξ1
+|	java:S116="[Rename this field "phieuDatHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ΤΎΡοψÿÿÿÿ8ΙΙαξ1
+ƒ	java:S116>"bRename this field "chiTietPhieuDatHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™Ίξ¤ÿÿÿÿÿ8ΚΙαξ1
+q	java:S116?"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Άκ‹”8ΚΙαξ1
+x	java:S116@"\Rename this field "chiTietHoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(αΠ—8ΚΙαξ1
+r	java:S116A"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(λ„ϋΥ8ΚΙαξ1
 a
-java:S1659:"DDeclare "lblTien" and all following declarations on a separate line.(‰›ύϋ8ΡΙαξ1
+java:S16594"DDeclare "lblTien" and all following declarations on a separate line.(‰›ύϋ8ΡΙαξ1
 F
-java:S1659;"$Declare "btnXoa" on a separate line.(³µ«Ιωÿÿÿÿ8ΡΙαξ1
-I
-java:S1948F",Make "hoaDon_DAO" transient or serializable.(Άκ‹”8ΣΙαξ1
-P
-java:S1948G"3Make "chiTietHoaDon_DAO" transient or serializable.(αΠ—8ΣΙαξ1
-Q
-java:S1948I"/Make "khachHang_DAO" transient or serializable.(χΝψÿÿÿÿ8ΣΙαξ1
+java:S16595"$Declare "btnXoa" on a separate line.(³µ«Ιωÿÿÿÿ8ΡΙαξ1
 t
-java:S1149Ρ"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(ΥΞ£8ΦΙαξ1
+java:S1149Κ"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(ΥΞ£8ΦΙαξ1
 L
-java:S1197w"*Move the array designators [] to the type.(·εχ—ύÿÿÿÿ8ΰΙαξ1
+java:S1197e"*Move the array designators [] to the type.(·εχ—ύÿÿÿÿ8ΰΙαξ1
+T
+java:S1135w"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8θΙαξ1
+T
+java:S1135}"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8ιΙαξ1
 U
-java:S1135‰"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8θΙαξ1
+java:S1135ƒ"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8ιΙαξ1
 U
-java:S1135"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8ιΙαξ1
-U
-java:S1135•"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8ιΙαξ1
-U
-java:S1135›"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8ιΙαξ1
+java:S1135‰"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8ιΙαξ1
 d
-java:S3252Ή"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™Πÿÿÿÿÿ8οΙαξ1
+java:S3252§"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™Πÿÿÿÿÿ8οΙαξ1
 H
-java:S1197¦"*Move the array designators [] to the type.(Αϊξ8όΙαξ1
+java:S1197™"*Move the array designators [] to the type.(Αϊξ8όΙαξ1
 U
-java:S1135Έ"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8ÿΙαξ1
+java:S1135«"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8ÿΙαξ1
 U
-java:S1135Ύ"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8Καξ1
+java:S1135±"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8Καξ1
 U
-java:S1135Δ"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8Καξ1
+java:S1135·"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8Καξ1
 U
-java:S1135Κ"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8‚Καξ1
+java:S1135½"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8‚Καξ1
 U
-java:S1135Π"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8‚Καξ1
+java:S1135Γ"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8‚Καξ1
 d
-java:S3252Ϋ"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™Πÿÿÿÿÿ8„Καξ1
-”
-java:S1130ξ"qRemove the declaration of thrown exception 'java.rmi.RemoteException', as it cannot be thrown from method's body.(…¤ς•ωÿÿÿÿ8Καξ1
-N
-java:S1068D",Remove this unused "sach_DAO" private field.( έμΡψÿÿÿÿ8Καξ1
-Q
-java:S1068E"4Remove this unused "dungCuHocTap_DAO" private field.(ΜΊωΥ8Καξ1
-M
-java:S1068H"0Remove this unused "nhanVien_DAO" private field.(ΞΚ’Α8Καξ1
-S
-java:S1068I"1Remove this unused "khachHang_DAO" private field.(χΝψÿÿÿÿ8Καξ1
+java:S3252Ξ"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™Πÿÿÿÿÿ8„Καξ1
+Y	java:S125»"<This block of commented-out lines of code should be removed.(ƒήςΞ8­§Ο£ο1

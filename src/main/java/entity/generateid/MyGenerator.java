@@ -1,6 +1,5 @@
 package entity.generateid;
 
-import entity.KhachHang;
 import entity.Sach;
 import org.hibernate.HibernateException;
 import org.hibernate.MappingException;

@@ -1,10 +1,6 @@
 
 d
-java:S1192<"HDefine a constant instead of duplicating this literal "ngaylap" 3 times.(»¯~8‚–ÿßî1
-h	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(½×ë<8…–ÿßî1
+java:S11929"HDefine a constant instead of duplicating this literal "ngaylap" 3 times.(»¯~8‚–ÿßî1
+h	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(½×ë<8…–ÿßî1
 n
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8¶–ÿßî1
-‚
-java:S1128"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª8—şßî1J$0373c42e-48ef-4254-9f44-50884443177c
-s
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8—şßî1J$53cb7921-92d6-4796-ba51-dba4b730f965
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8¶–ÿßî1
