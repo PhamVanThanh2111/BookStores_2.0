@@ -62,5 +62,10 @@
 			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="library/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="library/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="library/commons-beanutils-1.9.4.jar"/>
+	<classpathentry kind="lib" path="library/commons-collections4-4.2.jar"/>
+	<classpathentry kind="lib" path="library/commons-compress-1.24.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
