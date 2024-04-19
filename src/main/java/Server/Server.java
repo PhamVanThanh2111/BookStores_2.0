@@ -1,40 +1,13 @@
 package Server;
 
-import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
+import dao.*;
+import dao.impl.*;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-
-import dao.Ca_DAO;
-import dao.ChiTietHoaDon_DAO;
-import dao.ChiTietPhieuDatHang_DAO;
-import dao.DungCuHocTap_DAO;
-import dao.HoaDon_DAO;
-import dao.KhachHang_DAO;
-import dao.NhaCungCap_DAO;
-import dao.NhaXuatBan_DAO;
-import dao.NhanVien_DAO;
-import dao.PhieuDatHang_DAO;
-import dao.Sach_DAO;
-import dao.SanPham_DAO;
-import dao.TaiKhoan_DAO;
-import dao.TheLoaiSach_DAO;
-import dao.impl.Ca_Impl;
-import dao.impl.ChiTietHoaDon_Impl;
-import dao.impl.ChiTietPhieuDatHangImpl;
-import dao.impl.DungCuHocTap_Impl;
-import dao.impl.HoaDon_Impl;
-import dao.impl.KhachHang_Impl;
-import dao.impl.NhaCungCap_Impl;
-import dao.impl.NhaXuatBan_Impl;
-import dao.impl.NhanVien_Impl;
-import dao.impl.PhieuDatHang_Impl;
-import dao.impl.Sach_Impl;
-import dao.impl.SanPham_Impl;
-import dao.impl.TaiKhoan_Impl;
-import dao.impl.TheLoaiSach_Impl;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
 
 public class Server {
 	

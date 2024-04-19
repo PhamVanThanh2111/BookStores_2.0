@@ -113,8 +113,6 @@ Y
 )src/main/java/gui/DanhSachHoaDon_GUI.java,9\b\9b67590b97edb10cc994ee75840c3973035acaf6
 M
 src/main/java/dao/Ca_DAO.java,9\1\91d476a2dca4c7b4f6c0937a93dddb6b094cf18f
-P
- src/main/java/client/Client.java,c\5\c5c2abc05e75daf87e5d896f0c1528ea106af1a0
 Y
 )src/main/java/dao/impl/TaiKhoan_Impl.java,7\f\7fb90b1315480df6f2c36f08edaf8e297ff105ab
 S
@@ -133,3 +131,5 @@ W
 'src/main/java/gui/DungCuHocTap_GUI.java,2\6\2687f9d89cf6a0c727f9ed96867f77a61ee9f4b5
 _
 /src/main/java/gui/KhoiPhucDungCuHocTap_GUI.java,4\b\4b1f9f604f80bc34ab834481e32bc79b8630c278
+5
+0.iml,f\9\f9c6adb033b9498b402d2a3ddcafb60d8455d0c3
