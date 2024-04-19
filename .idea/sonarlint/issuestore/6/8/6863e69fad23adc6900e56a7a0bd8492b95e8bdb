@@ -1,4 +1,6 @@
 
+{
+java:S2293Q"YReplace the type specification in this constructor call with the diamond operator ("<>").(¬ü˜øÿÿÿÿ8ÛÀ´²ï1
 ”	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ù˜Œüûÿÿÿÿ8Ä¹òƒî1J$86869001-dc68-471f-9508-ecd80eea4f86
 ”
 java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8Î¹òƒî1J$e006f92c-64ce-4bd8-ba7e-4a7f1c19d40a
@@ -6,7 +8,3 @@ s
 java:S2160"+Override the "equals" method in this class.(Ù˜Œüûÿÿÿÿ8Ï¹òƒî1J$f007cce4-583e-48d3-aa12-7326d10c69db
 l
 java:S1948"$Make "em" transient or serializable.(‘æ¿Úúÿÿÿÿ8Ñ¹òƒî1J$b390a523-4f1c-4b99-9638-adf1d0fe60ea
-k
-java:S1128"(Remove this unused import 'entity.Sach'.(ÙÛÈÜ8›°÷ƒî1J$cf0f5568-49ae-47d0-bbbe-a61f4ccbd88d
-Š
-java:S1128"BRemove this unused import 'jakarta.persistence.EntityTransaction'.(¡«Ä×üÿÿÿÿ8›°÷ƒî1J$9a7c0256-f0cd-4156-be28-90a0a6f87cc3

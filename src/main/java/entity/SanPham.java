@@ -12,7 +12,7 @@ import org.hibernate.annotations.Parameter;
 @NamedQueries({
 	@NamedQuery(name = "getSanPhamTheoTen", query = "SELECT sp FROM SanPham sp WHERE sp.tenSanPham = :tenSanPham"),
 	@NamedQuery(name = "getSanPhamGanHetHang", query = "SELECT sp FROM SanPham sp WHERE sp.soLuongTon <= 10"),
-	@NamedQuery(name = "getSanPhamBanChay", query = "SELECT sp.maSanPham, SUM(cthd.soLuong) as total FROM SanPham sp JOIN sp.chiTietHoaDons cthd GROUP BY sp.maSanPham ORDER BY total DESC"),
+	@NamedQuery(name = "getSanPhamBanChay", query = "SELECT sp.maSanPham, SUM(cthd.soLuong) as total FROM SanPham sp JOIN  sp.chiTietHoaDons cthd GROUP BY sp.maSanPham ORDER BY total DESC"),
 })
 public abstract class SanPham implements Serializable {
 	private static final long serialVersionUID = 1L;

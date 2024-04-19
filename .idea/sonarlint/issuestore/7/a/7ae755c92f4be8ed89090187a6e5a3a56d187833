@@ -1,8 +1,8 @@
 
-
-java:S2095&"KUse try-with-resources or close this "EntityManager" in a "finally" clause.(ì¶Ğ8¦£üßî1J$36a75a95-2895-4d1d-ab9a-707876d3b3e6
 š
 java:S2095%"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(ÛÈşÿÿÿÿ8¦£üßî1J$35321a4a-b368-452d-85e2-7ee89245d76c
+
+java:S2095&"KUse try-with-resources or close this "EntityManager" in a "finally" clause.(ì¶Ğ8¦£üßî1J$36a75a95-2895-4d1d-ab9a-707876d3b3e6
 y
 java:S1854&"6Remove this useless assignment to local variable "em".(ì¶Ğ8®€©¢ï1J$a8ec10b9-b603-4a2a-9869-2ba3cf2e9ce8
 °
@@ -16,6 +16,7 @@ java:S1481&"'Remove this unused "em" local variable.(ì¶Ğ8ç€©¢ï1J$a4b7c3f9-968
 ~	java:S1254"<This block of commented-out lines of code should be removed.(±Õ™á8Î£üßî1J$ad67f066-a86a-45ad-9527-7d19505076a9
 ~	java:S1257"<This block of commented-out lines of code should be removed.(‚îËÒ8í€©¢ï1J$d1f8d0d4-3dd5-4d61-9970-9d544e3290da
 ~	java:S125@"<This block of commented-out lines of code should be removed.( †øˆ8î€©¢ï1J$9d0bb695-366e-4652-adc3-77841feab53a
+]	java:S125D"<This block of commented-out lines of code should be removed.(Òä„ùÿÿÿÿ8·šá²ï1
 m
 java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8Û£üßî1J$10fbf26f-9a89-4b1b-bbdf-c399b7c4e1fd
 r

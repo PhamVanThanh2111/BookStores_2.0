@@ -1,0 +1,23 @@
+
+h	java:S112°"FDefine and throw a dedicated exception instead of using a generic one.(¼ÿ¾¹ÿÿÿÿÿ8«€›²ï1
+
+java:S1192b"FDefine a constant instead of duplicating this literal "Arial" 3 times.(±ïÉ‘şÿÿÿÿ8²”²ï1J$8a0ee636-73d7-4178-94fe-cd39fecba3ae
+”	java:S117«"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß£€×8³”²ï1J$7f85ce8a-5f75-4b34-9464-b9694a7ce8d4
+”	java:S117ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÜé²8‹Î—²ï1J$64b3f441-7b5c-439e-b929-e692b608a1ca
+k
+java:S1604T"(Make this anonymous inner class a lambda(¥á¸È8´”²ï1J$5c026643-67ab-4b34-8ea1-fcbfa04fba74
+q
+java:S1604¥"(Make this anonymous inner class a lambda(ÔÀƒÊúÿÿÿÿ8´”²ï1J$fcea1776-9105-40c7-8073-7c454733f6a3
+	java:S101!"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(”¢Æä8µ”²ï1J$d5255da3-55c7-4aa2-a8ef-8d63ae714cec
+™	java:S116."WRename this field "taiKhoan_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©‚â†8Î”²ï1J$7f173638-ca12-449f-9c0c-68f37cc6fd6a
+	java:S116/"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â·åğùÿÿÿÿ8Î”²ï1J$52f69139-9261-4acc-83e3-907f5d0c6e17
+q
+java:S1948.".Make "taiKhoan_DAO" transient or serializable.(©‚â†8Ó”²ï1J$33ba0908-3f13-4db9-a03a-c0bc9e858c0f
+v
+java:S1948/".Make "nhanVien_DAO" transient or serializable.(Â·åğùÿÿÿÿ8Ó”²ï1J$977c24fe-8802-4810-b3a2-6088d615a020
+z
+java:S1135X"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8Û”²ï1J$a6e4a2a0-3323-4be5-b448-0b074e15d2aa
+‚
+java:S1481©"9Remove this unused "heThongQuanLyNhaSach" local variable.(Î·ôúÿÿÿÿ8ºÎ—²ï1J$58800bac-88c5-46da-9bad-10f9168ca90f
+…
+java:S1858İ"A"getText" returns a string, there's no need to call "toString()".( ½Ï‘8é”²ï1J$895700f3-f4a5-4fc5-8327-02dc7c15179a

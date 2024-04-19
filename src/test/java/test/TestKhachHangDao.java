@@ -1,8 +1,11 @@
 package test;
 
 import dao.KhachHang_DAO;
+import dao.TaiKhoan_DAO;
 import dao.impl.KhachHang_Impl;
+import dao.impl.TaiKhoan_Impl;
 import entity.KhachHang;
+import entity.TaiKhoan;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -13,15 +16,17 @@ import java.rmi.RemoteException;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TestKhachHangDao {
     private KhachHang_Impl khachHang_DAO;
-
+    private TaiKhoan_Impl taiKhoan_DAO;
     @BeforeAll
     void TestKhachHangDao() throws RemoteException {
         this.khachHang_DAO = new KhachHang_DAO();
+        this.taiKhoan_DAO = new TaiKhoan_DAO();
     }
 
     @AfterAll
     void close() {
         khachHang_DAO = null;
+        taiKhoan_DAO = null;
     }
 
     @Test
@@ -38,5 +43,12 @@ public class TestKhachHangDao {
         } catch (RemoteException ex) {
             throw new RuntimeException(ex);
         }
+    }
+    @Test
+    void themTk() throws RemoteException {
+        TaiKhoan taiKhoan = new TaiKhoan();
+        taiKhoan.setMatKhau("123");
+        taiKhoan_DAO.themTaiKhoan(taiKhoan);
+        System.out.println(taiKhoan.getTaiKhoan());
     }
 }

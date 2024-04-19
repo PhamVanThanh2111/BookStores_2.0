@@ -1,31 +1,16 @@
 
-f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ğ²İ
-f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô–½«
-f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú¿¢ö
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñÅ÷ùÿÿÿÿ
-f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹ÒœÀ
-U
-java:S1854"?Remove this useless assignment to local variable "sanPham_DAO".(‹ÒœÀ
-`
-java:S1854"ERemove this useless assignment to local variable "chiTietHoaDon_DAO".(ñÅ÷ùÿÿÿÿ
-V
-java:S1854"@Remove this useless assignment to local variable "nhanVien_DAO".(ú¿¢ö
-W
-java:S1854"ARemove this useless assignment to local variable "khachHang_DAO".(ô–½«
-V	java:S125"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ
-H
-java:S1481"2Remove this unused "khachHang_DAO" local variable.(ô–½«
-G
-java:S1481"1Remove this unused "nhanVien_DAO" local variable.(ú¿¢ö
-Q
-java:S1481"6Remove this unused "chiTietHoaDon_DAO" local variable.(ñÅ÷ùÿÿÿÿ
-F
-java:S1481"0Remove this unused "sanPham_DAO" local variable.(‹ÒœÀ
-@	java:S106""+Replace this use of System.out by a logger.(Ÿ—•
-M
-java:S1128"2Remove this unused import 'javax.swing.UIManager'.(ó·Âûÿÿÿÿ
-]
-java:S1128
-"GRemove this unused import 'com.formdev.flatlaf.themes.FlatMacLightLaf'.(ñ£Ğş
-P
-java:S1128"5Remove this unused import 'gui.HeThongQuanLyNhaSach'.(ÓüÜâûÿÿÿÿ
+~	java:S125"<This block of commented-out lines of code should be removed.(İáûã8‰“õ²ï1J$70724ac3-94d8-497b-9314-2f12115acc6d
+m	java:S106"+Replace this use of System.err by a logger.(ı×¯Í8‹“õ²ï1J$7a0ef9d9-d821-4090-9eb2-8d413ae40f92
+]	java:S125!"<This block of commented-out lines of code should be removed.(—×è–øÿÿÿÿ8Æ½õ²ï1
+I
+java:S1128",Remove this unused import 'java.rmi.Naming'.(Ü›¾¬8È½õ²ï1
+A
+java:S1128"%Remove this unused import 'dao.impl'.(Ïé³%8È½õ²ï1
+l
+java:S1128"*Remove this unused import 'entity.HoaDon'.(…õ»38ñÅÒ²ï1J$a6dd9dac-aabf-4cce-afe9-57553196fa10
+t
+java:S1128",Remove this unused import 'entity.TaiKhoan'.(Ï±Ê¡üÿÿÿÿ8ñÅÒ²ï1J$8a5e28ef-597f-4382-b9f6-38d5b1e0ed85
+}
+java:S1128"5Remove this unused import 'gui.HeThongQuanLyNhaSach'.(ÓüÜâûÿÿÿÿ8ñÅÒ²ï1J$1a6fb170-4887-4bd4-aef8-8c418826b5fa
+D
+java:S1068"'Remove this unused "URL" private field.(µë¼²8É½õ²ï1

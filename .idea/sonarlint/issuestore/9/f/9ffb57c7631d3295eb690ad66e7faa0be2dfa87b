@@ -1,123 +1,129 @@
 
-|
-java:S1192ì"YDefine a constant instead of duplicating this literal "Dá»¥ng Cá»¥ Há»c Táº­p" 12 times.(üá÷¶øÿÿÿÿ8‹Ñµÿí1
-p
-java:S1192Ç"MDefine a constant instead of duplicating this literal "Loáº¡i SÃ¡ch" 9 times.(ö¾‘úÿÿÿÿ8ŒÑµÿí1
-r
-java:S1192š"TDefine a constant instead of duplicating this literal "DanhSachDatHang_GUI" 3 times.(àŠ„Š8ŒÑµÿí1
-s
-java:S1192í"PDefine a constant instead of duplicating this literal "NhÃ  Cung Cáº¥p" 8 times.(±ø¾ıÿÿÿÿ8Ñµÿí1
-p
-java:S1192£"MDefine a constant instead of duplicating this literal "Thá»‘ng KÃª" 10 times.(£¢Àşÿÿÿÿ8Ñµÿí1
-m
-java:S1192œ"ODefine a constant instead of duplicating this literal "NhaXuatBan_GUI" 4 times.(ÉıÚï8Ñµÿí1
-p
-java:S1192ã"MDefine a constant instead of duplicating this literal "KhÃ¡ch HÃ ng" 5 times.(Éâú¡ÿÿÿÿÿ8Ñµÿí1
-o
-java:S1192«"LDefine a constant instead of duplicating this literal "ThongKe_GUI" 5 times.(åıùÿÿÿÿ8Ñµÿí1
-q
-java:S1192û"NDefine a constant instead of duplicating this literal "KhachHang_GUI" 3 times.(¢ıÙùÿÿÿÿ8Ñµÿí1
-p
-java:S1192È"RDefine a constant instead of duplicating this literal "NhÃ  Xuáº¥t Báº£n" 9 times.(³Ë—˜8Ñµÿí1
-l
-java:S1192"ODefine a constant instead of duplicating this literal "NhaCungCap_GUI" 4 times.(ß®è18Ñµÿí1
-n
-java:S1192 "KDefine a constant instead of duplicating this literal "HoaDon_GUI" 4 times.(Ï©ÿÿÿÿÿ8Ñµÿí1
-o
-java:S1192™"LDefine a constant instead of duplicating this literal "DatHang_GUI" 3 times.(¿›Â£ûÿÿÿÿ8Ñµÿí1
-g
-java:S1192¾"IDefine a constant instead of duplicating this literal "Há»“ SÆ¡" 5 times.(Ú›ÁĞ8Ñµÿí1
-t
-java:S1192ë"QDefine a constant instead of duplicating this literal "DungCuHocTap_GUI" 8 times.(Î¥öõÿÿÿÿÿ8Ñµÿí1
-i
-java:S1192ˆ"KDefine a constant instead of duplicating this literal "HÃ³a ÄÆ¡n" 7 times.(ğª¨å8Ñµÿí1
-n
-java:S1192›"PDefine a constant instead of duplicating this literal "TheLoaiSach_GUI" 4 times.(ÂëÖ¨8‘Ñµÿí1
-y
-java:S1192¢"VDefine a constant instead of duplicating this literal "Danh SÃ¡ch HÃ³a ÄÆ¡n" 4 times.(‰ªàúÿÿÿÿ8‘Ñµÿí1
-i
-java:S1192¹"KDefine a constant instead of duplicating this literal "SansSerif" 11 times.(„‰£›8‘Ñµÿí1
-j
-java:S1192"LDefine a constant instead of duplicating this literal "NhÃ¢n ViÃªn" 7 times.(Êº¸ï8‘Ñµÿí1
-l
-java:S1192–"IDefine a constant instead of duplicating this literal "HoSo_GUI" 3 times.(†àä¶ıÿÿÿÿ8’Ñµÿí1
-v
-java:S1192¥"XDefine a constant instead of duplicating this literal "Danh SÃ¡ch Äáº·t HÃ ng" 8 times.(ğ¤ñë8’Ñµÿí1
-p
-java:S1192¡"MDefine a constant instead of duplicating this literal "NhanVien_GUI" 4 times.(”Öêğÿÿÿÿÿ8’Ñµÿí1
-e
-java:S1192²"GDefine a constant instead of duplicating this literal "Tahoma" 9 times.(Ù¶±‚8“Ñµÿí1
-n
-java:S1192"LDefine a constant instead of duplicating this literal "Trang Chá»§" 8 times.(î‹ã»úÿÿÿÿ8“Ñµÿí1
-k
-java:S1192¤"MDefine a constant instead of duplicating this literal "Äáº·t HÃ ng" 8 times.(¸«í…8”Ñµÿí1
-g
-java:S1192Å"IDefine a constant instead of duplicating this literal "Sach_GUI" 9 times.(Äÿã¨8”Ñµÿí1
-k
-java:S1192Ö"MDefine a constant instead of duplicating this literal "TrangChu_GUI" 4 times.(—ßâó8”Ñµÿí1
-s	java:S117¡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Èßùıÿÿÿÿ8šÑµÿí1
-s	java:S117±"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—§ûÿÿÿÿÿ8›Ñµÿí1
-s	java:S117µ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯—â˜ÿÿÿÿÿ8â‰àî1
-s	java:S117½"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÇÁøÿÿÿÿ8›Ñµÿí1
-n	java:S117Ç	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾°‹ª8œÑµÿí1
-n	java:S117È	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›¨êÀ8œÑµÿí1
-s	java:S117É	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“¿™ùÿÿÿÿ8œÑµÿí1
-n	java:S117Ê	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä¢ª´8œÑµÿí1
-n	java:S117Ë	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ŒÛ•8ã‰àî1
-s	java:S117²"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó“ûÿÿÿÿ8Ñµÿí1
-F
-java:S1604­"(Make this anonymous inner class a lambda(¤¼ÚÑ8¡Ñµÿí1
-p
-java:S2095½"MUse try-with-resources or close this "ExecutorService" in a "finally" clause.(ÒÀîìüÿÿÿÿ8Õµÿí1
-o
-java:S2095r"MUse try-with-resources or close this "ExecutorService" in a "finally" clause.(ÒÀîìüÿÿÿÿ8Õµÿí1
-~	java:S116G"]Rename this field "danhSachHoaDon_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢±’”úÿÿÿÿ8“Õµÿí1
-z	java:S116H"^Rename this field "danhSachDatHang_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ¥«ô8”Õµÿí1
-r	java:S116I"VRename this field "thongKe_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Òş˜8”Õµÿí1
-x	java:S116J"WRename this field "trangChu_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶êÎ§úÿÿÿÿ8”Õµÿí1
-x	java:S116K"WRename this field "nhanVien_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“¾Êûÿÿÿÿ8”Õµÿí1
-t	java:S116L"XRename this field "khachHang_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ú¨Ÿ8”Õµÿí1
-x	java:S116M"\Rename this field "sach_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬‹8•Õµÿí1
-…	java:S116N"dRename this field "dungCuHocTap_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤á¤øÿÿÿÿ8•Õµÿí1
-	java:S116O"^Rename this field "hoaDon_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰»¹øÿÿÿÿ8•Õµÿí1
-}	java:S116P"\Rename this field "hoSo_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş¢ç¬şÿÿÿÿ8•Õµÿí1
-€	java:S116Q"_Rename this field "datHang_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„‚èşÿÿÿÿ8•Õµÿí1
-„	java:S116R"cRename this field "theLoaiSach_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„­­¨ÿÿÿÿÿ8•Õµÿí1
-ƒ	java:S116S"bRename this field "nhaXuatBan_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â·†ùÿÿÿÿ8•Õµÿí1
-ƒ	java:S116T"bRename this field "nhaCungCap_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²Ù¾Éøÿÿÿÿ8•Õµÿí1
-s	java:S116U"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÊ’Á8•Õµÿí1
-|	java:S116V"[Rename this field "phieuDatHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô¾Ñïøÿÿÿÿ8•Õµÿí1
-y	java:S116W"XRename this field "khachHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷˜Íøÿÿÿÿ8–Õµÿí1
-{	java:S116X"ZRename this field "theLoaiSach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†‡«˜ÿÿÿÿÿ8–Õµÿí1
-z	java:S116Y"YRename this field "nhaXuatBan_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œÛÔ‹ÿÿÿÿÿ8–Õµÿí1
-z	java:S116Z"YRename this field "nhaCungCap_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†¤´şÿÿÿÿ8–Õµÿí1
-q	java:S116["URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ê‹”8–Õµÿí1
-t	java:S116\"SRename this field "sach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( İìÑøÿÿÿÿ8–Õµÿí1
-w	java:S116]"[Rename this field "dungCuHocTap_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÌºùÕ8–Õµÿí1
-Q
-java:S1948W"/Make "khachHang_DAO" transient or serializable.(÷˜Íøÿÿÿÿ8¢Õµÿí1
-I
-java:S1948[",Make "hoaDon_DAO" transient or serializable.(¢ê‹”8¢Õµÿí1
-o
-java:S3776e"RRefactor this method to reduce its Cognitive Complexity from 64 to the 15 allowed.(ÏÚ¦ÿ8®Õµÿí1
+¡
+java:S1192é"XDefine a constant instead of duplicating this literal "Dá»¥ng Cá»¥ Há»c Táº­p" 6 times.(üá÷¶øÿÿÿÿ8‹Ñµÿí1J$bca215f4-23f7-4e36-a5d9-4710382d58fb
+–
+java:S1192 "MDefine a constant instead of duplicating this literal "Thá»‘ng KÃª" 10 times.(£¢Àşÿÿÿÿ8Ñµÿí1J$e202650d-8241-4247-a839-18d1121dcefe
+–
+java:S1192à"MDefine a constant instead of duplicating this literal "KhÃ¡ch HÃ ng" 5 times.(Éâú¡ÿÿÿÿÿ8Ñµÿí1J$4aac3fe6-9067-4929-a915-bdbf47527844
+•
+java:S1192¨"LDefine a constant instead of duplicating this literal "ThongKe_GUI" 5 times.(åıùÿÿÿÿ8Ñµÿí1J$1ccd7448-0a63-4b26-8210-d9d8630e66b0
+
+java:S1192»"IDefine a constant instead of duplicating this literal "Há»“ SÆ¡" 5 times.(Ú›ÁĞ8Ñµÿí1J$2b4dbca0-3961-4453-ab72-f32deb7b7cb0
+š
+java:S1192è"QDefine a constant instead of duplicating this literal "DungCuHocTap_GUI" 4 times.(Î¥öõÿÿÿÿÿ8Ñµÿí1J$6ad9ca34-08de-46a5-9270-d49f80c0ccb4
+
+java:S1192…"KDefine a constant instead of duplicating this literal "HÃ³a ÄÆ¡n" 7 times.(ğª¨å8Ñµÿí1J$468c412b-793d-4581-84e8-36ac9a7bc50d
 
-java:S1130e"sRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from constructor's body.(ÏÚ¦ÿ8°Õµÿí1
-k
-java:S3252w"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8ºÕµÿí1
-[
-java:S3252‚"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(®Ğ–8¼Õµÿí1
-n
-java:S1602±",Remove useless curly braces around statement(—§ûÿÿÿÿÿJ$f40c9ed1-c7b1-4313-a89e-3b5e4c0eaca6
-O
-java:S1602½",Remove useless curly braces around statement(ÂÇÁøÿÿÿÿ8ŞÙµÿí1
+java:S1192Š"LDefine a constant instead of duplicating this literal "NhÃ¢n ViÃªn" 7 times.(Êº¸ï8‘Ñµÿí1J$6e54217d-9cea-43f1-ba85-f5780b0a9d3f
+’
+java:S1192“"IDefine a constant instead of duplicating this literal "HoSo_GUI" 3 times.(†àä¶ıÿÿÿÿ8’Ñµÿí1J$aaefc363-4c72-4873-a49c-f167ff0506ea
+‹
+java:S1192¯"GDefine a constant instead of duplicating this literal "Tahoma" 5 times.(Ù¶±‚8“Ñµÿí1J$a1f1d0b5-a6d8-4446-8eef-1095bb3cd44c
+”
+java:S1192|"LDefine a constant instead of duplicating this literal "Trang Chá»§" 7 times.(î‹ã»úÿÿÿÿ8“Ñµÿí1J$4a91b55d-8841-4434-b300-a093f4002d69
+
+java:S1192Â"IDefine a constant instead of duplicating this literal "Sach_GUI" 4 times.(Äÿã¨8”Ñµÿí1J$2fff88f2-38b8-4d7e-a9b7-1edc9b5e4879
+‘
+java:S1192Ó"MDefine a constant instead of duplicating this literal "TrangChu_GUI" 4 times.(—ßâó8”Ñµÿí1J$7e281a0c-b407-4116-a742-b429ae50c6d8
+–
+java:S1192Ä"MDefine a constant instead of duplicating this literal "Loáº¡i SÃ¡ch" 4 times.(ö¾‘úÿÿÿÿ8ŒÑµÿí1J$424af9dd-4395-4a88-8869-6e8919de1ac5
+˜
+java:S1192—"TDefine a constant instead of duplicating this literal "DanhSachDatHang_GUI" 3 times.(àŠ„Š8ŒÑµÿí1J$75aa2dad-d3c9-48f9-8a56-f6e50edf5aae
+™
+java:S1192ê"PDefine a constant instead of duplicating this literal "NhÃ  Cung Cáº¥p" 4 times.(±ø¾ıÿÿÿÿ8Ñµÿí1J$7b5df067-7615-4708-a955-796ab7f36867
+—
+java:S1192ø"NDefine a constant instead of duplicating this literal "KhachHang_GUI" 3 times.(¢ıÙùÿÿÿÿ8Ñµÿí1J$19b37b7d-44c1-4571-997c-68feca7ee80a
+–
+java:S1192Å"RDefine a constant instead of duplicating this literal "NhÃ  Xuáº¥t Báº£n" 4 times.(³Ë—˜8Ñµÿí1J$bc1f2c15-8c60-42ee-a96a-358936895a01
+”
+java:S1192"KDefine a constant instead of duplicating this literal "HoaDon_GUI" 4 times.(Ï©ÿÿÿÿÿ8Ñµÿí1J$0a2c20b0-55b0-418f-8821-2415f50d8d4b
+•
+java:S1192–"LDefine a constant instead of duplicating this literal "DatHang_GUI" 3 times.(¿›Â£ûÿÿÿÿ8Ñµÿí1J$7124be56-f24c-449b-a4e6-a301652b21fe
+Ÿ
+java:S1192Ÿ"VDefine a constant instead of duplicating this literal "Danh SÃ¡ch HÃ³a ÄÆ¡n" 4 times.(‰ªàúÿÿÿÿ8‘Ñµÿí1J$b7f9ff16-702c-4827-8b6c-ab81a35669e7
+
+java:S1192¶"JDefine a constant instead of duplicating this literal "SansSerif" 8 times.(„‰£›8‘Ñµÿí1J$c269d162-1526-4e46-9e85-458c3c1b4f14
+œ
+java:S1192¢"XDefine a constant instead of duplicating this literal "Danh SÃ¡ch Äáº·t HÃ ng" 8 times.(ğ¤ñë8’Ñµÿí1J$1d286c88-b993-4794-92b6-cfa35bf911ad
+–
+java:S1192"MDefine a constant instead of duplicating this literal "NhanVien_GUI" 4 times.(”Öêğÿÿÿÿÿ8’Ñµÿí1J$2bc44f91-68e9-498c-ba17-a35488bf6f80
+‘
+java:S1192¡"MDefine a constant instead of duplicating this literal "Äáº·t HÃ ng" 8 times.(¸«í…8”Ñµÿí1J$2526ceb2-8c7c-486b-8602-f484afd32783
+o
+java:S2095o"MUse try-with-resources or close this "ExecutorService" in a "finally" clause.(ÒÀîìüÿÿÿÿ8Ü‚³ï1
+¤	java:S116G"]Rename this field "danhSachHoaDon_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢±’”úÿÿÿÿ8“Õµÿí1J$4be13172-b6b9-4437-8c90-44ab305e4330
+ 	java:S116H"^Rename this field "danhSachDatHang_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ¥«ô8”Õµÿí1J$62206235-1021-4fba-b20a-bed20bc64aab
+˜	java:S116I"VRename this field "thongKe_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Òş˜8”Õµÿí1J$4e21c109-2dd9-4156-b0a8-3cf49b0e6320
+	java:S116J"WRename this field "trangChu_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶êÎ§úÿÿÿÿ8”Õµÿí1J$d281054d-98e8-4fca-ab7a-d5c5ab5368f9
+	java:S116K"WRename this field "nhanVien_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“¾Êûÿÿÿÿ8”Õµÿí1J$958e3337-ea75-4c51-8d7e-e6e2e75f482d
+š	java:S116L"XRename this field "khachHang_GUI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ú¨Ÿ8”Õµÿí1J$a9d0d1a6-7bdc-4a5f-84f9-b9eafd9ab3ce
+	java:S116M"\Rename this field "sach_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬‹8•Õµÿí1J$1eea9d15-68ac-440e-8729-2f880e03b2fd
+«	java:S116N"dRename this field "dungCuHocTap_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤á¤øÿÿÿÿ8•Õµÿí1J$17fdbc19-7380-477f-8ab0-98a0d7b7f8b6
+¥	java:S116O"^Rename this field "hoaDon_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰»¹øÿÿÿÿ8•Õµÿí1J$afe826fa-3473-4a21-9efc-629d54f4db16
+£	java:S116P"\Rename this field "hoSo_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş¢ç¬şÿÿÿÿ8•Õµÿí1J$de0cab03-a317-4726-880c-88621d324c2a
+¦	java:S116Q"_Rename this field "datHang_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„‚èşÿÿÿÿ8•Õµÿí1J$a59711f3-d9e1-463f-98d8-480883484869
+ª	java:S116R"cRename this field "theLoaiSach_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„­­¨ÿÿÿÿÿ8•Õµÿí1J$efa38e92-a5d8-4aa6-97ad-f3154b58aa8d
+©	java:S116S"bRename this field "nhaXuatBan_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â·†ùÿÿÿÿ8•Õµÿí1J$661eb05a-5845-45e1-9e38-bd6ed32c0aac
+©	java:S116T"bRename this field "nhaCungCap_GUI_NhanVien" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²Ù¾Éøÿÿÿÿ8•Õµÿí1J$c9d0a5fc-c808-4a59-9ce5-50488b28f093
+	java:S116V"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â·åğùÿÿÿÿ8ş¢Î±ï1J$44789b25-f8dc-4b35-9efa-9336fefe29c2
+¢	java:S116W"[Rename this field "phieuDatHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûĞ¸öşÿÿÿÿ8€£Î±ï1J$ff385be6-7061-455b-b773-e65e980273fc
+™	java:S116X"XRename this field "khachHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š’:8‚£Î±ï1J$66a80f07-d544-48cb-9d6b-862c3f276476
+œ	java:S116Y"ZRename this field "theLoaiSach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³‹Œ™8„£Î±ï1J$67f03d97-1b1d-47f9-bbe0-29548c72f76a
+›	java:S116Z"YRename this field "nhaXuatBan_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏÏ²ü8†£Î±ï1J$5b13cc26-b1ff-45b5-af29-eb7387f782d3
+›	java:S116["YRename this field "nhaCungCap_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û·â8ˆ£Î±ï1J$8f18c9b3-6181-418a-b3f3-0e744be98328
+œ	java:S116\"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡¾® ÿÿÿÿÿ8‰£Î±ï1J$426c53aa-6d87-4e45-a018-487e913c085c
+š	java:S116]"SRename this field "sach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ò¤äÿÿÿÿÿ8‹£Î±ï1J$fdc38a7e-4947-4481-91c6-410995a024c2
+	java:S116^"[Rename this field "dungCuHocTap_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ğ­Ö8£Î±ï1J$3644a522-36b4-4a83-a355-5cd81065e907
+v
+java:S1948V".Make "nhanVien_DAO" transient or serializable.(Â·åğùÿÿÿÿ8™£Î±ï1J$bec3b2ab-1985-489b-a705-b79403a3a570
+z
+java:S1948W"2Make "phieuDatHang_DAO" transient or serializable.(ûĞ¸öşÿÿÿÿ8™£Î±ï1J$8f08e682-fc84-4e52-a6ee-96ab745db138
+q
+java:S1948X"/Make "khachHang_DAO" transient or serializable.(š’:8™£Î±ï1J$970ad0eb-de96-4361-964c-a87b6cdbc1e6
+t
+java:S1948Y"1Make "theLoaiSach_DAO" transient or serializable.(³‹Œ™8š£Î±ï1J$334048ff-0ce5-4179-9f8e-a174f099983d
+s
+java:S1948Z"0Make "nhaXuatBan_DAO" transient or serializable.(ÏÏ²ü8š£Î±ï1J$1191f7f4-cbf6-4024-b58e-555afdf33165
+s
+java:S1948["0Make "nhaCungCap_DAO" transient or serializable.(Û·â8œ£Î±ï1J$6400318a-049b-4b68-948f-4fecb817b1cb
+t
+java:S1948\",Make "hoaDon_DAO" transient or serializable.(‡¾® ÿÿÿÿÿ8œ£Î±ï1J$7b9c3b34-7e3e-4a7f-af75-351f4c91a86c
+r
+java:S1948]"*Make "sach_DAO" transient or serializable.(÷Ò¤äÿÿÿÿÿ8œ£Î±ï1J$1a3787e1-4f1f-4bfa-a193-39f3d0eb47a7
 u
-java:S3776Ö"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(ÈâÃŞùÿÿÿÿ8âÙµÿí1
-l
-java:S3252á"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8äÙµÿí1
-[
-java:S3252ì"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(®Ğ–8åÙµÿí1
-J
-java:S1602Ï",Remove useless curly braces around statement(Æ”æÓ8ŠÚµÿí1
-J
-java:S1602Û",Remove useless curly braces around statement( óúæ8‹Úµÿí1
-g	java:S106î"+Replace this use of System.err by a logger.(ı×¯ÍJ$0065e81e-5cf1-401d-afc0-8ef8091960fa
+java:S1948^"2Make "dungCuHocTap_DAO" transient or serializable.(—ğ­Ö8œ£Î±ï1J$f459cd99-1b56-4189-a19c-152f230fcc9c
+•
+java:S3776b"RRefactor this method to reduce its Cognitive Complexity from 44 to the 15 allowed.(«¡¦ğ8Ö£Î±ï1J$4b14edbc-7153-4c8d-a682-c2402d15b1b1
+¶
+java:S1130b"sRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from constructor's body.(«¡¦ğ8ç£Î±ï1J$e2b3010d-33c8-476b-8e06-17768f182bb4
+‘
+java:S3252t"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8ºÕµÿí1J$036a7054-d672-41e8-b3fd-192241c65e63
+€
+java:S3252"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(®Ğ–8¼Õµÿí1J$41fe5cfb-edcd-4384-b21d-6764dba2305e
+	java:S125½"<This block of commented-out lines of code should be removed.(Ôñ¡¢8Èï‡²ï1J$d871baf2-5d4d-4e32-9c8a-f9e4b1787d8c
+	java:S125›"<This block of commented-out lines of code should be removed.(Ôñ¡¢8¨üŠ²ï1J$b6903908-9cc7-4683-b482-03ae3009886e
+X	java:S125–"<This block of commented-out lines of code should be removed.(„±•<8¾ƒ³ï1
+	java:S125Ñ"<This block of commented-out lines of code should be removed.(„˜Éì8ÆÎ³ï1J$e9d620a2-d781-4847-9bf0-bc0ec798c907
+„	java:S125Û"<This block of commented-out lines of code should be removed.(„Ïú³ûÿÿÿÿ8ı™‚²ï1J$775cbd14-8b7b-4a84-be60-bd92720cf8ae
+T
+java:S1128"7Remove this unused import 'java.awt.event.ActionEvent'.(Úù“‘8Ãƒ³ï1
+W
+java:S1128	":Remove this unused import 'java.awt.event.ActionListener'.(Ìä¹8Ãƒ³ï1
+M
+java:S1128"0Remove this unused import 'javax.swing.JButton'.(´ÀÃ“8Ãƒ³ï1
+Q
+java:S1128"4Remove this unused import 'javax.swing.JOptionPane'.(÷‰Îé8Ãƒ³ï1
+s
+java:S1068X"1Remove this unused "khachHang_DAO" private field.(š’:8ëçŒ²ï1J$60d2cf57-c97d-4333-86de-7709f7036c70
+v
+java:S1068Y"3Remove this unused "theLoaiSach_DAO" private field.(³‹Œ™8ëçŒ²ï1J$28906bf3-b622-4c3c-bd0d-3d8bf23df755
+u
+java:S1068Z"2Remove this unused "nhaXuatBan_DAO" private field.(ÏÏ²ü8ëçŒ²ï1J$6e0d5394-8464-49dd-aee2-d4b47bb9fe19
+u
+java:S1068["2Remove this unused "nhaCungCap_DAO" private field.(Û·â8ëçŒ²ï1J$d46bf58e-991b-41b4-be0c-832e5ae7cd6a
+v
+java:S1068\".Remove this unused "hoaDon_DAO" private field.(‡¾® ÿÿÿÿÿ8ëçŒ²ï1J$ae79f244-a9a9-429b-932a-d642bd53bcea
+t
+java:S1068]",Remove this unused "sach_DAO" private field.(÷Ò¤äÿÿÿÿÿ8ëçŒ²ï1J$c3dde9a0-7c1a-4b5f-965f-8d78f1241a15
+w
+java:S1068^"4Remove this unused "dungCuHocTap_DAO" private field.(—ğ­Ö8ëçŒ²ï1J$df8e56ec-037b-4891-a377-bf46a2b481e8
