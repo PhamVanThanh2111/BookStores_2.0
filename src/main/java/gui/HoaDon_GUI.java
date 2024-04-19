@@ -707,12 +707,10 @@ public class HoaDon_GUI extends JPanel {
 	
 	private void lapHoaDon(String maNhanVien) throws SQLException, JRException, RemoteException {
 		HoaDon hoaDon = new HoaDon();
-		if (khachHang != null) {
-			hoaDon.setKhachHang(khachHang);
-		}
-		else {
+		if (khachHang == null) {
 			khachHang = new KhachHang();
 		}
+		hoaDon.setKhachHang(khachHang);
 		hoaDon.setNhanVien(nhanVien_DAO.getNhanVienTheoMa(maNhanVien));
 		hoaDon.setNgayLap(new java.sql.Date(new Date().getTime()));
 		hoaDon.setThanhTien(tinhThanhTien());

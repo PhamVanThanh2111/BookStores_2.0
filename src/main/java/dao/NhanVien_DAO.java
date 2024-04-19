@@ -2,6 +2,7 @@ package dao;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -137,5 +138,24 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 			}
 		});
 		return map;
+	}
+
+	@Override
+	public NhanVien getNhanVienTheoMaHoaDon(String maHoaDon) throws RemoteException {
+		return em.createNamedQuery("getNhanVienTheoMaHoaDon", NhanVien.class)
+				.setParameter("maHoaDon", maHoaDon)
+                .getResultList()
+                .stream()
+                .findFirst()
+                .orElse(null);
+	}
+
+	@Override
+	public double getDoanhThuNhanVienTheoNgay(String maNhanVien, Date ngay) throws RemoteException {
+		Double result = em.createNamedQuery("getDoanhThuNhanVienTheoNgay", Double.class)
+				.setParameter("ngay", ngay)
+				.setParameter("maNhanVien", maNhanVien)
+				.getSingleResult();
+		return result == null ? 0.0 : result;
 	}
 }

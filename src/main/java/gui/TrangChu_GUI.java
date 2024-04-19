@@ -7,6 +7,7 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Font;
 import java.rmi.RemoteException;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -14,6 +15,8 @@ import java.time.format.DateTimeFormatter;
 import javax.swing.border.LineBorder;
 
 import dao.Ca_DAO;
+import dao.HoaDon_DAO;
+import dao.NhanVien_DAO;
 import entity.NhanVien;
 
 import javax.swing.ImageIcon;
@@ -24,12 +27,16 @@ public class TrangChu_GUI extends JPanel {
 	private JLabel lblSoLuongGiaoDichValue;
 	private JLabel lblTongThuValue;
 	private Ca_DAO ca_DAO;
+	private HoaDon_DAO hoaDon_DAO;
+	private NhanVien_DAO nhanVien_DAO;
 	private JLabel lblThoiGianValue;
 	private JLabel lblTieuDe;
 	private NhanVien nhanVien;
 	
 	public TrangChu_GUI(NhanVien nhanVien) throws RemoteException {
 		ca_DAO = new Ca_DAO();
+		nhanVien_DAO = new NhanVien_DAO();
+		hoaDon_DAO = new HoaDon_DAO();
 		this.nhanVien = nhanVien;
 		
 		setLayout(null);
@@ -187,23 +194,19 @@ public class TrangChu_GUI extends JPanel {
 		lblBackGround.setBounds(1010, 110, 267, 590);
 		pnlMain.add(lblBackGround);
 		
-//		lblSoLuongGiaoDichValue.setText(hoaDon_DAO.getListHoaDonTrongNgayTheoMaNhanVien(nhanVien.getMaNhanVien()).size() + "");
+		lblSoLuongGiaoDichValue.setText(hoaDon_DAO.getHoaDonTheoMaNhanVien(nhanVien.getMaNhanVien()).size() + "");
 		
 		lblTongThuValue.setText(tinhDoanhThuNhanVienTrongNgay(nhanVien) + " VND");
 	}
 	
-	private float tinhDoanhThuNhanVienTrongNgay(NhanVien nhanVien) {
-		float doanhThu = 0;
-//		for (HoaDon hoaDon : hoaDon_DAO.getListHoaDonTrongNgayTheoMaNhanVien(nhanVien.getMaNhanVien())) {
-//			doanhThu += hoaDon.getThanhTien();
-//		}
-		return doanhThu;
+	private double tinhDoanhThuNhanVienTrongNgay(NhanVien nhanVien) throws RemoteException {
+		return nhanVien_DAO.getDoanhThuNhanVienTheoNgay(nhanVien.getMaNhanVien(), new Date(new java.util.Date().getTime()));
 	}
 	
 	public void refresh() throws RemoteException {
 		lblThoiGianValue.setText(ca_DAO.getCaTheoMa(nhanVien.getCa().getMaCa()).getThoiGian());
 		lblTieuDe.setText("Chào '" + nhanVien.getTenNhanVien() +"' , Chúc Bạn Ngày Mới Tốt Lành!");
-//		lblSoLuongGiaoDichValue.setText(hoaDon_DAO.getListHoaDonTrongNgayTheoMaNhanVien(nhanVien.getMaNhanVien()).size() + "");
+		lblSoLuongGiaoDichValue.setText(hoaDon_DAO.getHoaDonTheoMaNhanVien(nhanVien.getMaNhanVien()).size() + "");
 		lblTongThuValue.setText(tinhDoanhThuNhanVienTrongNgay(nhanVien) + " VND");
 	}
 }

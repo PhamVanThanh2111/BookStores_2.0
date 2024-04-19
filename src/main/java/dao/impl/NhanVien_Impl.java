@@ -2,6 +2,7 @@ package dao.impl;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -36,6 +37,10 @@ public interface NhanVien_Impl extends Remote {
 	public boolean suaNhanVien(NhanVien nhanVien) throws RemoteException;
 	// get getDoanhThuNhanVien
 	public Map<NhanVien, Double> getDoanhThuNhanVien()throws RemoteException;
+	
 	Map<NhanVien, Integer> getTongHoaDonSoLuongNhanVien() throws RemoteException;
 
+	public NhanVien getNhanVienTheoMaHoaDon(String maHoaDon) throws RemoteException;
+
+	public double getDoanhThuNhanVienTheoNgay(String maNhanVien, Date ngay) throws RemoteException;
 }
