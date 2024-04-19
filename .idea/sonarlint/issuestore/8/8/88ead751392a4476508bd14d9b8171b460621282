@@ -1,14 +1,13 @@
 
-k	java:S117C"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Œ÷Åÿÿÿÿÿ
-k	java:S117d"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Œ÷Åÿÿÿÿÿ
-g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¢±Š»üÿÿÿÿ
-g
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º
-M
-java:S2589P"7Remove this expression which always evaluates to "true"(ÍÕ’’
-M
-java:S2589q"7Remove this expression which always evaluates to "true"(ÍÕ’’
-F
-java:S2160"+Override the "equals" method in this class.(¢±Š»üÿÿÿÿ
-?
-java:S1948"$Make "em" transient or serializable.(‘æ¿Úúÿÿÿÿ
+˜	java:S117f"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Œ÷Åÿÿÿÿÿ8¶Êûµï1J$992bbb4d-e0d4-4755-9cf8-6569f00d2b3a
+”	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¢±Š»üÿÿÿÿ8¸Êûµï1J$8c7cfef2-f941-497e-b1b3-002c96982b6d
+”
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8ÛÊûµï1J$43be5181-f9a2-4d14-8146-137b546c699b
+z
+java:S2589s"7Remove this expression which always evaluates to "true"(ÍÕ’’8ÜÊûµï1J$9d5cbff6-a760-479d-9da5-8504509bba1e
+s
+java:S2160"+Override the "equals" method in this class.(¢±Š»üÿÿÿÿ8ÝÊûµï1J$ad7723cf-f9c1-409c-8589-1d58b40a9814
+l
+java:S1948"$Make "em" transient or serializable.(‘æ¿Úúÿÿÿÿ8ßÊûµï1J$f461d6a6-ca99-493d-8c41-b09d4bbb01b9
+ƒ	java:S125C"<This block of commented-out lines of code should be removed.(Öÿ’‚üÿÿÿÿ8Ý§—¶ï1J$38c34295-eefe-4287-83ab-bb6838021d41
+~	java:S125T"<This block of commented-out lines of code should be removed.(¯‚×¥8‘ÿ–¶ï1J$95fb2a32-3de1-4ab0-bff3-3921878e27c8

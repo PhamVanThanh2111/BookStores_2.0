@@ -38,6 +38,7 @@ public class TestSach {
 		sach_temp.setSoTrang(sach.getSoTrang());
 		sach_temp.setNamXuatBan(sach.getNamXuatBan());
 		sach_temp.setHinhAnh(sach.getHinhAnh());
+        sach_temp.setMaSanPham("XS00013");
         sach_impl.themSach(sach_temp);
         System.out.println(sach_temp.getMaSanPham());
     }

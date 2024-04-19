@@ -1,0 +1,20 @@
+
+e
+java:S1192f"JDefine a constant instead of duplicating this literal "SansSerif" 3 times.(Ì†¸¯ıÿÿÿÿ
+C
+java:S1604i"(Make this anonymous inner class a lambda(ÙÛïıÿÿÿÿ
+=
+java:S1604"(Make this anonymous inner class a lambda(©ŞøR
+?
+java:S1604œ"(Make this anonymous inner class a lambda(Ò…÷Ì
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÿØï·úÿÿÿÿ
+m	java:S116,"SRename this field "sach_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ò¤äÿÿÿÿÿ
+E
+java:S1948,"*Make "sach_DAO" transient or serializable.(÷Ò¤äÿÿÿÿÿ
+h
+java:S3776/"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¤Ë·Ú
+@
+java:S1197A"*Move the array designators [] to the type.(ÿäâ
+\
+java:S3252T"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿ
+E	java:S106p"+Replace this use of System.out by a logger.(±ÉÀÊüÿÿÿÿ

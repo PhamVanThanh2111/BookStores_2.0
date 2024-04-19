@@ -1,0 +1,19 @@
+
+†
+java:S1192I"JDefine a constant instead of duplicating this literal "SansSerif" 4 times.(ËÒ—åJ$85a959ba-c2ce-4d34-8f65-0a7b7b6ac0de
+i
+java:S1604b"(Make this anonymous inner class a lambda(ÙÛïıÿÿÿÿJ$4a259c7f-8a88-4e7d-9679-8e675bbb42e4
+c
+java:S1604x"(Make this anonymous inner class a lambda(©ŞøRJ$1e4a51df-fce3-4f81-8fbc-322ef1177008
+e
+java:S1604”"(Make this anonymous inner class a lambda(Ò…÷ÌJ$1278b166-a6ec-482a-b5ff-afd6ab4c4714
+ˆ	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(”¦®§J$6ba964b9-c593-47a1-9976-e769857f7a89
+–	java:S116("[Rename this field "dungCuHocTap_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ğ­ÖJ$a32a1200-4daf-4970-a544-c92fe1ed614e
+e
+java:S1659$")Declare "btnKhoiPhuc" on a separate line.(ûì¬ÎJ$fbd0a76f-c7dd-4201-a4cb-46dd765b1db1
+n
+java:S1948("2Make "dungCuHocTap_DAO" transient or serializable.(—ğ­ÖJ$54b80a34-9dcb-48ed-971e-79b049118587
+
+java:S3776+"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¿öØşJ$9383eb7e-f622-4bbf-8f3f-672f455cd2bd
+‚
+java:S3252P"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿJ$7bcaf4da-a0c1-4dd6-8c7d-671e55be1f24

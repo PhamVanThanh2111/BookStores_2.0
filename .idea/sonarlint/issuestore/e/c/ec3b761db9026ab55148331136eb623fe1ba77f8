@@ -1,0 +1,19 @@
+
+
+java:S1192b"FDefine a constant instead of duplicating this literal "Arial" 3 times.(±ïÉ‘şÿÿÿÿ8²”²ï1J$c7556e96-21c4-45c2-8dfc-c6c2a3e4ff41
+”	java:S117å"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÜé²8áææ¶ï1J$a0665457-a08f-4805-8bf5-05e4af3b6ed8
+k
+java:S1604T"(Make this anonymous inner class a lambda(¥á¸È8´”²ï1J$3ba4781c-d71c-442f-8553-aab67250a664
+q
+java:S1604¥"(Make this anonymous inner class a lambda(ÔÀƒÊúÿÿÿÿ8´”²ï1J$a8bad0d0-cc21-4c4b-ad2d-6a31a83eb06f
+	java:S101!"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(”¢Æä8µ”²ï1J$e48bfae8-5147-4f1f-9392-080b23cf6029
+™	java:S116."WRename this field "taiKhoan_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©‚â†8Î”²ï1J$bcafd223-0162-4e6d-9522-cdcb7c0c4c97
+	java:S116/"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â·åğùÿÿÿÿ8Î”²ï1J$b11d4d42-9c77-4df9-b3c6-503f6ef7ec2d
+q
+java:S1948.".Make "taiKhoan_DAO" transient or serializable.(©‚â†8Ó”²ï1J$b07faf55-2923-4980-b5f8-42a88800ae67
+v
+java:S1948/".Make "nhanVien_DAO" transient or serializable.(Â·åğùÿÿÿÿ8Ó”²ï1J$61669b4b-c0d4-400d-b9b7-bf9f67140ddb
+z
+java:S1135X"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8Û”²ï1J$39056f58-9b45-45aa-9180-19c28f34364e
+…
+java:S1858Û"A"getText" returns a string, there's no need to call "toString()".( ½Ï‘8é”²ï1J$e795142c-884f-4206-8e36-ab4e0ae2a330
