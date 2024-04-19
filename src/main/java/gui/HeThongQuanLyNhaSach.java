@@ -93,13 +93,7 @@ public class HeThongQuanLyNhaSach extends JFrame {
 	private HoaDon_DAO hoaDon_DAO;
 	private Sach_DAO sach_DAO;
 	private DungCuHocTap_DAO dungCuHocTap_DAO;
-
-	/**
-	 * Create the frame.
-	 * 
-	 * @throws SQLException
-	 * @throws RemoteException 
-	 */
+	
 	public HeThongQuanLyNhaSach(NhanVien nhanVien) throws SQLException, RemoteException {
 
 		// initialization variable DAO
