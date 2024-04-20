@@ -29,12 +29,12 @@ public class Main {
 //		Sach_DAO sach_DAO = new Sach_DAO();
 //		TaiKhoan_DAO taiKhoan_DAO = new TaiKhoan_DAO();
 //		DungCuHocTap_DAO dungCuHocTap_DAO = new DungCuHocTap_DAO();
-		NhanVien_DAO nhanVien_DAO = new NhanVien_DAO();
+//		NhanVien_DAO nhanVien_DAO = new NhanVien_DAO();
 //		KhachHang_DAO khachHang_DAO = new KhachHang_DAO();
-		HoaDon_DAO hoaDon_DAO = new HoaDon_DAO();
+//		HoaDon_DAO hoaDon_DAO = new HoaDon_DAO();
 //		SanPham_DAO sanPham_DAO = new SanPham_DAO();
 		
-//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BookStores MSSQL");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BookStores MSSQL");
 //		EntityManager em = emf.createEntityManager();
 //		emf.close();
 //		System.out.println(phatSinhMa_DAO.getMaSachXoa());
@@ -64,6 +64,6 @@ public class Main {
 //		System.out.println(hoaDon_DAO.getSoLuongSanPhamBanDuocTheoNgay(new Date(new java.util.Date().getTime())));
 //		Map<SanPham, Long> maps = sanPham_DAO.getSanPhamBanChay();
 //		maps.forEach((k, v) -> System.out.println(k.getTenSanPham() + " - " + v));
-		System.out.println(nhanVien_DAO.getNhanVienTheoMaHoaDon("HD00010").getTenNhanVien());;
+//		System.out.println(nhanVien_DAO.getNhanVienTheoMaHoaDon("HD00010").getTenNhanVien());;
 	}
 }
