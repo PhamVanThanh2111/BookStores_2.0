@@ -17,11 +17,9 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 
 	private static final long serialVersionUID = 1L;
 	private EntityManager em;
-	private TaiKhoan_DAO taiKhoan_DAO;
 	
 	public NhanVien_DAO() throws RemoteException {
 		super();
-		taiKhoan_DAO = new TaiKhoan_DAO();
 		em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
 	}
 	
@@ -63,7 +61,7 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 	}
 
 	@Override
-	public boolean themNhanVien(NhanVien nhanVien) throws RemoteException {
+	public NhanVien themNhanVien(NhanVien nhanVien) throws RemoteException {
 		try {
 			TaiKhoan taiKhoan = new TaiKhoan();
 			taiKhoan.setNhanVien(nhanVien);
@@ -72,11 +70,11 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 			em.persist(nhanVien);
 			em.persist(taiKhoan);
 			em.getTransaction().commit();
-			return true;
+			return nhanVien;
 		} catch (Exception e) {
 			e.printStackTrace();
 			em.getTransaction().rollback();
-			return false;
+			return null;
 		}
 	}
 

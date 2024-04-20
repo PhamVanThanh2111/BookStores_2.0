@@ -57,11 +57,11 @@ e
 java:S1604Ë"(Make this anonymous inner class a lambda(ğÕşÅJ$baf3ac39-2257-4af3-8577-6d8a855fe62e
 	java:S1017"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(€ëıÄúÿÿÿÿJ$57e76fbd-d2f2-4b56-887e-306e316f3da5
 „
-java:S2184¯"BCast one of the operands of this addition operation to a "double".(ÑØÕúÿÿÿÿJ$3f138c41-249f-42cc-aca2-4700dac579e6
-
-java:S2259Õ"MA "NullPointerException" could be thrown; "timKiemSach_GUI" is nullable here.(ÚøåğıÿÿÿÿJ$599f2033-98c1-48c8-9655-f565ebd92352
+java:S2184±"BCast one of the operands of this addition operation to a "double".(ÑØÕúÿÿÿÿJ$3f138c41-249f-42cc-aca2-4700dac579e6
 
 java:S2259¢"NA "NullPointerException" could be thrown; "khoiPhucSach_GUI" is nullable here.(ËÆßîøÿÿÿÿJ$2a0088f8-1213-453b-bba9-eaa2b5c29a70
+
+java:S2259Õ"MA "NullPointerException" could be thrown; "timKiemSach_GUI" is nullable here.(ÚøåğıÿÿÿÿJ$599f2033-98c1-48c8-9655-f565ebd92352
 
 java:S2259Ş"MA "NullPointerException" could be thrown; "timKiemSach_GUI" is nullable here.(ÚøåğıÿÿÿÿJ$9535d032-fbae-4709-ae18-75fa46e03683
 ”	java:S116c"YRename this field "nhaXuatBan_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏÏ²üJ$f53c57b5-8507-4f24-9d3b-90f1766a27cb
@@ -160,16 +160,16 @@ java:S1117’	"@Rename "theLoaiSach" which hides the field declared at line 106.(
 ”
 java:S3776˜	"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(ƒ¾ÉûÿÿÿÿJ$077d75f9-2069-4186-b54f-244495cb3e68
 ƒ
-java:S1126ú	"AReplace this if-then-else statement by a single return statement.(„ô«½üÿÿÿÿJ$69ac0f6f-10ca-47b2-8614-b891f4b9ce28
-	java:S125’
+java:S1126û	"AReplace this if-then-else statement by a single return statement.(„ô«½üÿÿÿÿJ$69ac0f6f-10ca-47b2-8614-b891f4b9ce28
+	java:S125“
 "<This block of commented-out lines of code should be removed.(Ê­æ–8Â¤¥´ï1J$66bfc529-3c9a-4762-be7a-9e3b85796aa3
 °
-java:S1130›
+java:S1130œ
 "nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(¹±å¯úÿÿÿÿJ$dec77002-045f-4b13-b48f-3b3d1a88d558
 l
-java:S1905‡"*Remove this unnecessary cast to "XSSFRow".(ñ³€ÍúÿÿÿÿJ$ddcf04f9-8a2a-4619-a44d-5e6727f62c92
+java:S1905‰"*Remove this unnecessary cast to "XSSFRow".(ñ³€ÍúÿÿÿÿJ$ddcf04f9-8a2a-4619-a44d-5e6727f62c92
 l
-java:S1905­"*Remove this unnecessary cast to "XSSFRow".(ñŸ†¢øÿÿÿÿJ$c5ffc2e1-d98f-48b5-8c91-476d98f00060
-x	java:S125ß"<This block of commented-out lines of code should be removed.(Æñ¬­J$759afd69-37c8-401d-a1cf-d0a906d29dd0
-x	java:S125§"<This block of commented-out lines of code should be removed.(ú¨î™J$f69af7f4-1709-4bd9-9839-4fdcbd80dc1e
-x	java:S125¼"<This block of commented-out lines of code should be removed.(’õ—J$6ddc3761-ead3-40f9-9614-eb204b5ca5f2
+java:S1905¯"*Remove this unnecessary cast to "XSSFRow".(ñŸ†¢øÿÿÿÿJ$c5ffc2e1-d98f-48b5-8c91-476d98f00060
+x	java:S125á"<This block of commented-out lines of code should be removed.(Æñ¬­J$759afd69-37c8-401d-a1cf-d0a906d29dd0
+x	java:S125©"<This block of commented-out lines of code should be removed.(ú¨î™J$f69af7f4-1709-4bd9-9839-4fdcbd80dc1e
+x	java:S125¾"<This block of commented-out lines of code should be removed.(’õ—J$6ddc3761-ead3-40f9-9614-eb204b5ca5f2

@@ -5,18 +5,8 @@ java:S1192<"HDefine a constant instead of duplicating this literal "Tahoma" 20 
 ˜	java:S116""QRename this field "ca_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïå©ûÿÿÿÿ8Åëìºï1J$3eb2646d-d5db-428d-b6da-6349ce18ec22
 œ	java:S116#"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡¾® ÿÿÿÿÿ8Åëìºï1J$b4f6d369-f74c-4057-86be-5826e920ea0c
 	java:S116$"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â·åğùÿÿÿÿ8Åëìºï1J$bcb7d2f5-fe37-4b2b-a746-901c9ab64dd9
-p
-java:S1948""(Make "ca_DAO" transient or serializable.(ïå©ûÿÿÿÿ8Êëìºï1J$e267ec24-a763-48af-b4ac-3fd54e400bb4
-t
-java:S1948#",Make "hoaDon_DAO" transient or serializable.(‡¾® ÿÿÿÿÿ8Êëìºï1J$29482274-162b-4002-8f0f-812c0e7e0375
-v
-java:S1948$".Make "nhanVien_DAO" transient or serializable.(Â·åğùÿÿÿÿ8Êëìºï1J$abf6fc41-fc4d-41f2-813f-83d87de6a9a2
 ƒ
 java:S1858Ä"@"format" returns a string, there's no need to call "toString()".(Ñı„\8Ùëìºï1J$77b90fd9-d5cc-4ec6-809b-f6e3406ee665
-…
-java:S1612Ò"AReplace this lambda with method reference 'HoaDon::getThanhTien'.(ÅÙøŸ8ßëìºï1J$10e68592-008a-4bdb-9480-ed65803dec8e
 „	java:S125Ó"<This block of commented-out lines of code should be removed.(…Á•£ıÿÿÿÿ8àëìºï1J$33b66a17-a12c-4ed8-a0d8-06f1b1269a3b
-m
-java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8á­ïºï1J$2f247836-36eb-463c-8b26-89f5d864e8e6
 x
 java:S1068$"0Remove this unused "nhanVien_DAO" private field.(Â·åğùÿÿÿÿ8âëìºï1J$1840b50c-e09e-481c-b580-573da933fa16

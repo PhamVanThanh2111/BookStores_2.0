@@ -50,8 +50,8 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 
 public class HoaDon_GUI extends JPanel {
@@ -707,14 +707,13 @@ public class HoaDon_GUI extends JPanel {
 	
 	private void lapHoaDon(String maNhanVien) throws SQLException, JRException, RemoteException {
 		HoaDon hoaDon = new HoaDon();
-		if (khachHang == null) {
-			khachHang = new KhachHang();
+		if (khachHang != null) {
+			hoaDon.setKhachHang(khachHang);
 		}
-		hoaDon.setKhachHang(khachHang);
 		hoaDon.setNhanVien(nhanVien_DAO.getNhanVienTheoMa(maNhanVien));
-		hoaDon.setNgayLap(new java.sql.Date(new Date().getTime()));
+		hoaDon.setNgayLap(java.sql.Date.valueOf(LocalDate.now()));
 		hoaDon.setThanhTien(tinhThanhTien());
-		hoaDon_DAO.themHoaDon(hoaDon);
+		hoaDon = hoaDon_DAO.themHoaDon(hoaDon);
 		for (int i = 0; i < model.getRowCount(); i++) {
 			SanPham sanPham = sanPham_DAO.getSanPhamTheoTen(model.getValueAt(i, 0).toString());
 			ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
@@ -746,6 +745,7 @@ public class HoaDon_GUI extends JPanel {
 	}
 
 	private void lamMoi() {
+		khachHang = null;
 		txtMaKhachHang.setText("");
 		txtTenKhachHang.setText("");
 		txtSoDienThoai.setText("");

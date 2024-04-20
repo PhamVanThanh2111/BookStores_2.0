@@ -723,13 +723,13 @@ public class DatHang_GUI extends JPanel {
 	
 	private void lapPhieuDatHang(String maNhanVien) throws SQLException, RemoteException {
 		PhieuDatHang phieuDatHang = new PhieuDatHang();
+		if (khachHang != null) {
+			phieuDatHang.setKhachHang(khachHang);
+		}
 		phieuDatHang.setNhanVien(nhanVien_DAO.getNhanVienTheoMa(maNhanVien));
-		phieuDatHang.setKhachHang(khachHang_DAO.getKhachHangTheoMa(txtMaKhachHang.getText()));
 		phieuDatHang.setNgayLap(new java.sql.Date(new Date().getTime()));
 		phieuDatHang.setThanhTien(tinhThanhTien());
-		
 		phieuDatHang_DAO.lapPhieuDatHang(phieuDatHang);
-		
 		for (int i = 0; i < model.getRowCount(); i++) {
 			SanPham sanPham = sanPham_DAO.getSanPhamTheoTen(model.getValueAt(i, 0).toString());
 			ChiTietPhieuDatHang chiTietPhieuDatHang = new ChiTietPhieuDatHang();
@@ -751,6 +751,7 @@ public class DatHang_GUI extends JPanel {
 	}
 	
 	private void lamMoi() {
+		khachHang = null;
 		txtMaKhachHang.setText("");
 		txtTenKhachHang.setText("");
 		txtSoDienThoai.setText("");

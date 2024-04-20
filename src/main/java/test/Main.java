@@ -3,6 +3,7 @@ package test;
 import java.rmi.RemoteException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Map;
 
 import dao.ChiTietPhieuDatHang_DAO;
@@ -27,12 +28,12 @@ import jakarta.persistence.Persistence;
 
 public class Main {
 	public static void main(String[] args) throws SQLException, RemoteException {
-		Sach_DAO sach_DAO = new Sach_DAO();
-		TaiKhoan_DAO taiKhoan_DAO = new TaiKhoan_DAO();
+//		Sach_DAO sach_DAO = new Sach_DAO();
+//		TaiKhoan_DAO taiKhoan_DAO = new TaiKhoan_DAO();
 //		DungCuHocTap_DAO dungCuHocTap_DAO = new DungCuHocTap_DAO();
-//		NhanVien_DAO nhanVien_DAO = new NhanVien_DAO();
-//		KhachHang_DAO khachHang_DAO = new KhachHang_DAO();
-//		HoaDon_DAO hoaDon_DAO = new HoaDon_DAO();
+		NhanVien_DAO nhanVien_DAO = new NhanVien_DAO();
+		KhachHang_DAO khachHang_DAO = new KhachHang_DAO();
+		HoaDon_DAO hoaDon_DAO = new HoaDon_DAO();
 //		SanPham_DAO sanPham_DAO = new SanPham_DAO();
 		
 //		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BookStores MSSQL");
@@ -75,6 +76,12 @@ public class Main {
 		
 //		sach_DAO.xoaSachVaoThungRac("S00013");
 //		sach_DAO.khoiPhucSach("S00013");
-		System.out.println(taiKhoan_DAO.getTaiKhoanTheoMaTaiKhoan("NV0001"));
+// 		System.out.println(taiKhoan_DAO.getTaiKhoanTheoMaTaiKhoan("NV0001"));
+//		HoaDon hoaDon = new HoaDon();
+//		hoaDon.setNhanVien(nhanVien_DAO.getNhanVienTheoMa("NV0001"));
+//		hoaDon.setNgayLap(Date.valueOf(LocalDate.now()));
+//		hoaDon.setThanhTien(15000);
+//		hoaDon = hoaDon_DAO.themHoaDon(hoaDon);
+		
 	}
 }

@@ -1,18 +1,15 @@
 
-	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÛÏš…ÿÿÿÿÿJ$4c934925-f673-44d8-a0d6-1ed8bf7f5af5
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÛÏš…ÿÿÿÿÿJ$14200470-d623-4dc5-97fe-1a223ba48c61
+”
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(¬¡º8Ğ¦èĞï1J$ddf7e6f4-3fe3-4977-b69f-40a02c64735e
 l
-java:S2160"+Override the "equals" method in this class.(ÛÏš…ÿÿÿÿÿJ$55cbc6bb-ab71-43fb-833f-56415cea5db8
+java:S2160"+Override the "equals" method in this class.(ÛÏš…ÿÿÿÿÿJ$d856c139-2b1d-433f-b1b1-85272125f4ab
 e
-java:S1948"$Make "em" transient or serializable.(‘æ¿ÚúÿÿÿÿJ$b9873173-d8de-49a0-8020-e343a87efc9c
-s
-java:S1135:"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$4accae88-bd89-4dff-a964-69deff46d964
-s
-java:S1135m"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿJ$9dda2bc1-0601-4b0b-8a51-2f9006dcb663
+java:S1948"$Make "em" transient or serializable.(‘æ¿ÚúÿÿÿÿJ$95cf3bf2-95f6-48ff-9f00-2bcd21c8827a
 g
-java:S1168u"$Return an empty map instead of null.(¥¹ï8Óí§¬î1J$644cbb73-e719-4f13-a390-0d61c52a86a8
-z
-java:S1135{"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8Ö¤§¬î1J$1e6eb321-3f66-4a15-8c4f-24bb707f1409
+java:S1168u"$Return an empty map instead of null.(¥¹ï8Óí§¬î1J$f6be33da-ed15-47f8-bba2-bd3a3fd7ffb0
 h
-java:S1168†"$Return an empty map instead of null.(¥¹ï8Ë‘»¼î1J$6399552c-7453-4052-93a6-9883ee740fa5
-{
-java:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8±ó´¼î1J$116b1ea4-c65b-4323-9c3c-93bba138ac51
+java:S1168„"$Return an empty map instead of null.(¥¹ï8Ë‘»¼î1J$ff3a06ec-e1f4-4886-ac84-43f75ada1504
+Q
+java:S1128
+"4Remove this unused import 'javax.swing.JOptionPane'.(÷‰Îé8îˆ¸Õï1

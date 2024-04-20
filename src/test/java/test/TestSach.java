@@ -1,7 +1,9 @@
 package test;
 
 import dao.Sach_DAO;
+import dao.TaiKhoan_DAO;
 import dao.impl.Sach_Impl;
+import dao.impl.TaiKhoan_Impl;
 import entity.Sach;
 import entity.SanPham;
 import org.junit.jupiter.api.AfterAll;
@@ -41,5 +43,11 @@ public class TestSach {
         sach_temp.setMaSanPham("XS00013");
         sach_impl.themSach(sach_temp);
         System.out.println(sach_temp.getMaSanPham());
+    }
+
+    @Test
+    void getTaiKhoan() throws RemoteException {
+        TaiKhoan_Impl taiKhoanDao = new TaiKhoan_DAO();
+        System.out.println(taiKhoanDao.getTaiKhoanTheoMaTaiKhoan("NV0001"));
     }
 }
