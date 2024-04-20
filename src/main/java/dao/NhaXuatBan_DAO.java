@@ -64,7 +64,6 @@ public class NhaXuatBan_DAO extends UnicastRemoteObject implements NhaXuatBan_Im
             result = true;
         } catch (Exception e) {
             em.getTransaction().rollback();
-            e.printStackTrace();
         }
         return result;
     }

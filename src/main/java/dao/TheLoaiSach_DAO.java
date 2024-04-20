@@ -63,7 +63,6 @@ public class TheLoaiSach_DAO extends UnicastRemoteObject implements TheLoaiSach_
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
 			em.getTransaction().rollback();
 			return false;
 		}

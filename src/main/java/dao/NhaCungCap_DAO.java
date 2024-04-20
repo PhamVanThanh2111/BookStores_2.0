@@ -65,7 +65,6 @@ public class NhaCungCap_DAO extends UnicastRemoteObject implements NhaCungCap_Im
 	        result = true;
 	    } catch (Exception e) {
 	        em.getTransaction().rollback();
-	        e.printStackTrace();
 	    }
 	    return result;
 	}

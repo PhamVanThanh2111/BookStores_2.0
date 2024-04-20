@@ -46,6 +46,8 @@ public class Server {
 		context.bind(URL + "sanPhamDAO", sanPhamDAO);
 		context.bind(URL + "taiKhoanDAO", taiKhoanDAO);
 		context.bind(URL + "theLoaiSachDAO", theLoaiSachDAO);
+		
+		System.setProperty("java.rmi.server.hostname", "PhamVanThanh");
 
 		System.out.println("Server is running...");
 	}
