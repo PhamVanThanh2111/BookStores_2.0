@@ -5,8 +5,6 @@ import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
 import dao.impl.DungCuHocTap_Impl;
 import entity.DungCuHocTap;
 import jakarta.persistence.EntityManager;

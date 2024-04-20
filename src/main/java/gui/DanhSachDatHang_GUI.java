@@ -446,8 +446,8 @@ public class DanhSachDatHang_GUI extends JPanel {
 			
 			// xóa phiếu đặt hàng
 			phieuDatHang_DAO.xoaPhieuDatHangTheoMa(phieuDatHang.getMaPhieuDatHang());
-			xuatHoaDon(hoaDon.getMaHoaDon());
 			JOptionPane.showMessageDialog(null, "Lập hóa đơn thành công!");
+			xuatHoaDon(hoaDon.getMaHoaDon());
 			refresh();
 			return true;
 		}

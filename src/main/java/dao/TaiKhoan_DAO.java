@@ -2,7 +2,6 @@ package dao;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.List;
 
 import dao.impl.TaiKhoan_Impl;
 import entity.TaiKhoan;
@@ -24,7 +23,7 @@ public class TaiKhoan_DAO extends UnicastRemoteObject implements TaiKhoan_Impl {
 	public TaiKhoan themTaiKhoan(TaiKhoan tk) throws RemoteException {
 		try {
 			em.getTransaction().begin();
-			em.persist(tk);
+			em.merge(tk);
 			em.getTransaction().commit();
 			return tk;
 		} catch (Exception e) {
@@ -64,11 +63,6 @@ public class TaiKhoan_DAO extends UnicastRemoteObject implements TaiKhoan_Impl {
 			em.getTransaction().rollback();
 			return false;
 		}
-	}
-
-	@Override
-	public List<TaiKhoan> getDanhSachTaiKhoan() throws RemoteException {
-		return null;
 	}
 
 	@Override
