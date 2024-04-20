@@ -49,6 +49,6 @@ public class TestKhachHangDao {
         TaiKhoan taiKhoan = new TaiKhoan();
         taiKhoan.setMatKhau("123");
         taiKhoan_DAO.themTaiKhoan(taiKhoan);
-        System.out.println(taiKhoan.getTaiKhoan());
+        System.out.println(taiKhoan.getNhanVien());
     }
 }

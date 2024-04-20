@@ -212,15 +212,14 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 			@SuppressWarnings("deprecation")
 			String matKhau = txtPwd.getText().toString().trim();
 			TaiKhoan taiKhoan = taiKhoan_DAO.getTaiKhoanTheoMaTaiKhoan(maTaiKhoan);
-			if (taiKhoan.getTaiKhoan() == null) {
+			if (taiKhoan.getNhanVien() == null) {
 				JOptionPane.showMessageDialog(null, "Tài khoản không đúng!");
 				countSaiMatKhau++;
 			} else if (!taiKhoan.getMatKhau().equals(matKhau)) {
 				JOptionPane.showMessageDialog(null, "Mật khẩu không đúng!");
 				countSaiMatKhau++;
 			} else {
-				NhanVien nhanVien = nhanVien_DAO.getNhanVienTheoTaiKhoan(taiKhoan.getTaiKhoan());
-				HeThongQuanLyNhaSach trangChu_GUI = new HeThongQuanLyNhaSach(nhanVien);
+				HeThongQuanLyNhaSach trangChu_GUI = new HeThongQuanLyNhaSach(taiKhoan.getNhanVien());
 				trangChu_GUI.setVisible(true);
 				this.setVisible(false);
 			}

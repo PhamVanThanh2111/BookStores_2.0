@@ -26,12 +26,16 @@ public class TaiKhoan implements Serializable {
 		this.matKhau = matKhau;
 	}
 
-	public String getTaiKhoan() {
-		return nhanVien.getMaNhanVien();
-	}
-
 	public String getMatKhau() {
 		return matKhau;
+	}
+	
+	public NhanVien getNhanVien() {
+		return nhanVien;
+	}
+
+	public void setNhanVien(NhanVien nhanVien) {
+		this.nhanVien = nhanVien;
 	}
 
 	public void setMatKhau(String matKhau) {

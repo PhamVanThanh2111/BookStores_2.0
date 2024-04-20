@@ -43,6 +43,9 @@ public abstract class SanPham implements Serializable {
 
 	@Column(name = "hinhAnh", columnDefinition = "nvarchar(50)", nullable = false)
 	protected String hinhAnh;
+	
+	@Column(name = "trangThai", nullable = false)
+	protected boolean trangThai;
 
 	@OneToMany(mappedBy = "sanPham")
 	private Set<ChiTietHoaDon> chiTietHoaDons;
@@ -136,6 +139,14 @@ public abstract class SanPham implements Serializable {
 
 	public void setHinhAnh(String hinhAnh) {
 		this.hinhAnh = hinhAnh;
+	}
+
+	public boolean isTrangThai() {
+		return trangThai;
+	}
+
+	public void setTrangThai(boolean trangThai) {
+		this.trangThai = trangThai;
 	}
 
 	@Override

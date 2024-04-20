@@ -13,9 +13,9 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "DungCuHocTap")
 @NamedQueries({
-	@NamedQuery(name = "getAllDungCuHocTap", query = "SELECT d FROM DungCuHocTap d WHERE d.maSanPham LIKE 'DCHT%'"),
+	@NamedQuery(name = "getAllDungCuHocTap", query = "SELECT d FROM DungCuHocTap d WHERE d.maSanPham LIKE 'DCHT%' AND d.trangThai = true"),
 	@NamedQuery(name = "getDungCuHocTapTheoTen", query = "SELECT d FROM DungCuHocTap d WHERE d.tenSanPham LIKE :tenSanPham"),
-	@NamedQuery(name = "getAllDungCuHocTapXoa", query = "SELECT d FROM DungCuHocTap d WHERE d.maSanPham LIKE 'XDCHT%'"),
+	@NamedQuery(name = "getAllDungCuHocTapXoa", query = "SELECT d FROM DungCuHocTap d WHERE d.maSanPham LIKE 'DCHT%' AND d.trangThai = false"),
 })
 public class DungCuHocTap extends SanPham implements Serializable {
 	private static final long serialVersionUID = 1L;
