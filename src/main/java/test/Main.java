@@ -27,13 +27,8 @@ import jakarta.persistence.Persistence;
 
 public class Main {
 	public static void main(String[] args) throws SQLException, RemoteException {
-<<<<<<< HEAD
 //		Sach_DAO sach_DAO = new Sach_DAO();
 //		TaiKhoan_DAO taiKhoan_DAO = new TaiKhoan_DAO();
-=======
-		Sach_DAO sach_DAO = new Sach_DAO();
-		TaiKhoan_DAO taiKhoan_DAO = new TaiKhoan_DAO();
->>>>>>> 878a64ad77f17d90e0516820a1fed34f23bb2dbd
 //		DungCuHocTap_DAO dungCuHocTap_DAO = new DungCuHocTap_DAO();
 //		NhanVien_DAO nhanVien_DAO = new NhanVien_DAO();
 //		KhachHang_DAO khachHang_DAO = new KhachHang_DAO();
