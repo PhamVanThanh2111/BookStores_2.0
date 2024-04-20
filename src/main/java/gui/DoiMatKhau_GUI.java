@@ -24,9 +24,6 @@ import java.awt.event.FocusAdapter;
 
 public class DoiMatKhau_GUI extends JInternalFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPasswordField pwdMatKhauHienTai;
 	private JPasswordField pwdNhapLai;
@@ -37,10 +34,6 @@ public class DoiMatKhau_GUI extends JInternalFrame {
 	private String matKhauMoi;
 	private String nhapLaiMatKhau;
 
-	/**
-	 * Create the frame.
-	 * @throws RemoteException 
-	 */
 	public DoiMatKhau_GUI(NhanVien nhanVien) throws RemoteException {
 		// khai bao DAO
 		taiKhoan_DAO = new TaiKhoan_DAO();
@@ -149,16 +142,14 @@ public class DoiMatKhau_GUI extends JInternalFrame {
 
 	}
 	
-	@SuppressWarnings("deprecation")
 	private boolean trungKhop() {
-		if (pwdMatKhauHienTai.getText().equals(pwdNhapLai.getText())) {
+		if (new String(pwdMatKhauHienTai.getPassword()).equals(new String(pwdNhapLai.getPassword()))) {
 			return true;
 		}
 		else {
 			JOptionPane.showMessageDialog(null, "Không trùng khớp với mật khẩu hiện tại!");
 			return false;
 		}
-		
 	}
 	
 	private boolean kiemTraRong() {
@@ -171,7 +162,6 @@ public class DoiMatKhau_GUI extends JInternalFrame {
 		return false;
 	}
 	
-	@SuppressWarnings("deprecation")
 	private boolean doiMatKhau() {
 		if (kiemTraRong()) {
 			JOptionPane.showMessageDialog(null, "Bạn chưa nhập thông tin!");
@@ -198,11 +188,11 @@ public class DoiMatKhau_GUI extends JInternalFrame {
 						"Đổi mật khẩu?", "Đổi mật khẩu",
 						JOptionPane.YES_NO_OPTION);
 				if (option == JOptionPane.YES_OPTION) {
-					if (Regular_expression.validatePassword(pwdMatKhauMoi.getText())) {
+					if (Regular_expression.validatePassword(new String(pwdMatKhauMoi.getPassword()))) {
 						try {
 							TaiKhoan taiKhoan = taiKhoan_DAO.getTaiKhoanTheoMaTaiKhoan(nhanVien.getMaNhanVien());
-							if (taiKhoan.getMatKhau().equals(pwdMatKhauHienTai.getText())) {
-								taiKhoan.setMatKhau(pwdMatKhauMoi.getText());
+							if (taiKhoan.getMatKhau().equals(new String(pwdMatKhauHienTai.getPassword()))) {
+								taiKhoan.setMatKhau(new String(pwdMatKhauMoi.getPassword()));
 								taiKhoan_DAO.suaTaiKhoan(taiKhoan);
 								JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công!");
 								setClosable(true);
