@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 
 import dao.impl.Sach_Impl;
 import entity.Sach;
-import entity.SanPham;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
@@ -45,7 +44,6 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
 			em.getTransaction().rollback();
 			return false;
 		}

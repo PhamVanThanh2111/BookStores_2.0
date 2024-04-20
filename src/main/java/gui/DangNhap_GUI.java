@@ -19,10 +19,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import dao.NhanVien_DAO;
 import dao.TaiKhoan_DAO;
-import entity.NhanVien;
-//import dao.TaiKhoan_DAO;
 import entity.TaiKhoan;
 import java.awt.event.KeyAdapter;
 import javax.swing.JCheckBox;
@@ -38,7 +35,6 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 	private JButton btnExit;
 	private JButton btnLogin;
 	private TaiKhoan_DAO taiKhoan_DAO;
-	private NhanVien_DAO nhanVien_DAO;
 	private JTextField txtUser;
 	private int countSaiMatKhau = 0;
 	private JCheckBox chkShow;
@@ -46,7 +42,6 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 	public DangNhap_GUI() throws SQLException, RemoteException {
 
 		taiKhoan_DAO = new TaiKhoan_DAO();
-		nhanVien_DAO = new NhanVien_DAO();
 
 		getContentPane().setLayout(null);
 		setTitle("Login");

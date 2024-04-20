@@ -7,6 +7,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.JOptionPane;
+
 import dao.impl.KhachHang_Impl;
 import entity.KhachHang;
 import jakarta.persistence.EntityManager;
@@ -47,7 +49,6 @@ public class KhachHang_DAO extends UnicastRemoteObject implements KhachHang_Impl
 			result = true;
 		} catch (Exception e) {
 			em.getTransaction().rollback();
-			e.printStackTrace();
 		}
 		return result;
 	}

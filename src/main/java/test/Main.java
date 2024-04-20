@@ -20,6 +20,7 @@ import entity.Sach;
 import entity.SanPham;
 import entity.TaiKhoan;
 import entity.generateid.DungCuHocTapGeneratorId;
+import gui.HoaDon_GUI;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

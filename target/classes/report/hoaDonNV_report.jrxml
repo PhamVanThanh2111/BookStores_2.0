@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hoaDon_report" pageWidth="595" pageHeight="500" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d579833-d12e-4050-8878-216f05e69a76">
-	<property name="com.jaspersoft.studio.data.sql.tables">
-		<![CDATA[Ik5oYW5WaWVuIiAsMzk0LDE0Nyw5ZjI1ZTljNy02MGEwLTRlYzctYjk1MS1mZTQ3NDE4N2Y1NGY7
-IkNoaVRpZXRIb2FEb24iICwzNSw0MCwxMWZjZmE3OS0wMTg2LTQ5ODUtOTYxMS04ZGUzMjljNjg1
-YmU7IlNhblBoYW0iICwyMTIsNDg2LDYyZGFlODg0LTIxNjMtNDY1Ny1hMTkzLWNlYjVkMDk5NmNi
-MzsiS2hhY2hIYW5nIiAsNzQ3LDI1LDE3ZTZjMzBlLWI4MTMtNDBkNS05YzEzLTE1ODhkZWYwYWFk
-MzsiQ2hpVGlldEhvYURvbiIgLDYwMiwyNjUsMGQzMDM3OTctOWU3Ny00OGZmLThhNTgtZDRjMTQ2
-N2JlODEwOyJIb2FEb24iICwyMTIsMjUsMmJmYmNlZmItYjRkNy00NzM2LWFlZTEtMjM4ZDMyZGIw
-NWNmOw==]]>
-	</property>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConnectBook"/>
 	<parameter name="maPhieu" class="java.lang.String" nestedType="java.lang.String" evaluationTime="Early"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT HD."maHoaDon",
+		<![CDATA[  SELECT HD."maHoaDon",
 	HD."maNhanVien",
 	KH."tenKhachHang",
 	NV."tenNhanVien",
@@ -22,8 +14,8 @@ NWNmOw==]]>
 	SP."tenSanPham",
 	CTHD."donGia",
 	CTHD."soLuong",
-	SUM( CTHD.soLuong * CTHD.donGia) AS Tong,
-	ThanhTien
+	HD.ThanhTien AS Tong,
+	HD."thanhTien"
 FROM "HoaDon" HD
 	LEFT JOIN "KhachHang" KH ON 
 	 HD."maKhachHang" = KH."maKhachHang" 
@@ -37,7 +29,7 @@ FROM "HoaDon" HD
 	SUM( soLuong * donGia) AS ThanhTien
 FROM "ChiTietHoaDon"
 GROUP BY "ChiTietHoaDon"."maHoaDon"
-	 )  TT ON HD."maHoaDon" = 'NULL' 
+	 )  TT ON HD."maHoaDon" = $P{maPhieu} 
 WHERE 
 	 HD."maHoaDon" = $P{maPhieu} 
 GROUP BY HD."maHoaDon",
@@ -48,7 +40,8 @@ GROUP BY HD."maHoaDon",
 	CTHD."maSanPham",
 	SP."tenSanPham",
 	CTHD."donGia",
-	CTHD."soLuong"]]>
+	CTHD."soLuong",
+	HD."thanhTien"]]>
 	</queryString>
 	<field name="maHoaDon" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="maHoaDon"/>
@@ -86,13 +79,13 @@ GROUP BY HD."maHoaDon",
 		<property name="com.jaspersoft.studio.field.name" value="soLuong"/>
 		<property name="com.jaspersoft.studio.field.label" value="soLuong"/>
 	</field>
-	<field name="Tong" class="java.lang.Double">
+	<field name="Tong" class="java.lang.Float">
 		<property name="com.jaspersoft.studio.field.name" value="Tong"/>
 		<property name="com.jaspersoft.studio.field.label" value="Tong"/>
 	</field>
-	<field name="ThanhTien" class="java.lang.Double">
-		<property name="com.jaspersoft.studio.field.name" value="ThanhTien"/>
-		<property name="com.jaspersoft.studio.field.label" value="ThanhTien"/>
+	<field name="thanhTien" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="thanhTien"/>
+		<property name="com.jaspersoft.studio.field.label" value="thanhTien"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -189,7 +182,7 @@ GROUP BY HD."maHoaDon",
 				<textElement>
 					<font fontName="Cambria" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ngayLap}.getDate()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ngayLap}.getDay()]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="385" y="30" width="154" height="30" uuid="f3b201ea-50e8-4d08-a378-c6e0a9b522e8">
@@ -377,7 +370,7 @@ GROUP BY HD."maHoaDon",
 				<textElement>
 					<font fontName="Cambria" size="14" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ThanhTien}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{thanhTien}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="162" y="60" width="230" height="20" uuid="372e77f2-762d-4fbe-9d6f-ed5ff4e02a36"/>

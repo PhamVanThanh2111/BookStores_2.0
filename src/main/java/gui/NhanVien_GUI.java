@@ -817,7 +817,6 @@ public class NhanVien_GUI extends JPanel {
 				refresh();
 				return true;
 			}
-
 		}
 	}
 	
