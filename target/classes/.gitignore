@@ -1,7 +1,4 @@
-/META-INF/
-/Server/
-/connect/
-/dao/
-/entity/
 /gui/
-/test/
+/entity/
+/META-INF/
+/dao/

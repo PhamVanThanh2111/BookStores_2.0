@@ -62,16 +62,16 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 	}
 
 	@Override
-	public boolean themNhanVien(NhanVien nhanVien) throws RemoteException {
+	public NhanVien themNhanVien(NhanVien nhanVien) throws RemoteException {
 		try {
 			em.getTransaction().begin();
 			em.persist(nhanVien);
 			em.getTransaction().commit();
-			return true;
+			return nhanVien;
 		} catch (Exception e) {
 			e.printStackTrace();
 			em.getTransaction().rollback();
-			return false;
+			return null;
 		}
 	}
 

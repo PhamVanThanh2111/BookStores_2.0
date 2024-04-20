@@ -13,3 +13,47 @@ U
 %src/main/java/dao/impl/Sach_Impl.java,9\c\9c8eb73302414c8ad34018ae0bfba65d46c37560
 Y
 )src/main/java/dao/impl/NhanVien_Impl.java,0\9\09eb0480de5830b69711d166dba75b191cd35d12
+O
+src/main/java/dao/Sach_DAO.java,8\8\88ead751392a4476508bd14d9b8171b460621282
+S
+#src/main/java/dao/NhanVien_DAO.java,6\8\686b508aa51128c3c03b15acdc1cfd3dd27dbf01
+Y
+)src/main/java/dao/impl/TaiKhoan_Impl.java,7\f\7fb90b1315480df6f2c36f08edaf8e297ff105ab
+S
+#src/main/java/gui/TrangChu_GUI.java,b\4\b4cb142c3b233a01ed5b3079bfb2496b1e288a25
+P
+ src/main/java/Server/Server.java,1\4\148de37c495bc1c22d5de3a69967777a598264e1
+L
+src/main/java/test/Main.java,7\a\7ae755c92f4be8ed89090187a6e5a3a56d187833
+F
+data/database/Book.sql,3\9\39e489a8e83b25448b1cdc7cb6444a18ab71c79b
+R
+"src/main/java/gui/DatHang_GUI.java,5\8\588b821f918f7b03b8dcafb51f2dc31447f9a9d6
+Z
+*src/main/java/gui/DanhSachDatHang_GUI.java,a\f\af406b1096b797f969ebfc1ee8ed2685a833a375
+Z
+*src/main/java/report/hoaDonNV_report.jrxml,c\0\c0c082b3ec887065c190b3e8d77852e1495281a8
+Y
+)src/main/java/gui/DanhSachHoaDon_GUI.java,9\b\9b67590b97edb10cc994ee75840c3973035acaf6
+W
+'src/main/java/gui/DungCuHocTap_GUI.java,2\6\2687f9d89cf6a0c727f9ed96867f77a61ee9f4b5
+Q
+!src/main/java/entity/SanPham.java,d\e\ded78218f61491b39252c0b62193181fc0d3e974
+O
+src/main/java/gui/Sach_GUI.java,5\6\56c231e3cfe2532504ff1f774f97c94ea47a295c
+W
+'src/main/java/dao/PhieuDatHang_DAO.java,c\4\c450a3e0bdc861c069c0d0a529a49d2e06cd4fba
+[
++src/main/java/gui/HeThongQuanLyNhaSach.java,9\f\9ffb57c7631d3295eb690ad66e7faa0be2dfa87b
+R
+"src/main/java/gui/ThongKe_GUI.java,2\b\2bc2c31bd04aca3fe761875bcd7f74cb0746964c
+P
+ src/test/java/test/TestSach.java,9\d\9df12b64b1473349d69ab2d7df047969c63416f9
+S
+#src/main/java/dao/TaiKhoan_DAO.java,4\a\4a9ef1bb6aee2bb29d8d5f1fde6402c3d49e7b3a
+Q
+!src/main/java/dao/HoaDon_DAO.java,8\c\8ca91197d39f414e55755a98fb248588b32c7cb8
+P
+ src/main/java/entity/HoaDon.java,3\4\3478d5524ee18dc973f49781ada17cec21c61d02
+V
+&src/main/java/META-INF/persistence.xml,3\b\3bc05faa95cf4e428049f8a702e36f2158650426

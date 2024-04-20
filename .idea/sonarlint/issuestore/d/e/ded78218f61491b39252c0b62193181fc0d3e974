@@ -1,9 +1,9 @@
 
 „
-java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿ8ÒÀ³ıî1J$8e522357-e4cd-4501-a74e-68cd4b824643
+java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿ8ÒÀ³ıî1J$f0bbb31c-c50e-4b83-a3b1-2b8e910398f1
 
-java:S59935"9Change the visibility of this constructor to "protected".(â®ÅŞúÿÿÿÿ8×À³ıî1J$426162ed-d3fe-4f46-9e8a-9dfce7f03674
+java:S59938"9Change the visibility of this constructor to "protected".(â®ÅŞúÿÿÿÿ8×À³ıî1J$0d039acf-05a3-4862-b7ce-e762ee267b5d
 
-java:S59939"9Change the visibility of this constructor to "protected".(ÿËŞ¸úÿÿÿÿ8ØÀ³ıî1J$4b9a2933-35d2-4143-a3e4-b08092af72da
+java:S5993<"9Change the visibility of this constructor to "protected".(ÿËŞ¸úÿÿÿÿ8ØÀ³ıî1J$7217cc39-01b6-4d5d-87c6-12aedd53bcd6
 x
-java:S1874"0Remove this use of "strategy"; it is deprecated.(É””øÿÿÿÿ8æ›ª‘ï1J$dde47c4a-d9cd-4006-99c8-552056600dcc
+java:S1874"0Remove this use of "strategy"; it is deprecated.(É””øÿÿÿÿ8æ›ª‘ï1J$6c3c29b4-fb00-4330-aad6-c757a4ffd984

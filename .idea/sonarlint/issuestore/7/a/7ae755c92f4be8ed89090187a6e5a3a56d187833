@@ -1,54 +1,54 @@
 
-š
-java:S2095%"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(ÛÈşÿÿÿÿ8¦£üßî1J$35321a4a-b368-452d-85e2-7ee89245d76c
-
-java:S2095&"KUse try-with-resources or close this "EntityManager" in a "finally" clause.(ì¶Ğ8¦£üßî1J$36a75a95-2895-4d1d-ab9a-707876d3b3e6
-y
-java:S1854&"6Remove this useless assignment to local variable "em".(ì¶Ğ8®€©¢ï1J$a8ec10b9-b603-4a2a-9869-2ba3cf2e9ce8
-°
-java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(¦Ã+8¸£üßî1J$f555d961-eb24-418e-83da-f710e1c980ee
-
-java:S1130"qRemove the declaration of thrown exception 'java.rmi.RemoteException', as it cannot be thrown from method's body.(¦Ã+8—»©¢ï1
-]	java:S125"<This block of commented-out lines of code should be removed.(©¯ñ‰şÿÿÿÿ8š»©¢ï1
-j
-java:S1481&"'Remove this unused "em" local variable.(ì¶Ğ8ç€©¢ï1J$a4b7c3f9-968f-45c7-ada5-f89cf61c216b
-ƒ	java:S125'"<This block of commented-out lines of code should be removed.(“Ñ´–ùÿÿÿÿ8Í£üßî1J$e159d7b1-0dab-4052-bfbe-cb24c091e31f
-~	java:S1254"<This block of commented-out lines of code should be removed.(±Õ™á8Î£üßî1J$ad67f066-a86a-45ad-9527-7d19505076a9
-~	java:S1257"<This block of commented-out lines of code should be removed.(‚îËÒ8í€©¢ï1J$d1f8d0d4-3dd5-4d61-9970-9d544e3290da
-~	java:S125@"<This block of commented-out lines of code should be removed.( †øˆ8î€©¢ï1J$9d0bb695-366e-4652-adc3-77841feab53a
-]	java:S125D"<This block of commented-out lines of code should be removed.(Òä„ùÿÿÿÿ8·šá²ï1
-m
-java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8Û£üßî1J$10fbf26f-9a89-4b1b-bbdf-c399b7c4e1fd
-r
-java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8ô€©¢ï1J$ad6f6b94-e8f0-465c-b175-11688313d4a1
-{
-java:S1128"8Remove this unused import 'dao.ChiTietPhieuDatHang_DAO'.(½ğÜ€8Ü£üßî1J$4480cafd-7838-49ff-856b-80d6e5ba4f17
+h
+java:S2095'"KUse try-with-resources or close this "EntityManager" in a "finally" clause.(ì¶Ğ8ş“€Ñï1
 S
-java:S1128	"1Remove this unused import 'dao.DungCuHocTap_DAO'.(İƒŠûÿÿÿÿ8¡»©¢ï1
-M
-java:S1128
-"+Remove this unused import 'dao.HoaDon_DAO'.(ú¢™Åûÿÿÿÿ8¢»©¢ï1
-P
-java:S1128".Remove this unused import 'dao.KhachHang_DAO'.(ŸÌŸ­ûÿÿÿÿ8¢»©¢ï1
-O
-java:S1128"-Remove this unused import 'dao.NhanVien_DAO'.(êıè€ÿÿÿÿÿ8¢»©¢ï1
-F
-java:S1128")Remove this unused import 'dao.Sach_DAO'.(Ğá†Á8£»©¢ï1
-N
-java:S1128",Remove this unused import 'dao.SanPham_DAO'.(ÛçµÚùÿÿÿÿ8£»©¢ï1
-O
-java:S1128"-Remove this unused import 'dao.TaiKhoan_DAO'.(¦ÈŒŞıÿÿÿÿ8£»©¢ï1
-l
-java:S1128"*Remove this unused import 'entity.HoaDon'.(…õ»38õ€©¢ï1J$50334ad7-54d0-407a-bd10-81d7a8521f40
-p
-java:S1128"-Remove this unused import 'entity.KhachHang'.(§¶Á³8ö€©¢ï1J$684ba452-f9b1-46fa-9069-bee7af9dccce
-o
-java:S1128",Remove this unused import 'entity.NhanVien'.(·Ã¶ª8ö€©¢ï1J$d5abe793-1f6f-4ebf-bfa0-3b69b0f42e4e
-k
-java:S1128"(Remove this unused import 'entity.Sach'.(ÙÛÈÜ8Ü£üßî1J$f06ff868-91be-42bd-a901-2ee51b607607
+java:S1854'"6Remove this useless assignment to local variable "em".(ì¶Ğ8‚”€Ñï1
+Š
+java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(¦Ã+8„”€Ñï1
+
+java:S1130"qRemove the declaration of thrown exception 'java.rmi.RemoteException', as it cannot be thrown from method's body.(¦Ã+8„”€Ñï1
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(©¯ñ‰şÿÿÿÿ8´ùÿĞï1J$249ae38e-063f-48b1-ace3-19ca7f6e5bdb
+D
+java:S1481'"'Remove this unused "em" local variable.(ì¶Ğ8‰”€Ñï1
+]	java:S125)"<This block of commented-out lines of code should be removed.(íĞ¢éùÿÿÿÿ8‹”€Ñï1
+~	java:S1255"<This block of commented-out lines of code should be removed.(±Õ™á8Î£üßî1J$332483db-fe68-406c-a288-917bd361ef45
+~	java:S1258"<This block of commented-out lines of code should be removed.(‚îËÒ8í€©¢ï1J$74314f6c-c168-45db-8b8a-3df1b89ea662
+~	java:S125A"<This block of commented-out lines of code should be removed.( †øˆ8î€©¢ï1J$ef87db36-0b0b-49b4-b22f-07128a8e8643
+~	java:S125L"<This block of commented-out lines of code should be removed.(Êş¢8Ø³ÿĞï1J$1400ba67-0448-46e1-bc0d-85382731a555
+m
+java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8Û£üßî1J$c6a4e40e-26b1-47e3-91f7-a22c0ff084f9
+r
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8ô€©¢ï1J$e0a833d3-12e0-4cbc-9028-e4b50bcfb31c
+{
+java:S1128"8Remove this unused import 'dao.ChiTietPhieuDatHang_DAO'.(½ğÜ€8Ü£üßî1J$0a9d58e0-9215-49b0-bf2e-f070058d4ad2
+y
+java:S1128	"1Remove this unused import 'dao.DungCuHocTap_DAO'.(İƒŠûÿÿÿÿ8¡»©¢ï1J$a0b8c1ed-0c31-4087-a007-14512515c296
 s
-java:S1128"+Remove this unused import 'entity.SanPham'.(‡İÜ¡ÿÿÿÿÿ8÷€©¢ï1J$a03e44da-1191-4be0-9ce5-52eaea25fc49
+java:S1128
+"+Remove this unused import 'dao.HoaDon_DAO'.(ú¢™Åûÿÿÿÿ8¢»©¢ï1J$5af97d7f-664b-4c89-9b8e-fe7770cfc251
+v
+java:S1128".Remove this unused import 'dao.KhachHang_DAO'.(ŸÌŸ­ûÿÿÿÿ8¢»©¢ï1J$8f534102-4ef2-4658-a6c7-3df51c86e442
+u
+java:S1128"-Remove this unused import 'dao.NhanVien_DAO'.(êıè€ÿÿÿÿÿ8¢»©¢ï1J$58d8b716-7785-4122-b3c1-81fbaa90965e
+l
+java:S1128")Remove this unused import 'dao.Sach_DAO'.(Ğá†Á8¹ùÿĞï1J$a8ecfaae-534b-4856-9789-af416a5cdb58
 t
-java:S1128",Remove this unused import 'entity.TaiKhoan'.(Ï±Ê¡üÿÿÿÿ8Ü£üßî1J$f645bf16-e94a-4e41-83c6-4dee4d39816c
+java:S1128",Remove this unused import 'dao.SanPham_DAO'.(ÛçµÚùÿÿÿÿ8£»©¢ï1J$f4a63c31-046a-45c4-a434-af4c28757675
+u
+java:S1128"-Remove this unused import 'dao.TaiKhoan_DAO'.(¦ÈŒŞıÿÿÿÿ8£»©¢ï1J$efeb183b-df23-40f9-af51-05fb0e1a94dd
+l
+java:S1128"*Remove this unused import 'entity.HoaDon'.(…õ»38õ€©¢ï1J$9198c515-1457-471a-b91d-70dbc323679d
+p
+java:S1128"-Remove this unused import 'entity.KhachHang'.(§¶Á³8ö€©¢ï1J$ddc42384-f94b-4a34-9d86-b41466c6940c
+o
+java:S1128",Remove this unused import 'entity.NhanVien'.(·Ã¶ª8ö€©¢ï1J$b32029e7-0441-402d-b1c8-b55a28f9780b
+k
+java:S1128"(Remove this unused import 'entity.Sach'.(ÙÛÈÜ8Ü£üßî1J$26e0ac05-af63-442d-afe2-e6862e64b080
+s
+java:S1128"+Remove this unused import 'entity.SanPham'.(‡İÜ¡ÿÿÿÿÿ8÷€©¢ï1J$288c3687-c147-4c60-9912-723c3c1f38c8
+t
+java:S1128",Remove this unused import 'entity.TaiKhoan'.(Ï±Ê¡üÿÿÿÿ8Ü£üßî1J$78fa2614-c3f7-4e52-b4c9-f5a45544e15a
 
-java:S1128"FRemove this unused import 'entity.generateid.DungCuHocTapGeneratorId'.(™¼Ü„ÿÿÿÿÿ8İ£üßî1J$28445c7d-0fd0-4e37-a6ae-0cf3e9205e37
+java:S1128"FRemove this unused import 'entity.generateid.DungCuHocTapGeneratorId'.(™¼Ü„ÿÿÿÿÿ8İ£üßî1J$4b0b0389-b845-43b9-9dcf-92e86e35d11c
+s
+java:S1128"+Remove this unused import 'gui.HoaDon_GUI'.(¨ï‰üÿÿÿÿ8Ü³ÿĞï1J$a54d6ca2-262e-4a55-8fa0-cfdd7ea3ca14

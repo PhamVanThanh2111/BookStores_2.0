@@ -28,7 +28,7 @@ public interface NhanVien_Impl extends Remote {
 	public NhanVien getNhanVienTheoTaiKhoan(String maTK) throws RemoteException;
 
 	// them nhan vien
-	public boolean themNhanVien(NhanVien nhanVien) throws RemoteException;
+	public NhanVien themNhanVien(NhanVien nhanVien) throws RemoteException;
 
 	// xoa nhan vien
 	public boolean xoaNhanVienTheoMa(String maNV) throws RemoteException;

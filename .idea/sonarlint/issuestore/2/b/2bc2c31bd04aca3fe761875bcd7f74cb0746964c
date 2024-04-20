@@ -1,111 +1,104 @@
 
-	java:S112Ö"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ğ¿»¸ï1J$dc281ddd-433a-4596-a39c-54a96ead0bff
+	java:S112Ö"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ò˜§Õï1J$93e3718d-a297-4d7d-b82b-1beb17135945
 –
-java:S1192ı"MDefine a constant instead of duplicating this literal "Sáº£n pháº©m" 3 times.(«Ñ¿¸ûÿÿÿÿ8Ö¿»¸ï1J$d22901d8-7c09-40e7-9298-63df2d89d194
+java:S1192ı"MDefine a constant instead of duplicating this literal "Sáº£n pháº©m" 3 times.(«Ñ¿¸ûÿÿÿÿ8õéÕï1J$6efea5fd-a71d-4224-9762-a11b97a5eb9e
 ’
-java:S1192"NDefine a constant instead of duplicating this literal "Sá» LÆ¯á»¢NG" 3 times.(¿Êüô8Ö¿»¸ï1J$02964a7e-0895-48cc-bdf7-c297aa789251
+java:S1192"NDefine a constant instead of duplicating this literal "Sá» LÆ¯á»¢NG" 3 times.(¿Êüô8õéÕï1J$56d8e5f4-055a-42af-bdc1-85e81c5e8fc3
 
-java:S1192"JDefine a constant instead of duplicating this literal "SansSerif" 6 times.(ËĞüá8Ö¿»¸ï1J$8c2b7e85-b0fb-45ab-8faf-074a3590cd08
+java:S1192"JDefine a constant instead of duplicating this literal "SansSerif" 6 times.(ËĞüá8õéÕï1J$6679f796-b79f-47f5-a650-de2544ed2684
 ”
-java:S1192ú"KDefine a constant instead of duplicating this literal "dd/MM/yyyy" 4 times.(“¡ƒ³şÿÿÿÿ8Ö¿»¸ï1J$79b92aee-c216-4c54-bf04-5a125d0221d5
+java:S1192ú"KDefine a constant instead of duplicating this literal "dd/MM/yyyy" 4 times.(“¡ƒ³şÿÿÿÿ8õéÕï1J$24912f74-03d1-45ec-93b7-a40723b69cb1
 ‹
-java:S1192¬"GDefine a constant instead of duplicating this literal "Tahoma" 5 times.(¼äÕ¤8Ö¿»¸ï1J$9ab129f3-7ccb-4f76-8571-9331608fedc7
+java:S1192¬"GDefine a constant instead of duplicating this literal "Tahoma" 5 times.(¼äÕ¤8õéÕï1J$7559aae2-b24a-4806-9649-1027d4bd25be
 
-java:S1192ƒ"JDefine a constant instead of duplicating this literal "Doanh thu" 3 times.(ƒ±Ö°8Ö¿»¸ï1J$9d3fb0d7-65fd-48ac-8248-00b6abf6b3b8
+java:S1192ƒ"JDefine a constant instead of duplicating this literal "Doanh thu" 3 times.(ƒ±Ö°8öéÕï1J$45e546d8-03bb-4cd6-85ba-89b5018d216e
 x
-java:S1066ê"/Merge this if statement with the enclosing one.(Šûäúıÿÿÿÿ8Ù¿»¸ï1J$d398e26d-69a6-4556-afd6-9d1b96a6610d
+java:S1066ê"/Merge this if statement with the enclosing one.(Šûäúıÿÿÿÿ8÷éÕï1J$c7363091-146f-4251-bcfc-bbf5b671b7be
 q
-java:S1604ç"(Make this anonymous inner class a lambda(ºŠ´Óüÿÿÿÿ8Û¿»¸ï1J$1dcfb211-f339-4ae0-be50-e4a0975454f0
+java:S1604ç"(Make this anonymous inner class a lambda(ºŠ´Óüÿÿÿÿ8ùéÕï1J$2c1a2c88-ec86-40fc-98a0-d7e9e6fa5d9a
 q
-java:S1604"(Make this anonymous inner class a lambda(¤äüÿÿÿÿÿ8Û¿»¸ï1J$5718cd56-5a0d-4f87-8e3a-1b641c1250c6
+java:S1604"(Make this anonymous inner class a lambda(¤äüÿÿÿÿÿ8ùéÕï1J$727ec846-667d-428c-a18a-81837c493f9b
 q
-java:S1604¤"(Make this anonymous inner class a lambda(‘òÂÏùÿÿÿÿ8Û¿»¸ï1J$ba1a2d91-55c3-406b-92aa-741234577eb4
+java:S1604¤"(Make this anonymous inner class a lambda(‘òÂÏùÿÿÿÿ8úéÕï1J$58f78153-c1e7-4601-8141-68b3c1c1a115
 l
-java:S1604½"(Make this anonymous inner class a lambda(Å‹í­8Û¿»¸ï1J$883a7f13-9a07-4212-b0d1-ae1de2b29716
-	java:S1018"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(²‡É˜8İ¿»¸ï1J$b1aaac22-5183-43bb-ba92-5f0942b9a5aa
-œ	java:S116D"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡¾® ÿÿÿÿÿ8”Â»¸ï1J$f6abb7f4-9b20-455d-aba0-3c099bb07cc1
-	java:S116E"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´ºî¿şÿÿÿÿ8–Â»¸ï1J$07f57f45-b42e-4122-a5de-1bdab5c9937e
-	java:S116F"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â·åğùÿÿÿÿ8˜Â»¸ï1J$4691052d-f9f2-46f0-9b5a-8a4772f559ee
-™	java:S116G"XRename this field "khachHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š’:8™Â»¸ï1J$cac12a71-a2e7-4e99-b132-472193b8afa9
-
-java:S1450="_Remove the "categoryDoanhThu" field and declare it as a local variable in the relevant methods.(ı‘Õ°şÿÿÿÿ8©ÄÒºï1
-©
-java:S1450a"gRemove the "categoryDoanhThuNhanVien" field and declare it as a local variable in the relevant methods.(ËûÆ8¨Â»¸ï1J$c69d6a43-9a1c-4c3a-a63b-697b90febf4e
-®
-java:S1450["lRemove the "categoryKhachHangMuaNhieuNhat" field and declare it as a local variable in the relevant methods.(€œÖ8©Â»¸ï1J$a80f3940-fdec-4452-9a9c-f162df0de0c7
-¨
-java:S1450V"eRemove the "categorySanPhamBanChay" field and declare it as a local variable in the relevant methods.(İ¢Äü8©Â»¸ï1J$242528a4-ae0c-4a29-a1a7-53f41a3e08b2
-¡
-java:S1450A"^Remove the "categorySoLuong" field and declare it as a local variable in the relevant methods.(‚·¸¯8©Â»¸ï1J$5f3697f3-cad8-466a-b4cf-f4d7e97fd13c
-¸
-java:S1450e"uRemove the "categorySoLuongHoaDonVaSanPhamNhanVien" field and declare it as a local variable in the relevant methods.(¡²Ç8ªÂ»¸ï1J$9cbafecc-3a82-4a55-a14e-7f098ed6cc04
-Ÿ
-java:S1450<"\Remove the "chartDoanhThu" field and declare it as a local variable in the relevant methods.(…ñ›8ªÂ»¸ï1J$dc80c6ab-fc4a-4e05-9084-69b7f4c3925f
+java:S1604½"(Make this anonymous inner class a lambda(Å‹í­8úéÕï1J$2b1c105a-04c3-45b6-86ef-a1872e7c19e9
+	java:S1018"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(²‡É˜8üéÕï1J$81509163-0a13-4b96-8ed1-96e12d3af4c4
+œ	java:S116D"URename this field "hoaDon_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡¾® ÿÿÿÿÿ8°êÕï1J$443f088a-c47a-4b05-8582-183250c2b391
+	java:S116E"VRename this field "sanPham_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´ºî¿şÿÿÿÿ8°êÕï1J$15e64e72-c680-4aa4-8c69-fedf417f9d9d
+	java:S116F"WRename this field "nhanVien_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â·åğùÿÿÿÿ8°êÕï1J$fc1d6813-428a-4727-9ad0-76f79d4a006a
+™	java:S116G"XRename this field "khachHang_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š’:8°êÕï1J$e0b4dbb7-017e-4d1a-819b-722dabe80357
 §
-java:S1450`"dRemove the "chartDoanhThuNhanVien" field and declare it as a local variable in the relevant methods.(şÌÇ¶8ªÂ»¸ï1J$db1ec0ff-fe4c-4c98-bd4f-d2724b6fd79d
-±
-java:S1450Z"iRemove the "chartKhachHangMuaNhieuNhat" field and declare it as a local variable in the relevant methods.(øºÆ±üÿÿÿÿ8«Â»¸ï1J$c20dd4c4-5f2d-4ba6-ad36-63599e753052
+java:S1450="_Remove the "categoryDoanhThu" field and declare it as a local variable in the relevant methods.(ı‘Õ°şÿÿÿÿ8µêÕï1J$f0f350a2-6db2-4048-9c2d-f60d76e66e01
 ©
-java:S1450>"aRemove the "chartPanelDoanhThu" field and declare it as a local variable in the relevant methods.(è“èüÿÿÿÿ8«Â»¸ï1J$5904591c-28a9-4d55-b08e-e7dae9c100fa
-±
-java:S1450c"iRemove the "chartPanelDoanhThuNhanVien" field and declare it as a local variable in the relevant methods.(å†Çûÿÿÿÿ8¬Â»¸ï1J$f44ae8d3-7cac-44fb-a333-7189faf14927
-±
-java:S1450]"nRemove the "chartPanelKhachHangMuaNhieuNhat" field and declare it as a local variable in the relevant methods.(ä„…Ö8­Â»¸ï1J$abcbd59b-0235-44d3-a569-c7000aca1a8f
-¯
-java:S1450X"gRemove the "chartPanelSanPhamBanChay" field and declare it as a local variable in the relevant methods.(†Ó·şûÿÿÿÿ8¯Â»¸ï1J$b6768853-174c-498c-8244-285d31b91281
-£
-java:S1450B"`Remove the "chartPanelSoLuong" field and declare it as a local variable in the relevant methods.(ñÀñ£8¯Â»¸ï1J$e9524396-95c2-449f-bd21-1af10c96b432
-º
-java:S1450g"wRemove the "chartPanelSoLuongHoaDonVaSanPhamNhanVien" field and declare it as a local variable in the relevant methods.(ÜÆ­ 8°Â»¸ï1J$af2f5ef9-aef8-4fde-98d0-5569b8a490fc
-¥
-java:S1450U"bRemove the "chartSanPhamBanChay" field and declare it as a local variable in the relevant methods.(„‡ëè8°Â»¸ï1J$6381cade-de79-43e8-898b-3a4f10b5c25e
-£
-java:S1450@"[Remove the "chartSoLuong" field and declare it as a local variable in the relevant methods.(‰ƒôÂÿÿÿÿÿ8°Â»¸ï1J$910dd162-79db-4b05-91b6-7aac6e850fce
-º
-java:S1450d"rRemove the "chartSoLuongHoaDonVaSanPhamNhanVien" field and declare it as a local variable in the relevant methods.(×©¼Íúÿÿÿÿ8°Â»¸ï1J$95dde0fe-7b53-4a7a-83e6-ec96078f23d3
-¡
-java:S1450;"^Remove the "datasetDoanhThu" field and declare it as a local variable in the relevant methods.(’´ÊÅ8±Â»¸ï1J$ae568c85-0164-448d-bcc2-d0a4f49004c2
-©
-java:S1450b"fRemove the "datasetDoanhThuNhanVien" field and declare it as a local variable in the relevant methods.(òüó¢8±Â»¸ï1J$1d440d45-8275-4e76-86dc-d5d197368401
+java:S1450a"gRemove the "categoryDoanhThuNhanVien" field and declare it as a local variable in the relevant methods.(ËûÆ8µêÕï1J$959b25cc-88e7-4e7d-8415-e3050e04efd9
 ®
-java:S1450\"kRemove the "datasetKhachHangMuaNhieuNhat" field and declare it as a local variable in the relevant methods.(éåßã8±Â»¸ï1J$2e08646d-c54a-4316-ab30-5300750cb285
-¬
-java:S1450W"dRemove the "datasetSanPhamBanChay" field and declare it as a local variable in the relevant methods.(ë³Ş€ûÿÿÿÿ8±Â»¸ï1J$57101ccc-3292-43a1-b402-0cdbb234e975
+java:S1450["lRemove the "categoryKhachHangMuaNhieuNhat" field and declare it as a local variable in the relevant methods.(€œÖ8µêÕï1J$958c61c2-b98a-404d-89e6-b423a1d9759c
+¨
+java:S1450V"eRemove the "categorySanPhamBanChay" field and declare it as a local variable in the relevant methods.(İ¢Äü8¶êÕï1J$b8c0e978-64d2-4d1b-88e0-c1b03d9a8d84
+¡
+java:S1450A"^Remove the "categorySoLuong" field and declare it as a local variable in the relevant methods.(‚·¸¯8¶êÕï1J$d172f4d7-d35b-4872-bc42-6780bc3fa415
+¸
+java:S1450e"uRemove the "categorySoLuongHoaDonVaSanPhamNhanVien" field and declare it as a local variable in the relevant methods.(¡²Ç8¶êÕï1J$6d282433-45e9-4cae-bf41-d10b5f78b2b7
+Ÿ
+java:S1450<"\Remove the "chartDoanhThu" field and declare it as a local variable in the relevant methods.(…ñ›8¶êÕï1J$ddcc1cc5-904e-4624-8dc2-e752b01d6636
+§
+java:S1450`"dRemove the "chartDoanhThuNhanVien" field and declare it as a local variable in the relevant methods.(şÌÇ¶8¶êÕï1J$0ebd3cd0-3d9e-4a39-9ff8-cca9447caa05
+±
+java:S1450Z"iRemove the "chartKhachHangMuaNhieuNhat" field and declare it as a local variable in the relevant methods.(øºÆ±üÿÿÿÿ8¶êÕï1J$369083f6-c468-4da0-94fc-fdfc71bf3a8c
+©
+java:S1450>"aRemove the "chartPanelDoanhThu" field and declare it as a local variable in the relevant methods.(è“èüÿÿÿÿ8¶êÕï1J$d5249d73-4f3a-4c77-95e6-fedb9b9e7c10
+±
+java:S1450c"iRemove the "chartPanelDoanhThuNhanVien" field and declare it as a local variable in the relevant methods.(å†Çûÿÿÿÿ8¶êÕï1J$cc8c6d14-f1c9-461d-8779-abc9fcff2b03
+±
+java:S1450]"nRemove the "chartPanelKhachHangMuaNhieuNhat" field and declare it as a local variable in the relevant methods.(ä„…Ö8¶êÕï1J$f13ec548-1e3f-4f7e-bc5e-fa96a0351380
+¯
+java:S1450X"gRemove the "chartPanelSanPhamBanChay" field and declare it as a local variable in the relevant methods.(†Ó·şûÿÿÿÿ8¶êÕï1J$363b32e1-9fa9-4dc4-bcb9-917b5690eddd
+£
+java:S1450B"`Remove the "chartPanelSoLuong" field and declare it as a local variable in the relevant methods.(ñÀñ£8¶êÕï1J$daedaee1-f10d-49de-97ad-494236134c59
+º
+java:S1450g"wRemove the "chartPanelSoLuongHoaDonVaSanPhamNhanVien" field and declare it as a local variable in the relevant methods.(ÜÆ­ 8¶êÕï1J$ddc5b030-6bb9-4ed0-8914-4b0df3d698f8
 ¥
-java:S1450?"]Remove the "datasetSoLuong" field and declare it as a local variable in the relevant methods.(ˆÁ¿øÿÿÿÿ8±Â»¸ï1J$495d722a-3c16-4624-baf0-83d3f8324fec
+java:S1450U"bRemove the "chartSanPhamBanChay" field and declare it as a local variable in the relevant methods.(„‡ëè8¶êÕï1J$d083b656-9492-405e-af6e-673a31537bfe
+£
+java:S1450@"[Remove the "chartSoLuong" field and declare it as a local variable in the relevant methods.(‰ƒôÂÿÿÿÿÿ8¶êÕï1J$a7fd28f3-1e3f-4318-ba14-cd3c84734dd8
+º
+java:S1450d"rRemove the "chartSoLuongHoaDonVaSanPhamNhanVien" field and declare it as a local variable in the relevant methods.(×©¼Íúÿÿÿÿ8¶êÕï1J$7892d0ac-773c-4292-92b8-ebf432c4d867
+¡
+java:S1450;"^Remove the "datasetDoanhThu" field and declare it as a local variable in the relevant methods.(’´ÊÅ8·êÕï1J$7b832095-c204-40c3-bfdf-9caa55f0cd84
+©
+java:S1450b"fRemove the "datasetDoanhThuNhanVien" field and declare it as a local variable in the relevant methods.(òüó¢8·êÕï1J$ab9905ad-f0e1-45f9-9fda-bb0438ada087
+®
+java:S1450\"kRemove the "datasetKhachHangMuaNhieuNhat" field and declare it as a local variable in the relevant methods.(éåßã8·êÕï1J$ee336d08-7636-459f-aa37-6e5e969a04fb
+¬
+java:S1450W"dRemove the "datasetSanPhamBanChay" field and declare it as a local variable in the relevant methods.(ë³Ş€ûÿÿÿÿ8·êÕï1J$e3981671-05f8-48c3-a9e0-ef10a5c7910d
+¥
+java:S1450?"]Remove the "datasetSoLuong" field and declare it as a local variable in the relevant methods.(ˆÁ¿øÿÿÿÿ8·êÕï1J$00ff8fd0-bd49-41e6-a4eb-b8910c8a790a
 ·
-java:S1450f"tRemove the "datasetSoLuongHoaDonVaSanPhamNhanVien" field and declare it as a local variable in the relevant methods.(„È×ğ8²Â»¸ï1J$7a65fe85-4d4c-44b0-98fa-893f27312dea
+java:S1450f"tRemove the "datasetSoLuongHoaDonVaSanPhamNhanVien" field and declare it as a local variable in the relevant methods.(„È×ğ8·êÕï1J$e870f576-1eff-48c1-84b7-c87a0102e6c3
 t
-java:S1948D",Make "hoaDon_DAO" transient or serializable.(‡¾® ÿÿÿÿÿ8´Â»¸ï1J$13788348-432e-4d6c-a72b-b318ac8667e6
+java:S1948D",Make "hoaDon_DAO" transient or serializable.(‡¾® ÿÿÿÿÿ8¸êÕï1J$400501a1-4fe7-447b-9153-b44c58c4f11a
 u
-java:S1948E"-Make "sanPham_DAO" transient or serializable.(´ºî¿şÿÿÿÿ8´Â»¸ï1J$8299429b-b1b1-4196-bc52-1cc433817330
+java:S1948E"-Make "sanPham_DAO" transient or serializable.(´ºî¿şÿÿÿÿ8¸êÕï1J$687f666f-1da8-4ee1-a37c-3c448c0567ed
 v
-java:S1948F".Make "nhanVien_DAO" transient or serializable.(Â·åğùÿÿÿÿ8´Â»¸ï1J$cf463de7-b3e3-4457-9638-504b047f4808
+java:S1948F".Make "nhanVien_DAO" transient or serializable.(Â·åğùÿÿÿÿ8¸êÕï1J$5277e6e5-5115-4537-aab4-82234a3c2724
 q
-java:S1948G"/Make "khachHang_DAO" transient or serializable.(š’:8´Â»¸ï1J$3879d6ec-5738-4e18-ba21-e25d59f89424
+java:S1948G"/Make "khachHang_DAO" transient or serializable.(š’:8¸êÕï1J$543d2e24-8453-4f12-bda2-2bc2415e8231
 •
-java:S3776n"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÇÜ´È8¼Â»¸ï1J$a5bf0b0b-077b-4570-a3c6-b0839880c417
+java:S3776n"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÇÜ´È8¼êÕï1J$a53621f2-310a-48eb-abda-abeb248dad5d
 †
-java:S3252}">Use static access with "javax.swing.SwingConstants" for "TOP".(û“ÍÉûÿÿÿÿ8ÀÂ»¸ï1J$fe7a5fc5-99c2-4fde-91de-7091dec26223
+java:S3252}">Use static access with "javax.swing.SwingConstants" for "TOP".(û“ÍÉûÿÿÿÿ8¾êÕï1J$ed3550b0-b027-439e-97b7-44d1678d5c11
 Š
-java:S3252À"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿ8ÏÂ»¸ï1J$25d27692-c98e-4a32-8d29-7ecab514a06d
+java:S3252À"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¦™œĞÿÿÿÿÿ8ÅêÕï1J$7012cd68-6570-41b5-965a-abd201da37b8
 ‰
-java:S1858Ú"@"format" returns a string, there's no need to call "toString()".(’Ê»‡ùÿÿÿÿ8êÂ»¸ï1J$603f77a1-b921-4911-b756-07fbbe72abb9
+java:S1858Ú"@"format" returns a string, there's no need to call "toString()".(’Ê»‡ùÿÿÿÿ8ÓêÕï1J$3d5d01e1-bb9f-4495-99fb-12af95679ed1
 „
-java:S1858ü"@"format" returns a string, there's no need to call "toString()".(¿ıæî8õÂ»¸ï1J$05fb8e4f-13b5-4ad2-a006-81699c258c99
+java:S1858ü"@"format" returns a string, there's no need to call "toString()".(¿ıæî8×êÕï1J$00cdf32b-b137-4d3a-813c-e25baaf4ea1b
 ‰
-java:S1858ı"@"format" returns a string, there's no need to call "toString()".(«Ñ¿¸ûÿÿÿÿ8øÂ»¸ï1J$4f989fd4-67de-4153-9f10-195afb717741
-n	java:S106œ"+Replace this use of System.out by a logger.(Ù«Ãí8Ã»¸ï1J$8c8dbc15-a271-4642-b0b6-5584317ab78f
+java:S1858ı"@"format" returns a string, there's no need to call "toString()".(«Ñ¿¸ûÿÿÿÿ8ØêÕï1J$6b941eb0-8780-4941-9738-ea20cd0187a3
+n	java:S106œ"+Replace this use of System.out by a logger.(Ù«Ãí8ÛêÕï1J$127dc82f-00d5-4dae-b473-f46dbc850339
 u
-java:S1602´",Remove useless curly braces around statement(ùÊàÊùÿÿÿÿ8†Ã»¸ï1J$57c1f115-966c-4073-9da5-4ccf196ddc7c
+java:S1602´",Remove useless curly braces around statement(ùÊàÊùÿÿÿÿ8ŞêÕï1J$13af37f0-0f17-4390-9e06-9c7eb6742dc0
 u
-java:S1602Í",Remove useless curly braces around statement(³õ’øÿÿÿÿÿ8‹Ã»¸ï1J$3d03f2fd-c2f9-443a-9238-d0e5bf3d2416
-|
-java:S3400€"9Remove this method and declare a constant for this value.(¡ğ¬8’Ã»¸ï1J$e4887dc8-260e-4665-a1df-1c63b7f3c6a0
-µ
-java:S1130ş"qRemove the declaration of thrown exception 'java.rmi.RemoteException', as it cannot be thrown from method's body.(Ö—â»8“Ã»¸ï1J$5a1f125a-1a88-4217-9e82-145d048d9eb6
-o
-java:S1172ş"+Remove this unused method parameter "date".(Ö—â»8”Ã»¸ï1J$3fbaa20a-2f9c-4f91-8f48-eeda8c682987
-~	java:S125ÿ"<This block of commented-out lines of code should be removed.(ùØı:8–Ã»¸ï1J$46f5cf7a-083f-4f52-8777-4c22ba419f9f
+java:S1602Í",Remove useless curly braces around statement(³õ’øÿÿÿÿÿ8áêÕï1J$9ce30ade-bb72-4745-954f-c2ad08dc8c1b
 `
-java:S11285"Remove this duplicated import.(…õ»38¡Ã»¸ï1J$7b1b314f-e511-4066-a3a3-26f062aa5249
+java:S11285"Remove this duplicated import.(…õ»38ìêÕï1J$db5f33b0-1820-4ab6-8a7c-28af34dadb7e
