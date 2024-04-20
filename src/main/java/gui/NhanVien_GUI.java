@@ -40,7 +40,6 @@ import javax.swing.ImageIcon;
 import com.toedter.calendar.JDateChooser;
 
 import dao.NhanVien_DAO;
-import dao.TaiKhoan_DAO;
 import entity.Ca;
 import entity.NhanVien;
 import entity.TaiKhoan;
@@ -57,7 +56,6 @@ public class NhanVien_GUI extends JPanel {
 	private JTable table;
 	private JTableHeader tableHeader;
 	private NhanVien_DAO nhanVien_DAO;
-	private TaiKhoan_DAO taiKhoan_DAO;
 	private JComboBox<String> cbGioiTinh;
 	private JComboBox<String> cbCa;
 	private JTextField txtLuong;
@@ -84,7 +82,6 @@ public class NhanVien_GUI extends JPanel {
 
 		// khai bao DAO
 		nhanVien_DAO = new NhanVien_DAO();
-		taiKhoan_DAO = new TaiKhoan_DAO();
 
 		ds = new ArrayList<NhanVien>();
 
@@ -808,11 +805,6 @@ public class NhanVien_GUI extends JPanel {
 				nhanVien.setHinhAnh(relativePath);
 				nhanVien_DAO.themNhanVien(nhanVien);
 				
-				// Thêm tài khoản mới cho nhân viên mới
-				TaiKhoan taiKhoan = new TaiKhoan();
-				taiKhoan.setNhanVien(nhanVien);
-				taiKhoan.setMatKhau(txtSoDienThoai.getText());
-				taiKhoan_DAO.themTaiKhoan(taiKhoan);
 				JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công!");
 				refresh();
 				return true;
@@ -846,9 +838,7 @@ public class NhanVien_GUI extends JPanel {
 					"Bạn có chắc muốn xóa nhân viên '" + model.getValueAt(row, 0) + "' chứ?", "Xóa?",
 					JOptionPane.YES_NO_OPTION);
 			if (option == JOptionPane.YES_OPTION) {
-				NhanVien nhanVien = nhanVien_DAO.getNhanVienTheoMa((String) model.getValueAt(row, 0));
 				try {
-					taiKhoan_DAO.xoaTaiKhoan(nhanVien.getMaNhanVien());
 					nhanVien_DAO.xoaNhanVienTheoMa(model.getValueAt(row, 0).toString());
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(null, "Không được xóa nhân viên này. Bởi vì sẽ mất toàn bộ dữ liệu hóa đơn và phiếu đặt của nhân viên này!");

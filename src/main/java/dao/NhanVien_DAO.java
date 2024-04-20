@@ -7,10 +7,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.JOptionPane;
-
 import dao.impl.NhanVien_Impl;
 import entity.NhanVien;
+import entity.TaiKhoan;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 
@@ -18,9 +17,11 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 
 	private static final long serialVersionUID = 1L;
 	private EntityManager em;
+	private TaiKhoan_DAO taiKhoan_DAO;
 	
 	public NhanVien_DAO() throws RemoteException {
 		super();
+		taiKhoan_DAO = new TaiKhoan_DAO();
 		em = Persistence.createEntityManagerFactory("BookStores MSSQL").createEntityManager();
 	}
 	
@@ -64,8 +65,12 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 	@Override
 	public boolean themNhanVien(NhanVien nhanVien) throws RemoteException {
 		try {
+			TaiKhoan taiKhoan = new TaiKhoan();
+			taiKhoan.setNhanVien(nhanVien);
+			taiKhoan.setMatKhau(nhanVien.getSoDienThoai());
 			em.getTransaction().begin();
 			em.persist(nhanVien);
+			em.persist(taiKhoan);
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
@@ -79,7 +84,9 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 	public boolean xoaNhanVienTheoMa(String maNV) throws RemoteException {
 		try {
 			NhanVien nhanVien = em.find(NhanVien.class, maNV);
+			TaiKhoan taiKhoan = em.find(TaiKhoan.class, maNV);
 			em.getTransaction().begin();
+			em.remove(taiKhoan);
 			em.remove(nhanVien);
 			em.getTransaction().commit();
 			return true;

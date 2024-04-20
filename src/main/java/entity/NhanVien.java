@@ -2,7 +2,6 @@ package entity;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.util.Objects;
 import java.util.Set;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -221,25 +220,6 @@ public class NhanVien implements Serializable {
 
     public void setHinhAnh(String hinhAnh) {
         this.hinhAnh = hinhAnh;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(cCCD, email, hinhAnh, maNhanVien, soDienThoai, taiKhoan);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        NhanVien other = (NhanVien) obj;
-        return Objects.equals(cCCD, other.cCCD) && Objects.equals(email, other.email)
-                && Objects.equals(hinhAnh, other.hinhAnh) && Objects.equals(maNhanVien, other.maNhanVien)
-                && Objects.equals(soDienThoai, other.soDienThoai) && Objects.equals(taiKhoan, other.taiKhoan);
     }
 
 //	@Override
