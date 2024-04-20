@@ -9,6 +9,8 @@ import jakarta.persistence.Embeddable;
 @Embeddable
 public class ChiTietPhieuDatKey implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	@Column(name = "maPhieuDatHang", columnDefinition = "nvarchar(7)", nullable = false)
 	private String maPhieuDatHang;
 

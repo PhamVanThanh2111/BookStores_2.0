@@ -7,6 +7,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.JOptionPane;
+
 import dao.impl.NhanVien_Impl;
 import entity.NhanVien;
 import jakarta.persistence.EntityManager;
@@ -82,7 +84,6 @@ public class NhanVien_DAO extends UnicastRemoteObject implements NhanVien_Impl {
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
 			em.getTransaction().rollback();
 			return false;
 		}

@@ -6,9 +6,9 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "Sach")
 @NamedQueries({
-	@NamedQuery(name = "getAllSach",query = "SELECT sa FROM Sach sa WHERE sa.maSanPham LIKE 'S%'"),
+	@NamedQuery(name = "getAllSach",query = "SELECT sa FROM Sach sa WHERE sa.maSanPham LIKE 'S%' AND sa.trangThai = true"),
 	@NamedQuery(name = "getSachTheoTen",query = "SELECT sa FROM Sach sa where sa.tenSanPham LIKE :tenSanPham"),
-	@NamedQuery(name = "getAllSachXoa", query = "SELECT sa FROM Sach sa where sa.maSanPham LIKE 'XS%'"),
+	@NamedQuery(name = "getAllSachXoa", query = "SELECT sa FROM Sach sa where sa.maSanPham LIKE 'S%' AND sa.trangThai = false"),
 })
 public class Sach extends SanPham implements Serializable {
 	private static final long serialVersionUID = 1L;

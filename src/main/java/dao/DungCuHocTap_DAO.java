@@ -45,7 +45,6 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
 			em.getTransaction().rollback();
 			return false;
 		}
@@ -60,23 +59,16 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 	public boolean xoaDungCuHocTapVaoThungRac(String maDungCuHocTap) throws RemoteException, SQLException {
 	    try {
 	        DungCuHocTap dungCuHocTap = em.find(DungCuHocTap.class, maDungCuHocTap);
-//	        DungCuHocTap dungCuHocTap_temp = new DungCuHocTap();
-//	        dungCuHocTap_temp.setMaSanPham("X" + maDungCuHocTap);
-//	        dungCuHocTap_temp.setTenSanPham(dungCuHocTap.getTenSanPham());
-//	        dungCuHocTap_temp.setSoLuongTon(dungCuHocTap.getSoLuongTon());
-//	        dungCuHocTap_temp.setGiaBan(dungCuHocTap.getGiaBan());
-//	        dungCuHocTap_temp.setGiaNhap(dungCuHocTap.getGiaNhap());
-//	        dungCuHocTap_temp.setNhaCungCap(dungCuHocTap.getNhaCungCap());
-//	        dungCuHocTap_temp.setHinhAnh(dungCuHocTap.getHinhAnh());
-//	        dungCuHocTap_temp.setXuatXu(dungCuHocTap.getXuatXu());
 	        if (dungCuHocTap != null) {
-	        	xoaDungCuHocTapTheoMa(maDungCuHocTap);
-//	        	themDungCuHocTap(dungCuHocTap_temp);
+	        	dungCuHocTap.setTrangThai(false);
+	        	em.getTransaction().begin();
+	        	em.merge(dungCuHocTap);
+	        	em.getTransaction().commit();
 	        }
 	        return true;
 	    } catch (Exception e) {
-	        e.printStackTrace();
-	        JOptionPane.showMessageDialog(null, "Không thể xóa dụng cụ học tập này!");
+	    	e.printStackTrace();
+	    	em.getTransaction().rollback();
 	        return false;
 	    }
 	}
@@ -86,22 +78,16 @@ public class DungCuHocTap_DAO extends UnicastRemoteObject implements DungCuHocTa
 	public boolean khoiPhucDungCuHocTap(String maDungCuHocTapXoa) throws RemoteException, SQLException {
 		try {
 			DungCuHocTap dungCuHocTap = em.find(DungCuHocTap.class, maDungCuHocTapXoa);
-			DungCuHocTap dungCuHocTap_temp = new DungCuHocTap();
-			dungCuHocTap_temp.setMaSanPham(maDungCuHocTapXoa.substring(1));
-	        dungCuHocTap_temp.setTenSanPham(dungCuHocTap.getTenSanPham());
-	        dungCuHocTap_temp.setSoLuongTon(dungCuHocTap.getSoLuongTon());
-	        dungCuHocTap_temp.setGiaBan(dungCuHocTap.getGiaBan());
-	        dungCuHocTap_temp.setGiaNhap(dungCuHocTap.getGiaNhap());
-	        dungCuHocTap_temp.setNhaCungCap(dungCuHocTap.getNhaCungCap());
-	        dungCuHocTap_temp.setHinhAnh(dungCuHocTap.getHinhAnh());
-	        dungCuHocTap_temp.setXuatXu(dungCuHocTap.getXuatXu());
 			if (dungCuHocTap != null) {
-				xoaDungCuHocTapTheoMa(maDungCuHocTapXoa);
-				themDungCuHocTap(dungCuHocTap_temp);
+				dungCuHocTap.setTrangThai(true);
+				em.getTransaction().begin();
+				em.merge(dungCuHocTap);
+				em.getTransaction().commit();
 			}
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
+			em.getTransaction().rollback();
 			return false;
 		}
 	}

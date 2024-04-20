@@ -19,10 +19,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import dao.NhanVien_DAO;
 import dao.TaiKhoan_DAO;
-import entity.NhanVien;
-//import dao.TaiKhoan_DAO;
 import entity.TaiKhoan;
 import java.awt.event.KeyAdapter;
 import javax.swing.JCheckBox;
@@ -38,7 +35,6 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 	private JButton btnExit;
 	private JButton btnLogin;
 	private TaiKhoan_DAO taiKhoan_DAO;
-	private NhanVien_DAO nhanVien_DAO;
 	private JTextField txtUser;
 	private int countSaiMatKhau = 0;
 	private JCheckBox chkShow;
@@ -46,7 +42,6 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 	public DangNhap_GUI() throws SQLException, RemoteException {
 
 		taiKhoan_DAO = new TaiKhoan_DAO();
-		nhanVien_DAO = new NhanVien_DAO();
 
 		getContentPane().setLayout(null);
 		setTitle("Login");
@@ -212,15 +207,14 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 			@SuppressWarnings("deprecation")
 			String matKhau = txtPwd.getText().toString().trim();
 			TaiKhoan taiKhoan = taiKhoan_DAO.getTaiKhoanTheoMaTaiKhoan(maTaiKhoan);
-			if (taiKhoan.getTaiKhoan() == null) {
+			if (taiKhoan.getNhanVien() == null) {
 				JOptionPane.showMessageDialog(null, "Tài khoản không đúng!");
 				countSaiMatKhau++;
 			} else if (!taiKhoan.getMatKhau().equals(matKhau)) {
 				JOptionPane.showMessageDialog(null, "Mật khẩu không đúng!");
 				countSaiMatKhau++;
 			} else {
-				NhanVien nhanVien = nhanVien_DAO.getNhanVienTheoTaiKhoan(taiKhoan.getTaiKhoan());
-				HeThongQuanLyNhaSach trangChu_GUI = new HeThongQuanLyNhaSach(nhanVien);
+				HeThongQuanLyNhaSach trangChu_GUI = new HeThongQuanLyNhaSach(taiKhoan.getNhanVien());
 				trangChu_GUI.setVisible(true);
 				this.setVisible(false);
 			}

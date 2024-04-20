@@ -69,7 +69,6 @@ public class SanPham_DAO extends UnicastRemoteObject implements SanPham_Impl {
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
 			em.getTransaction().rollback();
 			return false;
 		}

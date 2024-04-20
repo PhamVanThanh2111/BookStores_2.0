@@ -54,9 +54,6 @@ import javax.swing.SwingConstants;
 
 public class DungCuHocTap_GUI extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField txtmaDCHT;
 	private JTextField txttenDCHT;
@@ -1033,6 +1030,7 @@ public class DungCuHocTap_GUI extends JPanel {
 					}
 					dungCuHocTap.setNhaCungCap(nhacc);
 					dungCuHocTap.setHinhAnh(relativePath);
+					dungCuHocTap.setTrangThai(true);
 					dungCuHocTap_DAO.themDungCuHocTap(dungCuHocTap);
 					JOptionPane.showMessageDialog(null, "Thêm dụng cụ học tập thành công!");
 				}
@@ -1084,6 +1082,7 @@ public class DungCuHocTap_GUI extends JPanel {
 				}
 				dungCuHocTap.setNhaCungCap(nhacc);
 				dungCuHocTap.setHinhAnh(relativePath);
+				dungCuHocTap.setTrangThai(true);
 				dungCuHocTap_DAO.suaDungCuHocTap(dungCuHocTap);
 				JOptionPane.showMessageDialog(null, "Cập nhật thông tin dụng cụ học tập thành công!");
 			}

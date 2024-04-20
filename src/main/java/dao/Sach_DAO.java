@@ -44,7 +44,6 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
 			em.getTransaction().rollback();
 			return false;
 		}
@@ -64,28 +63,16 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 	public boolean xoaSachVaoThungRac(String maSach) throws RemoteException, SQLException {
 		try {
 			Sach sach = em.find(Sach.class, maSach);
-//			Sach sach_temp = new Sach();
-//			sach.setMaSanPham("X" + maSach);
-//			sach_temp.setMaSanPham("X" + maSach);
-//			System.out.println(sach_temp.getMaSanPham());
-//			sach_temp.setTenSanPham(sach.getTenSanPham());
-//			sach_temp.setXuatXu(sach.getXuatXu());
-//			sach_temp.setGiaNhap(sach.getGiaNhap());
-//			sach_temp.setGiaBan(sach.getGiaBan());
-//			sach_temp.setSoLuongTon(sach.getSoLuongTon());
-//			sach_temp.setNhaXuatBan(sach.getNhaXuatBan());
-//			sach_temp.setTheLoaiSach(sach.getTheLoaiSach());
-//			sach_temp.setTacGia(sach.getTacGia());
-//			sach_temp.setSoTrang(sach.getSoTrang());
-//			sach_temp.setNamXuatBan(sach.getNamXuatBan());
-//			sach_temp.setHinhAnh(sach.getHinhAnh());
 			if (sach != null) {
-				xoaSachTheoMaSach(maSach);
-//				themSach(sach);
+				sach.setTrangThai(false);
+				em.getTransaction().begin();
+				em.merge(sach);
+				em.getTransaction().commit();
 			}
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
+			em.getTransaction().rollback();
 			JOptionPane.showMessageDialog(null, "Không thể xóa sách này!");
 			return false;
 		}
@@ -99,25 +86,15 @@ public class Sach_DAO extends UnicastRemoteObject implements Sach_Impl {
 	public boolean khoiPhucSach(String maSachXoa) throws RemoteException, SQLException {
 		try {
 			Sach sach = em.find(Sach.class, maSachXoa);
-			Sach sach_temp = new Sach();
-			sach_temp.setMaSanPham(maSachXoa.substring(1));
-			sach_temp.setTenSanPham(sach.getTenSanPham());
-			sach_temp.setXuatXu(sach.getXuatXu());
-			sach_temp.setGiaNhap(sach.getGiaNhap());
-			sach_temp.setGiaBan(sach.getGiaBan());
-			sach_temp.setSoLuongTon(sach.getSoLuongTon());
-			sach_temp.setNhaXuatBan(sach.getNhaXuatBan());
-			sach_temp.setTheLoaiSach(sach.getTheLoaiSach());
-			sach_temp.setTacGia(sach.getTacGia());
-			sach_temp.setSoTrang(sach.getSoTrang());
-			sach_temp.setNamXuatBan(sach.getNamXuatBan());
-			sach_temp.setHinhAnh(sach.getHinhAnh());
 			if (sach != null) {
-				xoaSachTheoMaSach(maSachXoa);
-				themSach(sach_temp);
+				sach.setTrangThai(true);
+				em.getTransaction().begin();
+				em.merge(sach);
+				em.getTransaction().commit();
 			}
 			return true;
 		} catch (Exception e) {
+			em.getTransaction().rollback();
 			e.printStackTrace();
 			return false;
 		}

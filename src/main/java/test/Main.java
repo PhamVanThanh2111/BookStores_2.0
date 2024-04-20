@@ -20,13 +20,14 @@ import entity.Sach;
 import entity.SanPham;
 import entity.TaiKhoan;
 import entity.generateid.DungCuHocTapGeneratorId;
+import gui.HoaDon_GUI;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class Main {
 	public static void main(String[] args) throws SQLException, RemoteException {
-//		Sach_DAO sach_DAO = new Sach_DAO();
+		Sach_DAO sach_DAO = new Sach_DAO();
 //		TaiKhoan_DAO taiKhoan_DAO = new TaiKhoan_DAO();
 //		DungCuHocTap_DAO dungCuHocTap_DAO = new DungCuHocTap_DAO();
 //		NhanVien_DAO nhanVien_DAO = new NhanVien_DAO();
@@ -34,7 +35,7 @@ public class Main {
 //		HoaDon_DAO hoaDon_DAO = new HoaDon_DAO();
 //		SanPham_DAO sanPham_DAO = new SanPham_DAO();
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BookStores MSSQL");
+//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BookStores MSSQL");
 //		EntityManager em = emf.createEntityManager();
 //		emf.close();
 //		System.out.println(phatSinhMa_DAO.getMaSachXoa());
@@ -65,5 +66,14 @@ public class Main {
 //		Map<SanPham, Long> maps = sanPham_DAO.getSanPhamBanChay();
 //		maps.forEach((k, v) -> System.out.println(k.getTenSanPham() + " - " + v));
 //		System.out.println(nhanVien_DAO.getNhanVienTheoMaHoaDon("HD00010").getTenNhanVien());;
+//		TaiKhoan taiKhoan = new TaiKhoan();
+//		taiKhoan.setNhanVien(nhanVien_DAO.getNhanVienTheoMa("NV0009"));
+//		taiKhoan.setMatKhau("a");
+//		taiKhoan_DAO.themTaiKhoan(taiKhoan);
+//		System.out.println(taiKhoan_DAO.getTaiKhoanTheoMaTaiKhoan("NV0009").getMatKhau());
+//		taiKhoan_DAO.xoaTaiKhoan("NV0009");
+		
+//		sach_DAO.xoaSachVaoThungRac("S00013");
+//		sach_DAO.khoiPhucSach("S00013");
 	}
 }
