@@ -12,7 +12,7 @@ import java.awt.event.MouseListener;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JScrollPane;
@@ -464,19 +464,15 @@ public class DanhSachDatHang_GUI extends JPanel {
 		}
 	}
 	
-	private void xuatHoaDon(String ma)  {
+	private void xuatHoaDon(String maHoaDon)  {
 		try {
-			Hashtable<String, Object> map = new Hashtable<String, Object>();
-			JasperReport  jasperReport = JasperCompileManager.compileReport("src/main/java/report/hoaDonNV_report.jrxml");
-			
-			map.put("maPhieu",ma);
-			
-			JasperPrint jasperPrint = JasperFillManager.fillReport( jasperReport , map , ConnectDB.con);
-			JasperViewer.viewReport(jasperPrint,false);
-			
+			HashMap<String, Object> params = new HashMap<String, Object>();
+			params.put("maPhieu", maHoaDon);
+			JasperReport jasperReport = JasperCompileManager.compileReport("src/main/java/report/hoaDonNV_report.jrxml");
+			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, ConnectDB.getConnection());
+			JasperViewer.viewReport(jasperPrint, false);
 		} catch (JRException e) {
 			e.printStackTrace();
 		}
-		
 	}
 }

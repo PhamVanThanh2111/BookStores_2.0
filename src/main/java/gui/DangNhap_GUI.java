@@ -26,7 +26,7 @@ import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
 
 public class DangNhap_GUI extends JFrame implements ActionListener {
-
+	
 	private static final long serialVersionUID = 1L;
 	private JLabel lblTitle;
 	private JLabel lblUser;
@@ -38,6 +38,8 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 	private JTextField txtUser;
 	private int countSaiMatKhau = 0;
 	private JCheckBox chkShow;
+	
+	private HeThongQuanLyNhaSach trangChu_GUI;
 
 	public DangNhap_GUI() throws SQLException, RemoteException {
 
@@ -214,9 +216,11 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Mật khẩu không đúng!");
 				countSaiMatKhau++;
 			} else {
-				HeThongQuanLyNhaSach trangChu_GUI = new HeThongQuanLyNhaSach(taiKhoan.getNhanVien());
-				trangChu_GUI.setVisible(true);
-				this.setVisible(false);
+				if (trangChu_GUI == null) {
+					trangChu_GUI = new HeThongQuanLyNhaSach(taiKhoan.getNhanVien());
+					trangChu_GUI.setVisible(true);
+					this.setVisible(false);
+				}
 			}
 		}
 	}
