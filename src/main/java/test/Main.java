@@ -83,6 +83,8 @@ public class Main {
 //		hoaDon.setThanhTien(15000);
 //		hoaDon = hoaDon_DAO.themHoaDon(hoaDon);
 		
-		
+//		if (khachHang_DAO.getKhachHangTheoSoDienThoai("0111111111") == null) {
+//			System.out.println("Không tìm thấy khách hàng");
+//		}
 	}
 }

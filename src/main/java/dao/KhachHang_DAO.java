@@ -28,7 +28,11 @@ public class KhachHang_DAO extends UnicastRemoteObject implements KhachHang_Impl
 	@Override
 	public KhachHang getKhachHangTheoSoDienThoai(String soDienThoai) throws RemoteException {
 		return em.createNamedQuery("getKhachHangTheoSoDienThoai", KhachHang.class)
-				.setParameter("soDienThoai", soDienThoai).getSingleResult();
+				.setParameter("soDienThoai", soDienThoai)
+				.getResultList()
+				.stream()
+				.findFirst()
+				.orElse(null);
 	}
 
 	@Override
