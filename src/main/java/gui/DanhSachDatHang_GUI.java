@@ -64,13 +64,17 @@ public class DanhSachDatHang_GUI extends JPanel {
 	private ChiTietHoaDon_DAO chiTietHoaDon_DAO;
 	private SanPham_DAO sanPham_DAO;
 	
-	public DanhSachDatHang_GUI() throws RemoteException {
+	private DanhSachHoaDon_GUI danhSachHoaDon_GUI;
+	
+	public DanhSachDatHang_GUI(DanhSachHoaDon_GUI danhSachHoaDon_GUI) throws RemoteException {
 		// declare variables DAO
 		phieuDatHang_DAO = new PhieuDatHang_DAO();
 		chiTietPhieuDatHang_DAO = new ChiTietPhieuDatHang_DAO();
 		hoaDon_DAO = new HoaDon_DAO();
 		chiTietHoaDon_DAO = new ChiTietHoaDon_DAO();
 		sanPham_DAO = new SanPham_DAO();
+		
+		this.danhSachHoaDon_GUI = danhSachHoaDon_GUI;
 		
 		setLayout(null);
 		
@@ -348,6 +352,8 @@ public class DanhSachDatHang_GUI extends JPanel {
 		lblTien.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblTien.setBounds(360, 550, 150, 40);
 		pThongTinChiTiet.add(lblTien);
+		
+		danhSachHoaDon_GUI.refresh();
 	}
 	
 	public void loadData(List<PhieuDatHang> danhSachPhieuDatHangs) throws RemoteException {
@@ -449,6 +455,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 			JOptionPane.showMessageDialog(null, "Lập hóa đơn thành công!");
 			xuatHoaDon(hoaDon.getMaHoaDon());
 			refresh();
+			danhSachHoaDon_GUI.refresh();
 			return true;
 		}
 		else {
