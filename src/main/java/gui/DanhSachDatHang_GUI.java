@@ -10,8 +10,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.rmi.RemoteException;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 
@@ -431,7 +433,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 			// thêm hóa đơn
 			hoaDon.setNhanVien(phieuDatHang.getNhanVien());
 			hoaDon.setKhachHang(phieuDatHang.getKhachHang());
-			hoaDon.setNgayLap(phieuDatHang.getNgayLap());
+			hoaDon.setNgayLap(Date.valueOf(LocalDate.now()));
 			hoaDon.setThanhTien(phieuDatHang.getThanhTien());
 			hoaDon_DAO.themHoaDon(hoaDon);
 			
