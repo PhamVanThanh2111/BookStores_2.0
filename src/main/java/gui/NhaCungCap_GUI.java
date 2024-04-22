@@ -53,7 +53,7 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 	private Border borderDefault;
 	private JLabel lblMaNCC;
 	private NhaCungCap_DAO nhaCungCap_DAO;
-	private JButton btnXoa, btnThem, btnSua, btnTim;
+	private JButton btnXoa, btnThem, btnSua, btnTim, btnLamMoi;
 	private ArrayList<NhaCungCap> ds;
 	private TimKiemNhaCungCap timKiemNhaCungCap;
 	private JDesktopPane desktopPane;
@@ -301,7 +301,7 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 		btnTim.setBounds(543, 660, 135, 40);
 		pDanhSach.add(btnTim);
 		
-		JButton btnLamMoi = new JButton("Làm Mới");
+		btnLamMoi = new JButton("Làm Mới");
 		btnLamMoi.setOpaque(true);
 		btnLamMoi.setForeground(Color.WHITE);
 		btnLamMoi.setFont(new Font("SansSerif", Font.BOLD, 14));
@@ -726,14 +726,15 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 			if (btnThem.getText().equalsIgnoreCase("Thêm")) {
 				btnTim.setEnabled(false);
 				btnSua.setEnabled(false);
+				btnLamMoi.setEnabled(false);
 				openFocus();
 				btnThem.setText("Xác Nhận");
 				btnXoa.setText("Hủy");
-
 			} else {
 				if (btnThem.getText().equalsIgnoreCase("Xác Nhận")) {
 					btnTim.setEnabled(true);
 					btnSua.setEnabled(true);
+					btnLamMoi.setEnabled(true);
 					closeFocus();
 					btnThem.setText("Thêm");
 					btnXoa.setText("Xóa");
@@ -750,9 +751,12 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 			if (o.equals(btnXoa)) {
 				if (btnXoa.getText().equalsIgnoreCase("Hủy")) {
 					btnThem.setText("Thêm");
+					btnSua.setText("Sửa");
 					btnXoa.setText("Xóa");
+					btnThem.setEnabled(true);
 					btnTim.setEnabled(true);
 					btnSua.setEnabled(true);
+					btnLamMoi.setEnabled(true);
 					closeFocus();
 				} else {
 					if (btnXoa.getText().equalsIgnoreCase("Xóa")) {
@@ -777,28 +781,27 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Bạn Chưa Chọn Nhà Cung Cấp!");
 						} else {
 							btnThem.setEnabled(false);
-							btnXoa.setEnabled(false);
+                            btnTim.setEnabled(false);
+                            btnLamMoi.setEnabled(false);
 							btnSua.setText("Xác Nhận");
-							btnTim.setText("Hủy");
+							btnXoa.setText("Hủy");
 							openFocus();
 						}
 					} else {
-						if (btnSua.getText().equalsIgnoreCase("Xác Nhận")) {
-
-							int tb = JOptionPane.showConfirmDialog(null, "Bạn Muốn Cập Nhập Nhà Cung Cấp ? ", "Delete",
-									JOptionPane.YES_NO_OPTION);
-							if (tb == JOptionPane.YES_OPTION) {
-								btnThem.setEnabled(true);
-								btnXoa.setEnabled(true);
-								btnSua.setText("Sửa");
-								btnTim.setText("Tìm");
-								try {
-									suaNhaCungCap();
-								} catch (SQLException | RemoteException e1) {
-									e1.printStackTrace();
-								}
-								closeFocus();
+						int tb = JOptionPane.showConfirmDialog(null, "Bạn Muốn Cập Nhập Nhà Cung Cấp ? ", "Delete",
+								JOptionPane.YES_NO_OPTION);
+						if (tb == JOptionPane.YES_OPTION) {
+							btnThem.setEnabled(true);
+                            btnTim.setEnabled(true);
+                            btnLamMoi.setEnabled(true);
+							btnSua.setText("Sửa");
+							btnXoa.setText("Xóa");
+							try {
+								suaNhaCungCap();
+							} catch (SQLException | RemoteException e1) {
+								e1.printStackTrace();
 							}
+							closeFocus();
 						}
 					}
 				} else {
