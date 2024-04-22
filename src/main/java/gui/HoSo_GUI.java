@@ -27,14 +27,9 @@ import javax.swing.JDesktopPane;
 
 public class HoSo_GUI extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private DoiMatKhau_GUI doiMatKhau_GUI;
-	/**
-	 * Create the panel.
-	 */
+	
 	public HoSo_GUI(NhanVien nhanVien) {
 		setLayout(null);
 		

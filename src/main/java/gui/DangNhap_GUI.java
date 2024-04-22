@@ -200,7 +200,7 @@ public class DangNhap_GUI extends JFrame implements ActionListener {
 
 	}
 
-	public void login() throws SQLException, RemoteException {
+	private void login() throws SQLException, RemoteException {
 		if (countSaiMatKhau > 2) {
 			JOptionPane.showMessageDialog(null, "Bạn đã nhập sai tài khoản quá 3 lần. Chương trình sẽ thoát!");
 			System.exit(0);

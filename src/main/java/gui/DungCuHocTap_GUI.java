@@ -239,7 +239,7 @@ public class DungCuHocTap_GUI extends JPanel {
 					btnUpdate.setText("Sửa");
 					btnUpdate.setEnabled(true);
 					btnAdd.setText("Thêm");
-					lamMoi();
+					clearTextFields();
 				} else {
 					if (btnDelete.getText().equalsIgnoreCase("Xóa")) {
 						int r = table.getSelectedRow();
@@ -715,9 +715,8 @@ public class DungCuHocTap_GUI extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				loadCBNhaCC();
-				lamMoiKhachHang();
+				clearTextFieldsCus();;
 			}
 		});
 		pThongTin.add(btnlamMoi);
@@ -937,13 +936,13 @@ public class DungCuHocTap_GUI extends JPanel {
 		}
 	}
 
-	public void loadCBNhaCC() {
+	private void loadCBNhaCC() {
 		for (NhaCungCap nhaCC : nhaCC_DAO.getAllNhaCungCap()) {
 			cbNhaCC.addItem(nhaCC.getTenNCC());
 		}
 	}
 
-	public void lamMoi() {
+	private void clearTextFields() {
 		txtmaDCHT.setText("");
 		txttenDCHT.setText("");
 		txtgiaNhap.setText("");
@@ -954,7 +953,7 @@ public class DungCuHocTap_GUI extends JPanel {
 		lblHinhAnh.removeAll();
 	}
 	// làm mới cho Khách Hàng
-	public void lamMoiKhachHang() {
+	private void clearTextFieldsCus() {
 		txtmaDCHT.setText("");
 		txttenDCHT.setText("");
 		txtXuatXu.setText("");
@@ -972,7 +971,7 @@ public class DungCuHocTap_GUI extends JPanel {
 		}
 	}
 
-	public void closeText() {
+	private void closeText() {
 		txttenDCHT.setEditable(false);
 		txtXuatXu.setEditable(false);
 		txtgiaNhap.setEditable(false);
@@ -988,7 +987,7 @@ public class DungCuHocTap_GUI extends JPanel {
 
 	}
 
-	public void openText() {
+	private void openText() {
 		txttenDCHT.setEditable(true);
 		txtXuatXu.setEditable(true);
 		txtgiaNhap.setEditable(true);

@@ -811,7 +811,7 @@ public class NhaXuatBan_GUI extends JPanel {
 	 }
 
 	// Thêm nhà xuất bản
-	public boolean add() {
+	private boolean add() {
 		 if (txtDiaChi.getText().equals("")) {
 			JOptionPane.showMessageDialog(null, "Địa chỉ nhà xuất bản không được để trống!");
 			txtDiaChi.requestFocus();
@@ -839,7 +839,7 @@ public class NhaXuatBan_GUI extends JPanel {
 	}
 
 	// Xóa nhà xuất bản
-	public boolean delete() throws RemoteException {
+	private boolean delete() throws RemoteException {
 		int row = table.getSelectedRow();
 		if (row == -1) {
 			JOptionPane.showInternalMessageDialog(null, "Bạn phải chọn nhà xuất bản cần xóa!");
@@ -865,7 +865,7 @@ public class NhaXuatBan_GUI extends JPanel {
 	}
 
 	// Sửa nhà xuất bản theo mã
-	public boolean update() {
+	private boolean update() {
 		int row = table.getSelectedRow();
 		if (row == -1) {
 			JOptionPane.showMessageDialog(null, "Bạn phải chọn nhà xuất bản cần sửa!");

@@ -24,12 +24,8 @@ import entity.KhachHang;
 import entity.NhaXuatBan;
 import entity.NhanVien;
 import entity.PhieuDatHang;
-import entity.Sach;
 import entity.SanPham;
-import entity.TheLoaiSach;
-import entity.generateid.SachGeneratorId;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.Persistence;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TestDatHang {

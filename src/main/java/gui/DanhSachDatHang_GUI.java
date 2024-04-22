@@ -65,8 +65,9 @@ public class DanhSachDatHang_GUI extends JPanel {
 	private SanPham_DAO sanPham_DAO;
 	
 	private DanhSachHoaDon_GUI danhSachHoaDon_GUI;
+	private TrangChu_GUI trangChu_GUI;
 	
-	public DanhSachDatHang_GUI(DanhSachHoaDon_GUI danhSachHoaDon_GUI) throws RemoteException {
+	public DanhSachDatHang_GUI(DanhSachHoaDon_GUI danhSachHoaDon_GUI, TrangChu_GUI trangChu_GUI) throws RemoteException {
 		// declare variables DAO
 		phieuDatHang_DAO = new PhieuDatHang_DAO();
 		chiTietPhieuDatHang_DAO = new ChiTietPhieuDatHang_DAO();
@@ -75,6 +76,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 		sanPham_DAO = new SanPham_DAO();
 		
 		this.danhSachHoaDon_GUI = danhSachHoaDon_GUI;
+		this.trangChu_GUI = trangChu_GUI;
 		
 		setLayout(null);
 		
@@ -456,6 +458,7 @@ public class DanhSachDatHang_GUI extends JPanel {
 			xuatHoaDon(hoaDon.getMaHoaDon());
 			refresh();
 			danhSachHoaDon_GUI.refresh();
+			trangChu_GUI.refresh();
 			return true;
 		}
 		else {
