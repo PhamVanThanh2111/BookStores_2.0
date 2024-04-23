@@ -372,7 +372,6 @@ public class NhaXuatBan_GUI extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				int row = table.getSelectedRow();
 				if (btnUpdate.getText().equals("Sửa")) {
 					if (row == -1)
@@ -387,7 +386,7 @@ public class NhaXuatBan_GUI extends JPanel {
 						btnTim.setEnabled(false);
 					}
 				} else {
-						update();
+					if (update()) {
 						unfocusable();
 						btnUpdate.setText("Sửa");
 						btnDelete.setText("Xóa");
@@ -395,6 +394,7 @@ public class NhaXuatBan_GUI extends JPanel {
 						btnLamMoi.setEnabled(true);
 						btnAdd.setEnabled(true);
 						btnTim.setEnabled(true);
+					}
 				}
 			}
 		});

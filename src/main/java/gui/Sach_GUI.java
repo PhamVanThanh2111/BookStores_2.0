@@ -368,6 +368,7 @@ public class Sach_GUI extends JPanel {
 					btnAdd.setEnabled(true);
 					btnUpdate.setEnabled(true);
 					btnTim.setEnabled(true);
+					btnKhoiPhuc.setEnabled(true);
 				}
 			}
 		});
@@ -384,7 +385,6 @@ public class Sach_GUI extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (btnUpdate.getText().equals("Sửa")) {
 					enableEdit();
 					focusable();
@@ -397,19 +397,20 @@ public class Sach_GUI extends JPanel {
 					btnKhoiPhuc.setEnabled(false);
 				} else {
 					try {
-						update();
+						if (update()) {
+							unfocusable();
+							btnUpdate.setText("Sửa");
+							btnDelete.setText("Xóa");
+							disableEdit();
+							btnLamMoi.setEnabled(true);
+							btnAdd.setEnabled(true);
+							btnTim.setEnabled(true);
+							btnChonHinhAnh.setEnabled(false);
+							btnKhoiPhuc.setEnabled(true);
+						}
 					} catch (RemoteException | SQLException e1) {
 						e1.printStackTrace();
 					}
-					unfocusable();
-					btnUpdate.setText("Sửa");
-					btnDelete.setText("Xóa");
-					disableEdit();
-					btnLamMoi.setEnabled(true);
-					btnAdd.setEnabled(true);
-					btnTim.setEnabled(true);
-					btnChonHinhAnh.setEnabled(false);
-					btnKhoiPhuc.setEnabled(true);
 				}
 			}
 		});
