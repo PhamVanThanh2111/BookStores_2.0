@@ -374,7 +374,7 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 				btnTim.setEnabled(false);
 				btnLamMoi.setEnabled(false);
 				openText();
-
+				clearTextFields();
 			} else {
 				if (btnThem.getText().equalsIgnoreCase("Xác Nhận")) {
 					try {
@@ -593,5 +593,13 @@ public class KhachHang_GUI extends JPanel implements ActionListener {
 			return true;
 		}
 		return false;
+	}
+	
+	private void clearTextFields() {
+		txtTenKH.setText("");
+		txtDiaChi.setText("");
+		txtSDT.setText("");
+		cbGioiTinh.setSelectedIndex(-1);
+		lblMaKhachHang.setText("");
 	}
 }

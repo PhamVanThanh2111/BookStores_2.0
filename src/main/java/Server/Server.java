@@ -6,13 +6,15 @@ import dao.impl.*;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+
+import java.net.MalformedURLException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 
 public class Server {
 	
 	private static final String URL = "rmi://PhamVanThanh:9891/";
-	public static void main(String[] args) throws RemoteException, NamingException {
+	public static void main(String[] args) throws RemoteException, NamingException, MalformedURLException {
 		Context context = new InitialContext();
 
 		Ca_Impl caDAO = new Ca_DAO();
