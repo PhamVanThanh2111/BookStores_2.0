@@ -41,8 +41,10 @@ public class SanPham_DAO extends UnicastRemoteObject implements SanPham_Impl {
 			SanPham sanPham = em.find(SanPham.class, maSanPham);
 			em.getTransaction().begin();
 			if (sanPham != null) {
-				sanPham.setSoLuongTon(sanPham.getSoLuongTon() - soLuongBan);
-                em.merge(sanPham);
+				if (sanPham.getSoLuongTon() >= soLuongBan) {
+					sanPham.setSoLuongTon(sanPham.getSoLuongTon() - soLuongBan);
+					em.merge(sanPham);
+				}
 			}
 			em.getTransaction().commit();
 			return true;

@@ -20,6 +20,9 @@ import jakarta.persistence.*;
         @NamedQuery(name = "getNhanVienTheoMaHoaDon", query = "SELECT nv FROM NhanVien nv JOIN nv.hoaDons hd WHERE hd.maHoaDon = :maHoaDon"),
         @NamedQuery(name = "getDoanhThuNhanVienTheoNgay", query = "select sum(hd.thanhTien) from NhanVien nv join nv.hoaDons hd where hd.ngayLap = :ngay and nv.maNhanVien = :maNhanVien"),
 })
+@NamedNativeQueries({
+	@NamedNativeQuery(name = "findAllNhanVien", query = "select * from NhanVien", resultClass = NhanVien.class),
+})
 public class NhanVien implements Serializable {
     private static final long serialVersionUID = 1L;
 

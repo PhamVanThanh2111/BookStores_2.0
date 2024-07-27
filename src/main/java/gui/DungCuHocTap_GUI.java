@@ -63,6 +63,7 @@ public class DungCuHocTap_GUI extends JPanel {
 	private JTable table;
 	private JTableHeader tableHeader;
 	private DefaultTableModel model;
+	private JScrollPane scrollPaneDungCuHocTap;
 	private SanPham_DAO sanPham_DAO;
 	private JButton btnAdd, btnlamMoi, btnUpdate, btnDelete;
 	private JTextField txtXuatXu;
@@ -509,11 +510,12 @@ public class DungCuHocTap_GUI extends JPanel {
 		pDanhSach.setBounds(0, 380, 1300, 340);
 		pMain.add(pDanhSach);
 
-		JScrollPane scrollPaneDungCuHocTap = new JScrollPane();
+		scrollPaneDungCuHocTap = new JScrollPane();
 		scrollPaneDungCuHocTap.setToolTipText("Chọn vào Dụng cụ học tập cần hiển thị thông tin");
 		scrollPaneDungCuHocTap.setBorder(null);
 		scrollPaneDungCuHocTap.setBackground(Color.WHITE);
 		scrollPaneDungCuHocTap.setBounds(30, 65, 1259, 250);
+		scrollPaneDungCuHocTap.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		pDanhSach.add(scrollPaneDungCuHocTap);
 
 		String cols[] = { "Mã Dụng Cụ Học Tập", "Tên Dụng Cụ Học Tập ", "Xuất Xứ", "Giá Nhập", "Giá Bán",
@@ -827,9 +829,9 @@ public class DungCuHocTap_GUI extends JPanel {
 		pDanhSach.setBounds(0, 329, 1300, 391);
 		pMain.add(pDanhSach);
 
-		JScrollPane scrollPaneDungCuHocTap = new JScrollPane();
+		scrollPaneDungCuHocTap = new JScrollPane();
 		scrollPaneDungCuHocTap.setToolTipText("Chọn vào Dụng cụ học tập cần hiển thị thông tin");
-		scrollPaneDungCuHocTap.setBorder(null);
+		scrollPaneDungCuHocTap.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		scrollPaneDungCuHocTap.setBackground(Color.WHITE);
 		scrollPaneDungCuHocTap.setBounds(20, 65, 1259, 304);
 		pDanhSach.add(scrollPaneDungCuHocTap);

@@ -1,47 +1,9 @@
 package gui;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import java.awt.Font;
 import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
-import connect.ConnectDB;
-import dao.ChiTietHoaDon_DAO;
-import dao.DungCuHocTap_DAO;
-import dao.HoaDon_DAO;
-import dao.KhachHang_DAO;
-import dao.NhanVien_DAO;
-import dao.Sach_DAO;
-import dao.SanPham_DAO;
-import entity.ChiTietHoaDon;
-import entity.ChiTietHoaDonKey;
-import entity.HoaDon;
-import entity.KhachHang;
-import entity.NhanVien;
-import entity.SanPham;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
-
-import javax.swing.border.LineBorder;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import java.awt.event.ActionListener;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
-
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -54,9 +16,52 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+
+import connect.ConnectDB;
+import dao.ChiTietHoaDonCho_DAO;
+import dao.ChiTietHoaDon_DAO;
+import dao.DungCuHocTap_DAO;
+import dao.HoaDonCho_DAO;
+import dao.HoaDon_DAO;
+import dao.KhachHang_DAO;
+import dao.NhanVien_DAO;
+import dao.Sach_DAO;
+import dao.SanPham_DAO;
+import entity.ChiTietHoaDon;
+import entity.ChiTietHoaDonCho;
+import entity.ChiTietHoaDonChoKey;
+import entity.ChiTietHoaDonKey;
+import entity.HoaDon;
+import entity.HoaDonCho;
+import entity.KhachHang;
+import entity.NhanVien;
+import entity.SanPham;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
+
 public class HoaDon_GUI extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	private float thanhTien = 0;
 	private JTable table;
 	private DefaultTableModel model;
 	private JComboBox<String> cbTenSP;
@@ -78,7 +83,9 @@ public class HoaDon_GUI extends JPanel {
 	private SanPham_DAO sanPham_DAO;
 	private KhachHang_DAO khachHang_DAO;
 	private HoaDon_DAO hoaDon_DAO;
+	private HoaDonCho_DAO hoaDonCho_DAO;
 	private ChiTietHoaDon_DAO chiTietHoaDon_DAO;
+	private ChiTietHoaDonCho_DAO chiTietHoaDonCho_DAO;
 	private DungCuHocTap_DAO dungCuHocTap_DAO;
 	private Sach_DAO sach_DAO;
 	private NhanVien_DAO nhanVien_DAO;
@@ -86,17 +93,20 @@ public class HoaDon_GUI extends JPanel {
 	private DanhSachHoaDon_GUI danhSachHoaDon_GUI;
 	private ThongKe_GUI thongKe_GUI;
 	private TrangChu_GUI trangChu_GUI;
+	private DanhSachHoaDonCho_GUI danhSachHoaDonCho_GUI;
 	
 	/**
 	 * Create the panel.
 	 * @throws RemoteException 
 	 */
-	public HoaDon_GUI(NhanVien nhanVien, DanhSachHoaDon_GUI danhSachHoaDon_GUI, ThongKe_GUI thongKe_GUI, TrangChu_GUI trangChu_GUI) throws RemoteException {
+	public HoaDon_GUI(NhanVien nhanVien, DanhSachHoaDon_GUI danhSachHoaDon_GUI, DanhSachHoaDonCho_GUI danhSachHoaDonCho_GUI, ThongKe_GUI thongKe_GUI, TrangChu_GUI trangChu_GUI) throws RemoteException {
 		this.danhSachHoaDon_GUI = danhSachHoaDon_GUI;
 		this.thongKe_GUI = thongKe_GUI;
 		this.trangChu_GUI = trangChu_GUI;
+		this.danhSachHoaDonCho_GUI = danhSachHoaDonCho_GUI;
 		
 		setBackground(new Color(255, 255, 255));
+		
 		// khai bao DAO
 		sanPham_DAO = new SanPham_DAO();
 		khachHang_DAO = new KhachHang_DAO();
@@ -105,6 +115,8 @@ public class HoaDon_GUI extends JPanel {
 		dungCuHocTap_DAO = new DungCuHocTap_DAO();
 		sach_DAO = new Sach_DAO();
 		nhanVien_DAO = new NhanVien_DAO();
+		hoaDonCho_DAO = new HoaDonCho_DAO();
+		chiTietHoaDonCho_DAO = new ChiTietHoaDonCho_DAO();
 
 		setLayout(null);
 
@@ -213,7 +225,7 @@ public class HoaDon_GUI extends JPanel {
 		pChiTietHoaDon.setToolTipText("");
 		pChiTietHoaDon.setLayout(null);
 		pChiTietHoaDon.setBorder(new LineBorder(new Color(0, 0, 0), 2));
-		pChiTietHoaDon.setBounds(0, 300, 1298, 420);
+		pChiTietHoaDon.setBounds(0, 300, 1299, 420);
 		pnlMain.add(pChiTietHoaDon);
 
 		JScrollPane scrollPane;
@@ -321,7 +333,7 @@ public class HoaDon_GUI extends JPanel {
 		lblTongTienValue.setBorder(new LineBorder(new Color(0, 0, 0)));
 		pChiTietHoaDon.add(lblTongTienValue);
 		
-		JButton btnLapHoaDon = new JButton("Lập HD");
+		JButton btnLapHoaDon = new JButton("Lập HĐ");
 		btnLapHoaDon.setIcon(new ImageIcon(HoaDon_GUI.class.getResource("/image/HeThong/wallet.png")));
 		btnLapHoaDon.setBackground(new Color(73, 129, 158));
 		btnLapHoaDon.setForeground(new Color(255, 255, 255));
@@ -331,9 +343,10 @@ public class HoaDon_GUI extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (tinhThanhTien() > 0) {
+				thanhTien = tinhThanhTien();
+				if (thanhTien > 0) {
 					try {
-						lapHoaDon(nhanVien.getMaNhanVien());
+						lapHoaDon(nhanVien.getMaNhanVien(), thanhTien);
 					} catch (JRException | RemoteException | SQLException e1) {
 						e1.printStackTrace();
 					}
@@ -345,12 +358,36 @@ public class HoaDon_GUI extends JPanel {
 		});
 		pChiTietHoaDon.add(btnLapHoaDon);
 		
+		JButton btnLapHoaDonCho = new JButton("<html>Lập HĐ<br>chờ</html>");
+		btnLapHoaDonCho.setIcon(new ImageIcon(HoaDon_GUI.class.getResource("/image/HeThong/wallet.png")));
+		btnLapHoaDonCho.setForeground(Color.WHITE);
+		btnLapHoaDonCho.setFont(new Font("SansSerif", Font.BOLD, 14));
+		btnLapHoaDonCho.setBackground(new Color(73, 129, 158));
+		btnLapHoaDonCho.setBounds(940, 373, 135, 40);
+		btnLapHoaDonCho.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				thanhTien = tinhThanhTien();
+				if (thanhTien > 0) {
+					try {
+						lapHoaDonCho(nhanVien.getMaNhanVien(), thanhTien);
+					} catch (JRException | RemoteException | SQLException e1) {
+						e1.printStackTrace();
+					}
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Chưa có sản phẩm nào!");
+				}
+			}
+		});
+		pChiTietHoaDon.add(btnLapHoaDonCho);
+		
 
 		JPanel pThongTinKH = new JPanel();
 		pThongTinKH.setBackground(new Color(255, 255, 255));
 		pThongTinKH.setBorder(
 				new LineBorder(new Color(0, 0, 0), 2));
-		pThongTinKH.setBounds(550, 0, 748, 280);
+		pThongTinKH.setBounds(550, 0, 749, 280);
 		pnlMain.add(pThongTinKH);
 		pThongTinKH.setLayout(null);
 
@@ -377,7 +414,6 @@ public class HoaDon_GUI extends JPanel {
 		cbLoaiSP.addItem("Dụng cụ học tập");
 		cbLoaiSP.setSelectedIndex(-1);
 		cbLoaiSP.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (cbLoaiSP.getSelectedIndex() != -1) {
@@ -407,6 +443,7 @@ public class HoaDon_GUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (cbTenSP.getSelectedIndex() != -1) {
 					try {
+						sanPham_DAO = new SanPham_DAO();
 						sanPham = sanPham_DAO.getSanPhamTheoTen(cbTenSP.getSelectedItem().toString());
 					} catch (RemoteException e1) {
 						e1.printStackTrace();
@@ -685,9 +722,10 @@ public class HoaDon_GUI extends JPanel {
 	
 	private float tinhThanhTien() {
 		float thanhTien =  0;
+		int soLuongLoaiSanPham = model.getRowCount();
 		try {
 			thanhTien = Float.parseFloat(model.getValueAt(0, 4).toString());
-			for (int i = 1; i < model.getRowCount(); i++) {
+			for (int i = 1; i < soLuongLoaiSanPham; i++) {
 				thanhTien += Float.parseFloat(model.getValueAt(i, 4).toString());
 			}
 		} catch (Exception e) {
@@ -705,14 +743,14 @@ public class HoaDon_GUI extends JPanel {
 		return false;
 	}
 	
-	private void lapHoaDon(String maNhanVien) throws SQLException, JRException, RemoteException {
+	private void lapHoaDon(String maNhanVien, float thanhTien) throws SQLException, JRException, RemoteException {
 		HoaDon hoaDon = new HoaDon();
 		if (khachHang != null) {
 			hoaDon.setKhachHang(khachHang);
 		}
 		hoaDon.setNhanVien(nhanVien_DAO.getNhanVienTheoMa(maNhanVien));
 		hoaDon.setNgayLap(java.sql.Date.valueOf(LocalDate.now()));
-		hoaDon.setThanhTien(tinhThanhTien());
+		hoaDon.setThanhTien(thanhTien);
 		hoaDon = hoaDon_DAO.themHoaDon(hoaDon);
 		for (int i = 0; i < model.getRowCount(); i++) {
 			SanPham sanPham = sanPham_DAO.getSanPhamTheoTen(model.getValueAt(i, 0).toString());
@@ -727,12 +765,43 @@ public class HoaDon_GUI extends JPanel {
 			chiTietHoaDon.setSoLuong(soLuong);
 			chiTietHoaDon.setDonGia(Float.parseFloat(model.getValueAt(i, 3).toString()));
 			chiTietHoaDon_DAO.themChiTietHoaDon(chiTietHoaDon);
-			sanPham_DAO.banSanPham(sanPham.getMaSanPham(), soLuong);
+			if (!sanPham_DAO.banSanPham(sanPham.getMaSanPham(), soLuong)) {
+				JOptionPane.showMessageDialog(null, "Sản phẩm này đã hết hàng!");
+			};
 		}
 		xemHoaDon(hoaDon.getMaHoaDon());
 		danhSachHoaDon_GUI.refresh();
 		thongKe_GUI.showAllChart();
 		trangChu_GUI.refresh();
+	}
+	
+	private void lapHoaDonCho(String maNhanVien, float thanhTien) throws SQLException, JRException, RemoteException {
+		HoaDonCho hoaDonCho = new HoaDonCho();
+		if (khachHang != null) {
+			hoaDonCho.setKhachHang(khachHang);
+		}
+		hoaDonCho.setNhanVien(nhanVien_DAO.getNhanVienTheoMa(maNhanVien));
+		hoaDonCho.setNgayLap(java.sql.Date.valueOf(LocalDate.now()));
+		hoaDonCho.setThanhTien(thanhTien);
+		hoaDonCho = hoaDonCho_DAO.themHoaDonCho(hoaDonCho);
+		for (int i = 0; i < model.getRowCount(); i++) {
+			SanPham sanPham = sanPham_DAO.getSanPhamTheoTen(model.getValueAt(i, 0).toString());
+			ChiTietHoaDonCho chiTietHoaDonCho = new ChiTietHoaDonCho();
+			ChiTietHoaDonChoKey chiTietHoaDonChoKey = new ChiTietHoaDonChoKey();
+			int soLuong = Integer.parseInt(model.getValueAt(i, 2).toString());
+			chiTietHoaDonChoKey.setMaSanPham(sanPham.getMaSanPham());
+			chiTietHoaDonChoKey.setMaHoaDonCho(hoaDonCho.getMaHoaDonCho());
+			chiTietHoaDonCho.setHoaDonCho(hoaDonCho);
+			chiTietHoaDonCho.setSanPham(sanPham);
+			chiTietHoaDonCho.setId(chiTietHoaDonChoKey);
+			chiTietHoaDonCho.setSoLuong(soLuong);
+			chiTietHoaDonCho.setDonGia(Float.parseFloat(model.getValueAt(i, 3).toString()));
+			chiTietHoaDonCho_DAO.themChiTietHoaDonCho(chiTietHoaDonCho);
+			if (!sanPham_DAO.banSanPham(sanPham.getMaSanPham(), soLuong)) {
+				JOptionPane.showMessageDialog(null, "Sản phẩm này đã hết hàng!");
+			};
+		}
+		danhSachHoaDonCho_GUI.refresh();
 	}
 	
 	private synchronized void xemHoaDon(String maHoaDon) throws JRException {
@@ -754,6 +823,7 @@ public class HoaDon_GUI extends JPanel {
 		txtSoDienThoai.setText("");
 		txtDiaChi.setText("");
 		model.setRowCount(0);
+		lblTongTienValue.setText("");
 		lamMoiThongTinSanPham();
 	}
 	
@@ -807,5 +877,21 @@ public class HoaDon_GUI extends JPanel {
 				}
 			}
 		});
+	}
+	
+	public void getHoaDonTuHoaDonCho(String maHoaDonCho) throws RemoteException {
+        HoaDonCho hoaDonCho = hoaDonCho_DAO.getHoaDonChoTheoMa(maHoaDonCho);
+        if (hoaDonCho.getKhachHang() != null) {
+			txtMaKhachHang.setText(hoaDonCho.getKhachHang().getMaKhachHang());
+			txtTenKhachHang.setText(hoaDonCho.getKhachHang().getTenKhachHang());
+			txtSoDienThoai.setText(hoaDonCho.getKhachHang().getSoDienThoai());
+			txtDiaChi.setText(hoaDonCho.getKhachHang().getDiaChi());
+		}
+        model.setRowCount(0);
+        chiTietHoaDonCho_DAO.getAllChiTietHoaDonChoTheoMaHoaDonCho(maHoaDonCho).forEach(cthdc -> {
+        	Object[] objects = {cthdc.getSanPham().getTenSanPham(), cthdc.getSanPham().getMaSanPham().substring(0, 1).equals("S") ? "Sách" : "Dụng cụ học tập", cthdc.getSoLuong(), cthdc.getDonGia(), cthdc.getSoLuong() * cthdc.getDonGia()};
+        	model.addRow(objects);
+        });
+        lblTongTienValue.setText(tinhThanhTien() + " VND");
 	}
 }

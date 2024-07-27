@@ -10,6 +10,9 @@ import jakarta.persistence.*;
 	@NamedQuery(name = "getSachTheoTen",query = "SELECT sa FROM Sach sa where sa.tenSanPham LIKE :tenSanPham"),
 	@NamedQuery(name = "getAllSachXoa", query = "SELECT sa FROM Sach sa where sa.maSanPham LIKE 'S%' AND sa.trangThai = false"),
 })
+@NamedNativeQueries({
+	@NamedNativeQuery(name = "findAllSach", query = "select * from Sach s join SanPham sp on s.maSanPham = sp.maSanPham", resultClass = Sach.class),
+})
 public class Sach extends SanPham implements Serializable {
 	private static final long serialVersionUID = 1L;
 

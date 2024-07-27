@@ -241,7 +241,7 @@ public class DanhSachHoaDon_GUI extends JPanel {
 		pnlThongTinTimKiem.add(btnLamMoi);
 		
 		JPanel pnlDanhSachHoaDon = new JPanel();
-		pnlDanhSachHoaDon.setBorder(new LineBorder(new Color(0, 0, 0)));
+		pnlDanhSachHoaDon.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		pnlDanhSachHoaDon.setBounds(0, 200, 1299, 250);
 		pnlMain.add(pnlDanhSachHoaDon);
 		pnlDanhSachHoaDon.setLayout(null);
@@ -324,7 +324,7 @@ public class DanhSachHoaDon_GUI extends JPanel {
 		tableDanhSachHoaDon.setAutoResizeMode(JTable.AUTO_RESIZE_SUBSEQUENT_COLUMNS);
 		
 		JPanel pnlChiTietHoaDon = new JPanel();
-		pnlChiTietHoaDon.setBorder(new LineBorder(new Color(0, 0, 0)));
+		pnlChiTietHoaDon.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		pnlChiTietHoaDon.setBounds(0, 470, 1299, 250);
 		pnlMain.add(pnlChiTietHoaDon);
 		pnlChiTietHoaDon.setLayout(null);

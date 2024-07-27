@@ -601,6 +601,7 @@ public class Sach_GUI extends JPanel {
 		scrollPaneSach.setToolTipText("Chọn vào Sách cần hiển thị thông tin");
 		scrollPaneSach.setBorder(null);
 		scrollPaneSach.setBackground(new Color(255, 255, 255));
+		scrollPaneSach.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		pDanhSach.add(scrollPaneSach);
 
 		String cols[] = { "Mã Sách", "Tên Sách", "Xuất Xứ", "Giá Nhập", "Giá Bán", "Số Lượng Tồn", "Nhà Xuất Bản",
@@ -1019,7 +1020,7 @@ public class Sach_GUI extends JPanel {
 		scrollPaneSach = new JScrollPane();
 		scrollPaneSach.setBounds(20, 44, 1260, 295);
 		scrollPaneSach.setToolTipText("Chọn vào Sách cần hiển thị thông tin");
-		scrollPaneSach.setBorder(null);
+		scrollPaneSach.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		scrollPaneSach.setBackground(new Color(255, 255, 255));
 		pDanhSach.add(scrollPaneSach);
 
@@ -1265,7 +1266,7 @@ public class Sach_GUI extends JPanel {
 		}
 	}
 
-	private void refresh() throws RemoteException {
+	public void refresh() throws RemoteException {
 		loadData(sach_DAO.getAllSach());
 	}
 

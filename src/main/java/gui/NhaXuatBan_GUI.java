@@ -191,7 +191,7 @@ public class NhaXuatBan_GUI extends JPanel {
 		lblHinhAnh.setIcon(new ImageIcon(NhaXuatBan_GUI.class.getResource("/image/HeThong/people.jpg")));
 		lblHinhAnh.setBackground(new Color(255, 255, 255));
 		lblHinhAnh.setBounds(20, 20, 64, 64);
-		lblHinhAnh.setBorder(borderDefault);
+		lblHinhAnh.setBorder(new LineBorder(new Color(0, 0, 0)));
 		pNhapThongTin.add(lblHinhAnh);
 		
 		txtTenNXBValue = new JTextField();

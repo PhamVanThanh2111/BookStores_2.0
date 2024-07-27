@@ -343,6 +343,7 @@ public class TheLoaiSach_GUI extends JPanel {
 		scrollPaneTheLoaiSach.setToolTipText("Chọn vào thể loại Sách cần hiển thị thông tin");
 		scrollPaneTheLoaiSach.setBorder(null);
 		scrollPaneTheLoaiSach.setBackground(Color.WHITE);
+		scrollPaneTheLoaiSach.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		scrollPaneTheLoaiSach.setBounds(20, 44, 1259, 451);
 		pDanhSach.add(scrollPaneTheLoaiSach);
 
@@ -573,7 +574,7 @@ public class TheLoaiSach_GUI extends JPanel {
 
 		scrollPaneTheLoaiSach = new JScrollPane();
 		scrollPaneTheLoaiSach.setToolTipText("Chọn vào thể loại Sách cần hiển thị thông tin");
-		scrollPaneTheLoaiSach.setBorder(null);
+		scrollPaneTheLoaiSach.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		scrollPaneTheLoaiSach.setBackground(Color.WHITE);
 		scrollPaneTheLoaiSach.setBounds(20, 44, 1259, 451);
 		pDanhSach.add(scrollPaneTheLoaiSach);

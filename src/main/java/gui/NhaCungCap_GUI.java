@@ -76,6 +76,7 @@ public class NhaCungCap_GUI extends JPanel implements ActionListener {
 		pMain.add(pNhapThongTin);
 
 		JLabel lblHinhAnh = new JLabel("");
+		lblHinhAnh.setIcon(new ImageIcon(NhaCungCap_GUI.class.getResource("/image/HeThong/people.jpg")));
 		lblHinhAnh.setBorder(new LineBorder(new Color(0, 0, 0)));
 		lblHinhAnh.setBounds(20, 20, 64, 64);
 		pNhapThongTin.add(lblHinhAnh);
