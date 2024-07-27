@@ -801,6 +801,7 @@ public class HoaDon_GUI extends JPanel {
 				JOptionPane.showMessageDialog(null, "Sản phẩm này đã hết hàng!");
 			};
 		}
+		JOptionPane.showMessageDialog(null, "Lập hóa đơn chờ thành công!");
 		danhSachHoaDonCho_GUI.refresh();
 	}
 	
