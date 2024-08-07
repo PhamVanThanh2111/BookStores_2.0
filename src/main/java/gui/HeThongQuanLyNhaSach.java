@@ -1,10 +1,12 @@
 package gui;
 
-import java.awt.CardLayout;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Rectangle;
-import java.awt.Toolkit;
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import dao.*;
+import entity.NhanVien;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -13,31 +15,6 @@ import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JSeparator;
-import javax.swing.SwingConstants;
-import javax.swing.UIManager;
-import javax.swing.border.EmptyBorder;
-
-import com.formdev.flatlaf.themes.FlatMacLightLaf;
-
-import dao.DungCuHocTap_DAO;
-import dao.HoaDonCho_DAO;
-import dao.HoaDon_DAO;
-import dao.KhachHang_DAO;
-import dao.NhaCungCap_DAO;
-import dao.NhaXuatBan_DAO;
-import dao.NhanVien_DAO;
-import dao.PhieuDatHang_DAO;
-import dao.Sach_DAO;
-import dao.TheLoaiSach_DAO;
-import entity.NhanVien;
 
 public class HeThongQuanLyNhaSach extends JFrame {
 

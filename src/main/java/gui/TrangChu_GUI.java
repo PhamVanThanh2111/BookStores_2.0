@@ -1,25 +1,18 @@
 package gui;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.rmi.RemoteException;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
-
-import javax.swing.border.LineBorder;
-
 import dao.Ca_DAO;
 import dao.HoaDon_DAO;
 import entity.HoaDon;
 import entity.NhanVien;
 
-import javax.swing.ImageIcon;
+import javax.swing.*;
+import javax.swing.border.LineBorder;
+import java.awt.*;
+import java.rmi.RemoteException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 
 public class TrangChu_GUI extends JPanel {

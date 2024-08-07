@@ -19,9 +19,11 @@ public class Server {
 
 		Ca_Impl caDAO = new Ca_DAO();
 		ChiTietHoaDon_Impl chiTietHoaDonDAO = new ChiTietHoaDon_DAO();
+		ChiTietHoaDonCho_Impl chiTietHoaDonChoDAO = new ChiTietHoaDonCho_DAO();
 		ChiTietPhieuDatHangImpl chiTietPhieuDatHangDAO = new ChiTietPhieuDatHang_DAO();
 		DungCuHocTap_Impl dungCuHocTapDAO = new DungCuHocTap_DAO();
 		HoaDon_Impl hoaDonDAO = new HoaDon_DAO();
+		HoaDonCho_Impl hoaDonChoDAO = new HoaDonCho_DAO();
 		KhachHang_Impl khachHangDAO = new KhachHang_DAO();
 		NhaCungCap_Impl nhaCungCapDAO = new NhaCungCap_DAO();
 		NhanVien_Impl nhanVienDAO = new NhanVien_DAO();
@@ -36,9 +38,11 @@ public class Server {
 
 		context.bind(URL + "caDAO", caDAO);
 		context.bind(URL + "chiTietHoaDonDAO", chiTietHoaDonDAO);
+		context.bind(URL + "chiTietHoaDonChoDAO", chiTietHoaDonChoDAO);
 		context.bind(URL + "chiTietPhieuDatHangDAO", chiTietPhieuDatHangDAO);
 		context.bind(URL + "dungCuHocTapDAO", dungCuHocTapDAO);
 		context.bind(URL + "hoaDonDAO", hoaDonDAO);
+		context.bind(URL + "hoaDonChoDAO", hoaDonChoDAO);
 		context.bind(URL + "khachHangDAO", khachHangDAO);
 		context.bind(URL + "nhaCungCapDAO", nhaCungCapDAO);
 		context.bind(URL + "nhanVienDAO", nhanVienDAO);
